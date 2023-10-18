@@ -1,0 +1,200 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --body: #f9f9f9;
+  --stroke: #e9e9e9;
+  --secondary-text: #4b4b4b;
+  --secondary-text-hover: #4b4b4bc0;
+}
+
+html {
+  background-color: var(--white);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
+}
+
+.container {
+  margin-top: 60px;
+  padding-top: 25px;
+  background-color: var(--body);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -10px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+nav {
+  width: 100%;
+  font-size: 24px;
+  display: flex; 
+  gap: 10px;
+}
+
+nav a:last-child {
+    margin-left: auto;
+}
+
+h1 {
+  color: var(--black);
+  font-size: 32px;
+}
+
+p {
+  color: var(--secondary-text);
+  font-size: 20px;
+}
+
+p-title {
+  font-weight: 900;
+}
+
+button {
+  background-color: var(--white);
+  border: 1px solid var(--stroke);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 18px;
+  height: 42px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--stroke);
+  cursor: pointer;
+}
+
+a {
+  color: var(--secondary-text);
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: var(--secondary-text-hover);
+}
+
+section {
+  padding-bottom: 25px;
+}
+
+.selfie {
+  height: 48px;
+  width: 48px;
+  border: 1px solid var(--stroke);
+  border-radius: 99px;
+  bottom: 0;
+}
+
+.projectimg {
+  height: 120px;
+  width: auto;
+  border: 1px solid var(--stroke);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.projectimg:hover {
+  height: 200px;
+}
+
+.diplomaimg {
+  height: 240px;
+  width: auto;
+  border: 1px solid var(--stroke);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.diplomaimg:hover {
+  height: 300px;
+}
+
+.socialicon {
+  height: 14.63px;
+  width: auto;
+}
+
+/* responsiveness */
+
+@media (max-width: 590px) {
+    nav {
+        font-size: 16px;
+    }
+
+    nav button {
+        display: none;
+    }
+}
+@media (min-width: 591px) {
+    .mobilecv {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1024px) {
+  .container {
+    background-color: var(--white);
+    margin-top: 0px;
+    padding-top: 10px;
+    border: none;
+    box-shadow: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+    .projectimg:hover {
+        height: 160px;
+      }
+  }
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 100%;
+  }
+}
