@@ -88,6 +88,12 @@ a:hover {
   color: var(--secondary-text-hover);
 }
 
+.category {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+}
+
 section {
   padding-bottom: 25px;
 }
@@ -112,6 +118,11 @@ section {
   height: 200px;
 }
 
+.imgRow {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
 .diplomaimg {
   height: 240px;
   width: auto;
@@ -127,6 +138,12 @@ section {
 .socialicon {
   height: 14.63px;
   width: auto;
+}
+
+summary {
+  color: var(--secondary-text);
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* responsiveness */
