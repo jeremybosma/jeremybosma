@@ -140,10 +140,31 @@ section {
   width: auto;
 }
 
+.skillicon {
+  height: 25px;
+  width: auto;
+}
+
 summary {
   color: var(--secondary-text);
   font-size: 20px;
   font-weight: 700;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+}
+
+.bericht {
+  padding: 10px;
+  border: 1px solid var(--stroke);
+  border-radius: 5px;
+  width: 98%;
+  padding: 1%;
+  text-align: start;
+  height: auto;
 }
 
 /* Tooltip van W3Schools */
