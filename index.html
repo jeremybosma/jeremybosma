@@ -30,15 +30,19 @@
 
         <section id="hero">
             <div style="display: flex; align-items: center; gap: 10px;">
-                <img class="selfie" src="assets/images/selfie.png" alt="inprofessional photo of my face">
+                <img class="selfie" src="assets/images/selfie.png" alt="inprofessional photo of half my face">
                 <h1>Jeremy Bosma</h1>
             </div>
             <p style="margin-top: -10px;">15 jarige in software, ontwerp en startups.</p>
+            <iframe
+                src="https://lanyard.cnrad.dev/api/709441303351394314?hideProfile=true&theme=light&idleMessage=Momenteel geen activiteit gevonden."
+                width="410" height="auto" allowtransparency="true" frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             <div style="display: flex; gap: 10px;">
-            <a href="#contact"><button>Contact</button></a>
-            <a href="https://github.com/jecta" target=”_blank”><button>Github</button></a>
-            <a class="mobilecv" href="#"><button>CV</button></a>
-        </div>
+                <a href="#contact"><button>Contact</button></a>
+                <a href="https://github.com/jecta" target=”_blank”><button>Github</button></a>
+                <a class="mobilecv" href="#"><button>CV</button></a>
+            </div>
         </section>
 
         <section id="about">
@@ -48,7 +52,7 @@
             <p style="margin-top: -15px;">Ik streef ernaar een zelf-geleerde designer te worden terwijl ik
                 softwareontwikkeling studeer op een college, met als doel de vaardigheden te verwerven om zelfstandig
                 projecten te creëren en ondernemerschap op afstand na te streven en een baan te vinden in de sector
-                software-development.</p><br>
+                software-development.</p>
             <a href="about.html"><button style="width: 100%;">Lees meer over mij</button></a>
         </section>
 
@@ -77,7 +81,7 @@
                         alt="screenshot of outfits.bio">
                 </div>
             </div><br>
-            
+
             <div style="display: flex; gap: 10px;">
                 <p class="projectTitle" style="font-weight: bold;">2023 - 2023</p>
                 <p class="projectTitle">Oprichter van unifier.app</p>
@@ -107,7 +111,6 @@
                 <p style="margin-top: -15px;">De studie omvat uiteenlopende onderwerpen zoals webontwikkeling
                     (frontend/backend),
                     softwareontwikkeling, sensorontwikkeling en gameontwikkeling.</p>
-                <br>
                 <h1>Certificaten</h1>
                 <p style="margin-top: -15px;">Middelbare school diploma</p>
                 <img class="diplomaimg" src="assets/images/diplomering.png"
@@ -117,11 +120,15 @@
         <section id="contact">
             <h1>Contact</h1>
             <div style="display: flex; align-items: center; gap: 5px;">
-                <img class="socialicon" src="assets/images/emailicon.png" alt="email icon">
+                <div class="tooltip"><img class="socialicon" src="assets/images/emailicon.png" alt="email icon">
+                    <span class="tooltiptext">Email</span>
+                </div>
                 <a style="font-size: 20px;" href="mailto:hi@jeremybosma.nl" target=”_blank”>hi@jeremybosma.nl</a>
             </div>
             <div style="display: flex; align-items: center; gap: 5px;">
-                <img class="socialicon" src="assets/images/discord.png" alt="discord icon">
+                <div class="tooltip"><img class="socialicon" src="assets/images/discord.png" alt="discord icon">
+                    <span class="tooltiptext">Discord</span>
+                </div>
                 <a style="font-size: 20px;" href="#" target=”_blank”>jecta</a>
             </div>
         </section>
