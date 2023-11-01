@@ -11,7 +11,7 @@
 
 html {
   * {
-  color: var(--secondary-text);
+    color: var(--secondary-text);
   }
   background-color: var(--white);
   scroll-behavior: smooth;
@@ -38,12 +38,12 @@ body {
 nav {
   width: 100%;
   font-size: 24px;
-  display: flex; 
+  display: flex;
   gap: 10px;
 }
 
 nav a:last-child {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 h1 {
@@ -207,7 +207,6 @@ input {
   opacity: 1;
 }
 
-
 /* responsiveness */
 
 @media (max-width: 412px) {
@@ -217,19 +216,18 @@ input {
 }
 
 @media (max-width: 590px) {
-    nav {
-        font-size: 16px;
-    }
+  nav {
+    font-size: 16px;
+  }
 
-    nav button {
-        display: none;
-    }
+  nav button {
+    display: none;
+  }
 }
 @media (min-width: 591px) {
-    .mobilecv {
-        display: none;
-    }
-
+  .mobilecv {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -247,10 +245,10 @@ input {
 }
 
 @media (max-width: 768px) {
-    .projectimg:hover {
-        height: 160px;
-      }
+  .projectimg:hover {
+    height: 160px;
   }
+}
 
 @media (min-width: 576px) {
   .container {
