@@ -162,7 +162,6 @@ input {
   border: 1px solid var(--stroke);
   border-radius: 5px;
   width: 98%;
-  padding: 1%;
   text-align: start;
   height: auto;
 }
