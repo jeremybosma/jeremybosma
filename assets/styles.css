@@ -12,7 +12,8 @@
 html {
   * {
     color: var(--secondary-text);
-  }
+ /*     cursor: url('image-path.png'),auto;*/
+   }
   background-color: var(--white);
   scroll-behavior: smooth;
 }
@@ -75,7 +76,7 @@ button {
 
 button:hover {
   background-color: var(--stroke);
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 a {
