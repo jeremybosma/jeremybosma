@@ -22,7 +22,8 @@
     <div class="container">
 
         <nav>
-            <a style="color: var(--black);" href="index.html">home</a>
+            <a class="active" href="index.html">home</a>
+            <a class="slash">/</a>
             <a href="about.html">over mij</a>
             <a href="projects.html">projecten</a>
             <a href="school.html">school</a>
@@ -32,17 +33,12 @@
         </nav>
 
         <section id="hero">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <img class="selfie" src="assets/images/selfie.png" alt="inprofessional photo of half my face">
+            <div class="row">
+                <img class="selfie" src="assets/images/selfie.png" alt="photo of half my face">
                 <h1>Jeremy Bosma</h1>
             </div>
-            <p style="margin-top: -10px;">15 jarige in software, ontwerp en startups.</p>
-            <iframe
-                src="https://lanyard.cnrad.dev/api/709441303351394314?hideProfile=true&theme=light&idleMessage=Momenteel geen activiteit gevonden."
-                style="display: flex; width: 100%;" width="312px" height="113px" allowtransparency="true"
-                frameborder="0"
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe><br>
-            <div style="display: flex; gap: 10px;">
+            <p class="marginfix"><b>15</b> jarige in <b>software</b>, <b>ontwerp</b> en <b>startups</b>.</p>
+            <div class="row">
                 <a href="#socials"><button>Contact</button></a>
                 <a href="https://github.com/jecta" target=”_blank”><button>Github</button></a>
                 <a class="mobilecv" href="#"><button>CV</button></a>
@@ -51,46 +47,45 @@
 
         <section id="about">
             <h1>Over mij</h1>
-            <p style="margin-top: -15px;">Mijn naam is Jeremy Bosma, ik ben 15 jaar oud, ik ben woonachtig in Nederland
+            <p class="marginfix">Mijn naam is Jeremy Bosma, ik ben 15 jaar oud, ik ben woonachtig in Nederland
                 en ik ben student aan het alfa-college in Groningen.</p><br>
-            <p style="margin-top: -15px;">Ik streef ernaar een zelf-geleerde designer te worden terwijl ik
+            <p class="marginfix">Ik streef ernaar een zelf-geleerde designer te worden terwijl ik
                 softwareontwikkeling studeer op een college, met als doel de vaardigheden te verwerven om zelfstandig
                 projecten te creëren en ondernemerschap op afstand na te streven en een baan te vinden in de sector
                 software-development.</p>
-            <a href="about.html"><button style="width: 100%;">Lees meer over mij</button></a>
+            <a href="about.html"><button class="wide">Lees meer over mij</button></a>
         </section>
 
         <section id="skillset">
             <h1>Mijn skills</h1>
             <p>Programeertalen</p>
-            <div style="display: flex; gap: 5px;">
-                <div class="tooltip"><i style="font-size: 30px;" class="devicon-html5-plain colored"></i>
+            <div class="row">
+                <div class="tooltip"><i class="devicon-html5-plain colored skillicon"></i>
                     <span class="tooltiptext">Html</span>
                 </div>
-                <div class="tooltip"><i style="font-size: 30px;" class="devicon-css3-plain colored"></i>
+                <div class="tooltip"><i class="devicon-css3-plain colored skillicon"></i>
                     <span class="tooltiptext">CSS</span>
                 </div>
-                <div class="tooltip"><i style="background-color: black; font-size: 30px;"
-                        class="devicon-javascript-plain colored"></i>
+                <div class="tooltip"><i class="devicon-javascript-plain colored skillicon"></i>
                     <span class="tooltiptext">JavaScript</span>
                 </div>
-                <div class="tooltip"><i style="font-size: 30px;" class="devicon-csharp-plain colored"></i>
+                <div class="tooltip"><i class="devicon-csharp-plain colored skillicon"></i>
                     <span class="tooltiptext">C#</span>
                 </div>
             </div>
-            <hr style="border-top: 1px solid var(--stroke);">
+            <hr class="divider">
             <p>Tools</p>
-            <div style="display: flex; gap: 5px;">
-                <div class="tooltip"><i style="font-size: 30px;" class="devicon-vscode-plain colored"></i>
+            <div class="row">
+                <div class="tooltip"><i class="devicon-vscode-plain colored skillicon"></i>
                     <span class="tooltiptext">Vscode</span>
                 </div>
-                <div class="tooltip"><i style="font-size: 30px;" class="devicon-git-plain colored"></i>
+                <div class="tooltip"><i class="devicon-git-plain colored skillicon"></i>
                     <span class="tooltiptext">Git</span>
                 </div>
-                <div class="tooltip"><i style="font-size: 30px;" class="devicon-docker-plain colored"></i>
+                <div class="tooltip"><i class="devicon-docker-plain colored skillicon"></i>
                     <span class="tooltiptext">Docker</span>
                 </div>
-                <div class="tooltip"><img style="width: auto; height: 30px;"
+                <div class="tooltip"><img class="skillicon"
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
                     <span class="tooltiptext">Figma</span>
                 </div>
@@ -99,84 +94,73 @@
 
         <section id="projects">
             <h1>Projecten</h1>
-            <div>
-                <div style="margin-top: -20px; display: flex; align-items: center; gap: 10px;">
-                    <p class="projectTitle" style="font-weight: bold;">2023 - Heden</p>
-                    <p class="projectTitle">Oprichter van <a class="projectTitle" style="text-decoration: underline;"
-                            href="https://outfits.bio">outfits.bio</a>
-                    </p>
-                    <a href="https://outfits.bio"><img class="socialicon" src="assets/images/pijl.png"
-                            alt="arrow icon"></a>
-                </div>
-                <div style="display: flex; gap: 5px; margin-top: -10px;">
-                    <a class="category">design</a>
-                    <a class="category">development</a>
-                </div>
-                <p style="margin-top: 10px;">Ik bouw een virtuele garderobe waar mensen foto's aan hun profiel kunnen
-                    toevoegen en deze kunnen
-                    delen met een link zoals outfits.bio/jeremy.</p>
-                <div style="display: flex; gap: 10px;">
-                    <img class="projectimg" src="assets/images/outfitsbio/outfitsbio1.png"
-                        alt="screenshot of outfits.bio">
-                    <img class="projectimg" src="assets/images/outfitsbio/outfitsbio2.png"
-                        alt="screenshot of outfits.bio">
-                </div>
-            </div><br>
+            <div class="marginfix row">
+                <p class="projectTitle"><b>2023 - Heden</b></p>
+                <p class="projectTitle">Oprichter van <a class="projectTitle" style="text-decoration: underline;"
+                        href="https://outfits.bio">outfits.bio</a>
+                </p>
+                <a href="https://outfits.bio"><img class="socialicon" src="assets/images/pijl.png" alt="arrow icon"></a>
+            </div>
+            <div class="marginfix row">
+                <a class="category">design</a>
+                <a class="category">development</a>
+            </div>
+            <p style="margin-top: 10px;">Ik bouw een virtuele garderobe waar mensen foto's aan hun profiel kunnen
+                toevoegen en deze kunnen
+                delen met een link zoals outfits.bio/jeremy.</p>
+            <div class="row">
+                <img class="projectimg" src="assets/images/outfitsbio/outfitsbio1.png" alt="screenshot of outfits.bio">
+                <img class="projectimg" src="assets/images/outfitsbio/outfitsbio2.png"
+                    alt="screenshot of outfits.bio"><br>
+            </div>
 
-            <div style="display: flex; gap: 10px;">
-                <p class="projectTitle" style="font-weight: bold;">2023 - 2023</p>
+            <div class="row">
+                <p class="projectTitle"><b>2023 - 2023</b></p>
                 <p class="projectTitle">Oprichter van unifier.app</p>
             </div>
-            <div style="display: flex; gap: 5px; margin-top: -10px;">
+            <div class="marginfix row">
                 <a class="category">design</a>
             </div>
             <p style="margin-top: 10px;">Unifier is één feed voor reguliere sociale mediaplatforms om de focus te
                 verbeteren en de schermtijd te
                 verkorten.</p>
-            <div class="imgRow" style="display: flex; gap: 10px;">
+            <div class="imgRow">
                 <img class="projectimg" src="assets/images/unifierapp/unifierapp.png" alt="screenshot of unifier.app">
                 <img class="projectimg" src="assets/images/unifierapp/unifierapp1.png" alt="screenshot of unifier.app">
                 <img class="projectimg" src="assets/images/unifierapp/unifierapp2.png" alt="screenshot of unifier.app">
             </div><br>
 
-            <a href="projects.html"><button style="width: 100%;">Meer projecten</button></a>
+            <a href="projects.html"><button class="wide">Meer projecten</button></a>
         </section>
 
         <section id="school">
             <h1>School</h1>
-            <div>
-                <div style="margin-top: -20px; display: flex; gap: 10px;">
-                    <p style="font-weight: bold;">Huidig</p>
-                    <p>MBO 4 Software Development</p>
-                </div>
-                <p style="margin-top: -15px;">De studie omvat uiteenlopende onderwerpen zoals webontwikkeling
-                    (frontend/backend),
-                    softwareontwikkeling, sensorontwikkeling en gameontwikkeling.</p>
-                <h1>Certificaten</h1>
-                <p style="margin-top: -15px;">Middelbare school diploma</p>
-                <img class="diplomaimg" src="assets/images/diplomering.png"
-                    alt="picture shot at my graduation of high school">
+            <div class="row marginfix">
+                <p><b>Huidig</b></p>
+                <p>MBO 4 Software Development</p>
+            </div>
+            <p class="marginfix">De studie omvat uiteenlopende onderwerpen zoals webontwikkeling
+                (frontend/backend),
+                softwareontwikkeling, sensorontwikkeling en gameontwikkeling.</p>
         </section>
 
         <section id="socials">
             <h1>Socials</h1>
-            <div style="display: flex; align-items: center; gap: 5px;">
+            <div class="row marginfix">
                 <div class="tooltip"><img class="socialicon" src="assets/images/emailicon.png" alt="email icon">
                     <span class="tooltiptext">Email</span>
                 </div>
-                <a style="font-size: 20px;" href="mailto:hi@jeremybosma.nl" target=”_blank”>hi@jeremybosma.nl</a>
+                <a class="username" href="mailto:hi@jeremybosma.nl" target=”_blank”>hi@jeremybosma.nl</a>
             </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
+            <div class="row">
                 <div class="tooltip"><img class="socialicon" src="assets/images/discord.png" alt="discord icon">
                     <span class="tooltiptext">Discord</span>
                 </div>
-                <a style="font-size: 20px;" href="#" target=”_blank”>jecta</a>
+                <a class="username" href="#" target=”_blank”>jecta</a>
             </div>
         </section>
 
     </div>
-
-    <script src="assets/main.js"></script>
 </body>
 
 </html>
