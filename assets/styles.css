@@ -10,16 +10,10 @@
 }
 
 html {
-  * {
-    color: var(--secondary-text);
-    /*     cursor: url('image-path.png'),auto;*/
-  }
+  font-family: "Satoshi", sans-serif;
+  color: var(--secondary-text);
   background-color: var(--white);
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Satoshi", sans-serif;
 }
 
 .container {
