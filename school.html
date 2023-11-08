@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="nl">
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-type" content="text/html;" charset="UTF-8">
-    <meta name="robots" content="all">
-    <meta name="language" content="Dutch">
-    <meta name="author" content="Jeremy Bosma">
-    <meta name="description" content="15 jarige in software, ontwerp en startups.">
-    <meta name="keywords" content="Portfolio, Jeremy, projecten, CV, contact">
-    <meta name="copyright" content="copyright">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-type" content="text/html;" charset="UTF-8" />
+    <meta name="robots" content="all" />
+    <meta name="language" content="Dutch" />
+    <meta name="author" content="Jeremy Bosma" />
+    <meta
+      name="description"
+      content="15 jarige in software, ontwerp en startups."
+    />
+    <meta name="keywords" content="Portfolio, Jeremy, projecten, CV, contact" />
+    <meta name="copyright" content="copyright" />
     <title>Jeremy Bosma</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/selfie.png">
-    <link rel="stylesheet" href="assets/styles.css">
-</head>
+    <link rel="icon" type="image/x-icon" href="assets/images/selfie.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <nav>
+        <a href="index.html">home</a>
+        <a class="slash">/</a>
+        <a href="about.html">over</a>
+        <a href="projects.html">projecten</a>
+        <a class="active" href="school.html">school</a>
+        <a href="contact.html">contact</a>
 
-        <nav>
-            <a href="index.html">home</a>
-            <a class="slash">/</a>
-            <a href="about.html">over</a>
-            <a href="projects.html">projecten</a>
-            <a class="active" href="school.html">school</a>
-            <a href="contact.html">contact</a>
+        <a href="#"><button>CV</button></a>
+      </nav>
 
-            <a href="#"><button>CV</button></a>
-        </nav>
+      <section id="hero">
+        <div class="row">
+          <img
+            class="selfie"
+            src="assets/images/selfie.png"
+            alt="photo of half my face"
+          />
+          <h1>Jeremy Bosma</h1>
+        </div>
+        <p class="marginfix">
+          <b>15</b> jarige in <b>software</b>, <b>ontwerp</b> en
+          <b>startups</b>.
+        </p>
+        <div class="row">
+          <a href="contact.html"><button>Contact</button></a>
+          <a href="https://github.com/jecta" target="”_blank”"
+            ><button>Github</button></a
+          >
+          <a class="mobilecv" href="#"><button>CV</button></a>
+        </div>
+      </section>
 
-        <section id="hero">
-            <div class="row">
-                <img class="selfie" src="assets/images/selfie.png" alt="photo of half my face">
-                <h1>Jeremy Bosma</h1>
-            </div>
-            <p class="marginfix"><b>15</b> jarige in <b>software</b>, <b>ontwerp</b> en <b>startups</b>.</p>
-            <div class="row">
-                <a href="contact.html"><button>Contact</button></a>
-                <a href="https://github.com/jecta" target=”_blank”><button>Github</button></a>
-                <a class="mobilecv" href="#"><button>CV</button></a>
-            </div>
-        </section>
-
-        <section id="school">
-            <h1>School</h1>
-            <div class="row marginfix">
-                <p><b>Huidig</b></p>
-                <p>MBO 4 Software Development</p>
-            </div>
-            <p class="marginfix">De studie omvat uiteenlopende onderwerpen zoals webontwikkeling
-                (frontend/backend),
-                softwareontwikkeling, sensorontwikkeling en gameontwikkeling.</p>
-        </section>
-
+      <section id="school">
+        <h1>School</h1>
+        <div class="row marginfix">
+          <p><b>Huidig</b></p>
+          <p>MBO 4 Software Development</p>
+        </div>
+        <p class="marginfix">
+          De studie omvat uiteenlopende onderwerpen zoals webontwikkeling
+          (frontend/backend), softwareontwikkeling, sensorontwikkeling en
+          gameontwikkeling.
+        </p>
+      </section>
     </div>
 
     <script src="assets/main.js"></script>
-</body>
-
+  </body>
 </html>

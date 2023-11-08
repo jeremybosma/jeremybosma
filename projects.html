@@ -1,130 +1,247 @@
 <!DOCTYPE html>
 <html lang="nl">
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-type" content="text/html;" charset="UTF-8">
-    <meta name="robots" content="all">
-    <meta name="language" content="Dutch">
-    <meta name="author" content="Jeremy Bosma">
-    <meta name="description" content="15 jarige in software, ontwerp en startups.">
-    <meta name="keywords" content="Portfolio, Jeremy, projecten, CV, contact">
-    <meta name="copyright" content="copyright">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-type" content="text/html;" charset="UTF-8" />
+    <meta name="robots" content="all" />
+    <meta name="language" content="Dutch" />
+    <meta name="author" content="Jeremy Bosma" />
+    <meta
+      name="description"
+      content="15 jarige in software, ontwerp en startups."
+    />
+    <meta name="keywords" content="Portfolio, Jeremy, projecten, CV, contact" />
+    <meta name="copyright" content="copyright" />
     <title>Jeremy Bosma</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/selfie.png">
-    <link rel="stylesheet" href="assets/styles.css">
-</head>
+    <link rel="icon" type="image/x-icon" href="assets/images/selfie.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <nav>
+        <a href="index.html">home</a>
+        <a class="slash">/</a>
+        <a href="about.html">over</a>
+        <a class="active" href="projects.html">projecten</a>
+        <a href="school.html">school</a>
+        <a href="contact.html">contact</a>
 
-        <nav>
-            <a href="index.html">home</a>
-            <a class="slash">/</a>
-            <a href="about.html">over</a>
-            <a class="active" href="projects.html">projecten</a>
-            <a href="school.html">school</a>
-            <a href="contact.html">contact</a>
+        <a href="#"><button>CV</button></a>
+      </nav>
 
-            <a href="#"><button>CV</button></a>
-        </nav>
+      <section id="hero">
+        <div class="row">
+          <img
+            class="selfie"
+            src="assets/images/selfie.png"
+            alt="photo of half my face"
+          />
+          <h1>Jeremy Bosma</h1>
+        </div>
+        <p class="marginfix">
+          <b>15</b> jarige in <b>software</b>, <b>ontwerp</b> en
+          <b>startups</b>.
+        </p>
+        <div class="row">
+          <a href="contact.html"><button>Contact</button></a>
+          <a href="https://github.com/jecta" target="”_blank”"
+            ><button>Github</button></a
+          >
+          <a class="mobilecv" href="#"><button>CV</button></a>
+        </div>
+      </section>
 
-        <section id="hero">
-            <div class="row">
-                <img class="selfie" src="assets/images/selfie.png" alt="photo of half my face">
-                <h1>Jeremy Bosma</h1>
-            </div>
-            <p class="marginfix"><b>15</b> jarige in <b>software</b>, <b>ontwerp</b> en <b>startups</b>.</p>
-            <div class="row">
-                <a href="contact.html"><button>Contact</button></a>
-                <a href="https://github.com/jecta" target=”_blank”><button>Github</button></a>
-                <a class="mobilecv" href="#"><button>CV</button></a>
-            </div>
-        </section>
+      <section id="projects">
+        <h1>Projecten</h1>
+        <div class="marginfix row">
+          <p class="projectTitle"><b>2023 - Heden</b></p>
+          <p class="projectTitle">
+            Oprichter van
+            <a
+              class="projectTitle"
+              style="text-decoration: underline"
+              href="https://outfits.bio"
+              >outfits.bio</a
+            >
+          </p>
+          <a href="https://outfits.bio"
+            ><img
+              class="socialicon"
+              src="assets/images/pijl.png"
+              alt="arrow icon"
+          /></a>
+        </div>
+        <div class="marginfix row">
+          <a class="category">design</a>
+          <a class="category">development</a>
+        </div>
+        <div style="margin-top: 10px" class="collabs row">
+          <div class="collab tooltip">
+            <a href="https://www.briceduke.dev/"
+              ><img
+                src="https://avatars.githubusercontent.com/u/74372754?v=4"
+                alt="collab"
+            /></a>
+            <span class="tooltiptext">Brice Duke</span>
+          </div>
+        </div>
+        <p style="margin-top: 10px">
+          Ik bouw een virtuele garderobe waar mensen foto's aan hun profiel
+          kunnen toevoegen en deze kunnen delen met een link zoals
+          outfits.bio/jeremy.
+        </p>
+        <div class="row">
+          <img
+            class="projectimg"
+            src="assets/images/outfitsbio/outfitsbio1.png"
+            alt="screenshot of outfits.bio"
+          />
+          <img
+            class="projectimg"
+            src="assets/images/outfitsbio/outfitsbio2.png"
+            alt="screenshot of outfits.bio"
+          /><br />
+        </div>
 
-        <section id="projects">
-            <h1>Projecten</h1>
-            <div class="marginfix row">
-                <p class="projectTitle"><b>2023 - Heden</b></p>
-                <p class="projectTitle">Oprichter van <a class="projectTitle" style="text-decoration: underline;"
-                        href="https://outfits.bio">outfits.bio</a>
+        <div class="row">
+          <p class="projectTitle"><b>2023 - 2023</b></p>
+          <p class="projectTitle">Oprichter van unifier.app</p>
+        </div>
+        <div class="marginfix row">
+          <a class="category">design</a>
+        </div>
+        <div style="margin-top: 10px" class="collabs row">
+          <div class="collab tooltip">
+            <a href="https://funnydusto.com"
+              ><img
+                src="https://creatorspace.imgix.net/users/cle92tdku002jna0ycwool5y5/73wtFHxdU2YfVoHU-Untitled5_20230916004340.jpg?w=300&h=300"
+                alt="collab"
+            /></a>
+            <span class="tooltiptext">Funnydusto</span>
+          </div>
+          <div class="tooltip">
+            <a href="https://twitter.com/khanhtncva"
+              ><img
+                src="https://pbs.twimg.com/profile_images/1550786307600928768/qlFuo1VE_400x400.png"
+                alt="collab"
+            /></a>
+            <span class="tooltiptext">Khan Tran</span>
+          </div>
+        </div>
+        <p style="margin-top: 10px">
+          Unifier is één feed voor reguliere sociale mediaplatforms om de focus
+          te verbeteren en de schermtijd te verkorten.
+        </p>
+        <div class="imgRow">
+          <img
+            class="projectimg"
+            src="assets/images/unifierapp/unifierapp.png"
+            alt="screenshot of unifier.app"
+          />
+          <img
+            class="projectimg"
+            src="assets/images/unifierapp/unifierapp1.png"
+            alt="screenshot of unifier.app"
+          />
+          <img
+            class="projectimg"
+            src="assets/images/unifierapp/unifierapp2.png"
+            alt="screenshot of unifier.app"
+          />
+        </div>
+        <br />
+
+        <div class="row">
+          <p class="projectTitle"><b>2021 - 2023</b></p>
+          <p class="projectTitle">Oprichter van atlis.gg</p>
+        </div>
+        <div class="marginfix row">
+          <a class="category">design</a>
+        </div>
+        <div style="margin-top: 10px" class="collabs row">
+          <div class="collab tooltip">
+            <a href="https://funnydusto.com"
+              ><img
+                src="https://creatorspace.imgix.net/users/cle92tdku002jna0ycwool5y5/73wtFHxdU2YfVoHU-Untitled5_20230916004340.jpg?w=300&h=300"
+                alt="collab"
+            /></a>
+            <span class="tooltiptext">Funnydusto</span>
+          </div>
+          <div class="tooltip">
+            <a href="https://www.briceduke.dev/"
+              ><img
+                src="https://avatars.githubusercontent.com/u/74372754?v=4"
+                alt="collab"
+            /></a>
+            <span class="tooltiptext">Brice Duke</span>
+          </div>
+        </div>
+        <p style="margin-top: 10px">
+          Atlis is een social media platform wat alle aspecten van reddit,
+          twitter en instagram combineert en in 1 centraal platform stopt.
+        </p>
+        <div class="imgRow" class="row">
+          <img
+            class="projectimg"
+            src="assets/images/atlisgg/atlisgg.png"
+            alt="screenshot of atlis.gg"
+          />
+          <img
+            class="projectimg"
+            src="assets/images/atlisgg/atlisgg1.png"
+            alt="screenshot of atlis.gg"
+          />
+          <img
+            class="projectimg"
+            src="assets/images/atlisgg/atlisgg2.png"
+            alt="screenshot of atlis.gg"
+          />
+        </div>
+
+        <div style="margin-top: 20px">
+          <br />
+          <details>
+            <summary>Side-projects</summary>
+            <p>nog niks hier...</p>
+          </details>
+          <br />
+          <details>
+            <summary>School gerelateerd</summary>
+            <div>
+              <div class="marginfix row">
+                <p class="projectTitle" style="font-weight: bold">Oct, 2023</p>
+                <p class="projectTitle">
+                  Portfolio mockups in
+                  <a
+                    class="projectTitle"
+                    href="#"
+                    style="text-decoration: underline"
+                    >figma</a
+                  >
                 </p>
-                <a href="https://outfits.bio"><img class="socialicon" src="assets/images/pijl.png" alt="arrow icon"></a>
-            </div>
-            <div class="marginfix row">
+                <a href="#"
+                  ><img
+                    class="socialicon"
+                    src="assets/images/pijl.png"
+                    alt="arrow icon"
+                /></a>
+              </div>
+              <div class="marginfix row">
                 <a class="category">design</a>
-                <a class="category">development</a>
+              </div>
+              <p style="margin-top: 10px">
+                Dit was een eis om op mijn portfolio te zetten voor de opdracht
+                van school, klik om te zien hoe ik mijn design heb omgezet in
+                code.
+              </p>
             </div>
-            <p style="margin-top: 10px;">Ik bouw een virtuele garderobe waar mensen foto's aan hun profiel kunnen
-                toevoegen en deze kunnen
-                delen met een link zoals outfits.bio/jeremy.</p>
-            <div class="row">
-                <img class="projectimg" src="assets/images/outfitsbio/outfitsbio1.png" alt="screenshot of outfits.bio">
-                <img class="projectimg" src="assets/images/outfitsbio/outfitsbio2.png"
-                    alt="screenshot of outfits.bio"><br>
-            </div>
-
-            <div class="row">
-                <p class="projectTitle"><b>2023 - 2023</b></p>
-                <p class="projectTitle">Oprichter van unifier.app</p>
-            </div>
-            <div class="marginfix row">
-                <a class="category">design</a>
-            </div>
-            <p style="margin-top: 10px;">Unifier is één feed voor reguliere sociale mediaplatforms om de focus te
-                verbeteren en de schermtijd te
-                verkorten.</p>
-            <div class="imgRow">
-                <img class="projectimg" src="assets/images/unifierapp/unifierapp.png" alt="screenshot of unifier.app">
-                <img class="projectimg" src="assets/images/unifierapp/unifierapp1.png" alt="screenshot of unifier.app">
-                <img class="projectimg" src="assets/images/unifierapp/unifierapp2.png" alt="screenshot of unifier.app">
-            </div><br>
-
-            <div class="row">
-                <p class="projectTitle"><b>2021 - 2023</b></p>
-                <p class="projectTitle">Oprichter van atlis.gg</p>
-            </div>
-            <div class="marginfix row">
-                <a class="category">design</a>
-            </div>
-            <p style="margin-top: 10px;">Atlis is een social media platform wat alle aspecten van reddit, twitter en
-                instagram
-                combineert en in 1 centraal platform stopt.</p>
-            <div class="imgRow" class="row">
-                <img class="projectimg" src="assets/images/atlisgg/atlisgg.png" alt="screenshot of atlis.gg">
-                <img class="projectimg" src="assets/images/atlisgg/atlisgg1.png" alt="screenshot of atlis.gg">
-                <img class="projectimg" src="assets/images/atlisgg/atlisgg2.png" alt="screenshot of atlis.gg">
-            </div>
-
-            <div style="margin-top: 20px;"><br>
-                <details>
-                    <summary>Side-projects</summary>
-                    <p>nog niks hier...</p>
-                </details><br>
-                <details>
-                    <summary>School gerelateerd</summary>
-                    <div>
-                        <div class="marginfix row">
-                            <p class="projectTitle" style="font-weight: bold;">Oct, 2023</p>
-                            <p class="projectTitle">Portfolio mockups in <a class="projectTitle" href="#"
-                                    style="text-decoration: underline;">figma</a>
-                            </p>
-                            <a href="#"><img class="socialicon" src="assets/images/pijl.png" alt="arrow icon"></a>
-                        </div>
-                        <div class="marginfix row">
-                            <a class="category">design</a>
-                        </div>
-                        <p style="margin-top: 10px;">Dit was een eis om op mijn portfolio te zetten voor de opdracht van
-                            school, klik om te zien hoe ik mijn design heb omgezet in code.</p>
-                    </div>
-                </details><br>
-            </div>
-
-        </section>
-
+          </details>
+          <br />
+        </div>
+      </section>
     </div>
 
     <script src="assets/main.js"></script>
-</body>
-
+  </body>
 </html>

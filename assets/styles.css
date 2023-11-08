@@ -196,6 +196,18 @@ input {
   height: auto;
 }
 
+.collabs img {
+  margin-left: -20px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--stroke);
+  border-radius: 99px;
+}
+
+.collab img {
+  margin-left: 0px !important;
+}
+
 /* Tooltip van W3Schools */
 .tooltip {
   position: relative;
