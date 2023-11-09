@@ -10,8 +10,10 @@
 }
 
 html {
+  * {
+    color: var(--secondary-text);
+  }
   font-family: "Satoshi", sans-serif;
-  color: var(--secondary-text);
   background-color: var(--white);
   scroll-behavior: smooth;
 }
