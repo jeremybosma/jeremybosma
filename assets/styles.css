@@ -9,10 +9,11 @@
   --secondary-text-hover: #4b4b4bc0;
 }
 
+* {
+  color: var(--secondary-text);
+}
+
 html {
-  * {
-    color: var(--secondary-text);
-  }
   font-family: "Satoshi", sans-serif;
   background-color: var(--white);
   scroll-behavior: smooth;
@@ -73,6 +74,9 @@ p-title {
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--white);
   border: 1px solid var(--stroke);
   padding-top: 10px;
