@@ -102,6 +102,17 @@ a:hover {
   color: var(--secondary-text-hover);
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  float: center;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
 .category {
   padding: 5px;
   border-radius: 10px;
