@@ -297,7 +297,7 @@ input {
   }
 
   .pagination {
-    font-size: 13px;
+    font-size: 10px;
   }
 }
 @media (min-width: 591px) {
