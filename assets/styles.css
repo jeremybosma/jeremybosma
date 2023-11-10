@@ -9,6 +9,15 @@
   --secondary-text-hover: #4b4b4bc0;
 }
 
+[data-theme="dark"] {
+  --white: #1e1e1e;
+  --black: #ffffff;
+  --body: #121212;
+  --stroke: #2c2c2c;
+  --secondary-text: #d4d4d4;
+  --secondary-text-hover: #d4d4d4c0;
+}
+
 * {
   color: var(--secondary-text);
 }
@@ -55,7 +64,7 @@ a.username {
   font-size: 20px;
 }
 
-nav a:last-child {
+nav div:last-child {
   margin-left: auto;
 }
 

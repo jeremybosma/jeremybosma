@@ -15,6 +15,12 @@
     <title>Jeremy Bosma</title>
     <link rel="icon" type="image/x-icon" href="assets/images/selfie.png" />
     <link rel="stylesheet" href="assets/styles.css" />
+
+    <!-- Programming language icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
   </head>
 
   <body>
@@ -27,7 +33,10 @@
         <a href="school.html">school</a>
         <a class="active" href="contact.html">contact</a>
 
-        <a href="assets/cv.pdf"><button>CV</button></a>
+        <div class="row">
+          <a id="theme-toggle"><button>🌤️</button></a>
+          <a href="assets/cv.pdf"><button>CV</button></a>
+        </div>
       </nav>
 
       <section id="hero">
@@ -45,8 +54,9 @@
         </p>
         <div class="row">
           <a href="https://github.com/jecta" target="”_blank”"
-            ><button>Github</button></a
-          >
+            ><button>
+              <i class="devicon-github-original"></i></button
+          ></a>
           <a class="mobilecv" href="assets/cv.pdf"><button>CV</button></a>
         </div>
       </section>
@@ -105,5 +115,6 @@
       </div>
       <br />
     </div>
+    <script src="assets/main.js"></script>
   </body>
 </html>
