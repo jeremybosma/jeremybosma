@@ -1,4 +1,4 @@
-var toggle = document.getElementById("theme-toggle");
+var toggles = document.querySelectorAll(".theme-toggle");
 
 var storedTheme =
   localStorage.getItem("theme") ||
@@ -8,14 +8,16 @@ var storedTheme =
 if (storedTheme)
   document.documentElement.setAttribute("data-theme", storedTheme);
 
-toggle.onclick = function () {
-  var currentTheme = document.documentElement.getAttribute("data-theme");
-  var targetTheme = "light";
+toggles.forEach(function(toggle) {
+  toggle.onclick = function () {
+    var currentTheme = document.documentElement.getAttribute("data-theme");
+    var targetTheme = "light";
 
-  if (currentTheme === "light") {
-    targetTheme = "dark";
-  }
+    if (currentTheme === "light") {
+      targetTheme = "dark";
+    }
 
-  document.documentElement.setAttribute("data-theme", targetTheme);
-  localStorage.setItem("theme", targetTheme);
-};
+    document.documentElement.setAttribute("data-theme", targetTheme);
+    localStorage.setItem("theme", targetTheme);
+  };
+});
