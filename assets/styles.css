@@ -295,6 +295,10 @@ input {
   nav button {
     display: none;
   }
+
+  .pagination {
+    font-size: 13px;
+  }
 }
 @media (min-width: 591px) {
   .mobilecv {
