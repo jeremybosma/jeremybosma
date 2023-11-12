@@ -28,6 +28,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  transition: 0.3s;
+}
+
 .container {
   margin-top: 60px;
   padding-top: 25px;
@@ -41,6 +45,7 @@ html {
   padding-right: 15px;
   padding-left: 15px;
   height: 100%;
+  transition: 0.3s;
 }
 
 nav {
