@@ -313,7 +313,6 @@ input {
 
 @media (max-width: 1024px) {
   .container {
-    background-color: var(--white);
     margin-top: 0px;
     padding-top: 10px;
     border: none;
