@@ -24,7 +24,7 @@
 
 html {
   font-family: "Satoshi", sans-serif;
-  background-color: var(--white);
+  background-color: var(--body);
   scroll-behavior: smooth;
 }
 
@@ -305,6 +305,7 @@ input {
     font-size: 10px;
   }
 }
+
 @media (min-width: 591px) {
   .mobilecv {
     display: none;
@@ -353,6 +354,7 @@ input {
     max-width: 1140px;
   }
 }
+
 @media (min-width: 1024px) and (max-width: 1439px) {
   .container {
     max-width: 740px;
