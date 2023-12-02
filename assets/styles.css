@@ -37,7 +37,9 @@ body {
   padding-top: 25px;
   background-color: var(--body);
   border: 1px solid var(--stroke);
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -48,12 +50,39 @@ body {
   transition: 0.3s;
 }
 
+.projectbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.projectcard {
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+  max-width: 45%;
+  height: 100%;
+}
+
+.projectcard:hover {
+  background-color: var(--white);
+}
+
 nav {
   align-items: center;
   width: 100%;
   font-size: 24px;
   display: flex;
   gap: 15px;
+}
+
+nav .page:hover {
+  padding: 3px 5px;
+  background-color: var(--white);
+  transition: 0.5ms;
+  border-radius: 5px;
+  border: 1px solid var(--stroke);
 }
 
 nav.slash {
@@ -125,17 +154,6 @@ a {
 
 a:hover {
   color: var(--secondary-text-hover);
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-}
-
-.pagination a {
-  float: center;
-  padding: 8px 16px;
-  text-decoration: none;
 }
 
 .category {
@@ -300,10 +318,6 @@ input {
   nav button {
     display: none;
   }
-
-  .pagination {
-    font-size: 10px;
-  }
 }
 
 @media (min-width: 591px) {
@@ -326,6 +340,10 @@ input {
 }
 
 @media (max-width: 768px) {
+  .projectcard {
+    max-width: 100%;
+  }
+  
   .projectimg:hover {
     height: 160px;
   }
