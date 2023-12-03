@@ -9,6 +9,15 @@
   --secondary-text-hover: #4b4b4bc0;
 }
 
+[data-theme="coffee"] {
+  --white: #f5f0e1;
+  --black: #2d2d2d;
+  --body: #e8dfd0;
+  --stroke: #d9d2c4;
+  --secondary-text: #7d7365;
+  --secondary-text-hover: #7d7365c0;
+}
+
 [data-theme="dark"] {
   --white: #1e1e1e;
   --black: #ffffff;
@@ -57,6 +66,7 @@ body {
 }
 
 .projectcard {
+  background-color: var(--white);
   border: 1px solid var(--stroke);
   border-radius: 10px;
   padding: 10px;
@@ -66,7 +76,7 @@ body {
 }
 
 .projectcard:hover {
-  background-color: var(--white);
+  background-color: var(--body);
 }
 
 nav {
@@ -117,10 +127,6 @@ p {
   font-size: 20px;
 }
 
-p-title {
-  font-weight: 900;
-}
-
 button {
   display: flex;
   justify-content: center;
@@ -133,7 +139,7 @@ button {
   padding-right: 30px;
   font-size: 18px;
   height: 42px;
-  border-radius: 10px;
+  border-radius: 7px;
   transition: 0.3s;
 }
 
@@ -343,7 +349,7 @@ input {
   .projectcard {
     max-width: 100%;
   }
-  
+
   .projectimg:hover {
     height: 160px;
   }
