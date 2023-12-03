@@ -10,7 +10,7 @@ if (!storedTheme) {
 
 document.documentElement.setAttribute("data-theme", storedTheme);
 
-toggles.forEach(function(toggle) {
+toggles.forEach(function (toggle) {
   if (storedTheme === "light") {
     toggle.innerHTML = "<button>🌙</button>";
   } else {
@@ -18,12 +18,15 @@ toggles.forEach(function(toggle) {
   }
 });
 
-toggles.forEach(function(toggle) {
-  toggle.onclick = function() {
+toggles.forEach(function (toggle) {
+  toggle.onclick = function (event) {
     var currentTheme = document.documentElement.getAttribute("data-theme");
     var targetTheme = "light";
 
-    if (currentTheme === "light") {
+    if (event.altKey) {
+      targetTheme = "coffee";
+      toggle.innerHTML = "<button>☕️</button>";
+    } else if (currentTheme === "light") {
       targetTheme = "dark";
       toggle.innerHTML = "<button>☀️</button>";
     } else {
