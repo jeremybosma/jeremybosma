@@ -38,7 +38,11 @@ toggles.forEach(function (toggle) {
   };
 });
 
-const birthdate = new Date(2007, 11, 2);
+const birthdate = new Date(2007, 11, 2); // Adjusted month index to 11 (December is 11th month)
 const today = new Date();
 const age = today.getFullYear() - birthdate.getFullYear();
-document.getElementById("age").textContent = age;
+const ageElement = document.getElementById("age");
+
+if (ageElement) {
+  ageElement.textContent = age;
+}
