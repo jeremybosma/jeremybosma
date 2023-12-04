@@ -160,11 +160,12 @@ a {
 
 a:hover {
   color: var(--secondary-text-hover);
+  cursor: alias;
 }
 
 .category {
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid var(--stroke);
 }
 
