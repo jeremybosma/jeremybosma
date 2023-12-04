@@ -277,14 +277,15 @@ summary {
 input {
   padding: 10px;
   border: 1px solid var(--stroke);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 .bericht {
   padding: 10px;
+  resize: both;
   border: 1px solid var(--stroke);
-  border-radius: 5px;
-  width: 98%;
+  border-radius: 7px;
+  width: auto;
   text-align: start;
   height: auto;
 }
