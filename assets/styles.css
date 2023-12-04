@@ -71,7 +71,7 @@ body {
   background-color: var(--white);
   border: 1px solid var(--stroke);
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px 10px;
   transition: 0.3s;
   max-width: 45%;
   height: 100%;
@@ -378,6 +378,10 @@ input {
 @media (max-width: 768px) {
   .projectcard {
     max-width: 100%;
+  }
+
+  .easteregg {
+    display: none;
   }
 
   .projectimg:hover {
