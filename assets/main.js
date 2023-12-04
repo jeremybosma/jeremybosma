@@ -37,3 +37,8 @@ toggles.forEach(function (toggle) {
     localStorage.setItem("theme", targetTheme);
   };
 });
+
+const birthdate = new Date(2007, 11, 2);
+const today = new Date();
+const age = today.getFullYear() - birthdate.getFullYear();
+document.getElementById("age").textContent = age;
