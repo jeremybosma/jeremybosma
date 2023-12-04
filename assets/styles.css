@@ -79,22 +79,18 @@ body {
   height: 100%;
 
   opacity: 0;
-  /* Initially hidden */
   animation: fade-in 0.5s ease-in-out forwards;
-  /* Apply fade-in animation */
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(20px);
-    /* Move card down */
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    /* Move card to its original position */
   }
 }
 
