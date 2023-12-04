@@ -8,6 +8,8 @@
   --secondary-text: #4b4b4b;
   --secondary-text-hover: #4b4b4bc0;
 
+  --online-status: #22a559;
+
   --font: "Satoshi", sans-serif;
 }
 
@@ -339,7 +341,7 @@ input {
 }
 
 .status {
-  color: #22a559;
+  color: var(--online-status);
   font-size: 200%;
 }
 
