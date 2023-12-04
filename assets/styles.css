@@ -156,6 +156,7 @@ button {
   padding-right: 30px;
   font-size: 18px;
   height: 42px;
+  gap: 5px;
   border-radius: 7px;
   transition: 0.3s;
 }
@@ -325,6 +326,11 @@ input {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.status {
+  color: #22a559;
+  font-size: 200%;
 }
 
 /* responsiveness */
