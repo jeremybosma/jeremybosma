@@ -259,6 +259,7 @@ section {
   font-size: 30px;
   width: auto;
   height: 30px;
+  cursor: pointer !important;
 }
 
 hr.divider {
