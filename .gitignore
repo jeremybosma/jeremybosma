@@ -1,6 +1,3 @@
-.DS_Store
-assets/.DS_Store
-assets/images/.DS_Store
-assets/images/atlisgg/.DS_Store
-assets/images/outfitsbio/.DS_Store
-assets/images/unifierapp/.DS_Store
+/.DS_Store
+/.next
+/node_modules
