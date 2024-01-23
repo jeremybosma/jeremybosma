@@ -1,7 +1,7 @@
-import million from 'million/compiler';
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+/**
+ * @type {import('next').NextConfig}
+ */
 
-export default million.next(
-  nextConfig, { auto: { rsc: true } }
-);
+const nextConfig = {}
+ 
+export default nextConfig

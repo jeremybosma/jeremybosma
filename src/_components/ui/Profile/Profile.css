@@ -1,0 +1,33 @@
+.profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile .pfp {
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    border: 1px solid #bcbcbc;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.profile .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.profile p {
+    font-size: 20px;
+}
+
+.profile .buttonRow {
+    display: flex;
+    gap: 10px;
+}

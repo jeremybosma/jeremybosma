@@ -1,3 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+@import url("https://fonts.cdnfonts.com/css/sf-ui-text-2");
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+
+:root {
+  --pro-display: "SF Pro Display", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --pro-text: "SF UI Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --primary-surface: #F9F9F9;
+  --primary-stroke: #E9E9E9;
+
+  --secondary-surface: #FFFFFF;
+
+  --primary-text: #4b4b4b;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-surface);
+  color: var(--primary-text);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 25px;
+  padding: 15px 25px 0 25px;
+  width: 70vw;
+  min-height: 100vh;
+
+  border: 2px solid var(--primary-stroke);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--pro-display);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  font-weight: bold;
+  color: #000;
+}
+
+a,
+p,
+span,
+button {
+  font-family: var(--pro-text);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-surface);
+  border: 1px solid var(--primary-stroke);
+  padding: 10px 30px;
+  font-size: 18px;
+  height: 42px;
+  gap: 5px;
+  border-radius: 7px;
+}
+
+button:hover {
+  background-color: #bcbcbc;
+}
+
+button:active {
+  transform: scale(0.994);
+}
