@@ -12,6 +12,7 @@ export default function Profile() {
         setIsImageClicked(!isImageClicked);
         const pfpElement = document.querySelector('.pfp') as HTMLElement;
         const blurElement = document.querySelector('.blur') as HTMLElement;
+        const hiddenPfp = document.querySelector('.hide') as HTMLElement;
 
         if (pfpElement) {
             pfpElement.style.width = isImageClicked ? '140px' : '210px';
@@ -21,12 +22,17 @@ export default function Profile() {
             pfpElement.style.left = isImageClicked ? 'auto' : '50%';
             pfpElement.style.transform = isImageClicked ? 'none' : 'translate(-50%, -50%)';
             blurElement.style.display = isImageClicked ? 'none' : 'flex';
+            hiddenPfp.style.display = isImageClicked ? 'none' : 'flex';
         }
     };
 
+    const birthdate = new Date(2007, 11, 2);
+    const today = new Date();
+    const age = Math.floor((today.getTime() - birthdate.getTime()) / (1000 * 60 * 60 * 24 * 365));
+
     return (
         <div className="profile" id='profile'>
-            <div className="blur" />
+            <div className="blur" onClick={handleImageClick} />
             <Image
                 src="/images/pfp.jpg"
                 alt="Profile picture"
@@ -46,7 +52,7 @@ export default function Profile() {
 
             <div className="cta">
                 <h1 className='title'>Jeremy Bosma</h1>
-                <p>16 jarige in software, design en startups.</p>
+                <p>{age || "16"} jarige in software, design en startups.</p>
                 <div className="buttonRow">
                     <a className='button' href='#contact' target='_blank'>Contact</a>
                     <a className='button' href='https://github.com/jecta' target='_blank'><FaGithub /></a>
