@@ -11,6 +11,7 @@
 
 .profile {
     display: flex;
+    flex-wrap: wrap; 
     gap: 20px;
     align-items: center;
 }
@@ -47,4 +48,11 @@
 .profile .buttonRow {
     display: flex;
     gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .profile .pfp {
+        width: 100px; 
+        height: 100px; 
+    }
 }

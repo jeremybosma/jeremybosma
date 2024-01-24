@@ -1,5 +1,5 @@
 let metaTitle = "Jeremy Bosma";
-let metaDescription = "16 jarige in software, ontwerp en startups. Ik maak websites en software voor meerdere platformen en ik ben een zelf geleerde designer. Ik gebruik daarvoor tools als Figma, Github en Visual Studio code.";
+let metaDescription = "16 jarige in software, ontwerp en startups. Ik maak websites en software voor meerdere platformen en ik ben een zelf geleerde designer.";
 let faviconPath = "/images/pfp.jpg";
 let ogImagePath = "https://jeremybosma.nl/ogimage.png";
 let domainName = "https://jeremybosma.nl";
