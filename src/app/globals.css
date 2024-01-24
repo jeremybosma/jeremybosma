@@ -2,14 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
-@import url("https://fonts.cdnfonts.com/css/sf-ui-text-2");
-@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 
 :root {
-  --pro-display: "SF Pro Display", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  --pro-text: "SF UI Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --satoshi: 'Satoshi', sans-serif;
 
   --primary-surface: #F9F9F9;
   --primary-stroke: #E9E9E9;
@@ -25,6 +21,10 @@ body {
   align-items: center;
   background: var(--primary-surface);
   color: var(--primary-text);
+  background-size: 40px 40px;
+  background-image:
+      linear-gradient(to right, #eeeeee 1px, transparent 1px),
+      linear-gradient(to bottom, #eeeeee 1px, transparent 1px);
 }
 
 main {
@@ -32,10 +32,11 @@ main {
   flex-direction: column;
   gap: 50px;
   margin-top: 25px;
-  padding: 15px 25px 0 25px;
+  padding: 15px 25px 25px 25px;
   width: 70vw;
   min-height: 100vh;
 
+  background: var(--primary-surface);
   border: 2px solid var(--primary-stroke);
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
   border-top-left-radius: 15px;
@@ -48,7 +49,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--pro-display);
+  font-family: var(--satoshi);
 }
 
 .title {
@@ -61,11 +62,13 @@ h6 {
 a,
 p,
 span,
-button {
-  font-family: var(--pro-text);
+button,
+.button {
+  font-family: var(--satoshi);
 }
 
-button {
+button,
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,12 +79,25 @@ button {
   height: 42px;
   gap: 5px;
   border-radius: 7px;
+  cursor: pointer;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   background-color: #bcbcbc;
 }
 
-button:active {
+button:active,
+.button:active {
   transform: scale(0.994);
+}
+
+@media (max-width: 767px) {
+  main {
+    width: 100vw;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    margin-top: 0;
+  }
 }

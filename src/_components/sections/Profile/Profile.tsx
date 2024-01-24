@@ -11,6 +11,8 @@ export default function Profile() {
     const handleImageClick = () => {
         setIsImageClicked(!isImageClicked);
         const pfpElement = document.querySelector('.pfp') as HTMLElement;
+        const blurElement = document.querySelector('.blur') as HTMLElement;
+
         if (pfpElement) {
             pfpElement.style.width = isImageClicked ? '140px' : '210px';
             pfpElement.style.height = isImageClicked ? '140px' : '210px';
@@ -18,15 +20,25 @@ export default function Profile() {
             pfpElement.style.top = isImageClicked ? 'auto' : '50%';
             pfpElement.style.left = isImageClicked ? 'auto' : '50%';
             pfpElement.style.transform = isImageClicked ? 'none' : 'translate(-50%, -50%)';
+            blurElement.style.display = isImageClicked ? 'none' : 'flex';
         }
     };
 
     return (
-        <div className="profile">
+        <div className="profile" id='profile'>
+            <div className="blur" />
             <Image
                 src="/images/pfp.jpg"
                 alt="Profile picture"
                 className={`pfp ${isImageClicked ? 'expanded' : ''}`}
+                width={100}
+                height={100}
+                onClick={handleImageClick}
+            />
+            <Image
+                src="/images/pfp.jpg"
+                alt="Profile picture"
+                className={`pfp hide ${isImageClicked ? 'expanded' : ''}`}
                 width={100}
                 height={100}
                 onClick={handleImageClick}
@@ -36,8 +48,8 @@ export default function Profile() {
                 <h1 className='title'>Jeremy Bosma</h1>
                 <p>16 jarige in software, design en startups.</p>
                 <div className="buttonRow">
-                    <button>Contact</button>
-                    <button><FaGithub /></button>
+                    <a className='button' href='#contact' target='_blank'>Contact</a>
+                    <a className='button' href='https://github.com/jecta' target='_blank'><FaGithub /></a>
                 </div>
             </div>
         </div>

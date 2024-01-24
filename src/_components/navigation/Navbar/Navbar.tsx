@@ -5,8 +5,8 @@ export default function Navbar() {
     return (
         <nav>
             <div className="left_nav">
-                <Link href="/">
-                    <b>Jeremy Bosma</b>
+                <Link href="#profile">
+                    <b>Jeremy</b>
                 </Link>
             </div>
 
