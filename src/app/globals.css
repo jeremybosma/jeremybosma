@@ -8,9 +8,8 @@
   --satoshi: 'Satoshi', sans-serif;
 
   --primary-surface: #F9F9F9;
-  --primary-stroke: #E9E9E9;
-
   --secondary-surface: #FFFFFF;
+  --primary-stroke: #E9E9E9;
 
   --primary-text: #4b4b4b;
 }
@@ -23,8 +22,8 @@ body {
   color: var(--primary-text);
   background-size: 40px 40px;
   background-image:
-      linear-gradient(to right, #eeeeee 1px, transparent 1px),
-      linear-gradient(to bottom, #eeeeee 1px, transparent 1px);
+    linear-gradient(to right, #eeeeee 1px, transparent 1px),
+    linear-gradient(to bottom, #eeeeee 1px, transparent 1px);
 }
 
 main {
