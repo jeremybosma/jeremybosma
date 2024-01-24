@@ -1,0 +1,20 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about .title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000;
+}
+
+.about h1 {
+    font-size: 22px;
+}
+
+.about a {
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #4b4b4b;
+}
+
+nav .left_nav {
+  font-size: 24px;
+  color: #000;
+  font-weight: 500;
+}
+
+nav .right_nav {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  height: fit-content;
+}
+
+@media (max-width: 767px) {
+  .left_nav {
+    display: none;
+  }
+  .right_nav {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: #eeeeee solid 1px;
+  }
+}
