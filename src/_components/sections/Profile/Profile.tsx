@@ -54,7 +54,7 @@ export default function Profile() {
                 <h1 className='title'>Jeremy Bosma</h1>
                 <p>{age || "16"} jarige in software, design en startups.</p>
                 <div className="buttonRow">
-                    <a className='button' href='#contact' target='_blank'>Contact</a>
+                    <a className='button' href='#contact'>Contact</a>
                     <a className='button' href='https://github.com/jecta' target='_blank'><FaGithub /></a>
                 </div>
             </div>

@@ -12,6 +12,8 @@
   --primary-stroke: #E9E9E9;
 
   --primary-text: #4b4b4b;
+
+  scroll-behavior: smooth;
 }
 
 body {
