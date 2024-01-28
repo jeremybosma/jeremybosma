@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { FaGithub } from "react-icons/fa6";
+import { SiKofi } from "react-icons/si";
 import './Profile.css';
 
 export default function Profile() {
@@ -56,6 +57,7 @@ export default function Profile() {
                 <div className="buttonRow">
                     <a className='button' href='#contact'>Contact</a>
                     <a className='button' href='https://github.com/jecta' target='_blank'><FaGithub /></a>
+                    <a className='button' href='https://ko-fi.com/jecta' target='_blank'><SiKofi /></a>
                 </div>
             </div>
         </div>
