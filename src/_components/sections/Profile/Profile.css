@@ -52,7 +52,7 @@
 
 @media (max-width: 768px) {
     .profile .pfp {
-        width: 100px; 
-        height: 100px; 
+        width: 100px !important; 
+        height: 100px !important; 
     }
 }
