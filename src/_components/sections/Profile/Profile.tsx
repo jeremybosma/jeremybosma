@@ -22,6 +22,8 @@ export default function Profile() {
             pfpElement.style.top = isImageClicked ? 'auto' : '50%';
             pfpElement.style.left = isImageClicked ? 'auto' : '50%';
             pfpElement.style.transform = isImageClicked ? 'none' : 'translate(-50%, -50%)';
+            pfpElement.style.transition = isImageClicked ? 'none' : '0.1s ease-in-out';
+            document.body.style.overflow = isImageClicked ? 'auto' : 'hidden';
             blurElement.style.display = isImageClicked ? 'none' : 'flex';
             hiddenPfp.style.display = isImageClicked ? 'none' : 'flex';
         }
