@@ -52,9 +52,33 @@
 
 .projectcard:active {
     transform: scale(0.99);
+    transition: 0.1s;
 }
 
 summary {
     cursor: pointer;
     user-select: none;
-  }
+    display: block;
+    padding-left: 1rem;
+    position: relative;
+}
+
+summary:before {
+    content: '';
+    border-width: .5rem;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+    position: absolute;
+    top: 0.75rem;
+    left: -0.1rem;
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+}
+
+details[open] > summary:before {
+    transform: rotate(90deg);
+}
+
+details summary::-webkit-details-marker {
+    display:none;
+}

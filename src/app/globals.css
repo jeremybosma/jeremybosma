@@ -92,7 +92,8 @@ button:hover,
 
 button:active,
 .button:active {
-  transform: scale(0.994);
+  transform: scale(0.99);
+  transition: 0.1s;
 }
 
 @media (max-width: 767px) {
