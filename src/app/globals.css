@@ -81,6 +81,8 @@ button,
   gap: 5px;
   border-radius: 7px;
   cursor: pointer;
+  user-select: none;
+  text-align: center;
 }
 
 button:hover,

@@ -20,6 +20,7 @@ export default function ProjectCard({ backgroundColor, name, desc, icon, href }:
                             width={40}
                             height={40}
                             alt='Project Icon'
+                            className='projectIcon'
                         />
                     </div>
                 )}

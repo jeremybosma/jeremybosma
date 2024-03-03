@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://jeremybosma.nl' || 'http://localhost:3000'),
   title: meta.title,
   description: meta.description,
+  themeColor: meta.og.embedColor,
   openGraph: {
     locale: meta.og.locale,
     type: 'website',

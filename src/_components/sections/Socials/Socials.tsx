@@ -10,7 +10,7 @@ export default function Socials() {
                 <ProjectCard name='Jecta' backgroundColor='#333' icon='/images/github.png' href='https://github.com/jecta' />
                 <ProjectCard name='jeremybosma_' backgroundColor='#bc2a8d' icon='/images/instagram.png' href='https://instagram.com/jeremybosma_' />
                 <ProjectCard name='Jecta' backgroundColor='#5865F2' icon='/images/discord.png' href='https://discord.com/channels/@me/709441303351394314/' />
-                <ProjectCard name='Donate' backgroundColor='#11C3FF' icon='/images/kofi.png' href='https://ko-fi.com/jecta' />
+                <ProjectCard name='Jecta' backgroundColor='#11C3FF' icon='/images/kofi.png' href='https://ko-fi.com/jecta' />
             </section>
         </div>
     );

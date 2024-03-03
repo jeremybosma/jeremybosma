@@ -33,6 +33,7 @@
     padding: 10px 15px;
     border-radius: 10px;
     gap: 15px;
+    user-select: none;
 }
 
 .projectcard h1 {
@@ -52,3 +53,8 @@
 .projectcard:active {
     transform: scale(0.99);
 }
+
+summary {
+    cursor: pointer;
+    user-select: none;
+  }

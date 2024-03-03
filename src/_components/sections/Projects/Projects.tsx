@@ -15,6 +15,14 @@ export default function Projects() {
                 />
 
                 <ProjectCard
+                    name='vessels.pro'
+                    desc='Vessels.pro is een modern platform voor vlootbeheer binnen de scheepvaart.'
+                    icon='/images/vesselspro.png'
+                    href='https://vessels.pro'
+                    backgroundColor='#121212'
+                />
+
+                <ProjectCard
                     name='Mythic'
                     desc='De beste manier om Windows-games op de Mac te spelen.'
                     icon='/images/mythic.png'
@@ -23,16 +31,8 @@ export default function Projects() {
                 />
 
                 <ProjectCard
-                    name='vessels.pro'
-                    desc='Vessels.pro is een modern platform voor vlootbeheer.'
-                    icon='/images/vesselspro.png'
-                    href='https://vessels.pro'
-                    backgroundColor='#121212'
-                />
-
-                <ProjectCard
-                    name='Bpnt'
-                    desc='We zetten jouw idee om in productie.'
+                    name='Blueprint (bpnt.)'
+                    desc='We zetten jouw idee om in een online werkelijkheid.'
                     icon='/images/bpnt.png'
                     backgroundColor='#384E85'
                 />

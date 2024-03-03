@@ -1,5 +1,5 @@
 let metaTitle = "Jeremy Bosma";
-let metaDescription = "16 jarige in software, ontwerp en startups. Ik maak websites en software voor meerdere platformen en ik ben een zelf geleerde designer.";
+let metaDescription = "16 jarige in software, ontwerp en startups. Ik maak websites, software en ontwerp interfaces. Leer meer over mij op deze website.";
 let faviconPath = "/images/pfp.jpg";
 let ogImagePath = "https://jeremybosma.nl/ogimage.png";
 let domainName = "https://jeremybosma.nl";
@@ -16,7 +16,7 @@ export const meta = {
     title: metaTitle,
     description: metaDescription,
     image: ogImagePath,
-    embedColor: "#eeeeee",
+    embedColor: "#FFFFF9",
     imageWidth: 1200,
     imageHeight: 630,
     siteName: metaTitle,
