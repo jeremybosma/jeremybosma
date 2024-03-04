@@ -11,7 +11,7 @@ interface CardProps {
 
 export default function ProjectCard({ backgroundColor, name, desc, icon, href }: CardProps) {
     return (
-        <Link href={href ?? '#'} target='_blank'>
+        <Link href={href ?? '#'} target={href ? '_blank' : undefined}>
             <div className="projectcard" style={{ background: backgroundColor ?? "var(--secondary-surface)" }}>
                 {icon && (
                     <div className='icon'>
