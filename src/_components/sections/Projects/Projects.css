@@ -82,3 +82,8 @@ details[open] > summary:before {
 details summary::-webkit-details-marker {
     display:none;
 }
+
+.projectIcon {
+    width: 30px;
+    height: auto;
+}

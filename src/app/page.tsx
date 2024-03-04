@@ -9,7 +9,7 @@ import Socials from '../_components/sections/Socials/Socials';
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      {/* <Navbar /> */}
       <Profile />
       <About />
       {/* <Skillset /> */}

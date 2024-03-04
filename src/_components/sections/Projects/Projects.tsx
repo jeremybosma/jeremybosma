@@ -3,12 +3,12 @@ import ProjectCard from './projectcard/ProjectCard';
 
 export default function Projects() {
     return (
-        <div className='titlediv'>
+        <div className='titlediv' id='projects'>
             <h1 className='title'>Projecten</h1>
-            <section className="projects" id='projects'>
+            <section className="projects">
                 <ProjectCard
                     name='outfits.bio'
-                    desc='Een plek om inspiratie op te doen, je kleding virtueel te delen en te organiseren.'
+                    desc='Een platform om kleding te delen en vinden.'
                     icon='/images/outfitsbio.png'
                     href='https://outfits.bio'
                     backgroundColor='#EC6D2D'
@@ -16,7 +16,7 @@ export default function Projects() {
 
                 <ProjectCard
                     name='vessels.pro'
-                    desc='Vessels.pro is een modern platform voor vlootbeheer binnen de scheepvaart.'
+                    desc='Vessels.pro is een modern platform voor vlootbeheer.'
                     icon='/images/vesselspro.png'
                     href='https://vessels.pro'
                     backgroundColor='#121212'
