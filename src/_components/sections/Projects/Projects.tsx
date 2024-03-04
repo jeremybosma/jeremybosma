@@ -8,7 +8,7 @@ export default function Projects() {
             <section className="projects">
                 <ProjectCard
                     name='outfits.bio'
-                    desc='Een platform om kleding te delen en vinden.'
+                    desc='Een platform om je kleding te delen en vinden.'
                     icon='/images/outfitsbio.png'
                     href='https://outfits.bio'
                     backgroundColor='#EC6D2D'
