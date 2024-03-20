@@ -58,7 +58,7 @@ export default function Profile() {
                 <p>{age || "16"} jarige in software, design en startups.</p>
                 <div className="buttonRow">
                     <a className='button' href='#contact'>Contact</a>
-                    <a className='button' href='https://github.com/jecta' target='_blank'><FaGithub /></a>
+                    <a className='button' href='https://github.com/jeremybosma' target='_blank'><FaGithub /></a>
                     <a className='button' href='https://ko-fi.com/jecta' target='_blank'><SiKofi /></a>
                 </div>
             </div>
