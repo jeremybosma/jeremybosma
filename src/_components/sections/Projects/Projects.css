@@ -75,12 +75,12 @@ summary:before {
     transition: .25s transform ease;
 }
 
-details[open] > summary:before {
+details[open]>summary:before {
     transform: rotate(90deg);
 }
 
 details summary::-webkit-details-marker {
-    display:none;
+    display: none;
 }
 
 .projectIcon {

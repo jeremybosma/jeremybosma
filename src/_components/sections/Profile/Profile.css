@@ -11,7 +11,7 @@
 
 .profile {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
     align-items: center;
 }
@@ -51,7 +51,7 @@
 
 @media (max-width: 768px) {
     .profile .pfp {
-        width: 100px !important; 
-        height: 100px !important; 
+        width: 100px !important;
+        height: 100px !important;
     }
 }
