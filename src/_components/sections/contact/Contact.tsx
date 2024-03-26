@@ -1,4 +1,4 @@
-import '@/_components/sections/projects/Projects.css';
+import '../projects/Projects.css';
 import SocialMedia from '../../ui/SocialMedia';
 
 export default function Contact() {
