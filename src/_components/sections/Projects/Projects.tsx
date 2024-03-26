@@ -1,42 +1,46 @@
 import './Projects.css';
-import ProjectCard from './projectcard/ProjectCard';
+import ProjectCard from '../../ui/ProjectCard';
 
-export default function Projects() {
+const Projects = () => {
+    const projects = [
+        {
+            name: 'outfits.bio',
+            desc: 'Een platform om je kleding te delen en vinden.',
+            icon: '/images/projects/outfitsbio.png',
+            href: 'https://outfits.bio',
+            backgroundColor: '#EC6D2D',
+        },
+        {
+            name: 'vessels.pro',
+            desc: 'Vessels.pro is een modern platform voor vlootbeheer.',
+            icon: '/images/projects/vesselspro.png',
+            href: 'https://vessels.pro',
+            backgroundColor: '#121212',
+        },
+        {
+            name: 'Mythic',
+            desc: 'De beste manier om Windows-games op de Mac te spelen.',
+            icon: '/images/projects/mythic.png',
+            href: 'https://getmythic.app',
+            backgroundColor: '#8443C6',
+        },
+    ];
+
     return (
-        <div className='titlediv' id='projects'>
+        <>
             <h1 className='title'>Projecten</h1>
             <section className="projects">
-                <ProjectCard
-                    name='outfits.bio'
-                    desc='Een platform om je kleding te delen en vinden.'
-                    icon='/images/outfitsbio.png'
-                    href='https://outfits.bio'
-                    backgroundColor='#EC6D2D'
-                />
-
-                <ProjectCard
-                    name='vessels.pro'
-                    desc='Vessels.pro is een modern platform voor vlootbeheer.'
-                    icon='/images/vesselspro.png'
-                    href='https://vessels.pro'
-                    backgroundColor='#121212'
-                />
-
-                <ProjectCard
-                    name='Mythic'
-                    desc='De beste manier om Windows-games op de Mac te spelen.'
-                    icon='/images/mythic.png'
-                    href='https://getmythic.app'
-                    backgroundColor='#8443C6'
-                />
-
-                <ProjectCard
-                    name='Blueprint (bpnt.)'
-                    desc='We zetten jouw idee om in een online werkelijkheid.'
-                    icon='/images/bpnt.png'
-                    backgroundColor='#384E85'
-                />
-            </section><br />
+                {projects.map((project, index) => (
+                    <ProjectCard
+                        key={index}
+                        name={project.name}
+                        desc={project.desc}
+                        icon={project.icon}
+                        href={project.href}
+                        backgroundColor={project.backgroundColor}
+                    />
+                ))}
+            </section>
 
             <details>
                 <summary className='title'>School Opdrachten</summary><br />
@@ -48,6 +52,8 @@ export default function Projects() {
                     <ProjectCard name='Portfolio mockups in Figma' backgroundColor='#222222' href='https://www.figma.com/proto/deejQtKzKBApU6uIYjmVX4/02_did%2Fwsh-portfolio-1.0?page-id=0%3A1&type=design&node-id=1-3&viewport=557%2C445%2C0.22&t=8chiAav0CLI1frG3-1&scaling=min-zoom&starting-point-node-id=1%3A3&mode=design' />
                 </section>
             </details>
-        </div>
+        </>
     );
 };
+
+export default Projects;

@@ -1,21 +1,18 @@
-import Navbar from '../_components/navigation/Navbar/Navbar';
-import Profile from '../_components/sections/Profile/Profile';
-import About from '../_components/sections/About/About';
-import Skillset from '../_components/sections/Skillset/Skillset';
-import Projects from '../_components/sections/Projects/Projects';
-import School from '../_components/sections/School/School';
-import Socials from '../_components/sections/Socials/Socials';
+import Profile from '../_components/sections/profile/Profile';
+import About from '../_components/sections/about/About';
+import Projects from '../_components/sections/projects/Projects';
+import School from '../_components/sections/school/School';
+import Socials from '../_components/sections/contact/Contact';
 
 export default function Home() {
   return (
     <main>
-      {/* <Navbar /> */}
       <Profile />
       <About />
-      {/* <Skillset /> */}
       <Projects />
       <School />
       <Socials />
+      <br />
     </main>
   );
 }
