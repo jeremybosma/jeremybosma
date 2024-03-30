@@ -1,0 +1,47 @@
+---
+import SocialLink from "../SocialLink.astro";
+
+const socialMediaData = [
+    {
+        name: "mailto:prive@jeremybosma.nl",
+        icon: "/images/icons/link.png",
+        href: "mailto:prive@jeremybosma.nl",
+    },
+    {
+        name: "github.com/jeremybosma",
+        icon: "/images/icons/link.png",
+        href: "https://github.com/jeremybosma",
+    },
+    {
+        name: "x.com/jeremybosma_",
+        icon: "/images/icons/link.png",
+        href: "https://x.com/jeremybosma_",
+    },
+    {
+        name: "instagram.com/jeremybosma_",
+        icon: "/images/icons/link.png",
+        href: "https://instagram.com/jeremybosma_",
+    },
+    {
+        name: "ko-fi.com/jeremybosma",
+        icon: "/images/icons/link.png",
+        href: "https://ko-fi.com/jeremybosma",
+    },
+];
+---
+
+<div class="titlediv">
+    <h1 class="title">Contact</h1>
+    <section class="contact" id="contact">
+        {socialMediaData.map((data) => <SocialLink {...data} />)}
+    </section>
+</div>
+
+<style>
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+</style>
