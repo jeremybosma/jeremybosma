@@ -24,7 +24,13 @@ const { title, icon, href, tooltip } = Astro.props;
 					loading="eager"
 				/>
 				<span class="tooltiptext">
-					<Image src={tooltip || ""} width="200" height="110" loading="eager" alt="website screemshot" />
+					<Image
+						src={tooltip || ""}
+						width="200"
+						height="110"
+						loading="eager"
+						alt="website screemshot"
+					/>
 				</span>
 			</div>
 		)
@@ -76,5 +82,12 @@ const { title, icon, href, tooltip } = Astro.props;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 		opacity: 1;
 		transform: translateY(0);
+	}
+
+	@media (max-width: 768px) {
+		.tooltip:hover .tooltiptext {
+			visibility: hidden;
+			box-shadow: none;
+		}
 	}
 </style>
