@@ -24,7 +24,7 @@ const { title, icon, href, tooltip } = Astro.props;
 					loading="eager"
 				/>
 				<span class="tooltiptext">
-					<img src={tooltip} loading="eager" />
+					<Image src={tooltip || ""} width="200" height="110" loading="eager" alt="website screemshot" />
 				</span>
 			</div>
 		)
