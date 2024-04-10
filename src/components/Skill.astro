@@ -5,22 +5,28 @@ interface Props {
 	title: string;
 	icon: string;
 	href?: string;
+	tooltip?: string;
 }
 
-const { title, icon, href } = Astro.props;
+const { title, icon, href, tooltip } = Astro.props;
 ---
 
 <a class="hreffix" href={href ?? "#"} target={href ? "_blank" : undefined}>
 	{
 		icon && (
-			<Image
-				src={icon}
-				alt="Skill Icon"
-				class={`skillIcon`}
-				width="60"
-				height="60"
-				loading="eager"
-			/>
+			<div class="tooltip">
+				<Image
+					src={icon}
+					alt="Skill Icon"
+					class={`skillIcon`}
+					width="60"
+					height="60"
+					loading="eager"
+				/>
+				<span class="tooltiptext">
+					<img src={tooltip} loading="eager" />
+				</span>
+			</div>
 		)
 	}
 </a>
@@ -36,5 +42,39 @@ const { title, icon, href } = Astro.props;
 
 	.skillIcon:hover {
 		opacity: 0.9;
+	}
+
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		display: flex;
+		background-color: white;
+		color: black;
+		position: absolute;
+		z-index: 1;
+		bottom: 120%;
+		margin-left: -60px;
+		border-radius: 8px;
+		opacity: 0;
+		transform: translateY(5px);
+		transition:
+			opacity 0.2s,
+			transform 0.1s;
+	}
+
+	.tooltiptext img {
+		width: 200px;
+		border-radius: 8px;
+	}
+
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		opacity: 1;
+		transform: translateY(0);
 	}
 </style>
