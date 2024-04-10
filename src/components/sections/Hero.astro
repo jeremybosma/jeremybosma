@@ -1,19 +1,33 @@
 ---
 import { Image } from "astro:assets";
-import profilePicture from "../../images/pfp.jpg";
+import profilePicture from "../../images/pfp.png";
 import vesselsPro from "../../images/vesselspro.png";
 ---
 
 <div class="hero" id="about">
     <span>
         Ik ben
-        <Image src={profilePicture} alt="Profile picture" class={`icon`} />
-        <div class="link-container"><b>Jeremy Bosma</b></div>, een design developer.
-            Ik ontwerp en programmeer apps met
-            <a href="https://vessels.pro"><div class="link-container">
-                <Image src={vesselsPro} alt="Icon" class={`icon`} />
-                <b>vesselspro</b></a>,</div>
-            een onderhoudsapp voor de scheepvaart.
+        <div class="link-container">
+            <Image
+                src={profilePicture}
+                alt="Selfie"
+                class={`icon`}
+                loading="eager"
+            />
+            <b>Jeremy Bosma</b>
+        </div>, een design developer. Ik ontwerp en programmeer bij
+        <a href="https://vessels.pro"
+            ><div class="link-container">
+                <Image
+                    src={vesselsPro}
+                    alt="Icon"
+                    class={`icon`}
+                    loading="eager"
+                />
+                <b>vesselspro</b>
+            </div>,</a
+        >
+        een moderne administratie-app voor de scheepvaart.
     </span>
 </div>
 
@@ -37,8 +51,8 @@ import vesselsPro from "../../images/vesselspro.png";
     }
 
     .hero .icon {
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
         border-radius: 8px;
         transition: transform 0.1s ease-in-out;
         animation: loading 0.3s ease-in-out;
@@ -49,9 +63,10 @@ import vesselsPro from "../../images/vesselspro.png";
     }
 
     .link-container {
-        display: inline-block;
-        align-items: center;
+        display: inline-flex;
+        align-items: bottom;
         justify-content: center;
+        gap: 5px;
     }
 
     @keyframes loading {
@@ -63,6 +78,30 @@ import vesselsPro from "../../images/vesselspro.png";
         }
         100% {
             transform: rotate(0deg);
+        }
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+        .hero span {
+            font-size: 30px;
+        }
+
+        .hero .icon {
+            width: 25px;
+            height: 25px;
+            border-radius: 6px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .hero span {
+            font-size: 20px;
+        }
+
+        .hero .icon {
+            width: 25px;
+            height: 25px;
         }
     }
 </style>

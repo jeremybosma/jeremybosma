@@ -1,69 +1,90 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
-	backgroundColor?: string;
-	name: string;
+	title: string;
 	desc?: string;
 	icon?: string;
 	href?: string;
 }
 
-const { backgroundColor, name, desc, icon, href } = Astro.props;
+const { title, desc, icon, href } = Astro.props;
 ---
 
-<a href={href ?? "#"} target={href ? "_blank" : undefined}>
-	<div
-		class="projectcard"
-		style={{ background: backgroundColor ?? "var(--secondary-surface)" }}
-	>
+<a class="hreffix" href={href ?? "#"} target={href ? "_blank" : undefined}>
+	<div class="projectcard">
 		{
 			icon && (
-				<div class="icon">
-					<img src={icon} alt="Project Icon" class="projectIcon" />
-				</div>
+				<Image
+					src={icon}
+					alt="Project Icon"
+					class="projectIcon"
+					width="50"
+					height="50"
+					loading="eager"
+				/>
 			)
 		}
-		<div class="right_side">
-			<h1>{name}</h1>
-			{desc && <p>{desc}</p>}
+		<div class="metadata">
+			<b>{title}</b>
+			{desc && <span>{desc}</span>}
 		</div>
 	</div>
 </a>
 
 <style>
-	.projectcard {
-		color: white;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 5px 15px;
-		border-radius: 10px;
-		gap: 15px;
-		user-select: none;
+	.hreffix {
+		max-width: fit-content;
 	}
 
-	.projectcard h1 {
+	.projectcard {
+		color: black;
+		display: flex;
+		max-width: 500px;
+		gap: 15px;
+		padding: 10px;
+		border-radius: 10px;
+		user-select: none;
+		transition: background-color 0.1s ease-in-out;
+	}
+
+	.projectcard .metadata {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.projectcard b {
 		font-size: 20px;
 		font-weight: 600;
 	}
 
-	.projectcard p {
-		font-size: 16px;
-	}
-
-	.projectcard .right_side {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		justify-content: space-between;
-		align-items: center;
+	.projectcard span {
+		font-size: 18px;
 	}
 
 	.projectcard:hover {
-		opacity: 0.93;
+		background-color: #f0f0f0;
 	}
 
 	.projectIcon {
-		width: 30px;
-		height: auto;
+		max-width: 50px;
+		height: 50px;
+		border-radius: 8px;
+	}
+
+	@media (max-width: 768px) {
+		.projectcard {
+			max-width: 100%;
+			flex-direction: column;
+		}
+
+		.projectcard b {
+			font-size: 18px;
+		}
+
+		.projectcard span {
+			font-size: 16px;
+		}
 	}
 </style>

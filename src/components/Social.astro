@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	title: string;
+	icon: string;
+	href?: string;
+}
+
+const { title, icon, href } = Astro.props;
+---
+
+<a class="hreffix" href={href ?? "#"} target={href ? "_blank" : undefined}>
+	<div class="socialCard">
+		{
+			icon && (
+				<Image
+					src={icon}
+					alt="social Icon"
+					class="socialIcon"
+					width="30"
+					height="30"
+					loading="lazy"
+				/>
+			)
+		}
+		<span>{title}</span>
+	</div>
+</a>
+
+<style>
+	.hreffix {
+		max-width: fit-content;
+	}
+
+	.socialCard {
+		display: flex;
+		align-items: center;
+		padding: 10px;
+		border-radius: 10px;
+		transition: background-color 0.2s;
+		gap: 10px;
+	}
+
+	.socialCard:hover {
+		background-color: #f0f0f0;
+	}
+
+	.socialIcon {
+		width: 30px;
+		height: 30px;
+		border-radius: 100%;
+	}
+</style>

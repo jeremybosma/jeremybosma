@@ -4,10 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/images/favicon.jpg" />
+		<link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
+		<meta property="og:image" content="/images/ogimage.png" />
+		<meta name="theme-color" content="#fffff9" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Jeremy Bosma</title>
+		<meta
+			name="description"
+			content="Ik ben Jeremy Bosma, een design developer. Ik ontwerp en programmeer bij vesselspro, een moderne administratie-app voor de scheepvaart."
+		/>
+		<meta
+			name="keywords"
+			content="Jeremy Bosma, design, developer, vesselspro, development"
+		/>
+		<meta name="author" content="Jeremy Bosma" />
+		<meta name="robots" content="index, follow" />
 	</head>
+
 	<body>
 		<slot />
 	</body>
@@ -18,9 +31,7 @@
 	:root {
 		--satoshi: "Satoshi", sans-serif;
 		--primary-surface: #fff;
-		--secondary-surface: #ffffff;
-		--primary-stroke: #e9e9e9;
-		--primary-text: #000000BF;
+		--primary-text: #000000bf;
 
 		scroll-behavior: smooth;
 		font-family: var(--satoshi);
@@ -34,19 +45,27 @@
 		color: var(--primary-text);
 	}
 
+	div {
+		animation: fade-in 0.5s ease-in-out;
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
 	main {
 		display: flex;
 		flex-direction: column;
-		gap: 50px;
+		gap: 70px;
 		margin-top: 100px;
 		padding: 35px 25px 25px 25px;
 		width: 70vw;
 		min-height: 100vh;
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
 	}
 
 	a {
@@ -54,10 +73,7 @@
 		color: var(--primary-text);
 	}
 
-	p {
-		font-size: 20px;
-	}
-
+	p,
 	span {
 		font-size: 20px;
 	}
@@ -67,34 +83,6 @@
 		font-weight: 600;
 	}
 
-	button,
-	.button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: var(--secondary-surface);
-		border: 1px solid var(--primary-stroke);
-		padding: 10px 30px;
-		font-size: 18px;
-		height: 22px;
-		gap: 5px;
-		border-radius: 99px;
-		cursor: pointer;
-		user-select: none;
-		text-align: center;
-	}
-
-	button:hover,
-	.button:hover {
-		background-color: #f8f8f8;
-	}
-
-	button:active,
-	.button:active {
-		transform: scale(0.96);
-		transition: 0.1s;
-	}
-
 	@media (max-width: 767px) {
 		main {
 			width: 100vw;
@@ -102,9 +90,31 @@
 			border: none;
 			box-shadow: none;
 			margin-top: 0;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+
+		@media (max-width: 767px) {
+			main {
+				padding: 0 10px;
+			}
 		}
 
 		p {
+			font-size: 18px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		main {
+			padding: 25px;
+		}
+
+		p {
+			font-size: 16px;
+		}
+
+		.title {
 			font-size: 20px;
 		}
 	}

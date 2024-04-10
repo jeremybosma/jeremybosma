@@ -2,18 +2,50 @@
 import Layout from "../layouts/Layout.astro";
 
 import Hero from "../components/sections/Hero.astro";
-import About from "../components/sections/About.astro";
-import Projects from "../components/sections/Projects.astro";
+import Projects from "../components/sections/Experience.astro";
 import School from "../components/sections/School.astro";
+import Skillset from "../components/sections/Skillset.astro";
 import Contact from "../components/sections/Contact.astro";
 ---
 
 <Layout>
 	<main>
 		<Hero />
-		<About />
-		<Projects />
-		<School />
-		<Contact />
+		<div class="sidebyside">
+			<div class="column">
+				<Projects />
+				<School />
+			</div>
+			<div class="right_sidebar">
+				<Skillset />
+				<Contact />
+			</div>
+		</div>
 	</main>
 </Layout>
+
+<style>
+	.sidebyside {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.right_sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: 70px;
+	}
+
+	@media (max-width: 1150px) {
+		.sidebyside {
+			flex-direction: column;
+			gap: 70px;
+		}
+	}
+</style>

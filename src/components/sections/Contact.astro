@@ -1,47 +1,38 @@
 ---
-import SocialLink from "../SocialLink.astro";
+import Social from "../Social.astro";
 
-const socialMediaData = [
+const socials = [
     {
-        name: "mailto:prive@jeremybosma.nl",
-        icon: "/images/icons/link.png",
-        href: "mailto:prive@jeremybosma.nl",
-    },
-    {
-        name: "github.com/jeremybosma",
-        icon: "/images/icons/link.png",
-        href: "https://github.com/jeremybosma",
-    },
-    {
-        name: "x.com/jeremybosma_",
-        icon: "/images/icons/link.png",
+        title: "X / Twitter",
+        icon: "/images/socials/xcom.png",
         href: "https://x.com/jeremybosma_",
     },
     {
-        name: "instagram.com/jeremybosma_",
-        icon: "/images/icons/link.png",
+        title: "Github",
+        icon: "/images/socials/github.png",
+        href: "https://github.com/jeremybosma",
+    },
+    {
+        title: "Instagram",
+        icon: "/images/socials/instagram.png",
         href: "https://instagram.com/jeremybosma_",
     },
     {
-        name: "ko-fi.com/jeremybosma",
-        icon: "/images/icons/link.png",
+        title: "Discord",
+        icon: "/images/socials/discord.png",
+        href: "https://discord.com/channels/@me/709441303351394314",
+    },
+    {
+        title: "Ko-fi",
+        icon: "/images/socials/kofi.png",
         href: "https://ko-fi.com/jeremybosma",
     },
 ];
 ---
 
-<div class="titlediv">
-    <h1 class="title">Contact</h1>
-    <section class="contact" id="contact">
-        {socialMediaData.map((data) => <SocialLink {...data} />)}
-    </section>
+<div>
+    <h1 class="title">Online Aanwezigheid</h1>
+    <div class="row">
+        {socials.map((social) => <Social {...social} />)}
+    </div>
 </div>
-
-<style>
-    .contact {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-</style>

@@ -1,0 +1,110 @@
+---
+import Skill from "../Skill.astro";
+
+const tools = [
+    {
+        title: "vscode",
+        icon: "/images/tools/vscode.png",
+        href: "https://code.visualstudio.com/",
+    },
+    {
+        title: "arc",
+        icon: "/images/tools/arcbrowser.png",
+        href: "https://arc.net",
+    },
+    {
+        title: "figma",
+        icon: "/images/tools/figma.png",
+        href: "https://figma.com",
+    },
+    {
+        title: "warp",
+        icon: "/images/tools/warpdev.png",
+        href: "https://warp.dev",
+    },
+    {
+        title: "amie",
+        icon: "/images/tools/amieso.png",
+        href: "https://amie.so",
+    },
+    {
+        title: "orbstack",
+        icon: "/images/tools/orbstack.png",
+        href: "https://orbstack.dev",
+    },
+];
+
+const skills = [
+    {
+        title: "NextJS",
+        icon: "/images/skills/nextjs.png",
+        href: "https://nextjs.org",
+    },
+    {
+        title: "astro",
+        icon: "/images/skills/astro.png",
+        href: "https://astro.build",
+    },
+    {
+        title: "Svelte",
+        icon: "/images/skills/svelte.png",
+        href: "https://svelte.dev",
+    },
+    {
+        title: "TypeScript",
+        icon: "/images/skills/typescript.png",
+        href: "https://typescriptlang.org",
+    },
+    {
+        title: "tailwindcss",
+        icon: "/images/skills/tailwind.png",
+        href: "https://tailwindcss.com",
+    },
+    {
+        title: "c#",
+        icon: "/images/skills/csharp.png",
+        href: "https://docs.microsoft.com/en-us/dotnet/csharp/",
+    },
+];
+---
+
+<section class="skillsets">
+    <div>
+        <h1 class="title">Skillset</h1>
+        <div class="skilldivider">
+            <div class="row">
+                <span>Software & Tools</span>
+                <div class="row">
+                    {tools.map((tool) => <Skill {...tool} />)}
+                </div>
+            </div>
+            <div class="row">
+                <span>Programmeer Talen</span>
+                <div class="row">
+                    {skills.map((skill) => <Skill {...skill} />)}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .skilldivider {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .skillsets {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 270px;
+        }
+    </style>
+</section>

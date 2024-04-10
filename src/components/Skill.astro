@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	title: string;
+	icon: string;
+	href?: string;
+}
+
+const { title, icon, href } = Astro.props;
+---
+
+<a class="hreffix" href={href ?? "#"} target={href ? "_blank" : undefined}>
+	{
+		icon && (
+			<Image
+				src={icon}
+				alt="Skill Icon"
+				class={`skillIcon`}
+				width="60"
+				height="60"
+				loading="eager"
+			/>
+		)
+	}
+</a>
+
+<style>
+	.skillIcon {
+		height: 60px;
+		width: 60px;
+		border: 1px solid #e8e8e8;
+		border-radius: 12px;
+		transition: opacity 0.2s;
+	}
+
+	.skillIcon:hover {
+		opacity: 0.9;
+	}
+</style>
