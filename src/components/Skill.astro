@@ -2,13 +2,12 @@
 import { Image } from "astro:assets";
 
 interface Props {
-	title: string;
 	icon: string;
 	href?: string;
 	tooltip?: string;
 }
 
-const { title, icon, href, tooltip } = Astro.props;
+const { icon, href, tooltip } = Astro.props;
 ---
 
 <a class="hreffix" href={href ?? "#"} target={href ? "_blank" : undefined}>
