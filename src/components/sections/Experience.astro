@@ -3,20 +3,20 @@ import Card from "../Card.astro";
 
 const projects = [
     {
-        title: "Oprichter van vesselspro",
-        desc: "Vessels.pro is een moderne (web)applicatie voor vlootbeheer, onderhoud en meer.",
+        title: "Founder of vesselspro",
+        desc: "Vessels.pro is a modern (web)application for fleet management, maintenance, and more.",
         icon: "/images/projects/vesselspro.png",
         href: "https://vessels.pro",
     },
     {
-        title: "Web-developer van Mythic",
-        desc: "De game-launcher om Windows games op macOS te spelen met een wijde compatibiliteit.",
+        title: "Web developer @ Mythic",
+        desc: "The game launcher to play Windows games on macOS with wide compatibility.",
         icon: "/images/projects/mythic.png",
         href: "https://getmythic.app",
     },
     {
-        title: "Design-founder van outfits.bio",
-        desc: "Een platform om je kleding bij te houden, te delen en inspiratie voor outfits te vinden op het web.",
+        title: "Design founder @ outfits.bio",
+        desc: "A platform to keep track of your clothing, share, and find outfit inspiration on the web.",
         icon: "/images/projects/outfitsbio.png",
         href: "https://outfits.bio",
     },
@@ -48,14 +48,14 @@ const schoolprojects = [
 
 <div class="col">
     <section class="projects">
-        <h1 class="title">Ervaring</h1>
+        <h1 class="title">Experience</h1>
         <div class="projectscol">
             {projects.map((project) => <Card {...project} />)}
         </div>
     </section>
 
     <details>
-        <summary class="title">School Opdrachten</summary><br />
+        <summary class="title">School Assignments</summary><br />
         <section class="projects schoolprojects">
             {schoolprojects.map((project) => <Card {...project} />)}
         </section>
