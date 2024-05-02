@@ -51,6 +51,7 @@ const schoolprojects = [
         <h1 class="title">Experience</h1>
         <div class="projectscol">
             {projects.map((project) => <Card {...project} />)}
+            <span>Looking for a designer / engineer for your project? <a href="mailto:jeremybosma@outlook.com" style="text-decoration: underline;">email me</a>!</span>
         </div>
     </section>
 
@@ -67,10 +68,6 @@ const schoolprojects = [
         display: flex;
         flex-direction: column;
         gap: 50px;
-    }
-
-    .projects {
-        gap: 20px;
     }
 
     .projectscol {
