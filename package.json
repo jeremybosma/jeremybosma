@@ -13,6 +13,7 @@
     "@astrojs/check": "0.9.3",
     "@astrojs/vercel": "7.8.0",
     "astro": "4.15.1",
+    "fulldev-ui": "^0.3.35",
     "typescript": "^5.5.4"
   },
   "module": "index.ts",

@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Icon } from "fulldev-ui";
 
 interface Props {
   title: string;
@@ -12,18 +12,7 @@ const { title, icon, href } = Astro.props;
 
 <a class="hreffix" href={href ?? "#"} target={href ? "_blank" : undefined}>
   <div class="socialCard">
-    {
-      icon && (
-        <Image
-          src={icon}
-          alt="social Icon"
-          class="socialIcon"
-          width="30"
-          height="30"
-          loading="lazy"
-        />
-      )
-    }
+    {icon && <Icon name={icon} />}
     <span>{title}</span>
   </div>
 </a>

@@ -1,45 +1,6 @@
 ---
 import Skill from "../Skill.astro";
 
-const tools = [
-  {
-    title: "vscode",
-    icon: "/images/tools/vscode.png",
-    href: "https://code.visualstudio.com/",
-    tooltip: "/images/screenshots/vscode.png",
-  },
-  {
-    title: "arc",
-    icon: "/images/tools/arcbrowser.png",
-    href: "https://arc.net",
-    tooltip: "/images/screenshots/arc.png",
-  },
-  {
-    title: "figma",
-    icon: "/images/tools/figma.png",
-    href: "https://figma.com",
-    tooltip: "/images/screenshots/figma.png",
-  },
-  // {
-  //     title: "warp",
-  //     icon: "/images/tools/warpdev.png",
-  //     href: "https://warp.dev",
-  //     tooltip: "/images/screenshots/warp.png",
-  // },
-  // {
-  //     title: "amie",
-  //     icon: "/images/tools/amieso.png",
-  //     href: "https://amie.so",
-  //     tooltip: "/images/screenshots/amie.png",
-  // },
-  {
-    title: "orbstack",
-    icon: "/images/tools/orbstack.png",
-    href: "https://orbstack.dev",
-    tooltip: "/images/screenshots/orbstack.png",
-  },
-];
-
 const skills = [
   {
     title: "NextJS",
@@ -65,30 +26,16 @@ const skills = [
     href: "https://tailwindcss.com",
     tooltip: "/images/screenshots/tailwind.png",
   },
-  {
-    title: "c#",
-    icon: "/images/skills/csharp.png",
-    href: "https://docs.microsoft.com/en-us/dotnet/csharp/",
-    tooltip: "/images/screenshots/csharp.png",
-  },
 ];
 ---
 
 <section class="skillsets">
   <div>
-    <h1 class="title">Skillset</h1>
-    <div class="skilldivider">
+    <h1 class="title">Expertise</h1>
+    <div class="row">
+      <span>Programming</span>
       <div class="row">
-        <span>Software & Tools</span>
-        <div class="row">
-          {tools.map((tool) => <Skill {...tool} />)}
-        </div>
-      </div>
-      <div class="row">
-        <span>Programming</span>
-        <div class="row">
-          {skills.map((skill) => <Skill {...skill} />)}
-        </div>
+        {skills.map((skill) => <Skill {...skill} />)}
       </div>
     </div>
   </div>
