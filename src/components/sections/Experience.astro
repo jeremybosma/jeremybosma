@@ -27,29 +27,6 @@ const projects = [
     href: "https://getmythic.app",
   },
 ];
-
-const schoolprojects = [
-  {
-    title: "Vier op een rij (Webgame)",
-    href: "https://webgame.jeremybosma.nl",
-  },
-  // {
-  //     title: "Seriousapps Project",
-  //     href: "https://seriousapps-project.vercel.app",
-  // },
-  {
-    title: "Rekenapp in PHP",
-    href: "https://rekenapp.jeremybosma.nl",
-  },
-  {
-    title: "Irritante Webpage",
-    href: "https://irritante-webpage.jeremybosma.nl/",
-  },
-  // {
-  //     title: "Portfolio mockups in Figma",
-  //     href: "https://www.figma.com/proto/deejQtKzKBApU6uIYjmVX4/02_did%2Fwsh-portfolio-1.0?page-id=0%3A1&type=design&node-id=1-3&viewport=557%2C445%2C0.22&t=8chiAav0CLI1frG3-1&scaling=min-zoom&starting-point-node-id=1%3A3&mode=design",
-  // },
-];
 ---
 
 <div class="col">
@@ -65,13 +42,6 @@ const schoolprojects = [
       >
     </div>
   </section>
-
-  <details style="display: none;">
-    <summary class="title">School Assignments</summary><br />
-    <section class="projects schoolprojects">
-      {schoolprojects.map((project) => <Card {...project} />)}
-    </section>
-  </details>
 </div>
 
 <style>

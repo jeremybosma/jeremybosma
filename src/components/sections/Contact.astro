@@ -2,37 +2,37 @@
 import Social from "../Social.astro";
 
 const socials = [
-    {
-        title: "X / Twitter",
-        icon: "/images/socials/xcom.png",
-        href: "https://x.com/jeremybosma_",
-    },
-    {
-        title: "Github",
-        icon: "/images/socials/github.png",
-        href: "https://github.com/jeremybosma",
-    },
-    {
-        title: "Instagram",
-        icon: "/images/socials/instagram.png",
-        href: "https://instagram.com/jeremybosma_",
-    },
-    {
-        title: "Discord",
-        icon: "/images/socials/discord.png",
-        href: "https://discord.com/channels/@me/709441303351394314",
-    },
-    {
-        title: "Ko-fi",
-        icon: "/images/socials/kofi.png",
-        href: "https://ko-fi.com/jeremybosma",
-    },
+  {
+    title: "X / Twitter",
+    icon: "/images/socials/xcom.png",
+    href: "https://x.com/jeremybosma_",
+  },
+  {
+    title: "Github",
+    icon: "/images/socials/github.png",
+    href: "https://github.com/jeremybosma",
+  },
+  {
+    title: "Instagram",
+    icon: "/images/socials/instagram.png",
+    href: "https://instagram.com/jeremybosma_",
+  },
+  {
+    title: "Discord",
+    icon: "/images/socials/discord.png",
+    href: "https://discord.com/channels/@me/709441303351394314",
+  },
+  {
+    title: "Ko-fi",
+    icon: "/images/socials/kofi.png",
+    href: "https://ko-fi.com/jeremybosma",
+  },
 ];
 ---
 
 <div>
-    <h1 class="title">Social Presence</h1>
-    <div class="row">
-        {socials.map((social) => <Social {...social} />)}
-    </div>
+  <h1 class="title">Social Presence</h1>
+  <div class="row">
+    {socials.map((social) => <Social {...social} />)}
+  </div>
 </div>

@@ -5,104 +5,94 @@ import vesselsPro from "../../images/vesselspro.png";
 ---
 
 <div class="hero" id="about">
-    <span>
-        Hi! I am
-        <div class="link-container">
-            <Image
-                src={profilePicture}
-                alt="Selfie"
-                class={`icon`}
-                loading="eager"
-            />
-            <b>Jeremy Bosma</b>
-        </div>, a founding design engineer. I'm currently working on my startup
-        <a href="https://vessels.pro"
-            ><div class="link-container">
-                <Image
-                    src={vesselsPro}
-                    alt="Icon"
-                    class={`icon`}
-                    loading="eager"
-                />
-                <b>vesselspro</b>
-            </div>,</a
-        >
-        a modern maintenance application for the shipping industry.
-    </span>
+  <span>
+    Hi! I am
+    <div class="link-container">
+      <Image src={profilePicture} alt="Selfie" class={`icon`} loading="eager" />
+      <b>Jeremy Bosma</b>
+    </div>, a founding design engineer. I'm currently working on my startup
+    <a href="https://vessels.pro"
+      ><div class="link-container">
+        <Image src={vesselsPro} alt="Icon" class={`icon`} loading="eager" />
+        <b>vesselspro</b>
+      </div>,</a
+    >
+    a modern maintenance application for the shipping industry.
+  </span>
 </div>
 
 <style>
-    .hero {
-        display: flex;
-        width: 100vw;
-        max-width: 100%;
-        justify-content: center;
-        text-align: center;
-    }
+  .hero {
+    display: flex;
+    width: 100vw;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 
+  .hero span {
+    text-align: left;
+    color: #000000bf;
+    font-size: 40px;
+    font-weight: 500;
+  }
+
+  .hero a {
+    text-decoration: underline;
+  }
+
+  .hero .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    transition: transform 0.1s ease-in-out;
+    animation: loading 0.3s ease-in-out;
+  }
+
+  .hero .icon:hover {
+    transform: rotate(10deg);
+  }
+
+  .link-container {
+    display: inline-flex;
+    align-items: bottom;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
     .hero span {
-        text-align: left;
-        color: #000000bf;
-        font-size: 40px;
-        font-weight: 500;
-    }
-
-    .hero a {
-        text-decoration: underline;
+      font-size: 30px;
     }
 
     .hero .icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 8px;
-        transition: transform 0.1s ease-in-out;
-        animation: loading 0.3s ease-in-out;
+      width: 25px;
+      height: 25px;
+      border-radius: 6px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero span {
+      font-size: 20px;
     }
 
-    .hero .icon:hover {
-        transform: rotate(10deg);
+    .hero .icon {
+      width: 25px;
+      height: 25px;
     }
-
-    .link-container {
-        display: inline-flex;
-        align-items: bottom;
-        justify-content: center;
-        gap: 5px;
-    }
-
-    @keyframes loading {
-        0% {
-            transform: rotate(0deg);
-        }
-        50% {
-            transform: rotate(10deg);
-        }
-        100% {
-            transform: rotate(0deg);
-        }
-    }
-
-    /* Media Queries */
-    @media screen and (max-width: 768px) {
-        .hero span {
-            font-size: 30px;
-        }
-
-        .hero .icon {
-            width: 25px;
-            height: 25px;
-            border-radius: 6px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        .hero span {
-            font-size: 20px;
-        }
-
-        .hero .icon {
-            width: 25px;
-            height: 25px;
-        }
-    }
+  }
 </style>
