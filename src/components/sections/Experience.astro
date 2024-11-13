@@ -42,22 +42,24 @@ const projects = [
                 />
               )}
               <div class="flex flex-col">
-                <span class="text-lg font-medium group-hover:text-[#e7e7e7]">
+                <span class="text-lg font-medium group-hover:text-[--primary-text]">
                   {project.title}
                 </span>
                 {project.desc && (
-                  <span class="text-sm text-[#999]">{project.desc}</span>
+                  <span class="text-sm text-[--secondary-text]">
+                    {project.desc}
+                  </span>
                 )}
               </div>
             </div>
           </a>
         ))
       }
-      <span class="text-sm text-[#999]">
+      <span class="text-sm text-[--secondary-text]">
         Looking for a designer / engineer for your project?{" "}
         <a
           href="mailto:jeremybosma@outlook.com"
-          class="underline hover:text-[#e7e7e7] transition-colors"
+          class="underline hover:text-[--primary-text] transition-colors"
         >
           email me</a
         >!

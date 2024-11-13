@@ -30,13 +30,18 @@
 
   :root {
     --satoshi: "Satoshi", sans-serif;
-    /* Light mode */
-    /* --primary-surface: #fff;
-    --primary-text: #000000bf; */
 
-    /* Dark mode */
-    --primary-surface: #000;
-    --primary-text: #e7e7e7;
+    @media (prefers-color-scheme: light) {
+      --primary-surface: #fff;
+      --primary-text: #000000bf;
+      --secondary-text: #555;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      --primary-surface: #000;
+      --primary-text: #e7e7e7;
+      --secondary-text: #999;
+    }
 
     scroll-behavior: smooth;
     font-family: var(--satoshi);

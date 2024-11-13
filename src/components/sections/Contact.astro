@@ -33,7 +33,9 @@ const socials = [
         target={social.href ? "_blank" : undefined}
         class="rounded-lg transition-colors duration-200"
       >
-        {social.icon && <Icon class="hover:text-white" name={social.icon} />}
+        {social.icon && (
+          <Icon class="hover:text-[--primary-text]" name={social.icon} />
+        )}
       </a>
     ))
   }
