@@ -1,5 +1,5 @@
 ---
-import Card from "../Card.astro";
+import { Image } from "astro:assets";
 
 const projects = [
   {
@@ -8,12 +8,12 @@ const projects = [
     icon: "/images/projects/vesselspro.png",
     href: "https://vessels.pro",
   },
-  // {
-  //   title: "Founder of outfits.bio",
-  //   desc: "A platform to keep track of your clothing, share, and find outfit inspiration on the web.",
-  //   icon: "/images/projects/outfitsbio.png",
-  //   href: "https://outfits.bio",
-  // },
+  {
+    title: "Founder of outfits.bio",
+    desc: "A platform to keep track of your clothing, share, and find outfit inspiration on the web.",
+    icon: "/images/projects/outfitsbio.png",
+    href: "https://outfits.bio",
+  },
   {
     title: "Internship at full.dev",
     desc: "Full.dev is a web development agency that's also building astro development focused tools.",
@@ -23,66 +23,51 @@ const projects = [
 ];
 ---
 
-<div class="col">
+<div class="flex flex-col gap-12">
   <section class="projects">
     <h1 class="title">Experience</h1>
-    <div class="projectscol">
-      {projects.map((project) => <Card {...project} />)}
-      <span
-        >Looking for a designer / engineer for your project? <a
+    <div class="flex flex-col gap-6">
+      {
+        projects.map((project) => (
+          <a href={project.href} target="_blank" class="group">
+            <div class="flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity duration-200">
+              {project.icon && (
+                <Image
+                  src={project.icon}
+                  alt="Project Icon"
+                  class="w-8 h-8 rounded-md"
+                  width="32"
+                  height="32"
+                  loading="eager"
+                />
+              )}
+              <div class="flex flex-col">
+                <span class="text-lg font-medium group-hover:text-[#e7e7e7]">
+                  {project.title}
+                </span>
+                {project.desc && (
+                  <span class="text-sm text-[#999]">{project.desc}</span>
+                )}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+      <span class="text-sm text-[#999]">
+        Looking for a designer / engineer for your project?{" "}
+        <a
           href="mailto:jeremybosma@outlook.com"
-          style="text-decoration: underline;">email me</a
-        >!</span
-      >
+          class="underline hover:text-[#e7e7e7] transition-colors"
+        >
+          email me</a
+        >!
+      </span>
     </div>
   </section>
 </div>
 
 <style>
-  .col {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-  }
-
-  .projectscol {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .schoolprojects {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 520px;
-  }
-
-  summary {
-    cursor: pointer;
-    user-select: none;
-    display: block;
-    padding-left: 1rem;
-    position: relative;
-  }
-
-  summary:before {
-    content: "";
-    border-width: 0.38rem;
-    border-style: solid;
-    border-color: transparent transparent transparent #4b4b4b;
-    position: absolute;
-    top: 0.7rem;
-    left: -0.1rem;
-    transform-origin: 0.2rem 50%;
-    transition: 0.25s transform ease;
-  }
-
-  details[open] > summary:before {
-    transform: rotate(90deg);
-  }
-
-  details summary::-webkit-details-marker {
-    display: none;
+  .projects {
+    @apply flex flex-col gap-4;
   }
 </style>
