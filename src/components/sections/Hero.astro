@@ -1,98 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import profilePicture from "../../images/pfp.png";
-import vesselsPro from "../../images/vesselspro.png";
+import Image from "astro/components/Image.astro";
 ---
 
-<div class="hero" id="about">
-  <span>
-    Hi! I am
-    <div class="link-container">
-      <Image src={profilePicture} alt="Selfie" class={`icon`} loading="eager" />
-      <b>Jeremy Bosma</b>
-    </div>, a founding design engineer. I'm currently working on my startup
-    <a href="https://vessels.pro"
-      ><div class="link-container">
-        <Image src={vesselsPro} alt="Icon" class={`icon`} loading="eager" />
-        <b>vesselspro</b>
-      </div>,</a
-    >
-    a better maintenance solution for the maritime industry.
+<section
+  class="flex-col md:flex-row gap-3 md:items-center flex w-full max-w-full justify-center text-center"
+  id="about"
+>
+  <Image
+    src="/images/favicon.png"
+    alt="Jeremy Bosma"
+    class="rounded-md w-8 h-8 md:w-14 md:h-14"
+    width={52}
+    height={52}
+  />
+
+  <span class="text-left text-md md:text-2xl font-medium">
+    Hi! I am <b>Jeremy Bosma</b>, a founding developer / designer. I'm currently
+    working on my startup
+    <a class="underline font-bold" href="https://vessels.pro">vesselspro</a>, an
+    all-in-one suite for the maritime industry.
   </span>
-</div>
-
-<style>
-  .hero {
-    display: flex;
-    width: 100vw;
-    max-width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero span {
-    text-align: left;
-    color: #000000bf;
-    font-size: 40px;
-    font-weight: 500;
-  }
-
-  .hero a {
-    text-decoration: underline;
-  }
-
-  .hero .icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    transition: transform 0.1s ease-in-out;
-    animation: loading 0.3s ease-in-out;
-  }
-
-  .hero .icon:hover {
-    transform: rotate(10deg);
-  }
-
-  .link-container {
-    display: inline-flex;
-    align-items: bottom;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  @keyframes loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-  /* Media Queries */
-  @media screen and (max-width: 768px) {
-    .hero span {
-      font-size: 30px;
-    }
-
-    .hero .icon {
-      width: 25px;
-      height: 25px;
-      border-radius: 6px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .hero span {
-      font-size: 20px;
-    }
-
-    .hero .icon {
-      width: 25px;
-      height: 25px;
-    }
-  }
-</style>
+</section>
