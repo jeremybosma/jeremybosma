@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Badge } from "fulldev-ui";
 
 const projects = [
   {
@@ -7,24 +8,28 @@ const projects = [
     desc: "VesselsPro is a better solution to fleet management, ship maintenance, and more.",
     icon: "/images/projects/vesselspro.png",
     href: "https://vessels.pro",
+    badge: "Web, iOS, Android",
   },
   {
     title: "Creator of CalCalc",
     desc: "CalCalc is a calorie and micronutrient tracker.",
     icon: "/images/projects/calcalc.png",
     href: "https://calcalc.vercel.app",
+    badge: "iOS, Android",
   },
   {
     title: "Creator of outfits.bio",
     desc: "A platform to keep track of your clothing, share, and find outfit inspiration.",
     icon: "/images/projects/outfitsbio.png",
     href: "https://outfits.bio",
+    badge: "Web",
   },
   {
     title: "Internship at full.dev",
     desc: "A web development agency that's also building astro development focused tools.",
     icon: "/images/projects/fulldev.png",
     href: "https://full.dev",
+    badge: "",
   },
 ];
 ---
@@ -48,8 +53,9 @@ const projects = [
                 />
               )}
               <div class="flex flex-col">
-                <span class="text-lg font-medium group-hover:text-[--primary-text]">
-                  {project.title}
+                <span class="flex items-center text-lg font-medium group-hover:text-[--primary-text]">
+                  {project.title}{" "}
+                  {project.badge && <Badge>{project.badge}</Badge>}
                 </span>
                 {project.desc && (
                   <span class="text-sm text-[--secondary-text]">

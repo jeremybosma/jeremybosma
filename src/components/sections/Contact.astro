@@ -25,13 +25,23 @@ const socials = [
 ];
 ---
 
-<div class="flex gap-4">
+<div class="items-center flex gap-4">
+  <span class="flex gap-2 text-[--secondary-text] text-sm items-center">
+    <Icon name="clock" />
+    {
+      new Date().toLocaleTimeString("en-NL", {
+        timeZone: "Europe/Amsterdam",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    }
+  </span>
   {
     socials.map((social) => (
       <a
         href={social.href ?? "#"}
         target={social.href ? "_blank" : undefined}
-        class="rounded-lg transition-colors duration-200"
+        class="rounded-lg transition-colors duration-200 items-center flex"
       >
         {social.icon && (
           <Icon class="hover:text-[--primary-text]" name={social.icon} />
