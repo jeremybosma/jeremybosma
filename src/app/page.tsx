@@ -31,7 +31,7 @@ const TRANSITION_SECTION = {
 export default function Home() {
   return (
     <motion.main
-      className="flex flex-col h-screen p-8 gap-8 max-w-3xl"
+      className="flex flex-col h-screen m-8 gap-8 max-w-3xl"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
