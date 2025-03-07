@@ -42,7 +42,7 @@ export default function Home() {
         className="text-[17px]"
       >
         <h1>Jeremy Bosma</h1>
-        <p className="text-white/60">Software Engineer &amp; Designer</p>
+        <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
       </motion.section>
 
       <motion.section
@@ -76,7 +76,7 @@ export default function Home() {
         transition={TRANSITION_SECTION}
       >
         <h2>Contact</h2>
-        <p className="text-white/60">
+        <p className="text-black/60 dark:text-white/60">
           I'm always looking for new opportunities and collaborations. If you have any questions or would like to get in touch, please don't hesitate to contact me on <Link className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</Link> or contact me on <Link className="underline" href="https://x.com/jeremybosma_">X</Link>.
         </p>
       </motion.section>
@@ -96,11 +96,11 @@ function ProjectCard({ name, description, image, link }: ProjectProps) {
     <Link href={link}>
       <div className="flex gap-3 my-2 items-center">
 
-        <Image src={image} alt={name} className="w-fit h-fit rounded-md border-white/10 border-[0.5px]" width={30} height={30} />
+        <Image src={image} alt={name} className="w-fit h-fit rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={30} height={30} />
 
         <div className="flex flex-col">
           <h3>{name}</h3>
-          <p className="text-white/60">{description}</p>
+          <p className="text-black/60 dark:text-white/60">{description}</p>
         </div>
 
       </div>
