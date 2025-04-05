@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { motion } from 'motion/react'
 
+import zerosystem from "../../public/projects/0system.png";
 import vesselspro from "../../public/projects/vesselspro.png";
 import outfitsbio from "../../public/projects/outfitsbio.png";
 import fulldev from "../../public/projects/fulldev.png";
@@ -59,6 +60,7 @@ export default function Home() {
         transition={TRANSITION_SECTION}
       >
         <h2>What I'm working on</h2>
+        <ProjectCard name="0system" description="context aware cloud-based OS with everything you need" image={zerosystem} link="https://0system.com" />
         <ProjectCard name="vesselspro" description="a better solution to fleet management, ship maintenance, and more for privates and major shipping companies." image={vesselspro} link="https://vessels.pro" />
         <ProjectCard name="outfitsbio" description="a platform to keep track of your clothing, share, and find outfit inspiration." image={outfitsbio} link="https://outfits.bio" />
       </motion.section>
