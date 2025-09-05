@@ -120,36 +120,6 @@ export default function Home() {
         <ProjectCard name="Internship at full.dev" description="web development agency that's also building development tools." image={fulldev} link="https://full.dev" />
       </motion.section>
 
-
-      {false && (
-        <motion.section
-          variants={VARIANTS_SECTION}
-          transition={TRANSITION_SECTION}
-        >
-          <h2>Writing</h2>
-          {recentPosts.length > 0 ? (
-            <>
-              {recentPosts.map(post => (
-                <BlogPostCard
-                  key={post.slug}
-                  title={post.metadata.title}
-                  description={post.metadata.description}
-                  image={post.metadata.image}
-                  link={`/writing/${post.slug}`}
-                />
-              ))}
-              {recentPosts.length > 3 && (
-                <Link href="/writing" className="text-sm text-black/60 hover:text-black/80 mt-2 inline-block">
-                  View all posts →
-                </Link>
-              )}
-            </>
-          ) : (
-            <p className="text-black/60">Loading posts...</p>
-          )}
-        </motion.section>
-      )}
-
       {false && (
         <motion.section
           variants={VARIANTS_SECTION}
