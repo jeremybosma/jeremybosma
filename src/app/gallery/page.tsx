@@ -114,7 +114,7 @@ export default function Gallery() {
                                                 {img.alt}
                                             </figcaption>
                                             <Cambio.Portal>
-                                                <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" />
+                                                <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
                                                 <Cambio.Popup className="z-50">
                                                     <Image
                                                         src={img.src}
