@@ -104,7 +104,7 @@ export default function Music() {
                         viewport={{ once: false, amount: 0.2 }}
                         custom={index * 0.08}
                     >
-                        <img src={music.image} alt={music.title} className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300" loading="lazy" />
+                        <img src={music.image} alt={music.title} loading="eager" className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300" />
                         <div className="flex flex-col">
                             <h2>{music.title}</h2>
                             <p className="text-sm text-muted-foreground">{music.author}</p>
