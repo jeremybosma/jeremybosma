@@ -43,16 +43,15 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     }, []);
 
     return (
-        <motion.main
+        <main
             className="flex flex-col min-h-screen p-8 gap-8 max-w-3xl mx-auto"
             style={{ ['--topnav-h' as any]: `${navHeight}px` }}
-            layout={false}
         >
             <div ref={navRef}>
                 <TopNav />
             </div>
             {children}
-        </motion.main>
+        </main>
     );
 }
 
