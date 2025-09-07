@@ -83,7 +83,7 @@ const itemVariants = {
     hidden: { opacity: 0 },
     visible: (delay: number) => ({
         opacity: 1,
-        transition: { duration: 0.35, ease: "easeOut", delay },
+        transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay },
     }),
 };
 
