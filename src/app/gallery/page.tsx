@@ -98,37 +98,33 @@ export default function Gallery() {
                                         className="break-inside-avoid snap-start"
                                     >
                                         <Cambio.Root motion="smooth">
-                                            <Cambio.Trigger className="block group">
-                                                <div className="overflow-hidden rounded-md">
-                                                    <Image
-                                                        src={img.src}
-                                                        alt={img.alt}
-                                                        placeholder="blur"
-                                                        width={img.src.width}
-                                                        height={img.src.height}
-                                                        className="w-full h-auto object-cover"
-                                                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                                                        priority={cIdx === 0 && imgIdx === 0}
-                                                    />
-                                                </div>
+                                            <Cambio.Trigger className="block">
+                                                <Image
+                                                    src={img.src}
+                                                    alt={img.alt}
+                                                    placeholder="blur"
+                                                    width={img.src.width}
+                                                    height={img.src.height}
+                                                    className="w-full h-auto object-cover rounded-md"
+                                                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                                                    priority={cIdx === 0 && imgIdx === 0}
+                                                />
                                             </Cambio.Trigger>
                                             <figcaption className="mt-2 text-[13px] text-muted-foreground">
                                                 {img.alt}
                                             </figcaption>
                                             <Cambio.Portal>
                                                 <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" />
-                                                <Cambio.Popup className="relative z-50">
-                                                    <div className="relative m-auto overflow-hidden rounded-md max-w-[90vw] md:max-w-3xl max-h-[85vh]">
-                                                        <Image
-                                                            src={img.src}
-                                                            alt={img.alt}
-                                                            placeholder="blur"
-                                                            width={img.src.width}
-                                                            height={img.src.height}
-                                                            className="w-full h-auto object-contain"
-                                                            sizes="90vw"
-                                                        />
-                                                    </div>
+                                                <Cambio.Popup className="z-50">
+                                                    <Image
+                                                        src={img.src}
+                                                        alt={img.alt}
+                                                        placeholder="blur"
+                                                        width={img.src.width}
+                                                        height={img.src.height}
+                                                        className="w-full h-auto object-contain rounded-md max-w-[90vw] md:max-w-3xl max-h-[85vh]"
+                                                        sizes="90vw"
+                                                    />
                                                 </Cambio.Popup>
                                             </Cambio.Portal>
                                         </Cambio.Root>
