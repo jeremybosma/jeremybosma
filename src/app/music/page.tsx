@@ -79,13 +79,7 @@ const music = [
     },
 ];
 
-const itemVariants = {
-    hidden: { opacity: 0 },
-    visible: (delay: number) => ({
-        opacity: 1,
-        transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay },
-    }),
-};
+// Removed itemVariants; using inline animation configs on elements
 
 export default function Music() {
     return (
@@ -98,11 +92,9 @@ export default function Music() {
                     <motion.div
                         className="flex gap-4 items-center p-4 transition-all duration-300 group"
                         key={music.title}
-                        variants={itemVariants}
-                        initial="hidden"
-                        whileInView="visible"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 } }}
                         viewport={{ once: false, amount: 0.2 }}
-                        custom={index * 0.08}
                     >
                         <img src={music.image} alt={music.title} loading="eager" className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300" />
                         <div className="flex flex-col">

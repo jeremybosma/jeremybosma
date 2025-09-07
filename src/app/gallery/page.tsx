@@ -31,10 +31,7 @@ const images = [
     // { src: "/gallery/love.jpeg", alt: "Tried love (Failed 💀)" },
 ];
 
-const itemVariants = {
-    hidden: { opacity: 0 },
-    visible: (delay: number) => ({ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay } }),
-};
+// Removed itemVariants; using inline animation configs on elements
 
 function useColumnCount() {
     const [count, setCount] = React.useState(1);
@@ -71,11 +68,9 @@ export default function Gallery() {
                                 {col.map((img) => (
                                     <motion.figure
                                         key={img.src}
-                                        variants={itemVariants}
-                                        initial="hidden"
-                                        whileInView="visible"
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: cIdx * 0.08 } }}
                                         viewport={{ once: false, amount: 0.2 }}
-                                        custom={cIdx * 0.08}
                                         className="break-inside-avoid snap-start"
                                     >
                                         <Cambio.Root motion="smooth">
