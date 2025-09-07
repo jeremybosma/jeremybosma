@@ -28,7 +28,7 @@ const images = [
     { src: "/gallery/thelastnight.jpeg", alt: "The last night" },
     { src: "/gallery/kaufland.jpeg", alt: "fitpic" },
     { src: "/gallery/code.jpeg", alt: "Programming" },
-    // { src: "/gallery/love.jpeg", alt: "Love" },
+    // { src: "/gallery/love.jpeg", alt: "Tried love (Failed 💀)" },
 ];
 
 const itemVariants = {
@@ -64,9 +64,6 @@ export default function Gallery() {
     return (
         <>
             <section className="text-[17px] sm:overflow-visible overflow-hidden">
-                <div className="my-4 text-xs md:text-sm">
-                    <p>Looking for my work related images? Check my <Link href="https://internet-engineering.com/" className="underline">company's website</Link>.</p>
-                </div>
                 <div className="sm:overflow-visible sm:h-auto h-[calc(100svh-var(--topnav-h)-6rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
                     <div className="flex gap-4">
                         {columns.map((col, cIdx) => (

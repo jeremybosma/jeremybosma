@@ -11,6 +11,7 @@ import fulldev from "../../public/projects/fulldev.png";
 import internetengineering from "../../public/projects/internet-engineering.png";
 import { sectionProps } from "./ui/ClientLayout";
 import profile from "../../public/profile.png";
+import { IconArrowUpRight } from "symbols-react";
 
 export default function Home() {
   return (
@@ -83,11 +84,14 @@ type ProjectProps = {
 
 function ProjectCard({ name, description, image, link }: ProjectProps) {
   return (
-    <Link href={link}>
+    <Link href={link} className="group">
       <div className="flex gap-3 my-2 items-center">
         <Image src={image} alt={name} className="w-fit h-fit rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={30} height={30} />
         <div className="flex flex-col">
-          <h3>{name}</h3>
+          <span className="flex gap-2 items-center">
+            <h3>{name}</h3>
+            <IconArrowUpRight className="w-2 h-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+          </span>
           <p className="text-black/60 dark:text-white/60">{description}</p>
         </div>
       </div>
