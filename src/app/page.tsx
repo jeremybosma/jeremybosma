@@ -20,7 +20,7 @@ export default function Home() {
         {...sectionProps}
         className="text-[17px] flex gap-2 items-center"
       >
-        <Image src={profile} alt="Jeremy Bosma" className="w-12 h-12 rounded-xl object-cover" width={100} height={100} />
+        <Image loading="eager" src={profile} alt="Jeremy Bosma" className="w-12 h-12 rounded-xl object-cover" width={100} height={100} />
         <div>
           <h1>Jeremy Bosma</h1>
           <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
@@ -90,7 +90,7 @@ function ProjectCard({ name, description, image, link }: ProjectProps) {
   return (
     <Link href={link} className="group">
       <div className="flex gap-3 my-2 items-center">
-        <Image src={image} alt={name} className="w-fit h-fit rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={30} height={30} />
+        <Image src={image} alt={name} className="w-fit h-fit rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={30} height={30} loading="eager" />
         <div className="flex flex-col">
           <span className="flex gap-2 items-center">
             <h3>{name}</h3>
