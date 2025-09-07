@@ -45,10 +45,8 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     return (
         <motion.main
             className="flex flex-col min-h-screen p-8 gap-8 max-w-3xl mx-auto"
-            variants={VARIANTS_CONTAINER}
-            initial="hidden"
-            animate="visible"
             style={{ ['--topnav-h' as any]: `${navHeight}px` }}
+            layout={false}
         >
             <div ref={navRef}>
                 <TopNav />

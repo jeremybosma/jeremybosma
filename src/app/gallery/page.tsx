@@ -70,7 +70,7 @@ export default function Gallery() {
                                         key={img.src}
                                         initial={{ opacity: 0 }}
                                         whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: cIdx * 0.08 } }}
-                                        viewport={{ once: false, amount: 0.2 }}
+                                        viewport={{ once: true, amount: 0.2 }}
                                         className="break-inside-avoid snap-start"
                                     >
                                         <Cambio.Root motion="smooth">
@@ -79,7 +79,7 @@ export default function Gallery() {
                                                     <img
                                                         src={img.src}
                                                         alt={img.alt}
-                                                        loading="eager"
+                                                        loading="lazy"
                                                         className="w-full h-auto object-cover"
                                                     />
                                                 </div>

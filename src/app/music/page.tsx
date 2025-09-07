@@ -167,7 +167,7 @@ export default function Music() {
                         key={music.title}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 } }}
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <Image src={music.image} alt={music.title} loading="eager" className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300" width={100} height={100} />
                         <div className="flex flex-col">
