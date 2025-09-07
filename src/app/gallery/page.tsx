@@ -64,7 +64,7 @@ export default function Gallery() {
     return (
         <>
             <section className="text-[17px] sm:overflow-visible overflow-hidden">
-                <div className="sm:overflow-visible sm:h-auto h-[calc(100svh-var(--topnav-h)-6rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
+                <div className="sm:overflow-visible sm:h-auto h-[calc(100svh-var(--topnav-h)-4rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
                     <div className="flex gap-4">
                         {columns.map((col, cIdx) => (
                             <div key={cIdx} className="shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 space-y-4">
@@ -84,7 +84,7 @@ export default function Gallery() {
                                                     <img
                                                         src={img.src}
                                                         alt={img.alt}
-                                                        loading="lazy"
+                                                        loading="eager"
                                                         className="w-full h-auto object-cover"
                                                     />
                                                 </div>

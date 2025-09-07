@@ -49,18 +49,22 @@ export default function Home() {
         {...sectionProps}
       >
         <h2>What I'm working on</h2>
-        <ProjectCard name="Internet Engineering" description="Software agency focused on implementing agentic AI experiences software with human-like user interfaces." image={internetengineering} link="https://internet-engineering.com" />
-        <ProjectCard name="0system" description="One OS to run your entire digital life. We integrate with the applications you use everyday so you can work smarter, not harder. Just type and get things done." image={zerosystem} link="https://0system.com" />
-        {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
-        {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
-        <ProjectCard name="outfitsbio" description="Social platform to keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" />
+        <div className="flex flex-col">
+          <ProjectCard name="Internet Engineering" description="Software agency focused on implementing agentic AI experiences software with human-like user interfaces." image={internetengineering} link="https://internet-engineering.com" />
+          <ProjectCard name="0system" description="One OS to run your entire digital life. We integrate with the applications you use everyday so you can work smarter, not harder. Just type and get things done." image={zerosystem} link="https://0system.com" />
+          {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
+          {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
+          <ProjectCard name="outfitsbio" description="Social platform to keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" />
+        </div>
       </motion.section>
 
       <motion.section
         {...sectionProps}
       >
         <h2>Work experience</h2>
-        <ProjectCard name="Internship at full.dev" description="web development agency that's also building development tools." image={fulldev} link="https://full.dev" />
+        <div className="flex flex-col">
+          <ProjectCard name="Internship at full.dev" description="web development agency that's also building development tools." image={fulldev} link="https://full.dev" />
+        </div>
       </motion.section>
 
       <motion.section
