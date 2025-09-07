@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import React from "react";
 
 import { Cambio as CambioRaw } from "cambio";
@@ -83,7 +83,7 @@ export default function Gallery() {
     });
 
     return (
-        <>
+        <AnimatePresence>
             <section className="text-[17px] sm:overflow-visible overflow-hidden">
                 <div className="sm:overflow-visible sm:h-auto h-[calc(100svh-var(--topnav-h)-4rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
                     <div className="flex gap-4">
@@ -98,31 +98,37 @@ export default function Gallery() {
                                         className="break-inside-avoid snap-start"
                                     >
                                         <Cambio.Root motion="smooth">
-                                            <Cambio.Trigger className="rounded-md overflow-hidden block group">
-                                                <div className="relative w-full">
+                                            <Cambio.Trigger className="block group">
+                                                <div className="overflow-hidden rounded-md">
                                                     <Image
                                                         src={img.src}
                                                         alt={img.alt}
                                                         placeholder="blur"
+                                                        width={img.src.width}
+                                                        height={img.src.height}
                                                         className="w-full h-auto object-cover"
                                                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                                                         priority={cIdx === 0 && imgIdx === 0}
                                                     />
                                                 </div>
-                                                <figcaption className="mt-2 text-[13px] text-muted-foreground">
-                                                    {img.alt}
-                                                </figcaption>
                                             </Cambio.Trigger>
+                                            <figcaption className="mt-2 text-[13px] text-muted-foreground">
+                                                {img.alt}
+                                            </figcaption>
                                             <Cambio.Portal>
                                                 <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" />
-                                                <Cambio.Popup className="relative z-50 max-w-[90vw] max-h-[90vh] md:max-w-3xl p-2">
-                                                    <Image
-                                                        src={img.src}
-                                                        alt={img.alt}
-                                                        placeholder="blur"
-                                                        className="max-w-full max-h-[85vh] w-auto h-auto object-contain"
-                                                        sizes="100vw"
-                                                    />
+                                                <Cambio.Popup className="relative z-50">
+                                                    <div className="relative m-auto overflow-hidden rounded-md max-w-[90vw] md:max-w-3xl max-h-[85vh]">
+                                                        <Image
+                                                            src={img.src}
+                                                            alt={img.alt}
+                                                            placeholder="blur"
+                                                            width={img.src.width}
+                                                            height={img.src.height}
+                                                            className="w-full h-auto object-contain"
+                                                            sizes="90vw"
+                                                        />
+                                                    </div>
                                                 </Cambio.Popup>
                                             </Cambio.Portal>
                                         </Cambio.Root>
@@ -134,6 +140,6 @@ export default function Gallery() {
                     <span className="text-sm mt-3 text-muted-foreground hidden md:block">Like what you see? Check my <Link href="https://www.instagram.com/jeremybosma_/" className="underline">Instagram</Link>.</span>
                 </div>
             </section>
-        </>
+        </AnimatePresence>
     );
 }
