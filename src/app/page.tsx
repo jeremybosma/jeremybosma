@@ -2,107 +2,50 @@
 
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 import { motion } from 'motion/react'
 
 import zerosystem from "../../public/projects/0system.png";
-import vesselspro from "../../public/projects/vesselspro.png";
 import outfitsbio from "../../public/projects/outfitsbio.png";
 import fulldev from "../../public/projects/fulldev.png";
-import mythic from "../../public/projects/mythic.png";
-import calcalc from "../../public/projects/calcalc.png";
 import internetengineering from "../../public/projects/internet-engineering.png";
-
-const VARIANTS_CONTAINER = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-}
-
-const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-}
-
-const TRANSITION_SECTION = {
-  duration: 0.3,
-}
-
-// Define the blog post metadata structure 
-interface PostMetadata {
-  title: string
-  date: string
-  description: string
-  image?: string
-}
-
-// Define the blog post structure
-interface Post {
-  slug: string
-  metadata: PostMetadata
-}
+import { sectionProps } from "./ui/ClientLayout";
+import profile from "../../public/profile.png";
 
 export default function Home() {
-  const [recentPosts, setRecentPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    async function fetchRecentPosts() {
-      try {
-        const response = await fetch('/api/recent-posts');
-        if (response.ok) {
-          const posts = await response.json();
-          setRecentPosts(posts);
-        }
-      } catch (error) {
-        console.error("Failed to fetch recent posts:", error);
-      }
-    }
-
-    fetchRecentPosts();
-  }, []);
-
   return (
-    <motion.main
-      className="flex flex-col min-h-screen p-8 gap-8 max-w-3xl mx-auto"
-      variants={VARIANTS_CONTAINER}
-      initial="hidden"
-      animate="visible"
-    >
+    <>
       <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        className="text-[17px]"
+        {...sectionProps}
+        className="text-[17px] flex gap-2 items-center"
       >
-        <h1>Jeremy Bosma</h1>
-        <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
+        <Image src={profile} alt="Jeremy Bosma" className="w-12 h-12 rounded-xl object-cover" width={100} height={100} />
+        <div>
+          <h1>Jeremy Bosma</h1>
+          <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
+        </div>
       </motion.section>
 
       <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
+        {...sectionProps}
       >
         <p>
           I'm a software engineer with eye for design and micro-interactions and I aim to create memorable digital experiences.
         </p>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        className="bg-white border rounded-md p-4"
-      >
-        <h2>Open to freelance work (Fixed or hourly rate)</h2>
-        <p className="text-black/60 dark:text-white/60">I'm currently looking for a new challenge. If you have any opportunities, please don't hesitate to contact me on <Link className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</Link> or contact me on <Link className="underline" href="https://x.com/jeremybosma_">X</Link> for all your programming and or design needs.</p>
-      </motion.section>
+      {false && (
+        <motion.section
+          {...sectionProps}
+          className="bg-white border rounded-md p-4"
+        >
+          <h2>Open to freelance work (Fixed or hourly rate)</h2>
+          <p className="text-black/60 dark:text-white/60">I'm currently looking for a new challenge. If you have any opportunities, please don't hesitate to contact me on <Link className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</Link> or contact me on <Link className="underline" href="https://x.com/jeremybosma_">X</Link> for all your programming and or design needs.</p>
+        </motion.section>
+      )}
 
       <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
+        {...sectionProps}
       >
         <h2>What I'm working on</h2>
         <ProjectCard name="Internet Engineering" description="Software agency focused on implementing agentic AI experiences software with human-like user interfaces." image={internetengineering} link="https://internet-engineering.com" />
@@ -113,76 +56,21 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
+        {...sectionProps}
       >
         <h2>Work experience</h2>
         <ProjectCard name="Internship at full.dev" description="web development agency that's also building development tools." image={fulldev} link="https://full.dev" />
       </motion.section>
 
-      {false && (
-        <motion.section
-          variants={VARIANTS_SECTION}
-          transition={TRANSITION_SECTION}
-        >
-          <h2>Gallery</h2>
-          <motion.div
-            className="columns-2 sm:columns-3 gap-3 mt-4"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-          >
-            {[
-              { src: zerosystem, alt: "0system project" },
-              { src: mythic, alt: "Mythic project" },
-              { src: vesselspro, alt: "VesselsPro project" },
-              { src: calcalc, alt: "Calcalc project" },
-              { src: outfitsbio, alt: "OutfitsBio project" },
-              { src: fulldev, alt: "Full.dev project" },
-            ].map((image, index) => (
-              <motion.div
-                key={index}
-                className="break-inside-avoid mb-3"
-                variants={{
-                  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    filter: 'blur(0px)',
-                    transition: { duration: 0.4 }
-                  },
-                }}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full rounded-md border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-colors"
-                  placeholder="blur"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.section>
-      )}
-
       <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
+        {...sectionProps}
       >
         <h2>Contact</h2>
         <p className="text-black/60 dark:text-white/60">
           I'm always looking for new opportunities and collaborations. If you have any questions or would like to get in touch, please don't hesitate to contact me on <Link className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</Link> or contact me on <Link className="underline" href="https://x.com/jeremybosma_">X</Link>.
         </p>
       </motion.section>
-    </motion.main>
+    </>
   );
 }
 
@@ -200,42 +88,6 @@ function ProjectCard({ name, description, image, link }: ProjectProps) {
         <Image src={image} alt={name} className="w-fit h-fit rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={30} height={30} />
         <div className="flex flex-col">
           <h3>{name}</h3>
-          <p className="text-black/60 dark:text-white/60">{description}</p>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-type BlogPostProps = {
-  title: string;
-  description: string;
-  image?: string;
-  link: string;
-}
-
-function BlogPostCard({ title, description, image, link }: BlogPostProps) {
-  return (
-    <Link href={link}>
-      <div className="flex gap-3 my-2 items-center">
-        {image ? (
-          <Image
-            src={image}
-            alt={title}
-            className="w-[30px] h-[30px] rounded-md border-black/10 dark:border-white/10 border-[0.5px] object-cover"
-            width={30}
-            height={30}
-          />
-        ) : (
-          <div className="w-[30px] h-[30px] bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center border-black/10 dark:border-white/10 border-[0.5px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-            </svg>
-          </div>
-        )}
-        <div className="flex flex-col">
-          <h3>{title}</h3>
           <p className="text-black/60 dark:text-white/60">{description}</p>
         </div>
       </div>
