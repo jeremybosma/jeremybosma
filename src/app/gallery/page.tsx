@@ -91,22 +91,23 @@ export default function Gallery() {
                             <div key={cIdx} className="shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 space-y-4">
                                 {col.map((img, imgIdx) => (
                                     <motion.figure
-                                        key={`${img.src.src}-${imgIdx}`}
+                                        key={img.src.src}
                                         initial={{ opacity: 0 }}
                                         whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: cIdx * 0.08 } }}
                                         viewport={{ once: true, amount: 0.2 }}
-                                        className="break-inside-avoid snap-start"
+                                        className="break-inside-avoid snap-start w-full"
                                     >
                                         <Cambio.Root motion="smooth">
-                                            <Cambio.Trigger className="block">
+                                            <Cambio.Trigger className="block w-full">
                                                 <Image
+                                                    key={`img-${colCount}`}
                                                     src={img.src}
                                                     alt={img.alt}
                                                     placeholder="blur"
                                                     width={img.src.width}
                                                     height={img.src.height}
-                                                    className="w-full h-auto object-cover rounded-md"
-                                                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                                                    className="block w-full h-auto object-cover rounded-md"
+                                                    sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
                                                     priority={cIdx === 0 && imgIdx === 0}
                                                 />
                                             </Cambio.Trigger>
@@ -117,12 +118,13 @@ export default function Gallery() {
                                                 <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
                                                 <Cambio.Popup className="z-50">
                                                     <Image
+                                                        key={`popup-${colCount}`}
                                                         src={img.src}
                                                         alt={img.alt}
                                                         placeholder="blur"
                                                         width={img.src.width}
                                                         height={img.src.height}
-                                                        className="w-full h-auto object-contain rounded-md max-w-[90vw] md:max-w-3xl max-h-[85vh]"
+                                                        className="block w-full h-auto object-contain rounded-md max-w-[90vw] md:max-w-3xl max-h-[85vh]"
                                                         sizes="90vw"
                                                     />
                                                 </Cambio.Popup>
