@@ -4,6 +4,16 @@ import { motion } from "motion/react";
 import { sectionProps } from "../ui/ClientLayout";
 import Image from "next/image";
 
+const LIST_CONTAINER = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.02,
+        },
+    },
+};
+
 const music = [
     {
         title: "What Did I Miss?",
@@ -159,15 +169,16 @@ export default function Music() {
         <>
             <motion.section
                 className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                {...sectionProps}
+                variants={LIST_CONTAINER}
+                initial="hidden"
+                animate="visible"
             >
                 {music.map((music, index) => (
                     <motion.div
                         className="flex gap-4 items-center p-4 transition-all duration-300 group"
                         key={music.title}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 } }}
-                        viewport={{ once: true, amount: 0.2 }}
+                        variants={sectionProps.variants}
+                        transition={sectionProps.transition}
                     >
                         <Image src={music.image} alt={music.title} loading="eager" className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300" width={100} height={100} />
                         <div className="flex flex-col">
