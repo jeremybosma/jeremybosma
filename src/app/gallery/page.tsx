@@ -85,53 +85,64 @@ export default function Gallery() {
     return (
         <AnimatePresence>
             <section className="text-[17px] sm:overflow-visible overflow-hidden">
-                <div className="sm:overflow-visible sm:h-auto h-[calc(100vh-var(--topnav-h)-4rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
+                <div className="sm:overflow-visible sm:h-auto h-[calc(100dvh-var(--topnav-h)-3.5rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
                     <div className="flex gap-4">
                         {columns.map((col, cIdx) => (
                             <div key={cIdx} className="shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 space-y-4">
-                                {col.map((img, imgIdx) => (
-                                    <motion.figure
-                                        key={img.src.src}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: cIdx * 0.08 } }}
-                                        viewport={{ once: true, amount: 0.2 }}
-                                        className="break-inside-avoid snap-start w-full"
-                                    >
-                                        <Cambio.Root motion="smooth">
-                                            <Cambio.Trigger className="block w-full">
-                                                <Image
-                                                    key={`img-${colCount}`}
-                                                    src={img.src}
-                                                    alt={img.alt}
-                                                    placeholder="blur"
-                                                    width={img.src.width}
-                                                    height={img.src.height}
-                                                    className="block w-full h-auto object-cover rounded-md"
-                                                    sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
-                                                    priority={cIdx === 0 && imgIdx === 0}
-                                                />
-                                            </Cambio.Trigger>
-                                            <figcaption className="mt-2 text-[13px] text-muted-foreground">
-                                                {img.alt}
-                                            </figcaption>
-                                            <Cambio.Portal>
-                                                <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
-                                                <Cambio.Popup className="z-50">
+                                {col.map((img, imgIdx) => {
+                                    const globalIndex = imgIdx * colCount + cIdx;
+                                    return (
+                                        <motion.figure
+                                            key={img.src.src}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
+                                            viewport={{ once: true, amount: 0.2 }}
+                                            transition={{ duration: 0.3, delay: globalIndex * 0.03 }}
+                                            className="break-inside-avoid snap-start w-full"
+                                            style={{
+                                                WebkitBackfaceVisibility: 'hidden',
+                                                backfaceVisibility: 'hidden',
+                                                WebkitTransform: 'translate3d(0, 0, 0)',
+                                                transform: 'translate3d(0, 0, 0)',
+                                            }}
+                                        >
+                                            <Cambio.Root motion="smooth">
+                                                <Cambio.Trigger className="block w-full">
                                                     <Image
-                                                        key={`popup-${colCount}`}
+                                                        key={`img-${colCount}`}
                                                         src={img.src}
                                                         alt={img.alt}
                                                         placeholder="blur"
                                                         width={img.src.width}
                                                         height={img.src.height}
-                                                        className="block w-full h-auto object-contain rounded-md max-w-[90vw] md:max-w-3xl max-h-[85vh]"
-                                                        sizes="90vw"
+                                                        className="block w-full h-auto object-cover rounded-md"
+                                                        sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
+                                                        priority={cIdx === 0 && imgIdx === 0}
                                                     />
-                                                </Cambio.Popup>
-                                            </Cambio.Portal>
-                                        </Cambio.Root>
-                                    </motion.figure>
-                                ))}
+                                                </Cambio.Trigger>
+                                                <figcaption className="mt-2 text-[13px] text-muted-foreground">
+                                                    {img.alt}
+                                                </figcaption>
+                                                <Cambio.Portal>
+                                                    <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
+                                                    <Cambio.Popup className="z-50">
+                                                        <Image
+                                                            key={`popup-${colCount}`}
+                                                            src={img.src}
+                                                            alt={img.alt}
+                                                            placeholder="blur"
+                                                            width={img.src.width}
+                                                            height={img.src.height}
+                                                            className="block w-full h-auto object-contain rounded-md max-w-[90vw] md:max-w-3xl max-h-[85dvh]"
+                                                            sizes="90vw"
+                                                        />
+                                                    </Cambio.Popup>
+                                                </Cambio.Portal>
+                                            </Cambio.Root>
+                                        </motion.figure>
+                                    );
+                                })}
                             </div>
                         ))}
                     </div>

@@ -1,18 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { sectionProps } from "../ui/ClientLayout";
 import Image from "next/image";
-
-const LIST_CONTAINER = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.08,
-            delayChildren: 0.02,
-        },
-    },
-};
 
 const music = [
     {
@@ -162,25 +151,37 @@ const music = [
     }
 ];
 
-// Removed itemVariants; using inline animation configs on elements
-
 export default function Music() {
     return (
         <>
-            <motion.section
-                className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                variants={LIST_CONTAINER}
-                initial="hidden"
-                animate="visible"
-            >
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {music.map((music, index) => (
                     <motion.div
-                        className="flex gap-4 items-center p-4 transition-all duration-300 group"
+                        className="flex gap-4 items-center p-4 group"
                         key={music.title}
-                        variants={sectionProps.variants}
-                        transition={sectionProps.transition}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3, delay: index * 0.03 }}
+                        style={{
+                            WebkitBackfaceVisibility: 'hidden',
+                            WebkitTransform: 'translate3d(0, 0, 0)',
+                            backfaceVisibility: 'hidden',
+                            transform: 'translate3d(0, 0, 0)',
+                            willChange: 'opacity',
+                        }}
                     >
-                        <Image src={music.image} alt={music.title} loading="eager" className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300" width={100} height={100} />
+                        <Image
+                            src={music.image}
+                            alt={music.title}
+                            loading="eager"
+                            className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300"
+                            width={100}
+                            height={100}
+                            style={{
+                                WebkitBackfaceVisibility: 'hidden',
+                                backfaceVisibility: 'hidden',
+                            }}
+                        />
                         <div className="flex flex-col">
                             <h2>{music.title}</h2>
                             <p className="text-sm text-muted-foreground">{music.author}</p>
@@ -194,7 +195,7 @@ export default function Music() {
                         </div>
                     </motion.div>
                 ))}
-            </motion.section>
+            </section>
         </>
     );
 }

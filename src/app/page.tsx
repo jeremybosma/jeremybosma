@@ -18,6 +18,9 @@ export default function Home() {
     <>
       <motion.section
         {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0 }}
         className="text-[17px] flex gap-2 items-center"
       >
         <Image loading="eager" src={profile} alt="Jeremy Bosma" className="w-12 h-12 rounded-xl object-cover" width={100} height={100} />
@@ -29,6 +32,9 @@ export default function Home() {
 
       <motion.section
         {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.1 }}
       >
         <p>
           I'm a software engineer with eye for design and micro-interactions and I aim to create memorable digital experiences.
@@ -38,6 +44,9 @@ export default function Home() {
       {false && (
         <motion.section
           {...sectionProps}
+          initial="hidden"
+          animate="visible"
+          transition={{ ...sectionProps.transition, delay: 0.2 }}
           className="bg-white border rounded-md p-4"
         >
           <h2>Open to freelance work (Fixed or hourly rate)</h2>
@@ -47,6 +56,9 @@ export default function Home() {
 
       <motion.section
         {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.2 }}
       >
         <h2>What I'm working on</h2>
         <div className="flex flex-col">
@@ -60,6 +72,9 @@ export default function Home() {
 
       <motion.section
         {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.3 }}
       >
         <h2>Work experience</h2>
         <div className="flex flex-col">
@@ -69,6 +84,9 @@ export default function Home() {
 
       <motion.section
         {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.4 }}
       >
         <h2>Contact</h2>
         <p className="text-black/60 dark:text-white/60">

@@ -6,11 +6,18 @@ import TopNav from "./TopNav";
 
 export const sectionProps = {
     variants: {
-        hidden: { opacity: 0, filter: 'blur(8px)' },
-        visible: { opacity: 1, filter: 'blur(0px)' },
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
     },
     transition: {
-        duration: 0.2,
+        duration: 0.3,
+    },
+    style: {
+        WebkitBackfaceVisibility: 'hidden' as const,
+        WebkitTransform: 'translate3d(0, 0, 0)',
+        backfaceVisibility: 'hidden' as const,
+        transform: 'translate3d(0, 0, 0)',
+        willChange: 'opacity' as const,
     },
 }
 
