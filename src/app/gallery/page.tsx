@@ -1,5 +1,4 @@
 "use client";
-import { AnimatePresence, motion } from "motion/react";
 import React from "react";
 
 import { Cambio as CambioRaw } from "cambio";
@@ -57,98 +56,69 @@ const images: GalleryImage[] = [
 
 // Removed itemVariants; using inline animation configs on elements
 
-function useColumnCount() {
-    const [count, setCount] = React.useState(1);
-    React.useEffect(() => {
-        const sm = window.matchMedia("(min-width: 640px)");
-        const lg = window.matchMedia("(min-width: 1024px)");
-        const compute = () => setCount(lg.matches ? 3 : sm.matches ? 2 : 1);
-        compute();
-        const onChange = () => compute();
-        sm.addEventListener("change", onChange);
-        lg.addEventListener("change", onChange);
-        return () => {
-            sm.removeEventListener("change", onChange);
-            lg.removeEventListener("change", onChange);
-        };
-    }, []);
-    return count;
-}
-
 export default function Gallery() {
-    const colCount = useColumnCount();
-    const columns: GalleryImage[][] = Array.from({ length: colCount }, () => []);
-    images.forEach((img, i) => {
-        columns[i % colCount].push(img);
-    });
+    const [loadedMap, setLoadedMap] = React.useState<Record<string, boolean>>({});
+
+    const handleImageLoaded = React.useCallback((key: string) => {
+        setLoadedMap((prev) => ({ ...prev, [key]: true }));
+    }, []);
 
     return (
-        <AnimatePresence>
-            <section className="text-[17px] sm:overflow-visible overflow-hidden">
-                <div className="sm:overflow-visible sm:h-auto h-[calc(100dvh-var(--topnav-h)-3.5rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
-                    <div className="flex gap-4">
-                        {columns.map((col, cIdx) => (
-                            <div key={cIdx} className="shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 space-y-4">
-                                {col.map((img, imgIdx) => {
-                                    const globalIndex = imgIdx * colCount + cIdx;
-                                    return (
-                                        <motion.figure
-                                            key={img.src.src}
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            whileInView={{ opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
-                                            viewport={{ once: true, amount: 0.2 }}
-                                            transition={{ duration: 0.3, delay: globalIndex * 0.03 }}
-                                            className="break-inside-avoid snap-start w-full"
-                                            style={{
-                                                WebkitBackfaceVisibility: 'hidden',
-                                                backfaceVisibility: 'hidden',
-                                                WebkitTransform: 'translate3d(0, 0, 0)',
-                                                transform: 'translate3d(0, 0, 0)',
-                                            }}
+        <section className="text-[17px] sm:overflow-visible overflow-hidden">
+            <div className="sm:overflow-visible sm:h-auto h-[calc(100dvh-var(--topnav-h)-3.5rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+                    {images.map((img, index) => {
+                        const imageKey = img.src.src;
+                        const isLoaded = loadedMap[imageKey];
+                        const isFirst = index === 0;
+                        return (
+                            <div
+                                key={imageKey}
+                                className={`mb-4 break-inside-avoid snap-start transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+                            >
+                                <Cambio.Root motion="smooth">
+                                    <Cambio.Trigger className="block w-full text-left">
+                                        <div
+                                            className="relative w-full overflow-hidden rounded-md bg-secondary/60"
+                                            style={{ aspectRatio: `${img.src.width} / ${img.src.height}` }}
                                         >
-                                            <Cambio.Root motion="smooth">
-                                                <Cambio.Trigger className="block w-full">
-                                                    <Image
-                                                        key={`img-${colCount}`}
-                                                        src={img.src}
-                                                        alt={img.alt}
-                                                        placeholder="blur"
-                                                        width={img.src.width}
-                                                        height={img.src.height}
-                                                        className="block w-full h-auto object-cover rounded-md"
-                                                        sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
-                                                        priority={cIdx === 0 && imgIdx === 0}
-                                                    />
-                                                </Cambio.Trigger>
-                                                <figcaption className="mt-2 text-[13px] text-muted-foreground">
-                                                    {img.alt}
-                                                </figcaption>
-                                                <Cambio.Portal>
-                                                    <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
-                                                    <Cambio.Popup className="z-50">
-                                                        <Image
-                                                            key={`popup-${colCount}`}
-                                                            src={img.src}
-                                                            alt={img.alt}
-                                                            placeholder="blur"
-                                                            width={img.src.width}
-                                                            height={img.src.height}
-                                                            className="block w-full h-auto object-contain rounded-md max-w-[90vw] md:max-w-3xl max-h-[85dvh]"
-                                                            sizes="90vw"
-                                                        />
-                                                    </Cambio.Popup>
-                                                </Cambio.Portal>
-                                            </Cambio.Root>
-                                        </motion.figure>
-                                    );
-                                })}
+                                            <Image
+                                                src={img.src}
+                                                alt={img.alt}
+                                                fill={!isFirst}
+                                                width={isFirst ? img.src.width : undefined}
+                                                height={isFirst ? img.src.height : undefined}
+                                                sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
+                                                className="object-cover"
+                                                onLoadingComplete={() => handleImageLoaded(imageKey)}
+                                            />
+                                        </div>
+                                        <p className="mt-2 text-[13px] text-muted-foreground">
+                                            {img.alt}
+                                        </p>
+                                    </Cambio.Trigger>
+                                    <Cambio.Portal>
+                                        <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
+                                        <Cambio.Popup className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                                            <Image
+                                                src={img.src}
+                                                alt={img.alt}
+                                                width={img.src.width}
+                                                height={img.src.height}
+                                                className="max-w-[90vw] max-h-[85dvh] w-auto h-auto object-contain rounded-md"
+                                                sizes="90vw"
+                                            />
+                                        </Cambio.Popup>
+                                    </Cambio.Portal>
+                                </Cambio.Root>
                             </div>
-                        ))}
-                    </div>
-                    <span className="text-sm mt-3 text-muted-foreground hidden md:block">Like what you see? Check my <Link href="https://www.instagram.com/jeremybosma_/" className="underline">Instagram</Link>.</span>
+                        );
+                    })}
                 </div>
-            </section>
-        </AnimatePresence>
+                <p className="text-sm mt-3 text-muted-foreground hidden md:block">
+                    Like what you see? Check my <Link href="https://www.instagram.com/jeremybosma_/" className="underline">Instagram</Link>.
+                </p>
+            </div>
+        </section>
     );
 }
