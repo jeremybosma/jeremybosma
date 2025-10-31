@@ -104,7 +104,7 @@ const images: GalleryImage[] = [
     { src: wave, alt: "Wave" },
     { src: yacht2, alt: "Yacht" },
     { src: yacht3, alt: "Yacht" },
-    { src: love, alt: "No comment" },
+    { src: love, alt: "No comment (failed 💀)" },
 ];
 
 // Removed itemVariants; using inline animation configs on elements
