@@ -27,6 +27,33 @@ import doweevernotwork from "../../../public/gallery/doweevernotwork.jpeg";
 import thelastnight from "../../../public/gallery/thelastnight.jpeg";
 import kaufland from "../../../public/gallery/kaufland.jpeg";
 import code from "../../../public/gallery/code.jpeg";
+import bijenkorf from "../../../public/gallery/bijenkorf.jpeg";
+import boat2 from "../../../public/gallery/boat2.jpeg";
+import bottles from "../../../public/gallery/bottles.jpeg";
+import breakfast from "../../../public/gallery/breakfast.jpeg";
+import business from "../../../public/gallery/business.jpeg";
+import cafe from "../../../public/gallery/cafe.jpeg";
+import cappucino from "../../../public/gallery/cappucino.jpeg";
+import celcius from "../../../public/gallery/celcius.jpeg";
+import diploma from "../../../public/gallery/diploma.jpeg";
+import f1 from "../../../public/gallery/f1.jpeg";
+import fit3 from "../../../public/gallery/fit3.jpeg";
+import freshtaper from "../../../public/gallery/freshtaper.jpeg";
+import fuelingyacht from "../../../public/gallery/fuelingyacht.jpeg";
+import gym from "../../../public/gallery/gym.jpeg";
+import jesussaves from "../../../public/gallery/jesussaves.jpeg";
+import mediamarkt from "../../../public/gallery/mediamarkt.jpeg";
+import mirror from "../../../public/gallery/mirror.jpeg";
+import mirror2 from "../../../public/gallery/mirror2.jpeg";
+import redbullfrance from "../../../public/gallery/redbullfrance.jpeg";
+import rotterdam2 from "../../../public/gallery/rotterdam2.jpeg";
+import setup from "../../../public/gallery/setup.jpeg";
+import student from "../../../public/gallery/student.jpeg";
+import vlog from "../../../public/gallery/vlog.jpeg";
+import wave from "../../../public/gallery/wave.jpeg";
+import yacht2 from "../../../public/gallery/yacht2.jpeg";
+import yacht3 from "../../../public/gallery/yacht3.jpeg";
+import love from "../../../public/gallery/love.jpeg";
 
 type GalleryImage = { src: StaticImageData; alt: string };
 const images: GalleryImage[] = [
@@ -51,7 +78,33 @@ const images: GalleryImage[] = [
     { src: thelastnight, alt: "The last night" },
     { src: kaufland, alt: "fitpic" },
     { src: code, alt: "Programming" },
-    // { src: love, alt: "Tried love (Failed 💀)" },
+    { src: bijenkorf, alt: "Bijenkorf" },
+    { src: boat2, alt: "Boat" },
+    { src: bottles, alt: "Bottles" },
+    { src: breakfast, alt: "Breakfast" },
+    { src: business, alt: "Business" },
+    { src: cafe, alt: "Cafe" },
+    { src: cappucino, alt: "Cappuccino" },
+    { src: celcius, alt: "Celsius" },
+    { src: diploma, alt: "Diploma" },
+    { src: f1, alt: "F1" },
+    { src: fit3, alt: "fitpic" },
+    { src: freshtaper, alt: "Fresh taper" },
+    { src: fuelingyacht, alt: "Fueling yacht" },
+    { src: gym, alt: "Gym" },
+    { src: jesussaves, alt: "Jesus saves" },
+    { src: mediamarkt, alt: "MediaMarkt" },
+    { src: mirror, alt: "Mirror" },
+    { src: mirror2, alt: "Mirror" },
+    { src: redbullfrance, alt: "Red Bull France" },
+    { src: rotterdam2, alt: "Rotterdam" },
+    { src: setup, alt: "Setup" },
+    { src: student, alt: "Student" },
+    { src: vlog, alt: "Vlog" },
+    { src: wave, alt: "Wave" },
+    { src: yacht2, alt: "Yacht" },
+    { src: yacht3, alt: "Yacht" },
+    { src: love, alt: "No comment" },
 ];
 
 // Removed itemVariants; using inline animation configs on elements
@@ -90,7 +143,7 @@ export default function Gallery() {
                                                 height={isFirst ? img.src.height : undefined}
                                                 sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
                                                 className="object-cover"
-                                                onLoadingComplete={() => handleImageLoaded(imageKey)}
+                                                onLoad={() => handleImageLoaded(imageKey)}
                                             />
                                         </div>
                                         <p className="mt-2 text-[13px] text-muted-foreground">

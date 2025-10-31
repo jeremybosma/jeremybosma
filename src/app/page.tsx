@@ -10,8 +10,10 @@ import outfitsbio from "../../public/projects/outfitsbio.png";
 import fulldev from "../../public/projects/fulldev.png";
 import internetengineering from "../../public/projects/internet-engineering.png";
 import { sectionProps } from "./ui/ClientLayout";
-import profile from "../../public/profile.png";
+import profile from "../../public/profile2.jpeg";
 import { IconArrowUpRight } from "symbols-react";
+import integrate from "../../public/projects/integrate.png";
+import explorework from "../../public/projects/explore-work.png";
 
 export default function Home() {
   return (
@@ -62,11 +64,13 @@ export default function Home() {
       >
         <h2>What I'm working on</h2>
         <div className="flex flex-col">
-          <ProjectCard name="Internet Engineering" description="Software agency focused on implementing agentic AI experiences software with human-like user interfaces." image={internetengineering} link="https://internet-engineering.com" />
-          <ProjectCard name="0system" description="One OS to run your entire digital life. We integrate with the applications you use everyday so you can work smarter, not harder. Just type and get things done." image={zerosystem} link="https://0system.com" />
+          <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
+          <ProjectCard name="0system" description="One AI integrating with all your applications to work for you" image={zerosystem} link="https://0system.com" />
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
           {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
-          <ProjectCard name="outfitsbio" description="Social platform to keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" />
+          <ProjectCard name="integrate.dev" description="Connect AI agents to production services without shipping new backends" image={integrate} link="https://integrate.dev" />
+          <ProjectCard name="explore.work" description="AI-assisted job finder with realtime resume suggestions and inquiry-tracker" image={explorework} link="https://explore.work" />
+          <ProjectCard name="outfitsbio" description="Keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" />
         </div>
       </motion.section>
 
@@ -78,7 +82,7 @@ export default function Home() {
       >
         <h2>Work experience</h2>
         <div className="flex flex-col">
-          <ProjectCard name="Internship at full.dev" description="web development agency that's also building development tools." image={fulldev} link="https://full.dev" />
+          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" />
         </div>
       </motion.section>
 
