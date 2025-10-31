@@ -11,7 +11,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "lastfm.freetls.fastly.net",
+        hostname: "lastfm.freetls.fastly.net", // Last.fm CDN
+      },
+      {
+        protocol: "https",
+        hostname: "lastfm-img2.akamaized.net", // Last.fm CDN alternate
       },
     ],
   },

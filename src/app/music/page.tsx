@@ -1,201 +1,59 @@
-"use client";
+import { fetchMultipleAlbumArtsServer } from "@/lib/music-api.server";
+import type { MusicData } from "@/lib/music-api";
+import { MusicList } from "./music-list";
+import { ResetPreferenceButton } from "@/components/reset-preference-button";
 
-import { motion } from "motion/react";
-import Image from "next/image";
-
-const music = [
-    {
-        title: "What Did I Miss?",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/300x300/5ad5a7cbecc4e485797fc0201120de26.jpg",
-        type: "single",
-    },
-    {
-        title: "Donda (Deluxe)",
-        author: "Kanye West",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/3951c3cc05c2015a171f6ffe95b833e7.jpg",
-        type: "album",
-    },
-    {
-        title: "Man Of The Year",
-        author: "PlaqueBoyMax, UnoTheActivist",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/019735a7751741eff87e5a76b8408291.jpg",
-        type: "single",
-    },
-    {
-        title: "Wheels Fall Off",
-        author: "Ty dolla $ign, Kanye West",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/cbb528cf12d731a7f10604f79e70d2ed.jpg",
-        type: "single",
-    },
-    {
-        title: "Enjoy The Show",
-        author: "The Weeknd, Future",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/9b8a478ffae99410468b2e1935f07601.jpg",
-        type: "single",
-    },
-    {
-        title: "Banking On Me",
-        author: "Gunna",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/294fba26bf26ce84bf121865b085b633.jpg",
-        type: "single",
-    },
-    {
-        title: "The College Dropout",
-        author: "Kanye West",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/61d5e94c9aa712b29e283325bc5ae87f.jpg",
-        type: "album",
-    },
-    {
-        title: "Uuugly",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/53487851a61d3e680b940dead7031dbd.jpg",
-        type: "single",
-    },
-    {
-        title: "Xscape (Deluxe)",
-        author: "Michael Jackson",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/c6ade3b17a4b43b9c3622f9f4e576fc6.jpg",
-        type: "album",
-    },
-    {
-        title: "act ii: date @ 8",
-        author: "4batz & Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/1e5757789b12375655dd6a01aed4fc16.jpg",
-        type: "single",
-    },
-    {
-        title: "Jesus Is King",
-        author: "Kanye West",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/7477ac60ea2d22a4ec2281ae917d2d36.jpg",
-        type: "album",
-    },
-    {
-        title: "Figure It Out",
-        author: "Ian",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/f10df30d391b438ff053f1d8f31328ec.jpg",
-        type: "single",
-    },
-    {
-        title: "NOKIA",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/bb5d2b034becb58b049c47a357d4c7ab.jpg",
-        type: "single",
-    },
-    {
-        title: "Donda 2",
-        author: "Kanye West",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/cee50b7f4762d19b6df5f6a62920dc85.jpg",
-        type: "album",
-    },
-    {
-        title: "HIM ALL ALONG",
-        author: "Gunna",
-        image: "https://lastfm.freetls.fastly.net/i/u/300x300/c6d4bb6eb6dc821bfd97fbbe4b6e00c3.jpg",
-        type: "single",
-    },
-    {
-        title: "Views",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/99e7715edfbd4c4519e3483a1779d574.jpg",
-        type: "album",
-    },
-    {
-        title: "back in the a",
-        author: "Gunna",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/ddf416e359672be8a0c31c9a663acd79.jpg",
-        type: "single",
-    },
-    {
-        title: "Scorpion",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/b42f8bf1987f3e1e4dc55d46d9c7bc3d.jpg",
-        type: "album",
-    },
-    {
-        title: "All To Myself,",
-        author: "Future, Metro Boomin, The Weeknd",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/6a3dd879bb20457745a12ac0872c8821.jpg",
-        type: "single",
-    },
-    {
-        title: "Draft Day",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/e569dbdf0ec2f74660e00f74f724ff32.jpg",
-        type: "single",
-    },
-    {
-        title: "Can't Tell Me Nothing",
-        author: "Kanye West",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/8ddd1959a2bef460a5149b3e0cf5e18a.jpg",
-        type: "single",
-    },
-    {
-        title: "today i did good",
-        author: "Gunna",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/ddf416e359672be8a0c31c9a663acd79.jpg",
-        type: "single",
-    },
-    {
-        title: "2 Mazza",
-        author: "Smiley, Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/90b17c8ecfd29b65b5011bdd325de1fa.jpg",
-        type: "single",
-    },
-    {
-        title: "Blue Green Red",
-        author: "Drake",
-        image: "https://lastfm.freetls.fastly.net/i/u/500x500/d67665dd545b647a6da55370931d0791.jpg",
-        type: "single",
-        unreleased: true,
-    }
+// Now you only need to provide: title, author, and type
+// The album art will be fetched automatically on the server!
+const musicData: MusicData[] = [
+    { title: "2005", author: "Ian", type: "album" },
+    { title: "100 Grams", author: "Eem Triplin", type: "single", album: "Coming Undone" },
+    { title: "What Do You Mean?", author: "Justin Bieber", type: "single", album: "Purpose" },
+    { title: "What Did I Miss?", author: "Drake", type: "single" },
+    { title: "Donda (Deluxe)", author: "Kanye West", type: "album" },
+    { title: "Man Of The Year", author: "plaqueboymax", type: "single", album: "Man Of The Year" },
+    { title: "Wheels Fall Off", author: "Ty Dolla $ign", type: "single", album: "Wheels Fall Off" },
+    { title: "scars", author: "Baby Keem", type: "single", album: "The Melodic Blue" },
+    { title: "WHEN I THINK ABOUT IT", author: "Future", type: "single", album: "BEASTMODE 2" },
+    { title: "WHERE DO YOU SLEEP?", author: "The Kid LAROI", type: "single", album: "THE FIRST TIME (DELUXE VERSION)" },
+    { title: "Can You Stand the Rain", author: "New Edition", type: "single" },
+    { title: "Forever on Some Fly Shit", author: "Nipsey Hussle", type: "single", album: "TMC" },
+    { title: "Enjoy The Show", author: "The Weeknd", type: "single", album: "Hurry Up Tomorrow" },
+    { title: "Peaches", author: "Justin Bieber", type: "single", album: "Justice" },
+    { title: "Banking On Me", author: "Gunna", type: "single" },
+    { title: "The College Dropout", author: "Kanye West", type: "album" },
+    { title: "Uuugly", author: "Drake", type: "single" },
+    { title: "Xscape", author: "Michael Jackson", type: "album" },
+    { title: "act ii: date @ 8", author: "4batz", type: "single" },
+    { title: "Jesus Is King", author: "Kanye West", type: "album" },
+    { title: "Figure It Out", author: "Ian", type: "single" },
+    { title: "NOKIA", author: "Drake", type: "single" },
+    { title: "DONDA 2", author: "Kanye West", type: "album" },
+    { title: "HIM ALL ALONG", author: "Gunna", type: "single" },
+    { title: "Views", author: "Drake", type: "album" },
+    { title: "back in the a", author: "Gunna", type: "single" },
+    { title: "Scorpion", author: "Drake", type: "album" },
+    { title: "All To Myself", author: "Future", type: "single" },
+    { title: "Draft Day", author: "Drake", type: "single", album: "Scorpion" },
+    { title: "Can't Tell Me Nothing", author: "Kanye West", type: "single" },
+    { title: "today i did good", author: "Gunna", type: "single" },
+    { title: "2 Mazza", author: "Smiley", type: "single", album: "Don't box me in" },
+    { title: "Blue Green Red", author: "Drake", type: "single", album: "No Face", unreleased: true }
 ];
 
-export default function Music() {
+export default async function Music() {
+    // Fetch all album art on the server
+    const music = await fetchMultipleAlbumArtsServer(musicData);
+
     return (
         <>
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {music.map((music, index) => (
-                    <motion.div
-                        className="flex gap-4 items-center p-4 group"
-                        key={music.title}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.03 }}
-                        style={{
-                            WebkitBackfaceVisibility: 'hidden',
-                            WebkitTransform: 'translate3d(0, 0, 0)',
-                            backfaceVisibility: 'hidden',
-                            transform: 'translate3d(0, 0, 0)',
-                            willChange: 'opacity',
-                        }}
-                    >
-                        <Image
-                            src={music.image}
-                            alt={music.title}
-                            loading="eager"
-                            className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300"
-                            width={100}
-                            height={100}
-                            style={{
-                                WebkitBackfaceVisibility: 'hidden',
-                                backfaceVisibility: 'hidden',
-                            }}
-                        />
-                        <div className="flex flex-col">
-                            <h2>{music.title}</h2>
-                            <p className="text-sm text-muted-foreground">{music.author}</p>
-                            <p className="text-sm flex text-muted-foreground/80 gap-1 items-center">
-                                {music.unreleased && <span>Unreleased</span>}{" "}
-                                {music.unreleased
-                                    ? music.type
-                                    : music.type.charAt(0).toUpperCase() + music.type.slice(1)
-                                }
-                            </p>
-                        </div>
-                    </motion.div>
-                ))}
-            </section>
+            {/* <div className="flex justify-between items-center mb-4">
+                <p className="text-sm text-muted-foreground">
+                    Click any song to open in your preferred streaming service
+                </p>
+                <ResetPreferenceButton />
+            </div> */}
+            <MusicList music={music} />
         </>
     );
 }
