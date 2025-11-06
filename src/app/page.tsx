@@ -14,6 +14,7 @@ import profile from "../../public/profile2.jpeg";
 import { IconArrowUpRight } from "symbols-react";
 import integrate from "../../public/projects/integrate.png";
 import explorework from "../../public/projects/explore-work.png";
+import clipras from "../../public/projects/clipras.png";
 
 export default function Home() {
   return (
@@ -67,6 +68,7 @@ export default function Home() {
           <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
           <ProjectCard name="0system" description="One AI integrating with all your applications to work for you" image={zerosystem} link="https://0system.com" />
           <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" />
+          <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" />
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
           {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
           {/* <ProjectCard name="explore.work" description="AI-assisted job finder with realtime resume suggestions and inquiry-tracker" image={explorework} link="https://explore.work" />
