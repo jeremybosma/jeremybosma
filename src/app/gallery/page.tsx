@@ -54,6 +54,9 @@ import wave from "../../../public/gallery/wave.jpeg";
 import yacht2 from "../../../public/gallery/yacht2.jpeg";
 import yacht3 from "../../../public/gallery/yacht3.jpeg";
 import love from "../../../public/gallery/love.jpeg";
+import integrate from "../../../public/gallery/integrate.jpeg";
+import taper2 from "../../../public/gallery/taper2.jpeg";
+
 
 type GalleryImage = { src: StaticImageData; alt: string };
 const images: GalleryImage[] = [
@@ -96,6 +99,8 @@ const images: GalleryImage[] = [
     { src: mediamarkt, alt: "MediaMarkt" },
     { src: mirror, alt: "Mirror" },
     { src: mirror2, alt: "Mirror" },
+    { src: integrate, alt: "Integrate" },
+    { src: taper2, alt: "Taper" },
     { src: redbullfrance, alt: "Red Bull France" },
     { src: rotterdam2, alt: "Rotterdam" },
     { src: setup, alt: "Setup" },
