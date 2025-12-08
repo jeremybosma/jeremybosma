@@ -124,7 +124,7 @@ function ProjectCard({ name, description, image, link }: ProjectProps) {
   return (
     <Link href={link} className="group">
       <div className="flex gap-3 my-2 items-center">
-        <Image src={image} alt={name} className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={100} height={100} quality={100} loading="eager" />
+        <Image src={image} alt={name} className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={100} height={100} loading="eager" />
         <div className="flex flex-col">
           <span className="flex gap-2 items-center">
             <h3>{name}</h3>
