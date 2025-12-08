@@ -6,15 +6,13 @@ import Link from "next/link";
 import { motion } from 'motion/react'
 
 import zerosystem from "../../public/projects/0system.png";
-import outfitsbio from "../../public/projects/outfitsbio.png";
 import fulldev from "../../public/projects/fulldev.png";
 import internetengineering from "../../public/projects/internet-engineering.png";
 import { sectionProps } from "./ui/ClientLayout";
 import profile from "../../public/profile2.jpeg";
 import { IconArrowUpRight } from "symbols-react";
 import integrate from "../../public/projects/integrate.png";
-import explorework from "../../public/projects/explore-work.png";
-import clipras from "../../public/projects/clipras.png";
+import alfacollege from "../../public/alfa-college.png";
 
 export default function Home() {
   return (
@@ -92,6 +90,18 @@ export default function Home() {
         {...sectionProps}
         initial="hidden"
         animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.35 }}
+      >
+        <h2>Education</h2>
+        <div className="flex flex-col">
+          <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 - Feb 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" />
+        </div>
+      </motion.section>
+
+      <motion.section
+        {...sectionProps}
+        initial="hidden"
+        animate="visible"
         transition={{ ...sectionProps.transition, delay: 0.4 }}
       >
         <h2>Contact</h2>
@@ -114,7 +124,7 @@ function ProjectCard({ name, description, image, link }: ProjectProps) {
   return (
     <Link href={link} className="group">
       <div className="flex gap-3 my-2 items-center">
-        <Image src={image} alt={name} className="w-fit h-fit rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={30} height={30} loading="eager" />
+        <Image src={image} alt={name} className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={100} height={100} quality={100} loading="eager" />
         <div className="flex flex-col">
           <span className="flex gap-2 items-center">
             <h3>{name}</h3>
