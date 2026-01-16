@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 
-import { Cambio as CambioRaw } from "cambio";
-import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
-const Cambio: any = CambioRaw as any;
+import { motion, AnimatePresence } from "motion/react";
 
 import rotterdam from "../../../public/gallery/rotterdam.jpeg";
 import fit2 from "../../../public/gallery/fit2.jpeg";
@@ -109,35 +107,49 @@ const images: GalleryImage[] = [
     { src: wave, alt: "Wave" },
     { src: yacht2, alt: "Yacht" },
     { src: yacht3, alt: "Yacht" },
-    { src: love, alt: "No comment (failed 💀)" },
+    // { src: love, alt: "No comment (failed 💀)" },
 ];
-
-// Removed itemVariants; using inline animation configs on elements
 
 export default function Gallery() {
     const [loadedMap, setLoadedMap] = React.useState<Record<string, boolean>>({});
+    const [selectedImage, setSelectedImage] = React.useState<GalleryImage | null>(null);
 
     const handleImageLoaded = React.useCallback((key: string) => {
         setLoadedMap((prev) => ({ ...prev, [key]: true }));
     }, []);
 
+    // Close on escape key
+    React.useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setSelectedImage(null);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, []);
+
     return (
-        <section className="text-[17px] sm:overflow-visible overflow-hidden">
-            <div className="sm:overflow-visible sm:h-auto h-[calc(100dvh-var(--topnav-h)-3.5rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-                    {images.map((img, index) => {
-                        const imageKey = img.src.src;
-                        const isLoaded = loadedMap[imageKey];
-                        const isFirst = index === 0;
-                        return (
-                            <div
-                                key={imageKey}
-                                className={`mb-4 break-inside-avoid snap-start transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-                            >
-                                <Cambio.Root motion="smooth">
-                                    <Cambio.Trigger className="block w-full text-left">
+        <>
+            <section className="text-[17px] sm:overflow-visible overflow-hidden">
+                <div className="sm:overflow-visible sm:h-auto h-[calc(100dvh-var(--topnav-h)-3.5rem)] overflow-y-auto overscroll-contain snap-y snap-mandatory -mx-4 px-4">
+                    <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+                        {images.map((img, index) => {
+                            const imageKey = img.src.src;
+                            const isLoaded = loadedMap[imageKey];
+                            const isFirst = index === 0;
+                            return (
+                                <div
+                                    key={imageKey}
+                                    className={`mb-4 break-inside-avoid snap-start transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+                                >
+                                    <button
+                                        type="button"
+                                        onClick={() => setSelectedImage(img)}
+                                        className="block w-full text-left cursor-zoom-in"
+                                    >
                                         <div
-                                            className="relative w-full overflow-hidden rounded-md bg-secondary/60"
+                                            className="relative w-full overflow-hidden bg-secondary/60"
                                             style={{ aspectRatio: `${img.src.width} / ${img.src.height}` }}
                                         >
                                             <Image
@@ -154,29 +166,64 @@ export default function Gallery() {
                                         <p className="mt-2 text-[13px] text-muted-foreground">
                                             {img.alt}
                                         </p>
-                                    </Cambio.Trigger>
-                                    <Cambio.Portal>
-                                        <Cambio.Backdrop className="fixed inset-0 z-50 bg-black/20 backdrop-blur-xs" />
-                                        <Cambio.Popup className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                                            <Image
-                                                src={img.src}
-                                                alt={img.alt}
-                                                width={img.src.width}
-                                                height={img.src.height}
-                                                className="max-w-[90vw] max-h-[85dvh] w-auto h-auto object-contain rounded-md"
-                                                sizes="90vw"
-                                            />
-                                        </Cambio.Popup>
-                                    </Cambio.Portal>
-                                </Cambio.Root>
-                            </div>
-                        );
-                    })}
+                                    </button>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
-                <p className="text-sm mt-3 text-muted-foreground hidden md:block">
-                    Like what you see? Check my <Link href="https://www.instagram.com/jeremybosma_/" className="underline">Instagram</Link>.
-                </p>
-            </div>
-        </section>
+            </section>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center cursor-zoom-out"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        {/* Blurred background */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+                        />
+
+                        {/* Image */}
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            className="relative z-10 p-4"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Image
+                                src={selectedImage.src}
+                                alt={selectedImage.alt}
+                                width={selectedImage.src.width}
+                                height={selectedImage.src.height}
+                                className="max-w-[90vw] max-h-[85dvh] w-auto h-auto object-contain cursor-zoom-out"
+                                sizes="90vw"
+                                onClick={() => setSelectedImage(null)}
+                                priority
+                            />
+                            <motion.p
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                className="mt-3 text-center text-sm text-white/80"
+                            >
+                                {selectedImage.alt}
+                            </motion.p>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 }

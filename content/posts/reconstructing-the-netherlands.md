@@ -1,7 +1,7 @@
 ---
-title: Reconstructing the Netherlands
+title: Reconstructing the Netherlands (UNFINISHED)
 date: 2025-05-29
-description: My vision on how we can save this country.
+description: My two cents on how we can save this country.
 ---
 
 # Reconstructing the Netherlands
@@ -12,7 +12,7 @@ Since I was 14, I started noticing things around me and hearing conversations th
 
 ## Introduction
 
-Let me tell you a bit more about myself. My name is Jeremy Bosma and I am 17 years old. At this point, I'm not entirely sure what my occupation is anymore, but I would describe myself as an artist, an entrepreneur, or both. I mainly work on crafting digital experiences, mostly through code, but I also design. I believe this will help me write this, because I'm always striving to find the best and most efficient solution to any problem.
+Let me tell you a bit more about myself. My name is Jeremy Bosma and I am 17 years old as of now. At this point, I'm not entirely sure what my occupation is anymore, but I would describe myself as an artist, an entrepreneur, or both. I mainly work on crafting digital experiences, mostly through code, but I also design. I believe this will help me write this, because I'm always striving to find the best and most efficient solution to any problem.
 
 I grew up in a city in the province of Groningen, where I still reside today. For the first six years of my life, I lived in one place, but then my parents split up. From that point on, I basically had two different lifestyles, two different environments, and two different standards, swapping every two weeks.
 
@@ -97,3 +97,5 @@ The Netherlands has massive natural gas reserves, but we've shut them down while
 ## 9. Scrap All Dutch Climate Plans (and Save Billions)
 
 Let's be real: the Dutch climate plans are a drop in the ocean globally, but they cost us tens of billions. If we scrap all these plans, we instantly save at least €28 billion (the estimated cost of the current climate agreement), not to mention all the extra costs for businesses and households. That money can be used for things that actually make a difference for Dutch people—like affordable energy, better infrastructure, or lower taxes. If the rest of the world isn't going to zero emissions tomorrow, why should we bankrupt ourselves trying to lead the way?
+
+![Groningen](/groningen.png)

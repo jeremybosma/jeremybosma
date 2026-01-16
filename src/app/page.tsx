@@ -8,7 +8,7 @@ import { motion } from 'motion/react'
 import zerosystem from "../../public/projects/0system.png";
 import fulldev from "../../public/projects/fulldev.png";
 import internetengineering from "../../public/projects/internet-engineering.png";
-import { sectionProps } from "./ui/ClientLayout";
+import { sectionProps } from "./ui/client-layout";
 import profile from "../../public/profile2.jpeg";
 import { IconArrowUpRight } from "symbols-react";
 import integrate from "../../public/projects/integrate.png";

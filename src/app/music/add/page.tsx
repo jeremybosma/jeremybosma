@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { fetchAlbumArt } from "@/lib/music-api";
 import Image from "next/image";
+import { motion } from "motion/react";
+import { sectionProps } from "@/app/ui/client-layout";
 
 export default function AddMusicPage() {
     const [formData, setFormData] = useState({
@@ -10,7 +12,7 @@ export default function AddMusicPage() {
         author: "",
         type: "single" as "single" | "album",
         unreleased: false,
-        album: "", // Optional album name for singles
+        album: "",
     });
 
     const [preview, setPreview] = useState<string | null>(null);
@@ -46,167 +48,192 @@ export default function AddMusicPage() {
     };
 
     if (process.env.NODE_ENV === "development") return (
-        <div className="max-w-2xl mx-auto p-8">
-            <h1 className="text-3xl font-bold mb-8">Add Music</h1>
+        <>
+            <motion.section
+                {...sectionProps}
+                initial="hidden"
+                animate="visible"
+                transition={{ ...sectionProps.transition, delay: 0 }}
+            >
+                <h1>Add Music</h1>
+                <p className="text-black/60 dark:text-white/60">
+                    Add new tracks to your music collection
+                </p>
+            </motion.section>
 
-            <div className="space-y-6">
-                {/* Form */}
-                <div className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium mb-2">
-                            Title *
-                        </label>
-                        <input
-                            type="text"
-                            value={formData.title}
-                            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-background"
-                            placeholder="e.g., HUMBLE."
-                        />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium mb-2">
-                            Artist *
-                        </label>
-                        <input
-                            type="text"
-                            value={formData.author}
-                            onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-background"
-                            placeholder="e.g., Kendrick Lamar"
-                        />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium mb-2">
-                            Type
-                        </label>
-                        <select
-                            value={formData.type}
-                            onChange={(e) => setFormData({ ...formData, type: e.target.value as "single" | "album" })}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-background"
-                        >
-                            <option value="single">Single</option>
-                            <option value="album">Album</option>
-                        </select>
-                    </div>
-
-                    {formData.type === "single" && (
-                        <div>
-                            <label className="block text-sm font-medium mb-2">
-                                Album (Optional)
-                            </label>
-                            <input
-                                type="text"
-                                value={formData.album}
-                                onChange={(e) => setFormData({ ...formData, album: e.target.value })}
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-background"
-                                placeholder="e.g., Scorpion (if single is from an album)"
-                            />
-                            <p className="text-xs text-muted-foreground mt-1">
-                                Specify the album name to use its cover art
-                            </p>
-                        </div>
-                    )}
-
-                    <div className="flex items-center gap-2">
-                        <input
-                            type="checkbox"
-                            id="unreleased"
-                            checked={formData.unreleased}
-                            onChange={(e) => setFormData({ ...formData, unreleased: e.target.checked })}
-                            className="w-4 h-4"
-                        />
-                        <label htmlFor="unreleased" className="text-sm font-medium">
-                            Unreleased
-                        </label>
-                    </div>
+            <motion.section
+                {...sectionProps}
+                initial="hidden"
+                animate="visible"
+                transition={{ ...sectionProps.transition, delay: 0.1 }}
+                className="space-y-4"
+            >
+                <div>
+                    <label className="block text-sm text-black/60 dark:text-white/60 mb-1.5">
+                        Title
+                    </label>
+                    <input
+                        type="text"
+                        value={formData.title}
+                        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                        className="w-full px-3 py-2 border border-black/10 dark:border-white/10 rounded-md bg-transparent focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                        placeholder="e.g., HUMBLE."
+                    />
                 </div>
 
-                {/* Preview Button */}
-                <button
-                    onClick={handlePreview}
-                    disabled={loading || !formData.title || !formData.author}
-                    className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-neutral-600 disabled:cursor-not-allowed transition-colors"
-                >
-                    {loading ? "Fetching Album Art..." : "Preview Album Art"}
-                </button>
+                <div>
+                    <label className="block text-sm text-black/60 dark:text-white/60 mb-1.5">
+                        Artist
+                    </label>
+                    <input
+                        type="text"
+                        value={formData.author}
+                        onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                        className="w-full px-3 py-2 border border-black/10 dark:border-white/10 rounded-md bg-transparent focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                        placeholder="e.g., Kendrick Lamar"
+                    />
+                </div>
 
-                {/* Preview */}
-                {preview && (
-                    <div className="border rounded-lg p-6 space-y-4">
-                        <h3 className="text-lg font-semibold">Preview</h3>
-                        <div className="flex gap-4 items-center">
-                            <Image
-                                src={preview}
-                                alt={formData.title}
-                                width={80}
-                                height={80}
-                                className="object-cover rounded"
-                            />
-                            <div>
-                                <h4 className="font-medium">{formData.title}</h4>
-                                <p className="text-sm text-muted-foreground">{formData.author}</p>
-                                <p className="text-sm text-muted-foreground">
-                                    {formData.unreleased ? "Unreleased " : ""}
-                                    {formData.type.charAt(0).toUpperCase() + formData.type.slice(1)}
-                                </p>
-                            </div>
-                        </div>
+                <div>
+                    <label className="block text-sm text-black/60 dark:text-white/60 mb-1.5">
+                        Type
+                    </label>
+                    <select
+                        value={formData.type}
+                        onChange={(e) => setFormData({ ...formData, type: e.target.value as "single" | "album" })}
+                        className="w-full px-3 py-2 border border-black/10 dark:border-white/10 rounded-md bg-transparent focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                    >
+                        <option value="single">Single</option>
+                        <option value="album">Album</option>
+                    </select>
+                </div>
+
+                {formData.type === "single" && (
+                    <div>
+                        <label className="block text-sm text-black/60 dark:text-white/60 mb-1.5">
+                            Album (Optional)
+                        </label>
+                        <input
+                            type="text"
+                            value={formData.album}
+                            onChange={(e) => setFormData({ ...formData, album: e.target.value })}
+                            className="w-full px-3 py-2 border border-black/10 dark:border-white/10 rounded-md bg-transparent focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                            placeholder="e.g., Scorpion (if single is from an album)"
+                        />
+                        <p className="text-xs text-black/40 dark:text-white/40 mt-1">
+                            Specify the album name to use its cover art
+                        </p>
                     </div>
                 )}
 
-                {/* Generate Code Button */}
-                {preview && (
+                <div className="flex items-center gap-2">
+                    <input
+                        type="checkbox"
+                        id="unreleased"
+                        checked={formData.unreleased}
+                        onChange={(e) => setFormData({ ...formData, unreleased: e.target.checked })}
+                        className="w-4 h-4 accent-black dark:accent-white"
+                    />
+                    <label htmlFor="unreleased" className="text-sm">
+                        Unreleased
+                    </label>
+                </div>
+
+                <button
+                    type="button"
+                    onClick={handlePreview}
+                    disabled={loading || !formData.title || !formData.author}
+                    className="w-full px-4 py-2.5 border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                    {loading ? "Fetching..." : "Preview Album Art"}
+                </button>
+            </motion.section>
+
+            {preview && (
+                <motion.section
+                    {...sectionProps}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ ...sectionProps.transition, delay: 0.15 }}
+                >
+                    <h2>Preview</h2>
+                    <div className="flex gap-4 items-center mt-2">
+                        <Image
+                            src={preview}
+                            alt={formData.title}
+                            width={80}
+                            height={80}
+                            className="object-cover rounded-md"
+                        />
+                        <div>
+                            <h3>{formData.title}</h3>
+                            <p className="text-black/60 dark:text-white/60">{formData.author}</p>
+                            <p className="text-sm text-black/40 dark:text-white/40">
+                                {formData.unreleased ? "Unreleased " : ""}
+                                {formData.type.charAt(0).toUpperCase() + formData.type.slice(1)}
+                            </p>
+                        </div>
+                    </div>
                     <button
+                        type="button"
                         onClick={handleGenerate}
-                        className="w-full px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                        className="w-full mt-4 px-4 py-2.5 border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
                     >
                         Generate Code
                     </button>
-                )}
+                </motion.section>
+            )}
 
-                {/* Generated Code */}
-                {generatedCode && (
-                    <div className="border rounded-lg p-6 space-y-4">
-                        <div className="flex justify-between items-center">
-                            <h3 className="text-lg font-semibold">Generated Code</h3>
-                            <button
-                                onClick={copyToClipboard}
-                                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm"
-                            >
-                                Copy to Clipboard
-                            </button>
-                        </div>
-                        <pre className="bg-muted p-4 rounded overflow-x-auto">
-                            <code>{generatedCode}</code>
-                        </pre>
-                        <div className="text-sm text-muted-foreground">
-                            <p className="font-medium mb-2">Next steps:</p>
-                            <ol className="list-decimal list-inside space-y-1">
-                                <li>Copy the code above</li>
-                                <li>Open <code className="bg-muted px-1 rounded">src/app/music/page.tsx</code></li>
-                                <li>Add the code to the <code className="bg-muted px-1 rounded">musicData</code> array</li>
-                                <li>Save the file - the album art will be fetched automatically!</li>
-                            </ol>
-                        </div>
+            {generatedCode && (
+                <motion.section
+                    {...sectionProps}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ ...sectionProps.transition, delay: 0.2 }}
+                >
+                    <div className="flex justify-between items-center">
+                        <h2>Generated Code</h2>
+                        <button
+                            type="button"
+                            onClick={copyToClipboard}
+                            className="px-3 py-1.5 text-sm border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+                        >
+                            Copy
+                        </button>
                     </div>
-                )}
-            </div>
+                    <pre className="mt-2 p-4 bg-black/5 dark:bg-white/5 rounded-md overflow-x-auto text-sm">
+                        <code>{generatedCode}</code>
+                    </pre>
+                    <div className="mt-4 text-sm text-black/60 dark:text-white/60">
+                        <p className="font-medium mb-2">Next steps:</p>
+                        <ol className="list-decimal list-inside space-y-1">
+                            <li>Copy the code above</li>
+                            <li>Open <code className="bg-black/5 dark:bg-white/5 px-1 rounded">src/app/music/page.tsx</code></li>
+                            <li>Add the code to the <code className="bg-black/5 dark:bg-white/5 px-1 rounded">musicData</code> array</li>
+                            <li>Save the file</li>
+                        </ol>
+                    </div>
+                </motion.section>
+            )}
 
-            {/* Instructions */}
-            <div className="mt-12 p-6 bg-muted rounded-lg">
-                <h3 className="text-lg font-semibold mb-3">How it works</h3>
-                <ul className="space-y-2 text-sm">
-                    <li>• Fill in the song/album title and artist name</li>
-                    <li>• Click "Preview Album Art" to see the album cover that will be fetched</li>
-                    <li>• Click "Generate Code" to get the code snippet</li>
-                    <li>• Copy and paste it into your <code className="bg-background px-1 rounded">musicData</code> array</li>
-                    <li>• Album art is automatically fetched from iTunes API - no manual URLs needed!</li>
+            <motion.section
+                {...sectionProps}
+                initial="hidden"
+                animate="visible"
+                transition={{ ...sectionProps.transition, delay: 0.25 }}
+            >
+                <h2>How it works</h2>
+                <ul className="mt-2 space-y-1 text-black/60 dark:text-white/60">
+                    <li>Fill in the song/album title and artist name</li>
+                    <li>Click "Preview Album Art" to see the album cover</li>
+                    <li>Click "Generate Code" to get the code snippet</li>
+                    <li>Copy and paste it into your musicData array</li>
+                    <li>Album art is fetched automatically from iTunes API</li>
                 </ul>
-            </div>
-        </div>
+            </motion.section>
+        </>
     );
+
+    return null;
 }
 

@@ -124,3 +124,101 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Prose styles for blog posts */
+.prose {
+  @apply text-foreground leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-2xl font-semibold mt-8 mb-4 first:mt-0;
+}
+
+.prose h2 {
+  @apply text-xl font-semibold mt-8 mb-3;
+}
+
+.prose h3 {
+  @apply text-lg font-medium mt-6 mb-2;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose a {
+  @apply underline underline-offset-2 hover:text-muted-foreground transition-colors;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 space-y-1;
+}
+
+.prose li {
+  @apply text-foreground;
+}
+
+.prose blockquote {
+  @apply border-l-2 border-muted-foreground/30 pl-4 italic text-muted-foreground my-4;
+}
+
+.prose code {
+  @apply bg-secondary px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-secondary p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose hr {
+  @apply border-border my-8;
+}
+
+.prose img {
+  @apply rounded-lg my-4;
+}
+
+/* Accordion styles for blog posts */
+.prose details.accordion {
+  @apply border border-border rounded-lg my-4 overflow-hidden;
+}
+
+.prose details.accordion summary {
+  @apply px-4 py-3 cursor-pointer font-medium bg-secondary/40 hover:bg-secondary/60 transition-colors;
+}
+
+.prose details.accordion summary::-webkit-details-marker {
+  @apply hidden;
+}
+
+.prose details.accordion[open] summary {
+  @apply border-b border-border;
+}
+
+.prose details.accordion > *:not(summary) {
+  @apply px-4;
+}
+
+.prose details.accordion > p:first-of-type {
+  @apply mt-4;
+}
+
+.prose details.accordion > *:last-child {
+  @apply mb-4;
+}
