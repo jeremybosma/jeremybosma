@@ -223,13 +223,6 @@ export function ProductDetail({
                     </div>
                 )}
 
-                {/* SKU */}
-                {selectedVariant && (
-                    <p className="text-xs text-muted-foreground">
-                        SKU: {selectedVariant.sku}
-                    </p>
-                )}
-
                 {/* Description */}
                 {cleanDescription && (
                     <div className="pt-4 border-t border-border">
