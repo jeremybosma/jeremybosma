@@ -38,43 +38,41 @@ export function MusicList({ music }: MusicListProps) {
         }
     };
 
-    const openInPlatform = async (track: FetchedMusicData, platform: Platform) => {
-        try {
-            const params = new URLSearchParams({
-                artist: track.author,
-                track: track.title,
-                type: track.type,
-                platform,
-            });
-
-            const response = await fetch(`/api/music/streaming-url?${params}`);
-            const data = await response.json();
-
-            if (data.url) {
-                window.open(data.url, "_blank");
-            } else {
-                // Fallback: construct a basic search URL
-                const searchQuery = encodeURIComponent(`${track.author} ${track.title}`);
-                let fallbackUrl = "";
-
-                if (platform === "apple") {
-                    fallbackUrl = `https://music.apple.com/us/search?term=${searchQuery}`;
-                } else if (platform === "youtube") {
-                    fallbackUrl = `https://www.youtube.com/results?search_query=${searchQuery}`;
-                } else if (platform === "spotify") {
-                    fallbackUrl = `https://open.spotify.com/search/${searchQuery}`;
-                }
-
-                if (fallbackUrl) {
-                    window.open(fallbackUrl, "_blank");
-                }
-            }
-        } catch (error) {
-            console.error("Error opening track:", error);
-            // Still try to open a search as fallback
-            const searchQuery = encodeURIComponent(`${track.author} ${track.title}`);
-            window.open(`https://www.google.com/search?q=${searchQuery}+music`, "_blank");
+    const getFallbackUrl = (track: FetchedMusicData, platform: Platform) => {
+        const searchQuery = encodeURIComponent(`${track.author} ${track.title}`);
+        if (platform === "apple") {
+            return `https://music.apple.com/us/search?term=${searchQuery}`;
+        } else if (platform === "youtube") {
+            return `https://www.youtube.com/results?search_query=${searchQuery}`;
+        } else if (platform === "spotify") {
+            return `https://open.spotify.com/search/${searchQuery}`;
         }
+        return `https://www.google.com/search?q=${searchQuery}+music`;
+    };
+
+    const openInPlatform = (track: FetchedMusicData, platform: Platform) => {
+        // Open window immediately to preserve user gesture (required for mobile browsers)
+        const newWindow = window.open(getFallbackUrl(track, platform), "_blank");
+
+        // Then try to get the exact URL and update the window location
+        const params = new URLSearchParams({
+            artist: track.author,
+            track: track.title,
+            type: track.type,
+            platform,
+        });
+
+        fetch(`/api/music/streaming-url?${params}`)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.url && newWindow) {
+                    newWindow.location.href = data.url;
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching streaming URL:", error);
+                // Window already opened with fallback, so nothing more to do
+            });
     };
 
     const handlePlatformSelect = (platform: Platform, remember: boolean) => {
