@@ -94,46 +94,38 @@ export function MusicList({ music }: MusicListProps) {
         <>
             <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {music.map((item, index) => (
-                    <motion.button
-                        type="button"
-                        className="flex gap-4 items-center p-4 group cursor-pointer hover:bg-muted/50 rounded-lg transition-colors text-left w-full"
+                    <motion.div
                         key={item.title}
-                        onClick={() => handleTrackClick(item)}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.03 }}
-                        style={{
-                            WebkitBackfaceVisibility: 'hidden',
-                            WebkitTransform: 'translate3d(0, 0, 0)',
-                            backfaceVisibility: 'hidden',
-                            transform: 'translate3d(0, 0, 0)',
-                            willChange: 'opacity',
-                        }}
                     >
-                        <Image
-                            src={item.image}
-                            alt={item.title}
-                            loading="eager"
-                            className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300"
-                            width={100}
-                            height={100}
-                            style={{
-                                WebkitBackfaceVisibility: 'hidden',
-                                backfaceVisibility: 'hidden',
-                            }}
-                        />
-                        <div className="flex flex-col">
-                            <h2>{item.title}</h2>
-                            <p className="text-sm text-muted-foreground">{item.author}</p>
-                            <p className="text-sm flex text-muted-foreground/80 gap-1 items-center">
-                                {item.unreleased && <span>Unreleased</span>}{" "}
-                                {item.unreleased
-                                    ? item.type
-                                    : item.type.charAt(0).toUpperCase() + item.type.slice(1)
-                                }
-                            </p>
-                        </div>
-                    </motion.button>
+                        <button
+                            type="button"
+                            className="flex gap-4 items-center p-4 group cursor-pointer hover:bg-muted/50 rounded-lg transition-colors text-left w-full touch-manipulation"
+                            onClick={() => handleTrackClick(item)}
+                        >
+                            <Image
+                                src={item.image}
+                                alt={item.title}
+                                loading="eager"
+                                className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300 pointer-events-none"
+                                width={100}
+                                height={100}
+                            />
+                            <div className="flex flex-col pointer-events-none">
+                                <h2>{item.title}</h2>
+                                <p className="text-sm text-muted-foreground">{item.author}</p>
+                                <p className="text-sm flex text-muted-foreground/80 gap-1 items-center">
+                                    {item.unreleased && <span>Unreleased</span>}{" "}
+                                    {item.unreleased
+                                        ? item.type
+                                        : item.type.charAt(0).toUpperCase() + item.type.slice(1)
+                                    }
+                                </p>
+                            </div>
+                        </button>
+                    </motion.div>
                 ))}
             </section>
 
