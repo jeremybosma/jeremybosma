@@ -78,6 +78,9 @@ export function StreamingPlatformDialog({
                     transition={{ duration: 0.2 }}
                     className="fixed inset-0 z-50 flex items-center justify-center p-4"
                     onClick={onClose}
+                    onTouchEnd={(e) => {
+                        if (e.target === e.currentTarget) onClose();
+                    }}
                 >
                     {/* Backdrop */}
                     <motion.div
@@ -95,6 +98,7 @@ export function StreamingPlatformDialog({
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                         className="relative z-10 bg-background w-full max-w-sm p-6"
                         onClick={(e) => e.stopPropagation()}
+                        onTouchEnd={(e) => e.stopPropagation()}
                     >
                         {/* Track Info */}
                         <div className="flex gap-4 items-center mb-6">

@@ -94,8 +94,9 @@ export function MusicList({ music }: MusicListProps) {
         <>
             <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {music.map((item, index) => (
-                    <motion.div
-                        className="flex gap-4 items-center p-4 group cursor-pointer hover:bg-muted/50 rounded-lg transition-colors"
+                    <motion.button
+                        type="button"
+                        className="flex gap-4 items-center p-4 group cursor-pointer hover:bg-muted/50 rounded-lg transition-colors text-left w-full"
                         key={item.title}
                         onClick={() => handleTrackClick(item)}
                         initial={{ opacity: 0 }}
@@ -132,7 +133,7 @@ export function MusicList({ music }: MusicListProps) {
                                 }
                             </p>
                         </div>
-                    </motion.div>
+                    </motion.button>
                 ))}
             </section>
 

@@ -14,6 +14,7 @@ import {
     IconFilmFill,
     IconTshirt,
     IconTshirtFill,
+    IconEnvelope,
 } from "symbols-react";
 import React from "react";
 
@@ -36,6 +37,7 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const SOCIAL_ITEMS: NavItem[] = [
+    { label: "Email", href: "mailto:prive@jeremybosma.nl", external: true, icon: IconEnvelope },
     { label: "Instagram", href: "https://instagram.com/jeremybosma_", external: true, icon: IconInstagramLogo },
     { label: "X", href: "https://x.com/jeremybosma_", external: true, icon: IconXLogo },
     { label: "LinkedIn", href: "https://linkedin.com/in/jeremybosma", external: true, icon: IconLinkedinLogo },
