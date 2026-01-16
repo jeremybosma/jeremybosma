@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "lastfm-img2.akamaized.net", // Last.fm CDN alternate
       },
+      {
+        protocol: "https",
+        hostname: "images-api.printify.com", // Printify CDN
+      },
     ],
   },
 };

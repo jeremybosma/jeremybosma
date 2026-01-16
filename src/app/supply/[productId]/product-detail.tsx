@@ -34,6 +34,18 @@ export function ProductDetail({
         sizes.at(0)?.id ?? null
     );
     const [selectedImageIndex, setSelectedImageIndex] = React.useState(0);
+    const [lightboxOpen, setLightboxOpen] = React.useState(false);
+
+    // Close lightbox on escape key
+    React.useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setLightboxOpen(false);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, []);
 
     // Find the selected variant
     const selectedVariant = React.useMemo(() => {
@@ -77,7 +89,11 @@ export function ProductDetail({
         <div className="grid md:grid-cols-2 gap-8">
             {/* Image Gallery */}
             <div className="space-y-4">
-                <div className="aspect-square relative bg-secondary/30 rounded-lg overflow-hidden">
+                <button
+                    type="button"
+                    onClick={() => setLightboxOpen(true)}
+                    className="aspect-square relative bg-secondary/30 rounded-lg overflow-hidden w-full cursor-zoom-in"
+                >
                     <AnimatePresence mode="wait">
                         {currentImage && (
                             <motion.div
@@ -93,13 +109,13 @@ export function ProductDetail({
                                     alt={product.title}
                                     fill
                                     sizes="(min-width: 768px) 50vw, 100vw"
-                                    className="object-contain p-4"
+                                    className="object-contain"
                                     priority
                                 />
                             </motion.div>
                         )}
                     </AnimatePresence>
-                </div>
+                </button>
 
                 {/* Thumbnail Gallery */}
                 {variantImages.length > 1 && (
@@ -119,7 +135,7 @@ export function ProductDetail({
                                     alt={`${product.title} view ${index + 1}`}
                                     fill
                                     sizes="64px"
-                                    className="object-contain bg-secondary/30 p-1"
+                                    className="object-contain bg-secondary/30"
                                 />
                             </button>
                         ))}
@@ -140,7 +156,7 @@ export function ProductDetail({
                     </p>
                 </div>
 
-                {/* Color Selection */}
+                {/* Color Selection - only show available colors */}
                 {colors.length > 0 && (
                     <div>
                         <p className="text-sm font-medium mb-2">
@@ -150,26 +166,26 @@ export function ProductDetail({
                             </span>
                         </p>
                         <div className="flex flex-wrap gap-2">
-                            {colors.map((color) => {
-                                const available = isVariantAvailable(color.id, selectedSize);
-                                const isSelected = selectedColor === color.id;
-                                const displayColor = color.colors.at(0) ?? "#888";
+                            {colors
+                                .filter((color) => isVariantAvailable(color.id, null))
+                                .map((color) => {
+                                    const isSelected = selectedColor === color.id;
+                                    const displayColor = color.colors.at(0) ?? "#888";
 
-                                return (
-                                    <button
-                                        key={color.id}
-                                        type="button"
-                                        disabled={!available}
-                                        onClick={() => setSelectedColor(color.id)}
-                                        className={`w-8 h-8 rounded-full border-2 transition-all ${isSelected
-                                            ? "border-foreground scale-110"
-                                            : "border-transparent hover:border-muted-foreground/50"
-                                            } ${!available ? "opacity-30 cursor-not-allowed" : ""}`}
-                                        style={{ backgroundColor: displayColor }}
-                                        title={color.title}
-                                    />
-                                );
-                            })}
+                                    return (
+                                        <button
+                                            key={color.id}
+                                            type="button"
+                                            onClick={() => setSelectedColor(color.id)}
+                                            className={`w-8 h-8 rounded-full border-2 transition-all ${isSelected
+                                                ? "border-foreground scale-110"
+                                                : "border-transparent hover:border-muted-foreground/50"
+                                                }`}
+                                            style={{ backgroundColor: displayColor }}
+                                            title={color.title}
+                                        />
+                                    );
+                                })}
                         </div>
                     </div>
                 )}
@@ -223,24 +239,50 @@ export function ProductDetail({
                         </p>
                     </div>
                 )}
-
-                {/* Tags */}
-                {product.tags.length > 0 && (
-                    <div className="pt-4 border-t border-border">
-                        <h2 className="text-sm font-medium mb-2">Tags</h2>
-                        <div className="flex flex-wrap gap-2">
-                            {product.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="px-2 py-1 text-xs bg-secondary rounded-md text-muted-foreground"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                )}
             </div>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {lightboxOpen && currentImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center cursor-zoom-out"
+                        onClick={() => setLightboxOpen(false)}
+                    >
+                        {/* Blurred background */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+                        />
+
+                        {/* Image */}
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            className="relative z-10 p-4"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Image
+                                src={currentImage.src}
+                                alt={product.title}
+                                width={1200}
+                                height={1200}
+                                className="max-w-[90vw] max-h-[85dvh] w-auto h-auto object-contain cursor-zoom-out"
+                                sizes="90vw"
+                                onClick={() => setLightboxOpen(false)}
+                                priority
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
