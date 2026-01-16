@@ -12,6 +12,8 @@ import {
     IconPencilLine,
     IconFilm,
     IconFilmFill,
+    IconTshirt,
+    IconTshirtFill,
 } from "symbols-react";
 import React from "react";
 
@@ -26,6 +28,7 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
     { label: "Home", href: "/", icon: IconHouse, iconActive: IconHouseFill },
     { label: "Work", href: "https://internet-engineering.com", external: true, icon: IconBriefcase, iconActive: IconBriefcaseFill },
+    { label: "Supply", href: "/supply", icon: IconTshirt, iconActive: IconTshirtFill },
     { label: "Writing", href: "/writing", icon: IconPencilLine, iconActive: IconPencilLine },
     { label: "Gallery", href: "/gallery", icon: IconPhotoStack, iconActive: IconPhotoStackFill },
     { label: "Videos", href: "/videos", icon: IconFilm, iconActive: IconFilmFill },
