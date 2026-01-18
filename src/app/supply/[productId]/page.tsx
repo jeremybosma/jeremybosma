@@ -71,6 +71,14 @@ export default async function ProductPage({ params }: Props) {
         .replace(/\n{3,}/g, "\n\n")
         .trim();
 
+    // Clean safety information from HTML tags
+    const cleanSafetyInfo = product.safety_information
+        ? product.safety_information
+              .replace(/<[^>]*>/g, "\n")
+              .replace(/\n{3,}/g, "\n\n")
+              .trim()
+        : null;
+
     return (
         <article className="text-[17px]">
             <Link
@@ -90,6 +98,7 @@ export default async function ProductPage({ params }: Props) {
                 lowestPrice={lowestPrice}
                 highestPrice={highestPrice}
                 cleanDescription={cleanDescription}
+                safetyInformation={cleanSafetyInfo}
             />
         </article>
     );

@@ -61,6 +61,7 @@ export type PrintifyProduct = {
     id: string;
     title: string;
     description: string;
+    safety_information?: string;
     tags: string[];
     options: PrintifyOption[];
     variants: PrintifyVariant[];
@@ -180,7 +181,7 @@ export function getEnabledVariants(product: PrintifyProduct): PrintifyVariant[] 
 export function formatPrice(cents: number): string {
     return new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: "USD",
+        currency: "EUR",
     }).format(cents / 100);
 }
 
