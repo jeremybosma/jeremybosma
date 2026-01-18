@@ -178,10 +178,56 @@ export function getEnabledVariants(product: PrintifyProduct): PrintifyVariant[] 
     return product.variants.filter((v) => v.is_enabled && v.is_available);
 }
 
-export function formatPrice(cents: number): string {
-    return new Intl.NumberFormat("en-US", {
+type CurrencyConfig = {
+    locale: string;
+    currency: string;
+};
+
+const REGION_CURRENCY_MAP: Record<string, CurrencyConfig> = {
+    // EU countries
+    AT: { locale: "de-AT", currency: "EUR" },
+    BE: { locale: "fr-BE", currency: "EUR" },
+    DE: { locale: "de-DE", currency: "EUR" },
+    ES: { locale: "es-ES", currency: "EUR" },
+    FI: { locale: "fi-FI", currency: "EUR" },
+    FR: { locale: "fr-FR", currency: "EUR" },
+    GR: { locale: "el-GR", currency: "EUR" },
+    IE: { locale: "en-IE", currency: "EUR" },
+    IT: { locale: "it-IT", currency: "EUR" },
+    LU: { locale: "fr-LU", currency: "EUR" },
+    NL: { locale: "nl-NL", currency: "EUR" },
+    PT: { locale: "pt-PT", currency: "EUR" },
+    // UK
+    GB: { locale: "en-GB", currency: "GBP" },
+    UK: { locale: "en-GB", currency: "GBP" },
+    // US
+    US: { locale: "en-US", currency: "USD" },
+    // Canada
+    CA: { locale: "en-CA", currency: "CAD" },
+    // Australia
+    AU: { locale: "en-AU", currency: "AUD" },
+    // Japan
+    JP: { locale: "ja-JP", currency: "JPY" },
+    // Switzerland
+    CH: { locale: "de-CH", currency: "CHF" },
+};
+
+// Default to EUR for European focus
+const DEFAULT_CURRENCY_CONFIG: CurrencyConfig = {
+    locale: "nl-NL",
+    currency: "EUR",
+};
+
+export function getCurrencyConfig(countryCode?: string | null): CurrencyConfig {
+    if (!countryCode) return DEFAULT_CURRENCY_CONFIG;
+    return REGION_CURRENCY_MAP[countryCode.toUpperCase()] ?? DEFAULT_CURRENCY_CONFIG;
+}
+
+export function formatPrice(cents: number, countryCode?: string | null): string {
+    const config = getCurrencyConfig(countryCode);
+    return new Intl.NumberFormat(config.locale, {
         style: "currency",
-        currency: "EUR",
+        currency: config.currency,
     }).format(cents / 100);
 }
 

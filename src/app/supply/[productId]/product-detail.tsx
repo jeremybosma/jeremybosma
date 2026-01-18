@@ -5,6 +5,7 @@ import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { PrintifyProduct, PrintifyVariant, PrintifyImage } from "@/lib/printify";
 import { formatPrice } from "@/lib/printify";
+import { useUserCountry } from "@/lib/use-user-country";
 import {
     Accordion,
     AccordionContent,
@@ -44,6 +45,7 @@ export function ProductDetail({
     const [selectedImageIndex, setSelectedImageIndex] = React.useState(0);
     const [lightboxOpen, setLightboxOpen] = React.useState(false);
     const [sizeUnit, setSizeUnit] = React.useState<"cm" | "in">("cm");
+    const userCountry = useUserCountry();
 
     // Size chart data (measurements in cm)
     const sizeChart = {
@@ -173,10 +175,10 @@ export function ProductDetail({
                     <h1 className="text-2xl font-semibold mb-2">{product.title}</h1>
                     <p className="text-xl">
                         {selectedVariant
-                            ? formatPrice(selectedVariant.price)
+                            ? formatPrice(selectedVariant.price, userCountry)
                             : lowestPrice === highestPrice
-                                ? formatPrice(lowestPrice)
-                                : `${formatPrice(lowestPrice)} - ${formatPrice(highestPrice)}`}
+                                ? formatPrice(lowestPrice, userCountry)
+                                : `${formatPrice(lowestPrice, userCountry)} - ${formatPrice(highestPrice, userCountry)}`}
                     </p>
                 </div>
 

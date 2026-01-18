@@ -4,7 +4,6 @@ import {
     getProduct,
     getAllProducts,
     getDefaultImage,
-    formatPrice,
     getEnabledVariants,
     getUniqueColors,
     getUniqueSizes,
