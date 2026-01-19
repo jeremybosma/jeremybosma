@@ -15,6 +15,7 @@ import {
     IconTshirt,
     IconTshirtFill,
     IconEnvelope,
+    IconGithubLogo,
 } from "symbols-react";
 import React from "react";
 
@@ -38,8 +39,9 @@ const NAV_ITEMS: NavItem[] = [
 
 const SOCIAL_ITEMS: NavItem[] = [
     { label: "Email", href: "mailto:prive@jeremybosma.nl", external: true, icon: IconEnvelope },
-    { label: "Instagram", href: "https://instagram.com/jeremybosma_", external: true, icon: IconInstagramLogo },
+    { label: "GitHub", href: "https://github.com/jeremybosma", external: true, icon: IconGithubLogo },
     { label: "X", href: "https://x.com/jeremybosma_", external: true, icon: IconXLogo },
+    { label: "Instagram", href: "https://instagram.com/jeremybosma_", external: true, icon: IconInstagramLogo },
     { label: "LinkedIn", href: "https://linkedin.com/in/jeremybosma", external: true, icon: IconLinkedinLogo },
 ];
 
