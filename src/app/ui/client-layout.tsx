@@ -2,6 +2,7 @@
 
 import React from "react";
 import Navigation from "./navigation";
+import { ViewTransitionContent } from "./view-transition-content";
 
 export const sectionProps = {
     variants: {
@@ -38,17 +39,19 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
             {/* Mobile Layout */}
             <div className="md:hidden flex flex-col p-6 gap-6">
                 <Navigation />
-                <main className="flex flex-col gap-8">{children}</main>
+                <main className="flex flex-col gap-8">
+                    <ViewTransitionContent>{children}</ViewTransitionContent>
+                </main>
             </div>
 
             {/* Desktop Layout - Sidebar on left, content centered */}
             <div className="hidden md:block min-h-screen">
-                <aside className="fixed top-0 left-0 h-screen w-48 p-8 flex flex-col">
+                <aside className="view-transition-sidebar fixed top-0 left-0 h-screen w-48 p-8 flex flex-col">
                     <Navigation />
                 </aside>
                 <main className="ml-48 min-h-screen flex justify-center">
                     <div className="w-full max-w-2xl p-8 flex flex-col gap-8">
-                        {children}
+                        <ViewTransitionContent>{children}</ViewTransitionContent>
                     </div>
                 </main>
             </div>

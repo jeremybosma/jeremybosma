@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ViewTransitionLink } from "./view-transition-link";
 import { AnimatePresence, motion } from "motion/react";
 import {
     IconHouse, IconHouseFill, IconPhotoStack, IconPhotoStackFill, IconAirpodsProLeft, IconXLogo, IconLine3Horizontal, IconXmark,
@@ -79,9 +79,9 @@ function NavLink({ item, isActive, onClick }: { item: NavItem; isActive: boolean
     }
 
     return (
-        <Link href={item.href} className={linkClasses} onClick={onClick}>
+        <ViewTransitionLink href={item.href} className={linkClasses} onClick={onClick}>
             {content}
-        </Link>
+        </ViewTransitionLink>
     );
 }
 

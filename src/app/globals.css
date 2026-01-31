@@ -223,3 +223,20 @@
 .prose details.accordion > *:last-child {
   @apply mb-4;
 }
+
+/* View transitions: only the content area animates; sidebar is excluded */
+.view-transition-content {
+  view-transition-name: main-content;
+}
+
+.view-transition-sidebar {
+  view-transition-name: none;
+}
+
+@supports (view-transition-name: none) {
+  ::view-transition-old(main-content),
+  ::view-transition-new(main-content) {
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+  }
+}
