@@ -14,9 +14,61 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://jeremybosma.nl";
+
 export const metadata: Metadata = {
-  title: "Jeremy Bosma",
-  description: "A software engineer with eye for design and micro-interactions creating digital experiences.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Jeremy Bosma",
+    template: "%s | Jeremy Bosma",
+  },
+  description:
+    "A software engineer with eye for design and micro-interactions creating digital experiences.",
+  keywords: [
+    "Jeremy Bosma",
+    "software engineer",
+    "design",
+    "frontend",
+    "digital experiences",
+    "portfolio",
+  ],
+  authors: [{ name: "Jeremy Bosma" }],
+  creator: "Jeremy Bosma",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Jeremy Bosma",
+    title: "Jeremy Bosma",
+    description:
+      "A software engineer with eye for design and micro-interactions creating digital experiences.",
+    images: [
+      {
+        url: "/ogimage.png",
+        width: 1200,
+        height: 630,
+        alt: "Jeremy Bosma",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeremy Bosma",
+    description:
+      "A software engineer with eye for design and micro-interactions creating digital experiences.",
+    images: ["/ogimage.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
