@@ -4,8 +4,6 @@ date: 2025-05-29
 description: My two cents on how we can save this country.
 ---
 
-# Reconstructing the Netherlands
-
 Since I was 14, I started noticing things around me and hearing conversations that made me realize our country is on a path that could lead to failure if nothing changes. That's why I'm writing this: to share my perspective on how we can rebuild the Netherlands and relive the 17th century all over again—figuratively, of course.
 
 [[TOC]]
