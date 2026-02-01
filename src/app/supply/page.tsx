@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllProducts, getDefaultImage, getEnabledVariants } from "@/lib/printify";
+import { getPublishedProducts, getDefaultImage } from "@/lib/printify";
 import { IconTshirt } from "symbols-react";
 
 export const revalidate = 300; // Revalidate every 5 minutes
@@ -10,11 +10,8 @@ export default async function SupplyPage() {
     let error: string | null = null;
 
     try {
-        products = await getAllProducts();
-        // Filter to only show visible products with enabled variants
-        products = products.filter(
-            (p) => p.visible && getEnabledVariants(p).length > 0
-        );
+        // Only fetch visible products with enabled variants
+        products = await getPublishedProducts();
     } catch (e) {
         error = e instanceof Error ? e.message : "Failed to load products";
     }

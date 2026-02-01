@@ -91,6 +91,33 @@ export type PrintifyProductsResponse = {
     total: number;
 };
 
+export type PrintifyProductCreatePayload = {
+    title: string;
+    description: string;
+    blueprint_id: number;
+    print_provider_id: number;
+    variants: Array<{
+        id: number;
+        price: number; // in cents
+        is_enabled: boolean;
+    }>;
+    print_areas: Array<{
+        variant_ids: number[];
+        placeholders: Array<{
+            position: string;
+            images: Array<{
+                id: string;
+                x: number;
+                y: number;
+                scale: number;
+                angle: number;
+            }>;
+        }>;
+    }>;
+    tags?: string[];
+    visible?: boolean;
+};
+
 // API Functions
 export async function getShops(): Promise<PrintifyShop[]> {
     const response = await fetch(`${PRINTIFY_API_BASE}/shops.json`, {
@@ -159,6 +186,159 @@ export async function getAllProducts(): Promise<PrintifyProduct[]> {
     }
 
     return allProducts;
+}
+
+// Write API Functions
+export async function createProduct(
+    payload: PrintifyProductCreatePayload
+): Promise<PrintifyProduct> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/products.json`,
+        {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify(payload),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to create product: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+
+    return response.json();
+}
+
+export async function updateProduct(
+    productId: string,
+    payload: Partial<PrintifyProductCreatePayload>
+): Promise<PrintifyProduct> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/products/${productId}.json`,
+        {
+            method: "PUT",
+            headers: getHeaders(),
+            body: JSON.stringify(payload),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to update product: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+
+    return response.json();
+}
+
+export async function deleteProduct(productId: string): Promise<void> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/products/${productId}.json`,
+        {
+            method: "DELETE",
+            headers: getHeaders(),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to delete product: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+}
+
+export async function publishProduct(
+    productId: string,
+    publishOptions: {
+        title?: boolean;
+        description?: boolean;
+        images?: boolean;
+        variants?: boolean;
+        tags?: boolean;
+    } = {}
+): Promise<void> {
+    const shopId = getShopId();
+    const options = {
+        title: publishOptions.title ?? true,
+        description: publishOptions.description ?? true,
+        images: publishOptions.images ?? true,
+        variants: publishOptions.variants ?? true,
+        tags: publishOptions.tags ?? true,
+    };
+
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/products/${productId}/publish.json`,
+        {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify(options),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to publish product: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+}
+
+// ⭐ KEY FUNCTION: Clear the "Publishing..." state
+export async function setPublishSucceeded(
+    productId: string,
+    externalData: {
+        external_id: string; // Your store's product ID
+        handle?: string; // URL handle/slug
+    }
+): Promise<void> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/products/${productId}/publishing_succeeded.json`,
+        {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify({
+                external: externalData,
+            }),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to set publish succeeded: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+}
+
+// Mark publishing as failed (also clears "Publishing..." state)
+export async function setPublishFailed(
+    productId: string,
+    reason: string
+): Promise<void> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/products/${productId}/publishing_failed.json`,
+        {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify({ reason }),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to set publish failed: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
 }
 
 // Helper functions
@@ -264,4 +444,58 @@ export function getUniqueSizes(product: PrintifyProduct): Array<{
         id: v.id,
         title: v.title,
     }));
+}
+
+// Get only published products for your storefront
+export async function getPublishedProducts(): Promise<PrintifyProduct[]> {
+    const allProducts = await getAllProducts();
+    return allProducts.filter(
+        (p) => p.visible && getEnabledVariants(p).length > 0
+    );
+}
+
+// ⭐ KEY FUNCTION: Sync products stuck in "Publishing..." state
+export async function syncPublishedProducts(): Promise<string[]> {
+    const allProducts = await getAllProducts();
+
+    // Only sync products that are locked (stuck in "Publishing..." state)
+    // These are products where someone clicked "Publish" in Printify UI
+    const lockedProducts = allProducts.filter(
+        (p) => p.is_locked && p.visible && getEnabledVariants(p).length > 0
+    );
+
+    if (lockedProducts.length === 0) {
+        console.log("[Printify Sync] No products in 'Publishing...' state to sync");
+        return [];
+    }
+
+    const syncedIds: string[] = [];
+
+    for (const product of lockedProducts) {
+        try {
+            await setPublishSucceeded(product.id, {
+                external_id: product.id,
+                handle: product.title.toLowerCase().replace(/\s+/g, "-"),
+            });
+            syncedIds.push(product.id);
+            console.log(
+                `[Printify Sync] Cleared publishing state: ${product.title} (${product.id})`
+            );
+        } catch (error) {
+            console.error(
+                `[Printify Sync] Failed to sync ${product.title} (${product.id}):`,
+                error
+            );
+        }
+    }
+
+    console.log(
+        `[Printify Sync] Synced ${syncedIds.length} of ${lockedProducts.length} locked products`
+    );
+    return syncedIds;
+}
+
+// Check if a product is ready for sale
+export function isProductPublished(product: PrintifyProduct): boolean {
+    return product.visible && getEnabledVariants(product).length > 0;
 }

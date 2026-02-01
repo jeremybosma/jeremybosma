@@ -2,11 +2,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import {
     getProduct,
-    getAllProducts,
+    getPublishedProducts,
     getDefaultImage,
     getEnabledVariants,
     getUniqueColors,
     getUniqueSizes,
+    isProductPublished,
 } from "@/lib/printify";
 import { IconChevronLeft } from "symbols-react";
 import { ProductDetail } from "./product-detail";
@@ -19,7 +20,7 @@ export const revalidate = 300;
 
 export async function generateStaticParams() {
     try {
-        const products = await getAllProducts();
+        const products = await getPublishedProducts();
         return products.map((product) => ({
             productId: product.id,
         }));
@@ -53,10 +54,12 @@ export default async function ProductPage({ params }: Props) {
         notFound();
     }
 
-    const enabledVariants = getEnabledVariants(product);
-    if (enabledVariants.length === 0) {
+    // Only show published products
+    if (!isProductPublished(product)) {
         notFound();
     }
+
+    const enabledVariants = getEnabledVariants(product);
 
     const colors = getUniqueColors(product);
     const sizes = getUniqueSizes(product);
