@@ -9,6 +9,10 @@
 import { syncPublishedProducts, getShops, getAllProducts, getEnabledVariants } from "../src/lib/printify";
 
 async function main() {
+  if (!process.env.PRINTIFY_SHOP_ID || !process.env.PRINTIFY_API_TOKEN) {
+    return console.log("PRINTIFY_SHOP_ID or PRINTIFY_API_TOKEN is not set, skipping sync products");
+  }
+
   console.log("\n🔄 Syncing products with Printify...\n");
 
   // First, show shop info for debugging

@@ -3,7 +3,7 @@ const PRINTIFY_API_BASE = "https://api.printify.com/v1";
 function getHeaders() {
     const token = process.env.PRINTIFY_API_TOKEN;
     if (!token) {
-        return;
+        throw new Error("PRINTIFY_API_TOKEN is not set");
     }
     return {
         Authorization: `Bearer ${token}`,
@@ -15,7 +15,7 @@ function getHeaders() {
 function getShopId() {
     const shopId = process.env.PRINTIFY_SHOP_ID;
     if (!shopId) {
-        return;
+        throw new Error("PRINTIFY_SHOP_ID is not set");
     }
     return shopId;
 }
