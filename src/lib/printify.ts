@@ -3,7 +3,7 @@ const PRINTIFY_API_BASE = "https://api.printify.com/v1";
 function getHeaders() {
     const token = process.env.PRINTIFY_API_TOKEN;
     if (!token) {
-        throw new Error("PRINTIFY_API_TOKEN is not set");
+        return;
     }
     return {
         Authorization: `Bearer ${token}`,
