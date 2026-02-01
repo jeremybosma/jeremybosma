@@ -15,7 +15,7 @@ function getHeaders() {
 function getShopId() {
     const shopId = process.env.PRINTIFY_SHOP_ID;
     if (!shopId) {
-        throw new Error("PRINTIFY_SHOP_ID is not set");
+        return;
     }
     return shopId;
 }
