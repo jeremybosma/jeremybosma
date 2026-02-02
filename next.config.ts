@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === "production" ? {
+      exclude: ["error", "warn"],
+    } : false,
+  },
   images: {
     remotePatterns: [
       {
@@ -20,6 +26,10 @@ const nextConfig: NextConfig = {
         hostname: "images-api.printify.com", // Printify CDN
       },
     ],
+    // Optimized image sizes for gallery - includes mobile-friendly sizes
+    deviceSizes: [420, 640, 768, 1024, 1280, 1536],
+    imageSizes: [48, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
 };
 

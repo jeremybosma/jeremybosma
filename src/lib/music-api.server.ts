@@ -100,6 +100,23 @@ export async function fetchAlbumArtServer(
             return null;
         }
 
+        // Verify image URL is accessible to prevent 404 errors during Next.js image optimization
+        // Use shorter timeout in dev, longer in production
+        const timeout = process.env.NODE_ENV === "production" ? 5000 : 2000;
+        try {
+            const imageResponse = await fetch(imageUrl, {
+                method: "HEAD",
+                signal: AbortSignal.timeout(timeout),
+            });
+            if (!imageResponse.ok) {
+                // Silently return null - broken URLs will use fallback placeholder
+                return null;
+            }
+        } catch (error) {
+            // Network errors or timeouts - silently return null
+            return null;
+        }
+
         return imageUrl;
     } catch (error) {
         console.error("Error fetching album art from Last.fm:", error);
@@ -113,20 +130,33 @@ export async function fetchAlbumArtServer(
 export async function fetchMultipleAlbumArtsServer(
     tracks: MusicData[]
 ): Promise<FetchedMusicData[]> {
+    const isProduction = process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production";
+    
     const results = await Promise.all(
         tracks.map(async (track) => {
+            // If track already has an image, use it
             if (track.image) {
                 return track as FetchedMusicData;
             }
 
+            // Fetch album art
             const image = await fetchAlbumArtServer(track.author, track.title, track.type, track.album);
+            
+            // In production: exclude tracks without images
+            if (isProduction && !image) {
+                return null;
+            }
+
+            // In dev: use placeholder if no image found
+            const fallbackImage = image || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23ddd' width='300' height='300'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='18' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3ENo Image%3C/text%3E%3C/svg%3E";
             return {
                 ...track,
-                image: image || "/placeholder-album.png",
+                image: fallbackImage,
             } as FetchedMusicData;
         })
     );
 
-    return results;
+    // Filter out null values (tracks without images in production)
+    return results.filter((track): track is FetchedMusicData => track !== null);
 }
 

@@ -137,16 +137,18 @@ export default function Gallery() {
                         {images.map((img, index) => {
                             const imageKey = img.src.src;
                             const isLoaded = loadedMap[imageKey];
-                            const isFirst = index === 0;
+                            // Prioritize first 6 images (above the fold on all screen sizes)
+                            const isPriority = index < 6;
                             return (
                                 <div
                                     key={imageKey}
-                                    className={`mb-4 break-inside-avoid snap-start transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+                                    className={`mb-4 break-inside-avoid snap-start ${isPriority ? "" : `transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}`}
                                 >
                                     <button
                                         type="button"
                                         onClick={() => setSelectedImage(img)}
                                         className="block w-full text-left cursor-zoom-in"
+                                        aria-label={`View ${img.alt} in fullscreen`}
                                     >
                                         <div
                                             className="relative w-full overflow-hidden bg-secondary/60"
@@ -155,11 +157,14 @@ export default function Gallery() {
                                             <Image
                                                 src={img.src}
                                                 alt={img.alt}
-                                                fill={!isFirst}
-                                                width={isFirst ? img.src.width : undefined}
-                                                height={isFirst ? img.src.height : undefined}
-                                                sizes="(min-width: 1024px) calc(min(100vw, 48rem) / 3), (min-width: 640px) calc(min(100vw, 48rem) / 2), min(100vw, 48rem)"
+                                                fill
+                                                sizes="(min-width: 1024px) 256px, (min-width: 640px) 384px, calc(100vw - 2rem)"
                                                 className="object-cover"
+                                                placeholder="blur"
+                                                blurDataURL={img.src.blurDataURL}
+                                                priority={isPriority}
+                                                fetchPriority={isPriority ? "high" : "auto"}
+                                                loading={isPriority ? "eager" : "lazy"}
                                                 onLoad={() => handleImageLoaded(imageKey)}
                                             />
                                         </div>

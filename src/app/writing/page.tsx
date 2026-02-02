@@ -14,6 +14,7 @@ export default function WritingPage() {
                         key={post.slug}
                         href={`/writing/${post.slug}`}
                         className="group flex items-center justify-between py-3 -mx-3 px-3 rounded-lg hover:bg-secondary/60 transition-colors"
+                        aria-label={`Read ${post.title}`}
                     >
                         <div className="flex flex-col gap-0.5 min-w-0">
                             <h2 className="font-medium truncate">{post.title}</h2>
@@ -25,7 +26,7 @@ export default function WritingPage() {
                             <time className="text-sm hidden sm:block">
                                 {formatDate(post.date)}
                             </time>
-                            <IconChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            <IconChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                         </div>
                     </Link>
                 ))}

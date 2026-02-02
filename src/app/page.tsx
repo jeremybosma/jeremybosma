@@ -24,7 +24,18 @@ export default function Home() {
         transition={{ ...sectionProps.transition, delay: 0 }}
         className="text-[17px] flex gap-2 items-center"
       >
-        <Image loading="eager" src={profile} alt="Jeremy Bosma" className="w-12 h-12 rounded-xl object-cover" width={100} height={100} />
+        <Image 
+          loading="eager" 
+          src={profile} 
+          alt="Jeremy Bosma" 
+          className="w-12 h-12 rounded-xl object-cover" 
+          width={100} 
+          height={100}
+          placeholder="blur"
+          blurDataURL={profile.blurDataURL}
+          priority
+          fetchPriority="high"
+        />
         <div>
           <h1>Jeremy Bosma</h1>
           <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
@@ -122,13 +133,29 @@ type ProjectProps = {
 
 function ProjectCard({ name, description, image, link }: ProjectProps) {
   return (
-    <Link href={link} className="group">
+    <Link 
+      href={link} 
+      className="group"
+      aria-label={`Visit ${name} website (opens in new tab)`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="flex gap-3 my-2 items-center">
-        <Image src={image} alt={name} className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]" width={100} height={100} loading="eager" />
+        <Image 
+          src={image} 
+          alt={`${name} project logo`} 
+          className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]" 
+          width={100} 
+          height={100} 
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL={image.blurDataURL}
+          sizes="34px"
+        />
         <div className="flex flex-col">
           <span className="flex gap-2 items-center">
             <h3>{name}</h3>
-            <IconArrowUpRight className="w-2 h-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+            <IconArrowUpRight className="w-2 h-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" aria-hidden="true" />
           </span>
           <p className="text-black/60 dark:text-white/60">{description}</p>
         </div>

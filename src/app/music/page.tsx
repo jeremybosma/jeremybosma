@@ -3,6 +3,9 @@ import type { MusicData } from "@/lib/music-api";
 import { MusicList } from "./music-list";
 import { ResetPreferenceButton } from "@/components/reset-preference-button";
 
+// Static generation: revalidate every 24 hours (86400 seconds)
+export const revalidate = 86400;
+
 // Now you only need to provide: title, author, and type
 // The album art will be fetched automatically on the server!
 const musicData: MusicData[] = [

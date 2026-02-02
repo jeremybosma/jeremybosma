@@ -119,6 +119,7 @@ export function ProductDetail({
                     type="button"
                     onClick={() => setLightboxOpen(true)}
                     className="aspect-square relative bg-secondary/30 overflow-hidden w-full cursor-zoom-in"
+                    aria-label={`View ${product.title} images in fullscreen`}
                 >
                     <AnimatePresence mode="wait">
                         {currentImage && (
@@ -132,11 +133,12 @@ export function ProductDetail({
                             >
                                 <Image
                                     src={currentImage.src}
-                                    alt={product.title}
+                                    alt={`${product.title} product image`}
                                     fill
                                     sizes="(min-width: 768px) 50vw, 100vw"
                                     className="object-contain"
                                     priority
+                                    fetchPriority="high"
                                 />
                             </motion.div>
                         )}
@@ -158,10 +160,11 @@ export function ProductDetail({
                             >
                                 <Image
                                     src={img.src}
-                                    alt={`${product.title} view ${index + 1}`}
+                                    alt={`${product.title} thumbnail view ${index + 1}`}
                                     fill
                                     sizes="72px"
                                     className="object-contain bg-secondary/30"
+                                    loading="lazy"
                                 />
                             </button>
                         ))}
@@ -391,7 +394,7 @@ export function ProductDetail({
                         >
                             <Image
                                 src={currentImage.src}
-                                alt={product.title}
+                                alt={`${product.title} fullscreen view`}
                                 width={1200}
                                 height={1200}
                                 className="max-w-[90vw] max-h-[85dvh] w-auto h-auto object-contain cursor-zoom-out"

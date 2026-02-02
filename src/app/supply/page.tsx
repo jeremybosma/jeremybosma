@@ -43,15 +43,17 @@ export default async function SupplyPage() {
                             key={product.id}
                             href={`/supply/${product.id}`}
                             className="group block"
+                            aria-label={`View ${product.title} product details`}
                         >
                             <div className="aspect-square relative bg-secondary/20 overflow-hidden mb-2">
                                 {imageUrl ? (
                                     <Image
                                         src={imageUrl}
-                                        alt={product.title}
+                                        alt={`${product.title} product image`}
                                         fill
                                         sizes="(min-width: 640px) 33vw, 50vw"
                                         className="object-contain group-hover:scale-105 transition-transform duration-300"
+                                        loading="lazy"
                                     />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center text-muted-foreground">

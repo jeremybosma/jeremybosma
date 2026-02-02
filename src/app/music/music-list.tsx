@@ -102,19 +102,28 @@ export function MusicList({ music }: MusicListProps) {
                             type="button"
                             className="flex gap-4 items-center p-4 group cursor-pointer hover:bg-muted/50 rounded-lg transition-colors text-left w-full touch-manipulation"
                             onClick={() => handleTrackClick(item)}
+                            aria-label={`Play ${item.title} by ${item.author}`}
                         >
                             <Image
                                 src={item.image}
-                                alt={item.title}
-                                loading="eager"
+                                alt={`Album art for ${item.title} by ${item.author}`}
+                                loading={index < 10 ? "eager" : "lazy"}
+                                priority={index < 10}
                                 className="w-12 h-12 object-cover group-hover:scale-90 group-hover:rotate-3 transition-all duration-300 pointer-events-none"
                                 width={100}
                                 height={100}
+                                sizes="48px"
+                                unoptimized={item.image.startsWith("data:")}
+                                onError={(e) => {
+                                    // Fallback to placeholder if image fails to load
+                                    const target = e.target as HTMLImageElement;
+                                    target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23ddd' width='100' height='100'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='12' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3ENo Image%3C/text%3E%3C/svg%3E";
+                                }}
                             />
                             <div className="flex flex-col pointer-events-none">
                                 <h2>{item.title}</h2>
                                 <p className="text-sm text-muted-foreground">{item.author}</p>
-                                <p className="text-sm flex text-muted-foreground/80 gap-1 items-center">
+                                <p className="text-sm flex text-muted-foreground gap-1 items-center">
                                     {item.unreleased && <span>Unreleased</span>}{" "}
                                     {item.unreleased
                                         ? item.type
