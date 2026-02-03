@@ -38,7 +38,7 @@ To be honest, I don't know exactly how to fix it. I'm heavily inspired by the Am
 
 From a technical perspective, I was also thinking about letting citizens vote directly, instead of having someone vote on their behalf who, most of the time, isn't even chosen by them. This could be done by introducing a system where you log in with DigiD to vote on polls about motions, amendments, or proposed laws.
 
-## 1. Make the Netherlands for the Dutchmans again
+## 1. Make the Netherlands for the Dutchmen again
 
 Before I'm called a racist or whatever label people use for saying this, I want to make it very clear that I'm not against anyone. What I am saying is that anyone who throws away their passport can just enter the country freely and [receive more than the average Dutch person for free](https://www.rijksoverheid.nl/onderwerpen/asielbeleid/vraag-en-antwoord/hoeveel-geld-krijgen-asielzoekers-in-nederland), while Dutch citizens pay for it and also pay for them getting stuff for free indirectly. This is not sustainable, and it has to stop immediately.
 
