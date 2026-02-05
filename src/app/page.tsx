@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { motion } from 'motion/react'
 
-import zerosystem from "../../public/projects/0system.png";
+import individu from "../../public/projects/individu.png";
 import fulldev from "../../public/projects/fulldev.png";
 import internetengineering from "../../public/projects/internet-engineering.png";
 import { sectionProps } from "./ui/client-layout";
@@ -74,8 +74,8 @@ export default function Home() {
       >
         <h2>What I'm working on</h2>
         <div className="flex flex-col">
+          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" />  
           <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
-          <ProjectCard name="0system" description="One AI integrating with all your applications to work for you" image={zerosystem} link="https://0system.com" />
           <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" />
           {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
