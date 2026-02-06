@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from "motion/react";
 
 import individu from "../../public/projects/individu.png";
 import fulldev from "../../public/projects/fulldev.png";
@@ -15,6 +16,8 @@ import integrate from "../../public/projects/integrate.png";
 import alfacollege from "../../public/alfa-college.png";
 
 export default function Home() {
+  const [showMiddleName, setShowMiddleName] = useState(false);
+
   return (
     <>
       <motion.section
@@ -36,8 +39,52 @@ export default function Home() {
           priority
           fetchPriority="high"
         />
-        <div>
-          <h1>Jeremy Bosma</h1>
+        <div className="min-w-0">
+          <button
+            type="button"
+            onClick={() => setShowMiddleName((prev) => !prev)}
+            className="cursor-pointer block w-fit p-0 m-0 bg-transparent border-0 text-left font-inherit outline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 dark:focus-visible:ring-white/20 rounded"
+            aria-label={showMiddleName ? "Show short name" : "Show full name"}
+          >
+            <h1 className="inline leading-none">
+              Jeremy{" "}
+              <span className="inline-block align-baseline">
+                <AnimatePresence initial={false}>
+                  {showMiddleName ? (
+                    <motion.span
+                      key="with-middle"
+                      initial={{ 
+                        x: -20, 
+                        opacity: 0,
+                        filter: "blur(8px)",
+                        width: 0
+                      }}
+                      animate={{ 
+                        x: 0, 
+                        opacity: 1,
+                        filter: "blur(0px)",
+                        width: "auto"
+                      }}
+                      exit={{ 
+                        x: -20, 
+                        opacity: 0,
+                        filter: "blur(8px)",
+                        width: 0
+                      }}
+                      transition={{ 
+                        duration: 0.4, 
+                        ease: [0.32, 0.72, 0, 1]
+                      }}
+                      className="inline-block whitespace-pre  align-baseline"
+                    >
+                      Benjamin{" "}
+                    </motion.span>
+                  ) : null}
+                </AnimatePresence>
+              </span>
+              Bosma
+            </h1>
+          </button>
           <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
         </div>
       </motion.section>
