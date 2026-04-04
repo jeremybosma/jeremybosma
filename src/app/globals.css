@@ -234,9 +234,30 @@
 }
 
 @supports (view-transition-name: none) {
+  /*
+   * During gallery lightbox VT, disable root + main-content cross-fades.
+   * Otherwise, after named backdrop/image layers finish, the root snapshot can
+   * briefly re-blend the old full-page paint and flash fullscreen blur.
+   */
+  html.gallery-lightbox-vt ::view-transition-group(root),
+  html.gallery-lightbox-vt ::view-transition-old(root),
+  html.gallery-lightbox-vt ::view-transition-new(root),
+  html.gallery-lightbox-vt ::view-transition-group(main-content),
+  html.gallery-lightbox-vt ::view-transition-old(main-content),
+  html.gallery-lightbox-vt ::view-transition-new(main-content) {
+    animation-duration: 0s !important;
+  }
+
   ::view-transition-old(main-content),
   ::view-transition-new(main-content) {
     animation-duration: 0.2s;
     animation-timing-function: ease-out;
   }
+
+  ::view-transition-group(gallery-photo) {
+    z-index: 20;
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
 }

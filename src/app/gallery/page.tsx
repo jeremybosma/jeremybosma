@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
+import { createPortal } from "react-dom";
+import { flushSync } from "react-dom";
 
 import Image, { type StaticImageData } from "next/image";
-import { motion, AnimatePresence } from "motion/react";
 
 import rotterdam from "../../../public/gallery/rotterdam.jpeg";
 import fit2 from "../../../public/gallery/fit2.jpeg";
@@ -51,7 +52,6 @@ import vlog from "../../../public/gallery/vlog.jpeg";
 import wave from "../../../public/gallery/wave.jpeg";
 import yacht2 from "../../../public/gallery/yacht2.jpeg";
 import yacht3 from "../../../public/gallery/yacht3.jpeg";
-import love from "../../../public/gallery/love.jpeg";
 import integrate from "../../../public/gallery/integrate.jpeg";
 import taper2 from "../../../public/gallery/taper2.jpeg";
 
@@ -110,24 +110,147 @@ const images: GalleryImage[] = [
     // { src: love, alt: "No comment (failed 💀)" },
 ];
 
+const supportsViewTransition =
+    typeof document !== "undefined" && "startViewTransition" in document;
+
+const GALLERY_VT_HTML_CLASS = "gallery-lightbox-vt";
+
+/** Wraps updates so root/main-content do not cross-fade (see globals.css). */
+function runGalleryViewTransition(update: () => void, onFinished?: () => void) {
+    if (!supportsViewTransition) {
+        update();
+        onFinished?.();
+        return { finished: Promise.resolve() };
+    }
+    document.documentElement.classList.add(GALLERY_VT_HTML_CLASS);
+    const transition = (
+        document as Document & { startViewTransition: (cb: () => void) => { finished: Promise<void> } }
+    ).startViewTransition(update);
+    transition.finished.finally(() => {
+        document.documentElement.classList.remove(GALLERY_VT_HTML_CLASS);
+        onFinished?.();
+    });
+    return transition;
+}
+
 export default function Gallery() {
     const [loadedMap, setLoadedMap] = React.useState<Record<string, boolean>>({});
     const [selectedImage, setSelectedImage] = React.useState<GalleryImage | null>(null);
+    /** Drives shared-element names for open/close transitions (thumbnail index). */
+    const [vtFromIndex, setVtFromIndex] = React.useState<number | null>(null);
+    const [portalReady, setPortalReady] = React.useState(false);
+    /** When true: solid scrim only (no live backdrop-filter). When false: frosted scrim during VT morphs. */
+    const [lightboxScrimSettled, setLightboxScrimSettled] = React.useState(false);
 
     const handleImageLoaded = React.useCallback((key: string) => {
         setLoadedMap((prev) => ({ ...prev, [key]: true }));
     }, []);
 
-    // Close on escape key
+    React.useEffect(() => {
+        setPortalReady(true);
+    }, []);
+
+    React.useEffect(() => {
+        if (!selectedImage) {
+            setLightboxScrimSettled(false);
+        }
+    }, [selectedImage]);
+
+    const openLightbox = React.useCallback((img: GalleryImage, index: number) => {
+        if (supportsViewTransition) {
+            flushSync(() => {
+                setVtFromIndex(index);
+            });
+            runGalleryViewTransition(() => {
+                flushSync(() => {
+                    setSelectedImage(img);
+                    setVtFromIndex(null);
+                    setLightboxScrimSettled(false);
+                });
+            }, () => {
+                setLightboxScrimSettled(true);
+            });
+        } else {
+            setSelectedImage(img);
+            setLightboxScrimSettled(true);
+        }
+    }, []);
+
+    const closeLightbox = React.useCallback(() => {
+        if (!selectedImage) return;
+        const idx = images.indexOf(selectedImage);
+        if (idx < 0) {
+            setSelectedImage(null);
+            return;
+        }
+        if (supportsViewTransition) {
+            flushSync(() => {
+                setLightboxScrimSettled(false);
+            });
+            runGalleryViewTransition(() => {
+                flushSync(() => {
+                    setSelectedImage(null);
+                    setVtFromIndex(idx);
+                });
+            }, () => {
+                setVtFromIndex(null);
+            });
+        } else {
+            setSelectedImage(null);
+        }
+    }, [selectedImage]);
+
     React.useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
-                setSelectedImage(null);
+                closeLightbox();
             }
         };
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, []);
+    }, [closeLightbox]);
+
+    const lightbox =
+        selectedImage && portalReady ? (
+            <div
+                className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center"
+                onClick={closeLightbox}
+                role="presentation"
+            >
+                {/*
+                  Frosted scrim only during VT: live backdrop-filter recomputes stronger when the
+                  morph ends. After open, drop to solid dim so there is no extra blur on top of the
+                  transition (csswg-drafts#9358).
+                */}
+                <div
+                    className={
+                        lightboxScrimSettled
+                            ? "absolute inset-0 bg-black/72"
+                            : "absolute inset-0 bg-black/60 backdrop-blur-md"
+                    }
+                    aria-hidden
+                />
+                <div
+                    className="relative z-10 p-4"
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                    role="presentation"
+                >
+                    <Image
+                        src={selectedImage.src}
+                        alt={selectedImage.alt}
+                        width={selectedImage.src.width}
+                        height={selectedImage.src.height}
+                        className="max-h-[85dvh] w-auto max-w-[90vw] cursor-zoom-out object-contain"
+                        sizes="90vw"
+                        style={{ viewTransitionName: "gallery-photo" }}
+                        onClick={closeLightbox}
+                        priority
+                    />
+                    <p className="mt-3 text-center text-sm text-white/80">{selectedImage.alt}</p>
+                </div>
+            </div>
+        ) : null;
 
     return (
         <>
@@ -137,8 +260,13 @@ export default function Gallery() {
                         {images.map((img, index) => {
                             const imageKey = img.src.src;
                             const isLoaded = loadedMap[imageKey];
-                            // Prioritize first 6 images (above the fold on all screen sizes)
                             const isPriority = index < 6;
+                            const thumbVtName =
+                                selectedImage === img
+                                    ? "none"
+                                    : vtFromIndex === index
+                                      ? "gallery-photo"
+                                      : undefined;
                             return (
                                 <div
                                     key={imageKey}
@@ -146,13 +274,16 @@ export default function Gallery() {
                                 >
                                     <button
                                         type="button"
-                                        onClick={() => setSelectedImage(img)}
-                                        className="block w-full text-left cursor-zoom-in"
+                                        onClick={() => openLightbox(img, index)}
+                                        className="block w-full cursor-zoom-in text-left"
                                         aria-label={`View ${img.alt} in fullscreen`}
                                     >
                                         <div
                                             className="relative w-full overflow-hidden bg-secondary/60"
-                                            style={{ aspectRatio: `${img.src.width} / ${img.src.height}` }}
+                                            style={{
+                                                aspectRatio: `${img.src.width} / ${img.src.height}`,
+                                                ...(thumbVtName !== undefined ? { viewTransitionName: thumbVtName } : {}),
+                                            }}
                                         >
                                             <Image
                                                 src={img.src}
@@ -168,9 +299,7 @@ export default function Gallery() {
                                                 onLoad={() => handleImageLoaded(imageKey)}
                                             />
                                         </div>
-                                        <p className="mt-2 text-[13px] text-muted-foreground">
-                                            {img.alt}
-                                        </p>
+                                        <p className="mt-2 text-[13px] text-muted-foreground">{img.alt}</p>
                                     </button>
                                 </div>
                             );
@@ -179,56 +308,7 @@ export default function Gallery() {
                 </div>
             </section>
 
-            {/* Lightbox */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center cursor-zoom-out"
-                        onClick={() => setSelectedImage(null)}
-                    >
-                        {/* Blurred background */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-black/60 backdrop-blur-md"
-                        />
-
-                        {/* Image */}
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="relative z-10 p-4"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <Image
-                                src={selectedImage.src}
-                                alt={selectedImage.alt}
-                                width={selectedImage.src.width}
-                                height={selectedImage.src.height}
-                                className="max-w-[90vw] max-h-[85dvh] w-auto h-auto object-contain cursor-zoom-out"
-                                sizes="90vw"
-                                onClick={() => setSelectedImage(null)}
-                                priority
-                            />
-                            <motion.p
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 }}
-                                className="mt-3 text-center text-sm text-white/80"
-                            >
-                                {selectedImage.alt}
-                            </motion.p>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {portalReady ? createPortal(lightbox, document.body) : null}
         </>
     );
 }
