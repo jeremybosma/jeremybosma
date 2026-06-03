@@ -32,10 +32,7 @@ export async function fetchAlbumArtServer(
             });
 
             const response = await fetch(
-                `https://ws.audioscrobbler.com/2.0/?${params}`,
-                {
-                    next: { revalidate: 86400 },
-                }
+                `https://ws.audioscrobbler.com/2.0/?${params}`
             );
 
             if (response.ok) {
@@ -59,10 +56,7 @@ export async function fetchAlbumArtServer(
             });
 
             const response = await fetch(
-                `https://ws.audioscrobbler.com/2.0/?${params}`,
-                {
-                    next: { revalidate: 86400 },
-                }
+                `https://ws.audioscrobbler.com/2.0/?${params}`
             );
 
             if (!response.ok) {
@@ -130,7 +124,10 @@ export async function fetchAlbumArtServer(
 export async function fetchMultipleAlbumArtsServer(
     tracks: MusicData[]
 ): Promise<FetchedMusicData[]> {
-    const isProduction = process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production";
+    const isProduction =
+        import.meta.env.PROD ||
+        process.env.NODE_ENV === "production" ||
+        process.env.VERCEL_ENV === "production";
     
     const results = await Promise.all(
         tracks.map(async (track) => {

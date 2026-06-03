@@ -122,7 +122,6 @@ export type PrintifyProductCreatePayload = {
 export async function getShops(): Promise<PrintifyShop[]> {
     const response = await fetch(`${PRINTIFY_API_BASE}/shops.json`, {
         headers: getHeaders(),
-        next: { revalidate: 3600 }, // Cache for 1 hour
     });
 
     if (!response.ok) {
@@ -141,7 +140,6 @@ export async function getProducts(
         `${PRINTIFY_API_BASE}/shops/${shopId}/products.json?page=${page}&limit=${limit}`,
         {
             headers: getHeaders(),
-            next: { revalidate: 300 }, // Cache for 5 minutes
         }
     );
 
@@ -158,7 +156,6 @@ export async function getProduct(productId: string): Promise<PrintifyProduct> {
         `${PRINTIFY_API_BASE}/shops/${shopId}/products/${productId}.json`,
         {
             headers: getHeaders(),
-            next: { revalidate: 300 }, // Cache for 5 minutes
         }
     );
 

@@ -1,0 +1,190 @@
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { sectionProps } from "@/components/layouts/client-shell";
+import { IconArrowUpRight } from "@/lib/symbols-react";
+
+const profile = "/profile2.jpeg";
+const individu = "/projects/individu.png";
+const fulldev = "/projects/fulldev.png";
+const internetengineering = "/projects/internet-engineering.png";
+const integrate = "/projects/integrate.png";
+const alfacollege = "/alfa-college.png";
+
+export default function HomePage() {
+  const [showMiddleName, setShowMiddleName] = useState(false);
+
+  return (
+    <div className="page-sections flex flex-col gap-8">
+      <motion.section
+        {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0 }}
+        className="text-[17px] flex gap-2 items-center"
+      >
+        <img
+          loading="eager"
+          src={profile}
+          alt="Jeremy Bosma"
+          className="w-12 h-12 rounded-xl object-cover"
+          width={100}
+          height={100}
+          fetchPriority="high"
+        />
+        <div className="min-w-0">
+          <button
+            type="button"
+            onClick={() => setShowMiddleName((prev) => !prev)}
+            className="cursor-pointer block w-fit p-0 m-0 bg-transparent border-0 text-left font-inherit outline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 dark:focus-visible:ring-white/20 rounded"
+            aria-label={showMiddleName ? "Show short name" : "Show full name"}
+          >
+            <h1 className="inline leading-none">
+              Jeremy{" "}
+              <span className="inline-block align-baseline">
+                <AnimatePresence initial={false}>
+                  {showMiddleName ? (
+                    <motion.span
+                      key="with-middle"
+                      initial={{ 
+                        x: -20, 
+                        opacity: 0,
+                        filter: "blur(8px)",
+                        width: 0
+                      }}
+                      animate={{ 
+                        x: 0, 
+                        opacity: 1,
+                        filter: "blur(0px)",
+                        width: "auto"
+                      }}
+                      exit={{ 
+                        x: -20, 
+                        opacity: 0,
+                        filter: "blur(8px)",
+                        width: 0
+                      }}
+                      transition={{ 
+                        duration: 0.4, 
+                        ease: [0.32, 0.72, 0, 1]
+                      }}
+                      className="inline-block whitespace-pre  align-baseline"
+                    >
+                      Benjamin{" "}
+                    </motion.span>
+                  ) : null}
+                </AnimatePresence>
+              </span>
+              Bosma
+            </h1>
+          </button>
+          <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
+        </div>
+      </motion.section>
+
+      <motion.section
+        {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.1 }}
+      >
+        <p>
+          I'm a software engineer with eye for design and micro-interactions and I aim to create memorable digital experiences.
+        </p>
+      </motion.section>
+
+      {false && (
+        <motion.section
+          {...sectionProps}
+          initial="hidden"
+          animate="visible"
+          transition={{ ...sectionProps.transition, delay: 0.2 }}
+          className="bg-white border rounded-md p-4"
+        >
+          <h2>Open to freelance work (Fixed or hourly rate)</h2>
+          <p className="text-black/60 dark:text-white/60">I'm currently looking for a new challenge. If you have any opportunities, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_">X</a> for all your programming and or design needs.</p>
+        </motion.section>
+      )}
+
+      <motion.section
+        {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.2 }}
+      >
+        <h2>Highlighted work</h2>
+        <div className="flex flex-col">
+          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" />  
+          <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
+          <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" />
+          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" />
+          {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
+          {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
+          {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
+          {/* <ProjectCard name="explore.work" description="AI-assisted job finder with realtime resume suggestions and inquiry-tracker" image={explorework} link="https://explore.work" />
+          <ProjectCard name="outfitsbio" description="Keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" /> */}
+        </div>
+      </motion.section>
+
+      <motion.section
+        {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.3 }}
+      >
+        <h2>Education</h2>
+        <div className="flex flex-col">
+          <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 – May 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" />
+        </div>
+      </motion.section>
+
+      <motion.section
+        {...sectionProps}
+        initial="hidden"
+        animate="visible"
+        transition={{ ...sectionProps.transition, delay: 0.35 }}
+      >
+        <h2>Contact</h2>
+        <p className="text-black/60 dark:text-white/60">
+          I'm always looking for new opportunities and collaborations. If you have any questions or would like to get in touch, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_" target="_blank" rel="noopener noreferrer">X</a>.
+        </p>
+      </motion.section>
+    </div>
+  );
+}
+
+type ProjectProps = {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+};
+
+function ProjectCard({ name, description, image, link }: ProjectProps) {
+  return (
+    <a
+      href={link}
+      className="group"
+      aria-label={`Visit ${name} website (opens in new tab)`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="flex gap-3 my-2 items-center">
+        <img
+          src={image}
+          alt={`${name} project logo`}
+          className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]"
+          width={100}
+          height={100}
+          loading="lazy"
+        />
+        <div className="flex flex-col">
+          <span className="flex gap-2 items-center">
+            <h3>{name}</h3>
+            <IconArrowUpRight className="w-2 h-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" aria-hidden="true" />
+          </span>
+          <p className="text-black/60 dark:text-white/60">{description}</p>
+        </div>
+      </div>
+    </a>
+  );
+}

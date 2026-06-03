@@ -1,9 +1,6 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
-import { IconAppleLogo, IconPlayFill, IconFilmStack, IconYoutubeLogo } from "symbols-react";
+import { IconAppleLogo, IconPlayFill, IconFilmStack, IconYoutubeLogo } from "@/lib/symbols-react";
 
 type Platform = "apple" | "spotify" | "youtube";
 
@@ -103,7 +100,7 @@ export function StreamingPlatformDialog({
                         {/* Track Info */}
                         <div className="flex gap-4 items-center mb-6">
                             {albumArt && (
-                                <Image
+                                <img
                                     src={albumArt}
                                     alt={trackTitle}
                                     width={56}

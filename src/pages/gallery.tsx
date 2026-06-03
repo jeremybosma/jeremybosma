@@ -1,0 +1,17 @@
+import BaseLayout from "@/components/layouts/base";
+import ClientShell from "@/components/layouts/client-shell";
+import GalleryPage from "@/components/pages/gallery-page";
+
+export default function Page() {
+  return (
+    <BaseLayout
+      title="Gallery"
+      description="Photos from Jeremy Bosma — travel, work, and everyday life."
+      pathname="/gallery"
+    >
+      <ClientShell client:load pathname="/gallery">
+        <GalleryPage client:load />
+      </ClientShell>
+    </BaseLayout>
+  );
+}

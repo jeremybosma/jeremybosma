@@ -13,9 +13,16 @@
 # testing
 /coverage
 
-# next.js
+# next.js (legacy)
 /.next/
 /out/
+
+# sitex / vite
+/dist/
+
+# generated sitex routes (from scripts/generate-pages.ts)
+/src/pages/writing/
+/src/pages/supply/
 
 # production
 /build
