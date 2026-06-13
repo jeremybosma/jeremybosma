@@ -1,219 +1,6 @@
 {
-  "syncedAt": "2026-06-13T16:12:21.448Z",
+  "syncedAt": "2026-06-13T16:47:35.102Z",
   "tracks": [
-    {
-      "title": "2005",
-      "author": "Ian",
-      "type": "album",
-      "image": "/music/covers/ian-2005.jpg"
-    },
-    {
-      "title": "100 Grams",
-      "author": "Eem Triplin",
-      "type": "single",
-      "album": "Coming Undone",
-      "image": "/music/covers/eem-triplin-100-grams-coming-undone.jpg"
-    },
-    {
-      "title": "What Do You Mean?",
-      "author": "Justin Bieber",
-      "type": "single",
-      "album": "Purpose",
-      "image": "/music/covers/justin-bieber-what-do-you-mean-purpose.jpg"
-    },
-    {
-      "title": "What Did I Miss?",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-what-did-i-miss.jpg"
-    },
-    {
-      "title": "Donda (Deluxe)",
-      "author": "Kanye West",
-      "type": "album",
-      "image": "/music/covers/kanye-west-donda-deluxe.jpg"
-    },
-    {
-      "title": "Man Of The Year",
-      "author": "plaqueboymax",
-      "type": "single",
-      "album": "Man Of The Year",
-      "image": "/music/covers/plaqueboymax-man-of-the-year-man-of-the-year.jpg"
-    },
-    {
-      "title": "Wheels Fall Off",
-      "author": "Ty Dolla $ign",
-      "type": "single",
-      "album": "Wheels Fall Off",
-      "image": "/music/covers/ty-dolla-ign-wheels-fall-off-wheels-fall-off.jpg"
-    },
-    {
-      "title": "scars",
-      "author": "Baby Keem",
-      "type": "single",
-      "album": "The Melodic Blue",
-      "image": "/music/covers/baby-keem-scars-the-melodic-blue.jpg"
-    },
-    {
-      "title": "WHEN I THINK ABOUT IT",
-      "author": "Future",
-      "type": "single",
-      "album": "BEASTMODE 2",
-      "image": "/music/covers/future-when-i-think-about-it-beastmode-2.jpg"
-    },
-    {
-      "title": "WHERE DO YOU SLEEP?",
-      "author": "The Kid LAROI",
-      "type": "single",
-      "album": "THE FIRST TIME (DELUXE VERSION)",
-      "image": "/music/covers/the-kid-laroi-where-do-you-sleep-the-first-time-deluxe-version.jpg"
-    },
-    {
-      "title": "Can You Stand the Rain",
-      "author": "New Edition",
-      "type": "single",
-      "image": "/music/covers/new-edition-can-you-stand-the-rain.jpg"
-    },
-    {
-      "title": "Forever on Some Fly Shit",
-      "author": "Nipsey Hussle",
-      "type": "single",
-      "album": "TMC",
-      "image": "/music/covers/nipsey-hussle-forever-on-some-fly-shit-tmc.jpg"
-    },
-    {
-      "title": "Enjoy The Show",
-      "author": "The Weeknd",
-      "type": "single",
-      "album": "Hurry Up Tomorrow",
-      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
-    },
-    {
-      "title": "Peaches",
-      "author": "Justin Bieber",
-      "type": "single",
-      "album": "Justice",
-      "image": "/music/covers/justin-bieber-peaches-justice.jpg"
-    },
-    {
-      "title": "Banking On Me",
-      "author": "Gunna",
-      "type": "single",
-      "image": "/music/covers/gunna-banking-on-me.jpg"
-    },
-    {
-      "title": "The College Dropout",
-      "author": "Kanye West",
-      "type": "album",
-      "image": "/music/covers/kanye-west-the-college-dropout.jpg"
-    },
-    {
-      "title": "Uuugly",
-      "author": "Drake",
-      "type": "single",
-      "image": "/music/covers/drake-uuugly.jpg"
-    },
-    {
-      "title": "Xscape",
-      "author": "Michael Jackson",
-      "type": "album",
-      "image": "/music/covers/michael-jackson-xscape.jpg"
-    },
-    {
-      "title": "act ii: date @ 8",
-      "author": "4batz",
-      "type": "single",
-      "image": "/music/covers/4batz-act-ii-date-8.jpg"
-    },
-    {
-      "title": "Jesus Is King",
-      "author": "Kanye West",
-      "type": "album",
-      "image": "/music/covers/kanye-west-jesus-is-king.jpg"
-    },
-    {
-      "title": "Figure It Out",
-      "author": "Ian",
-      "type": "single",
-      "image": "/music/covers/ian-figure-it-out.jpg"
-    },
-    {
-      "title": "NOKIA",
-      "author": "Drake",
-      "type": "single",
-      "image": "/music/covers/drake-nokia.jpg"
-    },
-    {
-      "title": "DONDA 2",
-      "author": "Kanye West",
-      "type": "album",
-      "image": "/music/covers/kanye-west-donda-2.jpg"
-    },
-    {
-      "title": "Draft Day",
-      "author": "Drake",
-      "type": "single",
-      "album": "Scorpion",
-      "image": "/music/covers/drake-draft-day-scorpion.jpg"
-    },
-    {
-      "title": "HIM ALL ALONG",
-      "author": "Gunna",
-      "type": "single",
-      "image": "/music/covers/gunna-him-all-along.jpg"
-    },
-    {
-      "title": "Views",
-      "author": "Drake",
-      "type": "album",
-      "image": "/music/covers/drake-views.jpg"
-    },
-    {
-      "title": "back in the a",
-      "author": "Gunna",
-      "type": "single",
-      "image": "/music/covers/gunna-back-in-the-a.jpg"
-    },
-    {
-      "title": "Scorpion",
-      "author": "Drake",
-      "type": "album",
-      "image": "/music/covers/drake-draft-day-scorpion.jpg"
-    },
-    {
-      "title": "All To Myself",
-      "author": "Future",
-      "type": "single",
-      "image": "/music/covers/future-all-to-myself.jpg"
-    },
-    {
-      "title": "Can't Tell Me Nothing",
-      "author": "Kanye West",
-      "type": "single",
-      "image": "/music/covers/kanye-west-can-t-tell-me-nothing.jpg"
-    },
-    {
-      "title": "today i did good",
-      "author": "Gunna",
-      "type": "single",
-      "image": "/music/covers/gunna-today-i-did-good.jpg"
-    },
-    {
-      "title": "2 Mazza",
-      "author": "Smiley",
-      "type": "single",
-      "album": "Don't box me in",
-      "image": "/music/covers/smiley-2-mazza-don-t-box-me-in.jpg"
-    },
-    {
-      "title": "Blue Green Red",
-      "author": "Drake",
-      "type": "single",
-      "album": "No Face",
-      "unreleased": true,
-      "image": "/music/covers/drake-blue-green-red-no-face.jpg"
-    },
     {
       "title": "BBW",
       "author": "Drake",
@@ -222,15 +9,68 @@
       "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
     },
     {
-      "title": "Road Trips",
+      "title": "Call Out My Name",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "My Dear Melancholy,",
+      "image": "/music/covers/the-weeknd-my-dear-melancholy.jpg"
+    },
+    {
+      "title": "GEMINI SEASON",
+      "author": "Kanye West",
+      "type": "single",
+      "image": "/music/covers/kanye-west-gemini-season.jpg"
+    },
+    {
+      "title": "Drop The Lo",
+      "author": "Bryson Tiller",
+      "type": "single",
+      "image": "/music/covers/bryson-tiller-drop-the-lo.jpg"
+    },
+    {
+      "title": "Cinderella (feat. Ty Dolla $ign)",
+      "author": "Mac Miller",
+      "type": "single",
+      "album": "The Divine Feminine",
+      "image": "/music/covers/mac-miller-the-divine-feminine.jpg"
+    },
+    {
+      "title": "U My Everything",
+      "author": "Sexyy Red & Drake",
+      "type": "single",
+      "album": "In Sexyy We Trust",
+      "image": "/music/covers/sexyy-red-in-sexyy-we-trust.jpg"
+    },
+    {
+      "title": "HIGHJACK (feat. Jessica Pratt)",
+      "author": "A$AP Rocky",
+      "type": "single",
+      "image": "/music/covers/a-ap-rocky-highjack-feat-jessica-pratt.jpg"
+    },
+    {
+      "title": "Favorite (feat. Jeremih)",
+      "author": "Nicki Minaj",
+      "type": "single",
+      "album": "The Pinkprint (Deluxe)",
+      "image": "/music/covers/nicki-minaj-the-pinkprint-deluxe.jpg"
+    },
+    {
+      "title": "Cece's Interlude",
       "author": "Drake",
       "type": "single",
-      "album": "MAID OF HONOUR",
-      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+      "album": "Thank Me Later",
+      "image": "/music/covers/drake-thank-me-later.jpg"
+    },
+    {
+      "title": "Like a Tattoo",
+      "author": "Sade",
+      "type": "single",
+      "album": "Love Deluxe",
+      "image": "/music/covers/sade-love-deluxe.jpg"
     },
     {
       "title": "Cheetah Print",
-      "author": "Drake",
+      "author": "Drake & Sexyy Red",
       "type": "single",
       "album": "MAID OF HONOUR",
       "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
@@ -243,6 +83,19 @@
       "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
     },
     {
+      "title": "Un-thinkable (I'm Ready) [Remix] {feat. Drake}",
+      "author": "Alicia Keys",
+      "type": "single",
+      "image": "/music/covers/alicia-keys-un-thinkable-i-m-ready-remix-feat-drake.jpg"
+    },
+    {
+      "title": "Don’t Worry",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
       "title": "Princess",
       "author": "Drake",
       "type": "single",
@@ -250,109 +103,52 @@
       "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
     },
     {
-      "title": "New Bestie",
+      "title": "6PM In New York",
+      "author": "Drake",
+      "type": "single",
+      "album": "If You're Reading This It's Too Late",
+      "image": "/music/covers/drake-if-you-re-reading-this-it-s-too-late.jpg"
+    },
+    {
+      "title": "Road Trips",
       "author": "Drake",
       "type": "single",
       "album": "MAID OF HONOUR",
       "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
-    },
-    {
-      "title": "Hoe Phase",
-      "author": "Drake",
-      "type": "single",
-      "album": "MAID OF HONOUR",
-      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
-    },
-    {
-      "title": "Stuck",
-      "author": "Drake",
-      "type": "single",
-      "album": "MAID OF HONOUR",
-      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
-    },
-    {
-      "title": "Don't Worry",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
     },
     {
       "title": "National Treasures",
       "author": "Drake",
       "type": "single",
       "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Return of the Mack",
+      "author": "Mark Morrison",
+      "type": "single",
+      "image": "/music/covers/mark-morrison-return-of-the-mack.jpg"
     },
     {
       "title": "Janice STFU",
       "author": "Drake",
       "type": "single",
       "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
     },
     {
       "title": "Burning Bridges",
       "author": "Drake",
       "type": "single",
       "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
     },
     {
-      "title": "Little Birdie",
+      "title": "New Bestie",
       "author": "Drake",
       "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "Whisper My Name",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "Make Them Know",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "Firm Friends",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "Make Them Remember",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "2 Hard 4 The Radio",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "Shabang",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
-    },
-    {
-      "title": "Make Them Cry",
-      "author": "Drake",
-      "type": "single",
-      "album": "ICEMAN",
-      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
     },
     {
       "title": "WNBA",
@@ -369,6 +165,27 @@
       "image": "/music/covers/drake-wnba-habibti.jpg"
     },
     {
+      "title": "Hoe Phase",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Little Birdie",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Whisper My Name",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
       "title": "White Bone",
       "author": "Drake",
       "type": "single",
@@ -383,8 +200,8 @@
       "image": "/music/covers/drake-wnba-habibti.jpg"
     },
     {
-      "title": "I'm Spent",
-      "author": "Drake",
+      "title": "I’m Spent",
+      "author": "Drake & Loe Shimmy",
       "type": "single",
       "album": "HABIBTI",
       "image": "/music/covers/drake-wnba-habibti.jpg"
@@ -395,6 +212,81 @@
       "type": "single",
       "album": "HABIBTI",
       "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "Make Them Know",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Firm Friends",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Make Them Remember",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "2 Hard 4 The Radio",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Shabang",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Make Them Cry",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Stuck",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "U Fancy ?",
+      "author": "Nine Vicious",
+      "type": "single",
+      "image": "/music/covers/nine-vicious-u-fancy.jpg"
+    },
+    {
+      "title": "ss",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "A Great Chaos (Deluxe)",
+      "image": "/music/covers/ken-carson-a-great-chaos-deluxe.jpg"
+    },
+    {
+      "title": "Tuition Remix",
+      "author": "Don Toliver & Lil Baby",
+      "type": "single",
+      "image": "/music/covers/don-toliver-tuition-remix.jpg"
+    },
+    {
+      "title": "real feel",
+      "author": "skaiwater",
+      "type": "single",
+      "album": "#gigi",
+      "image": "/music/covers/skaiwater-gigi.jpg"
     },
     {
       "title": "Violent Crimes",
@@ -425,11 +317,31 @@
       "image": "/music/covers/tems-higher-for-broken-ears.jpg"
     },
     {
+      "title": "GEEKIN",
+      "author": "Lil Yachty & Nemzzz",
+      "type": "single",
+      "image": "/music/covers/lil-yachty-geekin.jpg"
+    },
+    {
       "title": "Wanna Be Startin' Somethin'",
       "author": "Michael Jackson",
       "type": "single",
       "album": "Thriller",
       "image": "/music/covers/michael-jackson-wanna-be-startin-somethin-thriller.jpg"
+    },
+    {
+      "title": "Break My Heart (feat. Rick Ross)",
+      "author": "Estelle",
+      "type": "single",
+      "album": "All of Me",
+      "image": "/music/covers/estelle-all-of-me.jpg"
+    },
+    {
+      "title": "Everyday Hustle",
+      "author": "Future, Metro Boomin & Rick Ross",
+      "type": "single",
+      "album": "WE DON'T TRUST YOU",
+      "image": "/music/covers/future-we-don-t-trust-you.jpg"
     },
     {
       "title": "P.Y.T. (Pretty Young Thing)",
@@ -442,8 +354,3120 @@
       "title": "The Girl Is Mine (feat. Paul McCartney)",
       "author": "Michael Jackson",
       "type": "single",
-      "album": "Thriller",
+      "album": "The Indispensable Collection",
       "image": "/music/covers/michael-jackson-wanna-be-startin-somethin-thriller.jpg"
+    },
+    {
+      "title": "ATTENTION",
+      "author": "LAY LOE",
+      "type": "single",
+      "image": "/music/covers/lay-loe-attention.jpg"
+    },
+    {
+      "title": "SUPPOSED TO BE LOVED (feat. Lil Uzi Vert)",
+      "author": "DJ Khaled, Lil Baby & Future",
+      "type": "single",
+      "image": "/music/covers/dj-khaled-supposed-to-be-loved-feat-lil-uzi-vert.jpg"
+    },
+    {
+      "title": "Jumpman",
+      "author": "Drake & Future",
+      "type": "single",
+      "album": "What a Time To Be Alive",
+      "image": "/music/covers/drake-what-a-time-to-be-alive.jpg"
+    },
+    {
+      "title": "Draco",
+      "author": "Future",
+      "type": "single",
+      "album": "FUTURE",
+      "image": "/music/covers/future-future.jpg"
+    },
+    {
+      "title": "2005",
+      "author": "Ian",
+      "type": "album",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "Versace (feat. Drake) [Remix]",
+      "author": "Migos",
+      "type": "single",
+      "image": "/music/covers/migos-versace-feat-drake-remix.jpg"
+    },
+    {
+      "title": "No New Friends (SFTB Remix) [feat. Drake, Rick Ross & Lil Wayne] [feat. Drake, Rick Ross & Lil Wayne]",
+      "author": "DJ Khaled",
+      "type": "single",
+      "album": "No New Friends (SFTB Remix) [feat. Drake, Rick Ross & Lil Wayne]",
+      "image": "/music/covers/dj-khaled-no-new-friends-sftb-remix-feat-drake-rick-ross-lil-wayne.jpg"
+    },
+    {
+      "title": "24Hrs",
+      "author": "Nine Vicious",
+      "type": "single",
+      "album": "B4EM",
+      "image": "/music/covers/nine-vicious-b4em.jpg"
+    },
+    {
+      "title": "OH",
+      "author": "Kromow",
+      "type": "single",
+      "image": "/music/covers/kromow-oh.jpg"
+    },
+    {
+      "title": "Come Closer (feat. Drake)",
+      "author": "Wizkid",
+      "type": "single",
+      "album": "Sounds From the Other Side",
+      "image": "/music/covers/wizkid-sounds-from-the-other-side.jpg"
+    },
+    {
+      "title": "IF I WASN’T RAPPIN’",
+      "author": "Concrete Boys, Lil Yachty, Draft Day & Dc2trill",
+      "type": "single",
+      "album": "It's Us Vol. 2",
+      "image": "/music/covers/concrete-boys-it-s-us-vol-2.jpg"
+    },
+    {
+      "title": "Jukebox Joints (feat. Joe Fox x Kanye West)",
+      "author": "A$AP Rocky",
+      "type": "single",
+      "album": "AT.LONG.LAST.A$AP",
+      "image": "/music/covers/a-ap-rocky-at-long-last-a-ap.jpg"
+    },
+    {
+      "title": "9",
+      "author": "Dean Blunt & Panda Bear",
+      "type": "single",
+      "album": "ZUSHI",
+      "image": "/music/covers/dean-blunt-zushi.jpg"
+    },
+    {
+      "title": "Stars Align (with Drake)",
+      "author": "Majid Jordan & Drake",
+      "type": "single",
+      "album": "Wildest Dreams",
+      "image": "/music/covers/majid-jordan-wildest-dreams.jpg"
+    },
+    {
+      "title": "Views",
+      "author": "Drake",
+      "type": "album",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "Jesus Is King",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-jesus-is-king.jpg"
+    },
+    {
+      "title": "baddie",
+      "author": "lostboyshawty",
+      "type": "single",
+      "album": "#b4BNS - EP",
+      "image": "/music/covers/lostboyshawty-b4bns-ep.jpg"
+    },
+    {
+      "title": "meer dan dat",
+      "author": "lostboyshawty",
+      "type": "single",
+      "album": "#b4BNS - EP",
+      "image": "/music/covers/lostboyshawty-b4bns-ep.jpg"
+    },
+    {
+      "title": "Round of Applause (feat. Drake)",
+      "author": "Waka Flocka Flame",
+      "type": "single",
+      "image": "/music/covers/waka-flocka-flame-round-of-applause-feat-drake.jpg"
+    },
+    {
+      "title": "Faithful (feat. Pimp C & dvsn)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Views",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "Another You (feat. Kanye West)",
+      "author": "The WRLDFMS Tony Williams",
+      "type": "single",
+      "album": "King or the Fool: An Opera, Vol. I",
+      "image": "/music/covers/the-wrldfms-tony-williams-king-or-the-fool-an-opera-vol-i.jpg"
+    },
+    {
+      "title": "Fear",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-fear.jpg"
+    },
+    {
+      "title": "Silk Facë",
+      "author": "Yeat",
+      "type": "single",
+      "album": "ADL",
+      "image": "/music/covers/yeat-adl.jpg"
+    },
+    {
+      "title": "Don't Give It Away",
+      "author": "Fridayy & Chris Brown",
+      "type": "single",
+      "album": "Fridayy",
+      "image": "/music/covers/fridayy-fridayy.jpg"
+    },
+    {
+      "title": "Sloppy Joe",
+      "author": "slayr",
+      "type": "single",
+      "album": "Half Blood",
+      "image": "/music/covers/slayr-half-blood.jpg"
+    },
+    {
+      "title": "35",
+      "author": "Kromow",
+      "type": "single",
+      "image": "/music/covers/kromow-35.jpg"
+    },
+    {
+      "title": "Look At The Sky",
+      "author": "Kromow",
+      "type": "single",
+      "album": "35 NIGHTS",
+      "image": "/music/covers/kromow-35-nights.jpg"
+    },
+    {
+      "title": "Eyesight",
+      "author": "slayr",
+      "type": "single",
+      "album": "Half Blood (BloodLuxe)",
+      "image": "/music/covers/slayr-half-blood-bloodluxe.jpg"
+    },
+    {
+      "title": "YSL Sweats",
+      "author": "Kromow & On The Radar",
+      "type": "single",
+      "image": "/music/covers/kromow-ysl-sweats.jpg"
+    },
+    {
+      "title": "Love U Better (feat. Lil Wayne & the-Dream)",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "Beach House 3 (Deluxe)",
+      "image": "/music/covers/ty-dolla-ign-beach-house-3-deluxe.jpg"
+    },
+    {
+      "title": "Don't Judge Me (feat. Future and Swae Lee)",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "Beach House 3 (Deluxe)",
+      "image": "/music/covers/ty-dolla-ign-beach-house-3-deluxe.jpg"
+    },
+    {
+      "title": "Clout (feat. 21 Savage)",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "Beach House 3 (Deluxe)",
+      "image": "/music/covers/ty-dolla-ign-beach-house-3-deluxe.jpg"
+    },
+    {
+      "title": "Amazing",
+      "author": "Nine Vicious",
+      "type": "single",
+      "album": "EMOTIONS",
+      "image": "/music/covers/nine-vicious-emotions.jpg"
+    },
+    {
+      "title": "Feedback",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "The Life of Pablo",
+      "image": "/music/covers/kanye-west-the-life-of-pablo.jpg"
+    },
+    {
+      "title": "3am",
+      "author": "Loe Shimmy & Don Toliver",
+      "type": "single",
+      "album": "Rockstar Junkie",
+      "image": "/music/covers/loe-shimmy-rockstar-junkie.jpg"
+    },
+    {
+      "title": "FEELINGS",
+      "author": "Central Cee",
+      "type": "single",
+      "album": "ALL ROADS LEAD HOME",
+      "image": "/music/covers/central-cee-all-roads-lead-home.jpg"
+    },
+    {
+      "title": "ATL (APPR3CIAT3 TH3 LOV3)",
+      "author": "Mike WiLL Made-It & 21 Savage",
+      "type": "single",
+      "album": "R3SET",
+      "image": "/music/covers/mike-will-made-it-r3set.jpg"
+    },
+    {
+      "title": "BEAUTY AND THE BEAST",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "PREACHER MAN",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "CIRCLES",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "WHITE LINES",
+      "author": "Kanye West & Andre Troutman",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "WHATEVER WORKS",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "PUNCH DRUNK",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "FATHER",
+      "author": "Kanye West & Travis Scott",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "THIS A MUST",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "KING",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "BULLY",
+      "image": "/music/covers/kanye-west-bully.jpg"
+    },
+    {
+      "title": "Excavator",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "OCTANE",
+      "image": "/music/covers/don-toliver-octane.jpg"
+    },
+    {
+      "title": "Housekeeping Knows (feat. Latto)",
+      "author": "Drake",
+      "type": "single",
+      "album": "100 GIGS",
+      "image": "/music/covers/drake-100-gigs.jpg"
+    },
+    {
+      "title": "Wheels Fall Off (feat. Kanye West)",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "image": "/music/covers/ty-dolla-ign-wheels-fall-off-feat-kanye-west.jpg"
+    },
+    {
+      "title": "Never Recover",
+      "author": "Lil Baby, Gunna & Drake",
+      "type": "single",
+      "album": "Drip Harder",
+      "image": "/music/covers/lil-baby-drip-harder.jpg"
+    },
+    {
+      "title": "Mirror",
+      "author": "Kendrick Lamar",
+      "type": "single",
+      "album": "Mr. Morale & The Big Steppers",
+      "image": "/music/covers/kendrick-lamar-mr-morale-the-big-steppers.jpg"
+    },
+    {
+      "title": "CARXXX (feat. Idaly)",
+      "author": "Cho",
+      "type": "single",
+      "album": "GIOVANNI II",
+      "image": "/music/covers/cho-giovanni-ii.jpg"
+    },
+    {
+      "title": "R.I.P",
+      "author": "RainingLol",
+      "type": "single",
+      "image": "/music/covers/raininglol-r-i-p.jpg"
+    },
+    {
+      "title": "Set In Stone",
+      "author": "slayr",
+      "type": "single",
+      "album": "Half Blood",
+      "image": "/music/covers/slayr-half-blood.jpg"
+    },
+    {
+      "title": "Donda (Deluxe)",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-donda-deluxe.jpg"
+    },
+    {
+      "title": "Wat Een Tijd Om Te Leven",
+      "author": "Lil Kleine",
+      "type": "single",
+      "album": "Ibiza Stories",
+      "image": "/music/covers/lil-kleine-ibiza-stories.jpg"
+    },
+    {
+      "title": "I Feel It Coming (feat. Daft Punk)",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "Starboy (Deluxe)",
+      "image": "/music/covers/the-weeknd-starboy-deluxe.jpg"
+    },
+    {
+      "title": "Balans",
+      "author": "Hef",
+      "type": "single",
+      "album": "Rook",
+      "image": "/music/covers/hef-rook.jpg"
+    },
+    {
+      "title": "Let Me Love You",
+      "author": "Mario",
+      "type": "single",
+      "album": "Turning Point",
+      "image": "/music/covers/mario-turning-point.jpg"
+    },
+    {
+      "title": "Thinkin Bout You",
+      "author": "Frank Ocean",
+      "type": "single",
+      "album": "channel ORANGE",
+      "image": "/music/covers/frank-ocean-channel-orange.jpg"
+    },
+    {
+      "title": "Break from Toronto",
+      "author": "PARTYNEXTDOOR",
+      "type": "single",
+      "album": "PARTYNEXTDOOR",
+      "image": "/music/covers/partynextdoor-partynextdoor.jpg"
+    },
+    {
+      "title": "Madiba Riddim",
+      "author": "Drake",
+      "type": "single",
+      "album": "More Life",
+      "image": "/music/covers/drake-more-life.jpg"
+    },
+    {
+      "title": "Self Control",
+      "author": "Frank Ocean",
+      "type": "single",
+      "album": "Blonde",
+      "image": "/music/covers/frank-ocean-futura-free-blonde.jpg"
+    },
+    {
+      "title": "miss u 2 (with Leon Thomas)",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "girl music vol. 1 - EP",
+      "image": "/music/covers/ty-dolla-ign-girl-music-vol-1-ep.jpg"
+    },
+    {
+      "title": "DMDD",
+      "author": "Marou & Massin",
+      "type": "single",
+      "image": "/music/covers/marou-dmdd.jpg"
+    },
+    {
+      "title": "Alors on danse (feat. Kanye West) [feat. Kanye West]",
+      "author": "Stromae",
+      "type": "single",
+      "album": "Alors on danse - EP",
+      "image": "/music/covers/stromae-alors-on-danse-ep.jpg"
+    },
+    {
+      "title": "FORWARD",
+      "author": "SBTRKT & LEILAH",
+      "type": "single",
+      "image": "/music/covers/sbtrkt-forward.jpg"
+    },
+    {
+      "title": "Scorpion",
+      "author": "Drake",
+      "type": "album",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "F*****g Fans",
+      "author": "Drake",
+      "type": "single",
+      "album": "Certified Lover Boy",
+      "image": "/music/covers/drake-certified-lover-boy.jpg"
+    },
+    {
+      "title": "Over",
+      "author": "R2Bees",
+      "type": "single",
+      "album": "Site 15",
+      "image": "/music/covers/r2bees-site-15.jpg"
+    },
+    {
+      "title": "I See Now (feat. Kanye West & Little Brother)",
+      "author": "Consequence",
+      "type": "single",
+      "album": "Take'Em To the Cleaners",
+      "image": "/music/covers/consequence-take-em-to-the-cleaners.jpg"
+    },
+    {
+      "title": "Workhardt Freestyle",
+      "author": "Nuez & Rio Da Yung Og",
+      "type": "single",
+      "album": "Life of a Yung Og",
+      "image": "/music/covers/nuez-life-of-a-yung-og.jpg"
+    },
+    {
+      "title": "ALL THE SAME",
+      "author": "Concrete Boys, Veeze & Lil Yachty",
+      "type": "single",
+      "album": "It's Us Vol. 2",
+      "image": "/music/covers/concrete-boys-it-s-us-vol-2.jpg"
+    },
+    {
+      "title": "Pump Fake (feat. Playboi Carti)",
+      "author": "Ethereal",
+      "type": "single",
+      "image": "/music/covers/ethereal-pump-fake-feat-playboi-carti.jpg"
+    },
+    {
+      "title": "Murda",
+      "author": "Lil Yachty",
+      "type": "single",
+      "image": "/music/covers/lil-yachty-murda.jpg"
+    },
+    {
+      "title": "Need for speed",
+      "author": "Lil Kleine",
+      "type": "single",
+      "album": "F*CK KLEINE",
+      "image": "/music/covers/lil-kleine-f-ck-kleine.jpg"
+    },
+    {
+      "title": "Miley Cyrus",
+      "author": "Che",
+      "type": "single",
+      "image": "/music/covers/che-miley-cyrus.jpg"
+    },
+    {
+      "title": "Search & Rescue",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-search-rescue.jpg"
+    },
+    {
+      "title": "fido",
+      "author": "deathtoricky",
+      "type": "single",
+      "image": "/music/covers/deathtoricky-fido.jpg"
+    },
+    {
+      "title": "COPY, OK COOL",
+      "author": "Concrete Boys, Honest & Lil Yachty",
+      "type": "single",
+      "album": "It's Us Vol. 2",
+      "image": "/music/covers/concrete-boys-it-s-us-vol-2.jpg"
+    },
+    {
+      "title": "Sere",
+      "author": "SPINALL & Fireboy DML",
+      "type": "single",
+      "album": "Grace",
+      "image": "/music/covers/spinall-grace.png"
+    },
+    {
+      "title": "STATS",
+      "author": "Baby Keem",
+      "type": "single",
+      "album": "DIE FOR MY BITCH",
+      "image": "/music/covers/baby-keem-die-for-my-bitch.jpg"
+    },
+    {
+      "title": "Here I Am (feat. Nelly & Avery Storm)",
+      "author": "Rick Ross",
+      "type": "single",
+      "album": "Trilla (Bonus Track Version)",
+      "image": "/music/covers/rick-ross-trilla-bonus-track-version.jpg"
+    },
+    {
+      "title": "Paranoid (feat. Destroy Lonely)",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "A Great Chaos (Deluxe)",
+      "image": "/music/covers/ken-carson-a-great-chaos-deluxe.jpg"
+    },
+    {
+      "title": "No Security",
+      "author": "Baby Keem",
+      "type": "single",
+      "album": "Ca$ino",
+      "image": "/music/covers/baby-keem-ca-ino.jpg"
+    },
+    {
+      "title": "$ex Appeal (feat. Too $hort)",
+      "author": "Baby Keem",
+      "type": "single",
+      "album": "Ca$ino",
+      "image": "/music/covers/baby-keem-ca-ino.jpg"
+    },
+    {
+      "title": "Birds & the Bees",
+      "author": "Baby Keem",
+      "type": "single",
+      "album": "Ca$ino",
+      "image": "/music/covers/baby-keem-ca-ino.jpg"
+    },
+    {
+      "title": "GO (feat. Camo!, Dc2trill & Draft Day)",
+      "author": "PlaqueBoyMax, Concrete Boys & Lil Yachty",
+      "type": "single",
+      "album": "fivestarcrete - EP",
+      "image": "/music/covers/plaqueboymax-fivestarcrete-ep.jpg"
+    },
+    {
+      "title": "Run A Train",
+      "author": "J. Cole & Future",
+      "type": "single",
+      "album": "The Fall-Off",
+      "image": "/music/covers/j-cole-the-fall-off.jpg"
+    },
+    {
+      "title": "Come Thru",
+      "author": "Drake",
+      "type": "single",
+      "album": "Nothing Was The Same (Deluxe)",
+      "image": "/music/covers/drake-nothing-was-the-same-deluxe.jpg"
+    },
+    {
+      "title": "Yes You Can",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "UY SCUTI (Supernova Edition)",
+      "image": "/music/covers/young-thug-uy-scuti-supernova-edition.jpg"
+    },
+    {
+      "title": "With Them",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "Slime Season 3",
+      "image": "/music/covers/young-thug-slime-season-3.jpg"
+    },
+    {
+      "title": "Groen Paars Yellow",
+      "author": "lostboyshawty",
+      "type": "single",
+      "album": "Jerragamo",
+      "image": "/music/covers/lostboyshawty-jerragamo.png"
+    },
+    {
+      "title": "Hellcat Kenny (feat. Lil Uzi Vert)",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "BUSINESS IS BUSINESS (Metro's Version)",
+      "image": "/music/covers/young-thug-business-is-business-metro-s-version.jpg"
+    },
+    {
+      "title": "MILLIONAIRE",
+      "author": "Concrete Boys, Lil Yachty, Draft Day, Camo! & Dc2trill",
+      "type": "single",
+      "album": "It's Us Vol. 2",
+      "image": "/music/covers/concrete-boys-it-s-us-vol-2.jpg"
+    },
+    {
+      "title": "9AM In Dallas",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-9am-in-dallas.jpg"
+    },
+    {
+      "title": "Bij Zinnen",
+      "author": "Narco Polo, Willymakeamilli & Marou",
+      "type": "single",
+      "image": "/music/covers/narco-polo-bij-zinnen.jpg"
+    },
+    {
+      "title": "Me Eige Beleid",
+      "author": "Marou, Massin & Chanou",
+      "type": "single",
+      "image": "/music/covers/marou-me-eige-beleid.jpg"
+    },
+    {
+      "title": "Hoofd Teeh",
+      "author": "lostboyshawty",
+      "type": "single",
+      "image": "/music/covers/lostboyshawty-hoofd-teeh.png"
+    },
+    {
+      "title": "Bunce Road Blues",
+      "author": "J. Cole, Future & Tems",
+      "type": "single",
+      "album": "The Fall-Off",
+      "image": "/music/covers/j-cole-the-fall-off.jpg"
+    },
+    {
+      "title": "About the Money (feat. Young Thug)",
+      "author": "T.I.",
+      "type": "single",
+      "album": "Paperwork (Deluxe)",
+      "image": "/music/covers/t-i-paperwork-deluxe.png"
+    },
+    {
+      "title": "Body",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "OCTANE",
+      "image": "/music/covers/don-toliver-octane.jpg"
+    },
+    {
+      "title": "E85",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "OCTANE",
+      "image": "/music/covers/don-toliver-octane.jpg"
+    },
+    {
+      "title": "ATM",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "OCTANE",
+      "image": "/music/covers/don-toliver-octane.jpg"
+    },
+    {
+      "title": "Call Back",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "OCTANE",
+      "image": "/music/covers/don-toliver-octane.jpg"
+    },
+    {
+      "title": "Rendezvous (feat. Yeat)",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "OCTANE",
+      "image": "/music/covers/don-toliver-octane.jpg"
+    },
+    {
+      "title": "rodeo dr",
+      "author": "Gunna",
+      "type": "single",
+      "album": "a Gift & a Curse",
+      "image": "/music/covers/gunna-a-gift-a-curse.jpg"
+    },
+    {
+      "title": "Denver",
+      "author": "Jack Harlow",
+      "type": "single",
+      "album": "Jackman.",
+      "image": "/music/covers/jack-harlow-jackman.jpg"
+    },
+    {
+      "title": "Ambitious",
+      "author": "Jack Harlow",
+      "type": "single",
+      "album": "Jackman.",
+      "image": "/music/covers/jack-harlow-jackman.jpg"
+    },
+    {
+      "title": "MARINATING",
+      "author": "DaBaby",
+      "type": "single",
+      "album": "BE MORE GRATEFUL",
+      "image": "/music/covers/dababy-be-more-grateful.jpg"
+    },
+    {
+      "title": "CLEAR THIS SHIT",
+      "author": "DaBaby",
+      "type": "single",
+      "album": "BE MORE GRATEFUL",
+      "image": "/music/covers/dababy-be-more-grateful.jpg"
+    },
+    {
+      "title": "OUT YA BUSINESS",
+      "author": "DaBaby",
+      "type": "single",
+      "album": "BE MORE GRATEFUL",
+      "image": "/music/covers/dababy-be-more-grateful.jpg"
+    },
+    {
+      "title": "DON JULIO LEMONADE",
+      "author": "DaBaby",
+      "type": "single",
+      "album": "BE MORE GRATEFUL",
+      "image": "/music/covers/dababy-be-more-grateful.jpg"
+    },
+    {
+      "title": "POP DAT THANG",
+      "author": "DaBaby",
+      "type": "single",
+      "album": "BE MORE GRATEFUL",
+      "image": "/music/covers/dababy-be-more-grateful.jpg"
+    },
+    {
+      "title": "Family Ties",
+      "author": "Rick Ross",
+      "type": "single",
+      "album": "Hood Billionaire (Deluxe Version)",
+      "image": "/music/covers/rick-ross-hood-billionaire-deluxe-version.jpg"
+    },
+    {
+      "title": "The Weather (feat. Rick Ross & Cuzzy Capone)",
+      "author": "Nipsey Hussle",
+      "type": "single",
+      "album": "Crenshaw",
+      "image": "/music/covers/nipsey-hussle-crenshaw.jpg"
+    },
+    {
+      "title": "Sacrifices (feat. 2 Chainz & Young Thug)",
+      "author": "Drake",
+      "type": "single",
+      "album": "More Life",
+      "image": "/music/covers/drake-more-life.jpg"
+    },
+    {
+      "title": "Nothings Into Somethings",
+      "author": "Drake",
+      "type": "single",
+      "album": "More Life",
+      "image": "/music/covers/drake-more-life.jpg"
+    },
+    {
+      "title": "HALFTIME INTERLUDE",
+      "author": "21 Savage",
+      "type": "single",
+      "album": "WHAT HAPPENED TO THE STREETS?",
+      "image": "/music/covers/21-savage-what-happened-to-the-streets.jpg"
+    },
+    {
+      "title": "From Florida With Love",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Drew A Picasso",
+      "author": "Drake",
+      "type": "single",
+      "album": "For All The Dogs",
+      "image": "/music/covers/drake-for-all-the-dogs.jpg"
+    },
+    {
+      "title": "The End",
+      "author": "Nine Vicious",
+      "type": "single",
+      "album": "FOR NOTHING",
+      "image": "/music/covers/nine-vicious-for-nothing.jpg"
+    },
+    {
+      "title": "Show Me a Good Time",
+      "author": "Drake",
+      "type": "single",
+      "album": "Thank Me Later",
+      "image": "/music/covers/drake-thank-me-later.jpg"
+    },
+    {
+      "title": "Versace",
+      "author": "Westside Gunn",
+      "type": "single",
+      "album": "Pray for Paris",
+      "image": "/music/covers/westside-gunn-pray-for-paris.jpg"
+    },
+    {
+      "title": "Dbz",
+      "author": "Nine Vicious",
+      "type": "single",
+      "album": "FOR NOTHING",
+      "image": "/music/covers/nine-vicious-for-nothing.jpg"
+    },
+    {
+      "title": "HELICOPTER",
+      "author": "A$AP Rocky",
+      "type": "single",
+      "album": "Don't Be Dumb",
+      "image": "/music/covers/a-ap-rocky-don-t-be-dumb.jpg"
+    },
+    {
+      "title": "EAR BLEED",
+      "author": "Zukenee",
+      "type": "single",
+      "image": "/music/covers/zukenee-ear-bleed.jpg"
+    },
+    {
+      "title": "2 Mazza (feat. Drake)",
+      "author": "Smiley & Drake",
+      "type": "single",
+      "album": "Don't Box Me In",
+      "image": "/music/covers/smiley-drake-don-t-box-me-in.jpg"
+    },
+    {
+      "title": "Best I Ever Had",
+      "author": "Drake",
+      "type": "single",
+      "album": "So Far Gone",
+      "image": "/music/covers/drake-so-far-gone.jpg"
+    },
+    {
+      "title": "Successful (feat. Trey Songz & Lil Wayne)",
+      "author": "Drake",
+      "type": "single",
+      "album": "So Far Gone",
+      "image": "/music/covers/drake-so-far-gone.jpg"
+    },
+    {
+      "title": "comethru (feat. kans)",
+      "author": "sor",
+      "type": "single",
+      "album": "INSOMNIA",
+      "image": "/music/covers/sor-insomnia.jpg"
+    },
+    {
+      "title": "Ojuelegba (feat. Drake, Wizkid & Skepta) [Cadenza Remix] [Mixed]",
+      "author": "Wizkid",
+      "type": "single",
+      "album": "British Invasion (LargeUp Mix Series, Vol. 04) [DJ Mix]",
+      "image": "/music/covers/wizkid-british-invasion-largeup-mix-series-vol-04-dj-mix.jpg"
+    },
+    {
+      "title": "Diamonds & Dollars",
+      "author": "Dgtl",
+      "type": "single",
+      "image": "/music/covers/dgtl-diamonds-dollars.jpg"
+    },
+    {
+      "title": "Look Alive (feat. Drake)",
+      "author": "BlocBoy JB",
+      "type": "single",
+      "image": "/music/covers/blocboy-jb-look-alive-feat-drake.jpg"
+    },
+    {
+      "title": "Can't Let Her Get Away",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Dangerous",
+      "image": "/music/covers/michael-jackson-dangerous.jpg"
+    },
+    {
+      "title": "Remember the Time",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Dangerous",
+      "image": "/music/covers/michael-jackson-dangerous.jpg"
+    },
+    {
+      "title": "(I Like) The Way You Love Me",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Michael",
+      "image": "/music/covers/michael-jackson-michael.jpg"
+    },
+    {
+      "title": "Chicago",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "XSCAPE (Deluxe)",
+      "image": "/music/covers/michael-jackson-xscape-deluxe.jpg"
+    },
+    {
+      "title": "hoeveel is genoeg? (feat. ADF Samski)",
+      "author": "sor",
+      "type": "single",
+      "image": "/music/covers/sor-hoeveel-is-genoeg-feat-adf-samski.jpg"
+    },
+    {
+      "title": "I'm Sprung",
+      "author": "T-Pain",
+      "type": "single",
+      "album": "Rappa Ternt Sanga (Expanded Edition)",
+      "image": "/music/covers/t-pain-rappa-ternt-sanga-expanded-edition.jpg"
+    },
+    {
+      "title": "Love Don't Live Here",
+      "author": "Meek Mill",
+      "type": "single",
+      "album": "Dreamchasers",
+      "image": "/music/covers/meek-mill-dreamchasers.jpg"
+    },
+    {
+      "title": "Place",
+      "author": "Playboi Carti",
+      "type": "single",
+      "album": "Whole Lotta Red",
+      "image": "/music/covers/playboi-carti-whole-lotta-red.jpg"
+    },
+    {
+      "title": "Play Play (feat. Burna Boy)",
+      "author": "J Hus",
+      "type": "single",
+      "album": "Big Conspiracy",
+      "image": "/music/covers/j-hus-big-conspiracy.jpg"
+    },
+    {
+      "title": "Respect Ya Passion",
+      "author": "Nipsey Hussle",
+      "type": "single",
+      "image": "/music/covers/nipsey-hussle-respect-ya-passion.jpg"
+    },
+    {
+      "title": "Denk Dat Ik Rijk Word",
+      "author": "Crooks & Hef",
+      "type": "single",
+      "album": "Freddy & Bundy",
+      "image": "/music/covers/crooks-freddy-bundy.jpg"
+    },
+    {
+      "title": "Begraaf Me Als Een G",
+      "author": "Crooks & Hef",
+      "type": "single",
+      "album": "Freddy & Bundy",
+      "image": "/music/covers/crooks-freddy-bundy.jpg"
+    },
+    {
+      "title": "WPFF",
+      "author": "Hef",
+      "type": "single",
+      "album": "Grijze",
+      "image": "/music/covers/hef-grijze.jpg"
+    },
+    {
+      "title": "Soldaten (skit)",
+      "author": "Hef",
+      "type": "single",
+      "album": "Grijze",
+      "image": "/music/covers/hef-grijze.jpg"
+    },
+    {
+      "title": "Smal (Interlude)",
+      "author": "Hef",
+      "type": "single",
+      "album": "Grijze",
+      "image": "/music/covers/hef-grijze.jpg"
+    },
+    {
+      "title": "Play Fair",
+      "author": "Kromow",
+      "type": "single",
+      "image": "/music/covers/kromow-play-fair.jpg"
+    },
+    {
+      "title": "Meh",
+      "author": "Playboi Carti",
+      "type": "single",
+      "album": "Whole Lotta Red",
+      "image": "/music/covers/playboi-carti-whole-lotta-red.jpg"
+    },
+    {
+      "title": "SPREAD LIKE BUTTA",
+      "author": "Yakiyn",
+      "type": "single",
+      "image": "/music/covers/yakiyn-spread-like-butta.jpg"
+    },
+    {
+      "title": "Not a Romantic",
+      "author": "Karri",
+      "type": "single",
+      "album": "Slider II",
+      "image": "/music/covers/karri-slider-ii.png"
+    },
+    {
+      "title": "the acronym",
+      "author": "Ken Carson & Destroy Lonely",
+      "type": "single",
+      "image": "/music/covers/ken-carson-the-acronym.jpg"
+    },
+    {
+      "title": "B.M.F. (Blowin' Money Fast) [feat. Styles P]",
+      "author": "Rick Ross",
+      "type": "single",
+      "album": "Teflon Don",
+      "image": "/music/covers/rick-ross-teflon-don.jpg"
+    },
+    {
+      "title": "ATLANTA TEARS",
+      "author": "21 Savage & Lil Baby",
+      "type": "single",
+      "album": "WHAT HAPPENED TO THE STREETS?",
+      "image": "/music/covers/21-savage-what-happened-to-the-streets.jpg"
+    },
+    {
+      "title": "MR RECOUP",
+      "author": "21 Savage & Drake",
+      "type": "single",
+      "album": "WHAT HAPPENED TO THE STREETS?",
+      "image": "/music/covers/21-savage-what-happened-to-the-streets.jpg"
+    },
+    {
+      "title": "RealSpill",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Too Much Music-EP",
+      "image": "/music/covers/plaqueboymax-too-much-music-ep.jpg"
+    },
+    {
+      "title": "Cayendo (Sango Remix) [Mixed]",
+      "author": "Frank Ocean",
+      "type": "single",
+      "album": "Archive 001 (DJ Mix)",
+      "image": "/music/covers/frank-ocean-archive-001-dj-mix.jpg"
+    },
+    {
+      "title": "How Far Will I Go (feat. Lil Yachty)",
+      "author": "Draft Day",
+      "type": "single",
+      "image": "/music/covers/draft-day-how-far-will-i-go-feat-lil-yachty.jpg"
+    },
+    {
+      "title": "Do2Much",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Too Much Music-EP",
+      "image": "/music/covers/plaqueboymax-too-much-music-ep.jpg"
+    },
+    {
+      "title": "MalibuTides",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Too Much Music-EP",
+      "image": "/music/covers/plaqueboymax-too-much-music-ep.jpg"
+    },
+    {
+      "title": "InTheMorning",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Too Much Music-EP",
+      "image": "/music/covers/plaqueboymax-too-much-music-ep.jpg"
+    },
+    {
+      "title": "Different Music (Yerr On The Street Live Performance)",
+      "author": "Rio Da Yung Og & Yerr On The Street",
+      "type": "single",
+      "image": "/music/covers/rio-da-yung-og-different-music-yerr-on-the-street-live-performance.jpg"
+    },
+    {
+      "title": "Let’s Do It",
+      "author": "Lil Baby, Playboi Carti & Skooly",
+      "type": "single",
+      "album": "The Leaks",
+      "image": "/music/covers/lil-baby-the-leaks.jpg"
+    },
+    {
+      "title": "The Resistance",
+      "author": "Drake",
+      "type": "single",
+      "album": "Thank Me Later",
+      "image": "/music/covers/drake-thank-me-later.jpg"
+    },
+    {
+      "title": "Dave",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "from chi to saint mary",
+      "author": "millkzy",
+      "type": "single",
+      "image": "/music/covers/millkzy-from-chi-to-saint-mary.jpg"
+    },
+    {
+      "title": "No Face",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-no-face.jpg"
+    },
+    {
+      "title": "Feds Did a Sweep",
+      "author": "Future",
+      "type": "single",
+      "album": "FUTURE",
+      "image": "/music/covers/future-future.jpg"
+    },
+    {
+      "title": "Tuscan Leather",
+      "author": "Drake",
+      "type": "single",
+      "album": "Nothing Was The Same (Deluxe)",
+      "image": "/music/covers/drake-nothing-was-the-same-deluxe.jpg"
+    },
+    {
+      "title": "Make a Mil",
+      "author": "PARTYNEXTDOOR",
+      "type": "single",
+      "album": "PARTYNEXTDOOR",
+      "image": "/music/covers/partynextdoor-partynextdoor.jpg"
+    },
+    {
+      "title": "Yacht 2",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Me and Your Mama",
+      "author": "Childish Gambino",
+      "type": "single",
+      "album": "\"Awaken, My Love!\"",
+      "image": "/music/covers/childish-gambino-awaken-my-love.jpg"
+    },
+    {
+      "title": "Redbone",
+      "author": "Childish Gambino",
+      "type": "single",
+      "album": "\"Awaken, My Love!\"",
+      "image": "/music/covers/childish-gambino-awaken-my-love.jpg"
+    },
+    {
+      "title": "Nights",
+      "author": "Frank Ocean",
+      "type": "single",
+      "album": "Blonde",
+      "image": "/music/covers/frank-ocean-futura-free-blonde.jpg"
+    },
+    {
+      "title": "Cameras / Good Ones Go Interlude",
+      "author": "Drake",
+      "type": "single",
+      "album": "Take Care (Deluxe Version)",
+      "image": "/music/covers/drake-take-care-deluxe-version.jpg"
+    },
+    {
+      "title": "margiela",
+      "author": "Ken Carson",
+      "type": "single",
+      "image": "/music/covers/ken-carson-margiela.jpg"
+    },
+    {
+      "title": "Poor Soul",
+      "author": "Dris",
+      "type": "single",
+      "image": "/music/covers/dris-poor-soul.jpg"
+    },
+    {
+      "title": "Crank Up Da Jet",
+      "author": "Loe Shimmy",
+      "type": "single",
+      "image": "/music/covers/loe-shimmy-crank-up-da-jet.jpg"
+    },
+    {
+      "title": "When To Say When",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "III. Life: The Biggest Troll (Andrew Auernheimer)",
+      "author": "Childish Gambino",
+      "type": "single",
+      "album": "Because the Internet",
+      "image": "/music/covers/childish-gambino-because-the-internet.jpg"
+    },
+    {
+      "title": "BABY I'M BACK",
+      "author": "The Kid LAROI",
+      "type": "single",
+      "album": "THE FIRST TIME (DELUXE VERSION)",
+      "image": "/music/covers/the-kid-laroi-where-do-you-sleep-the-first-time-deluxe-version.jpg"
+    },
+    {
+      "title": "Oasis",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "image": "/music/covers/plaqueboymax-oasis.jpg"
+    },
+    {
+      "title": "Parking Lot",
+      "author": "Mustard & Travis Scott",
+      "type": "single",
+      "image": "/music/covers/mustard-parking-lot.jpg"
+    },
+    {
+      "title": "Down Chick (feat. 3Three)",
+      "author": "YoungBoy Never Broke Again",
+      "type": "single",
+      "album": "38 Baby",
+      "image": "/music/covers/youngboy-never-broke-again-38-baby.jpg"
+    },
+    {
+      "title": "9",
+      "author": "Drake",
+      "type": "single",
+      "album": "Views",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "i need u",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "A Great Chaos",
+      "image": "/music/covers/ken-carson-a-great-chaos.jpg"
+    },
+    {
+      "title": "loading",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "A Great Chaos (Deluxe)",
+      "image": "/music/covers/ken-carson-a-great-chaos-deluxe.jpg"
+    },
+    {
+      "title": "yes",
+      "author": "Ken Carson",
+      "type": "single",
+      "image": "/music/covers/ken-carson-yes.jpg"
+    },
+    {
+      "title": "Soul Provider",
+      "author": "ian",
+      "type": "single",
+      "album": "2005",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "History",
+      "author": "Dave & James Blake",
+      "type": "single",
+      "album": "The Boy Who Played the Harp",
+      "image": "/music/covers/dave-the-boy-who-played-the-harp.jpg"
+    },
+    {
+      "title": "Wish (Trippie Mix) [feat. Trippie Redd]",
+      "author": "Diplo",
+      "type": "single",
+      "album": "LIFE'S A TRIP",
+      "image": "/music/covers/diplo-life-s-a-trip.jpg"
+    },
+    {
+      "title": "What Do You Mean?",
+      "author": "Justin Bieber",
+      "type": "single",
+      "album": "Purpose (Deluxe)",
+      "image": "/music/covers/justin-bieber-what-do-you-mean-purpose.jpg"
+    },
+    {
+      "title": "100 Grams",
+      "author": "Eem Triplin",
+      "type": "single",
+      "album": "Coming Undone",
+      "image": "/music/covers/eem-triplin-100-grams-coming-undone.jpg"
+    },
+    {
+      "title": "Go Ian",
+      "author": "ian",
+      "type": "single",
+      "album": "2005",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "Friends From Everywhere",
+      "author": "ian",
+      "type": "single",
+      "album": "2005",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "You Told Me",
+      "author": "ian",
+      "type": "single",
+      "album": "2005",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "Aw Shit",
+      "author": "ian",
+      "type": "single",
+      "album": "2005",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "scars",
+      "author": "Baby Keem",
+      "type": "single",
+      "album": "The Melodic Blue (Deluxe)",
+      "image": "/music/covers/baby-keem-scars-the-melodic-blue.jpg"
+    },
+    {
+      "title": "Green Room",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "A Great Chaos (Deluxe)",
+      "image": "/music/covers/ken-carson-a-great-chaos-deluxe.jpg"
+    },
+    {
+      "title": "And This is Just the Intro",
+      "author": "Tory Lanez",
+      "type": "single",
+      "album": "PLAYBOY",
+      "image": "/music/covers/tory-lanez-playboy.jpg"
+    },
+    {
+      "title": "her friends",
+      "author": "Nettspend",
+      "type": "single",
+      "album": "gone too soon",
+      "image": "/music/covers/nettspend-gone-too-soon.jpg"
+    },
+    {
+      "title": "From Time (feat. Jhené Aiko)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Nothing Was The Same (Deluxe)",
+      "image": "/music/covers/drake-nothing-was-the-same-deluxe.jpg"
+    },
+    {
+      "title": "Fight Night",
+      "author": "Migos",
+      "type": "single",
+      "album": "No Label II",
+      "image": "/music/covers/migos-no-label-ii.jpg"
+    },
+    {
+      "title": "Billion Streams Freestyle",
+      "author": "Central Cee",
+      "type": "single",
+      "album": "Bolide Noir",
+      "image": "/music/covers/central-cee-bolide-noir.jpg"
+    },
+    {
+      "title": "Solid (feat. Drake)",
+      "author": "Young Stoner Life, Young Thug & Gunna",
+      "type": "single",
+      "album": "Slime Language 2 (Deluxe)",
+      "image": "/music/covers/young-stoner-life-slime-language-2-deluxe.jpg"
+    },
+    {
+      "title": "Shut Up",
+      "author": "Nettspend",
+      "type": "single",
+      "album": "BAD ASS F*CKING KID",
+      "image": "/music/covers/nettspend-bad-ass-f-cking-kid.jpg"
+    },
+    {
+      "title": "Paid the Fine (feat. Lil Baby & YTB Trench)",
+      "author": "Young Stoner Life, Young Thug & Gunna",
+      "type": "single",
+      "album": "Slime Language 2 (Deluxe)",
+      "image": "/music/covers/young-stoner-life-slime-language-2-deluxe.jpg"
+    },
+    {
+      "title": "WHEN I THINK ABOUT IT",
+      "author": "Future",
+      "type": "single",
+      "album": "BEASTMODE 2",
+      "image": "/music/covers/future-when-i-think-about-it-beastmode-2.jpg"
+    },
+    {
+      "title": "Sticky",
+      "author": "Drake",
+      "type": "single",
+      "album": "Honestly, Nevermind",
+      "image": "/music/covers/drake-honestly-nevermind.jpg"
+    },
+    {
+      "title": "RICK OWENS (feat. Ken Carson)",
+      "author": "Ufo361",
+      "type": "single",
+      "album": "SONY (Mixtape)",
+      "image": "/music/covers/ufo361-sony-mixtape.jpg"
+    },
+    {
+      "title": "Freestyle 3",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "XTENDED",
+      "image": "/music/covers/ken-carson-xtended.jpg"
+    },
+    {
+      "title": "back of the club",
+      "author": "kwn",
+      "type": "single",
+      "album": "with all due respect",
+      "image": "/music/covers/kwn-with-all-due-respect.jpg"
+    },
+    {
+      "title": "Walk in the park",
+      "author": "Feng",
+      "type": "single",
+      "image": "/music/covers/feng-walk-in-the-park.jpg"
+    },
+    {
+      "title": "Having Our Way (feat. Drake)",
+      "author": "Migos",
+      "type": "single",
+      "album": "Culture III",
+      "image": "/music/covers/migos-culture-iii.jpg"
+    },
+    {
+      "title": "WHERE DO YOU SLEEP?",
+      "author": "The Kid LAROI",
+      "type": "single",
+      "album": "THE FIRST TIME",
+      "image": "/music/covers/the-kid-laroi-where-do-you-sleep-the-first-time-deluxe-version.jpg"
+    },
+    {
+      "title": "Maze",
+      "author": "Jimmy Q",
+      "type": "single",
+      "album": "Soulmetrics - Volume 1",
+      "image": "/music/covers/jimmy-q-soulmetrics-volume-1.jpg"
+    },
+    {
+      "title": "Stories About My Brother",
+      "author": "Drake",
+      "type": "single",
+      "album": "For All The Dogs Scary Hours Edition",
+      "image": "/music/covers/drake-for-all-the-dogs-scary-hours-edition.jpg"
+    },
+    {
+      "title": "Nights Like This",
+      "author": "Future & Metro Boomin",
+      "type": "single",
+      "album": "WE STILL DON'T TRUST YOU",
+      "image": "/music/covers/future-we-still-don-t-trust-you.jpg"
+    },
+    {
+      "title": "All to Myself",
+      "author": "Future, Metro Boomin & The Weeknd",
+      "type": "single",
+      "album": "WE STILL DON'T TRUST YOU",
+      "image": "/music/covers/future-all-to-myself.jpg"
+    },
+    {
+      "title": "flex a band",
+      "author": "KD!",
+      "type": "single",
+      "image": "/music/covers/kd-flex-a-band.jpg"
+    },
+    {
+      "title": "On The Radar Freestyle",
+      "author": "Drake & Central Cee",
+      "type": "single",
+      "image": "/music/covers/drake-on-the-radar-freestyle.jpg"
+    },
+    {
+      "title": "Figure It Out",
+      "author": "ian",
+      "type": "single",
+      "image": "/music/covers/ian-figure-it-out.jpg"
+    },
+    {
+      "title": "Forever on Some Fly Shit",
+      "author": "Nipsey Hussle",
+      "type": "single",
+      "album": "TMC (Acapellas)",
+      "image": "/music/covers/nipsey-hussle-forever-on-some-fly-shit-tmc.jpg"
+    },
+    {
+      "title": "WHAT A DAY",
+      "author": "Tyler, The Creator",
+      "type": "single",
+      "album": "CALL ME IF YOU GET LOST: The Estate Sale",
+      "image": "/music/covers/tyler-call-me-if-you-get-lost-the-estate-sale.jpg"
+    },
+    {
+      "title": "soooo high",
+      "author": "Destroy Lonely",
+      "type": "single",
+      "album": "</3³",
+      "image": "/music/covers/destroy-lonely-3.jpg"
+    },
+    {
+      "title": "Elevate",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "I Ain't Coming Back",
+      "author": "ian",
+      "type": "single",
+      "image": "/music/covers/ian-i-ain-t-coming-back.jpg"
+    },
+    {
+      "title": "Can't Have Everything",
+      "author": "Drake",
+      "type": "single",
+      "album": "More Life",
+      "image": "/music/covers/drake-more-life.jpg"
+    },
+    {
+      "title": "Flexing All Summer",
+      "author": "Lackvill",
+      "type": "single",
+      "image": "/music/covers/lackvill-flexing-all-summer.jpg"
+    },
+    {
+      "title": "Family Matters",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-family-matters.jpg"
+    },
+    {
+      "title": "DOG HOUSE",
+      "author": "Drake, Julia Wolf & Yeat",
+      "type": "single",
+      "image": "/music/covers/drake-dog-house.jpg"
+    },
+    {
+      "title": "Niagara Falls",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "Hurry Up Tomorrow",
+      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
+    },
+    {
+      "title": "Enjoy The Show",
+      "author": "The Weeknd & Future",
+      "type": "single",
+      "album": "Hurry Up Tomorrow",
+      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
+    },
+    {
+      "title": "Digital Dash",
+      "author": "Drake & Future",
+      "type": "single",
+      "album": "What a Time To Be Alive",
+      "image": "/music/covers/drake-what-a-time-to-be-alive.jpg"
+    },
+    {
+      "title": "Red Flag (feat. ADF Ricky)",
+      "author": "ADF Samski",
+      "type": "single",
+      "album": "Cartier Music",
+      "image": "/music/covers/adf-samski-cartier-music.jpg"
+    },
+    {
+      "title": "Banking On Me",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-banking-on-me.jpg"
+    },
+    {
+      "title": "Dark Fantasy",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "My Beautiful Dark Twisted Fantasy",
+      "image": "/music/covers/kanye-west-my-beautiful-dark-twisted-fantasy.jpg"
+    },
+    {
+      "title": "8 Out Of 10",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "March 14",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "Feeeeeeeeel",
+      "author": "Cash Cobain",
+      "type": "single",
+      "image": "/music/covers/cash-cobain-feeeeeeeeel.png"
+    },
+    {
+      "title": "Beach leak",
+      "author": "Nettspend",
+      "type": "single",
+      "album": "BAD ASS F*CKING KID",
+      "image": "/music/covers/nettspend-bad-ass-f-cking-kid.jpg"
+    },
+    {
+      "title": "Sandra’s Rose",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "Don't Play (feat. The 1975 & Big Sean)",
+      "author": "Travis Scott",
+      "type": "single",
+      "image": "/music/covers/travis-scott-don-t-play-feat-the-1975-big-sean.jpg"
+    },
+    {
+      "title": "HOT UPTOWN (feat. Drake)",
+      "author": "Camila Cabello",
+      "type": "single",
+      "album": "C,XOXO",
+      "image": "/music/covers/camila-cabello-c-xoxo.jpg"
+    },
+    {
+      "title": "Hours In Silence",
+      "author": "Drake & 21 Savage",
+      "type": "single",
+      "album": "Her Loss",
+      "image": "/music/covers/drake-her-loss.jpg"
+    },
+    {
+      "title": "Peaches (feat. Daniel Caesar & GIVĒON)",
+      "author": "Justin Bieber",
+      "type": "single",
+      "album": "Justice",
+      "image": "/music/covers/justin-bieber-justice.jpg"
+    },
+    {
+      "title": "5X",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "Life of a DON",
+      "image": "/music/covers/don-toliver-life-of-a-don.jpg"
+    },
+    {
+      "title": "again",
+      "author": "Gunna",
+      "type": "single",
+      "album": "The Last Wun",
+      "image": "/music/covers/gunna-the-last-wun.jpg"
+    },
+    {
+      "title": "Ye",
+      "author": "Burna Boy",
+      "type": "single",
+      "album": "Outside",
+      "image": "/music/covers/burna-boy-outside.jpg"
+    },
+    {
+      "title": "Papi’s Home",
+      "author": "Drake",
+      "type": "single",
+      "album": "Certified Lover Boy",
+      "image": "/music/covers/drake-certified-lover-boy.jpg"
+    },
+    {
+      "title": "Come to Life",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "Donda",
+      "image": "/music/covers/kanye-west-donda.jpg"
+    },
+    {
+      "title": "War",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Oh U Went (feat. Drake)",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "BUSINESS IS BUSINESS",
+      "image": "/music/covers/young-thug-business-is-business.jpg"
+    },
+    {
+      "title": "LORD LIFT ME UP",
+      "author": "Ye",
+      "type": "single",
+      "album": "DONDA 2",
+      "image": "/music/covers/ye-donda-2.jpg"
+    },
+    {
+      "title": "JESSE",
+      "author": "Ye",
+      "type": "single",
+      "album": "DONDA 2",
+      "image": "/music/covers/ye-donda-2.jpg"
+    },
+    {
+      "title": "No Hook II",
+      "author": "ADF Samski",
+      "type": "single",
+      "album": "Fresh Prince Van Noord",
+      "image": "/music/covers/adf-samski-fresh-prince-van-noord.jpg"
+    },
+    {
+      "title": "Forever",
+      "author": "Drake, Kanye West, Lil Wayne & Eminem",
+      "type": "single",
+      "image": "/music/covers/drake-forever.jpg"
+    },
+    {
+      "title": "Charged Up",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-charged-up.jpg"
+    },
+    {
+      "title": "Back To Back",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-back-to-back.jpg"
+    },
+    {
+      "title": "Come and See Me",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "image": "/music/covers/partynextdoor-come-and-see-me.jpg"
+    },
+    {
+      "title": "Two Birds, One Stone",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-two-birds-one-stone.jpg"
+    },
+    {
+      "title": "GLOCK",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "HARDSTONE PSYCHO",
+      "image": "/music/covers/don-toliver-hardstone-psycho.jpg"
+    },
+    {
+      "title": "Finished",
+      "author": "Bryson Tiller",
+      "type": "single",
+      "album": "Solace & The Vices",
+      "image": "/music/covers/bryson-tiller-solace-the-vices.jpg"
+    },
+    {
+      "title": "Last Call",
+      "author": "Bryson Tiller",
+      "type": "single",
+      "album": "Solace & The Vices",
+      "image": "/music/covers/bryson-tiller-solace-the-vices.jpg"
+    },
+    {
+      "title": "Which One",
+      "author": "Drake & Central Cee",
+      "type": "single",
+      "image": "/music/covers/drake-which-one.jpg"
+    },
+    {
+      "title": "i need meds",
+      "author": "Lil Yachty",
+      "type": "single",
+      "image": "/music/covers/lil-yachty-i-need-meds.jpg"
+    },
+    {
+      "title": "fuck witcha boy",
+      "author": "Gunna",
+      "type": "single",
+      "album": "The Last Wun",
+      "image": "/music/covers/gunna-the-last-wun.jpg"
+    },
+    {
+      "title": "Chosen",
+      "author": "Jay Manwell",
+      "type": "single",
+      "image": "/music/covers/jay-manwell-chosen.jpg"
+    },
+    {
+      "title": "stephanie",
+      "author": "Eem Triplin",
+      "type": "single",
+      "image": "/music/covers/eem-triplin-stephanie.jpg"
+    },
+    {
+      "title": "Dreams and Nightmares",
+      "author": "Meek Mill",
+      "type": "single",
+      "album": "Dreams and Nightmares (Deluxe Version)",
+      "image": "/music/covers/meek-mill-dreams-and-nightmares-deluxe-version.jpg"
+    },
+    {
+      "title": "On Your Own",
+      "author": "Lil Tecca",
+      "type": "single",
+      "album": "DOPAMINE",
+      "image": "/music/covers/lil-tecca-dopamine.jpg"
+    },
+    {
+      "title": "KICK OUT",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "JACKBOYS 2",
+      "image": "/music/covers/travis-scott-jackboys-2.jpg"
+    },
+    {
+      "title": "The Remorse",
+      "author": "Drake",
+      "type": "single",
+      "album": "Certified Lover Boy",
+      "image": "/music/covers/drake-certified-lover-boy.jpg"
+    },
+    {
+      "title": "Miss Me (feat. Lil Wayne)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Thank Me Later",
+      "image": "/music/covers/drake-thank-me-later.jpg"
+    },
+    {
+      "title": "Fireworks (feat. Alicia Keys)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Thank Me Later",
+      "image": "/music/covers/drake-thank-me-later.jpg"
+    },
+    {
+      "title": "Irish Goodbye",
+      "author": "Lil Tecca",
+      "type": "single",
+      "album": "DOPAMINE",
+      "image": "/music/covers/lil-tecca-dopamine.jpg"
+    },
+    {
+      "title": "NO COMMENTS",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "JACKBOYS 2",
+      "image": "/music/covers/don-toliver-jackboys-2.jpg"
+    },
+    {
+      "title": "Holy Vessel",
+      "author": "Nino Paid & Seddy Hendrinx",
+      "type": "single",
+      "image": "/music/covers/nino-paid-holy-vessel.jpg"
+    },
+    {
+      "title": "CHRISTIANS",
+      "author": "Yourboywonder",
+      "type": "single",
+      "album": "Before We Leave",
+      "image": "/music/covers/yourboywonder-before-we-leave.jpg"
+    },
+    {
+      "title": "CHAMPAIN & VACAY",
+      "author": "Travis Scott & Don Toliver",
+      "type": "single",
+      "album": "JACKBOYS 2",
+      "image": "/music/covers/travis-scott-jackboys-2.jpg"
+    },
+    {
+      "title": "PBT",
+      "author": "Travis Scott, Tyla & Vybz Kartel",
+      "type": "single",
+      "album": "JACKBOYS 2",
+      "image": "/music/covers/travis-scott-jackboys-2.jpg"
+    },
+    {
+      "title": "Heat of the Moment",
+      "author": "Drake",
+      "type": "single",
+      "album": "Care Package",
+      "image": "/music/covers/drake-care-package.jpg"
+    },
+    {
+      "title": "Moeilijk",
+      "author": "Hef",
+      "type": "single",
+      "album": "Hefvermogen 2",
+      "image": "/music/covers/hef-hefvermogen-2.jpg"
+    },
+    {
+      "title": "Super Wrong",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "What Did I Miss?",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Circo Loco",
+      "author": "Drake & 21 Savage",
+      "type": "single",
+      "album": "Her Loss",
+      "image": "/music/covers/drake-her-loss.jpg"
+    },
+    {
+      "title": "Jenni",
+      "author": "Cash Cobain & Chow Lee",
+      "type": "single",
+      "album": "2 Slizzy 2 Sexy (Deluxe)",
+      "image": "/music/covers/cash-cobain-2-slizzy-2-sexy-deluxe.jpg"
+    },
+    {
+      "title": "Jholiday 2",
+      "author": "Cash Cobain & Chow Lee",
+      "type": "single",
+      "album": "2 Slizzy 2 Sexy (Deluxe)",
+      "image": "/music/covers/cash-cobain-2-slizzy-2-sexy-deluxe.jpg"
+    },
+    {
+      "title": "Blakk Rokkstar",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "More Chaos",
+      "image": "/music/covers/ken-carson-more-chaos.jpg"
+    },
+    {
+      "title": "bankroll",
+      "author": "DDG",
+      "type": "single",
+      "album": "blame the chat",
+      "image": "/music/covers/ddg-blame-the-chat.jpg"
+    },
+    {
+      "title": "no help",
+      "author": "DDG",
+      "type": "single",
+      "album": "blame the chat",
+      "image": "/music/covers/ddg-blame-the-chat.jpg"
+    },
+    {
+      "title": "Apple Pie",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "Rodeo",
+      "image": "/music/covers/travis-scott-rodeo.jpg"
+    },
+    {
+      "title": "pick up the phone (feat. Quavo)",
+      "author": "Young Thug & Travis Scott",
+      "type": "single",
+      "album": "Birds In The Trap Sing McKnight",
+      "image": "/music/covers/young-thug-birds-in-the-trap-sing-mcknight.jpg"
+    },
+    {
+      "title": "sweet sweet",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "Birds In The Trap Sing McKnight",
+      "image": "/music/covers/travis-scott-birds-in-the-trap-sing-mcknight.jpg"
+    },
+    {
+      "title": "Shut It Down",
+      "author": "ian",
+      "type": "single",
+      "image": "/music/covers/ian-shut-it-down.jpg"
+    },
+    {
+      "title": "Swag 2",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Casper",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "East Coast N*gga",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "SOS",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Pink Moscato",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Paid For",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Sevan",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Yacht",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Yellow Lamb Truck",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "2016",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "album": "Five Forever (Deluxe)",
+      "image": "/music/covers/plaqueboymax-five-forever-deluxe.jpg"
+    },
+    {
+      "title": "Love All (feat. JAŸ-Z)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Certified Lover Boy",
+      "image": "/music/covers/drake-certified-lover-boy.jpg"
+    },
+    {
+      "title": "Champions",
+      "author": "Kanye West, Gucci Mane, Big Sean, 2 Chainz, Travis Scott, Yo Gotti, Quavo & Desiigner",
+      "type": "single",
+      "image": "/music/covers/kanye-west-champions.jpg"
+    },
+    {
+      "title": "Pon Road (feat. Sevn Alias)",
+      "author": "SFB",
+      "type": "single",
+      "album": "77 Nachten",
+      "image": "/music/covers/sfb-77-nachten.jpg"
+    },
+    {
+      "title": "ETA",
+      "author": "TopKid! Archive",
+      "type": "single",
+      "image": "/music/covers/topkid-archive-eta.jpg"
+    },
+    {
+      "title": "FELLOFF 2 (feat. Plaqueboymax)",
+      "author": "Prince Ji",
+      "type": "single",
+      "image": "/music/covers/prince-ji-felloff-2-feat-plaqueboymax.jpg"
+    },
+    {
+      "title": "Zeven",
+      "author": "Hef",
+      "type": "single",
+      "album": "Bloed Is Dikker Dan Water",
+      "image": "/music/covers/hef-bloed-is-dikker-dan-water.jpg"
+    },
+    {
+      "title": "Welcome 2 Da City",
+      "author": "Thirteendegrees °",
+      "type": "single",
+      "album": "Clique City Vol. 2",
+      "image": "/music/covers/thirteendegrees-clique-city-vol-2.jpg"
+    },
+    {
+      "title": "Da Problem Solva",
+      "author": "Thirteendegrees °",
+      "type": "single",
+      "album": "Clique City Vol. 2",
+      "image": "/music/covers/thirteendegrees-clique-city-vol-2.jpg"
+    },
+    {
+      "title": "Alright",
+      "author": "Kent Jones",
+      "type": "single",
+      "image": "/music/covers/kent-jones-alright.jpg"
+    },
+    {
+      "title": "WORTH IT",
+      "author": "Offset & Don Toliver",
+      "type": "single",
+      "album": "SET IT OFF (Versions)",
+      "image": "/music/covers/offset-set-it-off-versions.jpg"
+    },
+    {
+      "title": "Champagne",
+      "author": "Nino Paid",
+      "type": "single",
+      "image": "/music/covers/nino-paid-champagne.jpg"
+    },
+    {
+      "title": "Cooln",
+      "author": "Nino Paid, BabyChiefDoit & PlaqueBoyMax",
+      "type": "single",
+      "album": "Love Me As I Am",
+      "image": "/music/covers/nino-paid-love-me-as-i-am.jpg"
+    },
+    {
+      "title": "Ain't No Switch",
+      "author": "Jripey & 5ive",
+      "type": "single",
+      "album": "Euphoria",
+      "image": "/music/covers/jripey-euphoria.jpg"
+    },
+    {
+      "title": "High Fashion (feat. Mustard)",
+      "author": "Roddy Ricch",
+      "type": "single",
+      "album": "Please Excuse Me For Being Antisocial",
+      "image": "/music/covers/roddy-ricch-please-excuse-me-for-being-antisocial.jpg"
+    },
+    {
+      "title": "Get To It (feat. Nino Paid)",
+      "author": "ian",
+      "type": "single",
+      "image": "/music/covers/ian-get-to-it-feat-nino-paid.jpg"
+    },
+    {
+      "title": "LOYAL (feat. Drake)",
+      "author": "PARTYNEXTDOOR",
+      "type": "single",
+      "album": "PARTYMOBILE (Chopped Not Slopped)",
+      "image": "/music/covers/partynextdoor-partymobile-chopped-not-slopped.jpg"
+    },
+    {
+      "title": "Kennedy",
+      "author": "lostboyshawty",
+      "type": "single",
+      "image": "/music/covers/lostboyshawty-kennedy.png"
+    },
+    {
+      "title": "We Major (feat. Nas & Really Doe)",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "Late Registration",
+      "image": "/music/covers/kanye-west-late-registration.jpg"
+    },
+    {
+      "title": "YSL (feat. Playboi Carti)",
+      "author": "Gunna",
+      "type": "single",
+      "album": "Drip Season 2",
+      "image": "/music/covers/gunna-drip-season-2.jpg"
+    },
+    {
+      "title": "Tree On The Hill (Lunch Break Freestyle)",
+      "author": "Lyrical Lemonade & Nino Paid",
+      "type": "single",
+      "image": "/music/covers/lyrical-lemonade-tree-on-the-hill-lunch-break-freestyle.jpg"
+    },
+    {
+      "title": "Pack It Up",
+      "author": "ian",
+      "type": "single",
+      "image": "/music/covers/ian-pack-it-up.jpg"
+    },
+    {
+      "title": "Out thë way",
+      "author": "Yeat",
+      "type": "single",
+      "album": "Lyfë",
+      "image": "/music/covers/yeat-lyfe.jpg"
+    },
+    {
+      "title": "Zo Zijn",
+      "author": "sor",
+      "type": "single",
+      "album": "Bae Doven",
+      "image": "/music/covers/sor-bae-doven.jpg"
+    },
+    {
+      "title": "This Ain’t What You Wanted",
+      "author": "sor",
+      "type": "single",
+      "album": "Bae Doven",
+      "image": "/music/covers/sor-bae-doven.jpg"
+    },
+    {
+      "title": "Under Ground Kings",
+      "author": "Drake",
+      "type": "single",
+      "album": "Take Care (Deluxe Version)",
+      "image": "/music/covers/drake-take-care-deluxe-version.jpg"
+    },
+    {
+      "title": "Play No Games (feat. Chris Brown & Ty Dolla $ign)",
+      "author": "Big Sean",
+      "type": "single",
+      "album": "Dark Sky Paradise (Deluxe)",
+      "image": "/music/covers/big-sean-dark-sky-paradise-deluxe.jpg"
+    },
+    {
+      "title": "Lord Knows (feat. Rick Ross)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Take Care (Deluxe Version)",
+      "image": "/music/covers/drake-take-care-deluxe-version.jpg"
+    },
+    {
+      "title": "The Ride",
+      "author": "Drake",
+      "type": "single",
+      "album": "Take Care (Deluxe Version)",
+      "image": "/music/covers/drake-take-care-deluxe-version.jpg"
+    },
+    {
+      "title": "Diamonds Dancing (feat. Travis Scott)",
+      "author": "Young Stoner Life, Young Thug & Gunna",
+      "type": "single",
+      "album": "Slime Language 2",
+      "image": "/music/covers/young-stoner-life-slime-language-2.jpg"
+    },
+    {
+      "title": "Jodeci Freestyle (feat. J. Cole)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Care Package",
+      "image": "/music/covers/drake-care-package.jpg"
+    },
+    {
+      "title": "Draft Day",
+      "author": "Drake",
+      "type": "single",
+      "album": "Care Package",
+      "image": "/music/covers/drake-care-package.jpg"
+    },
+    {
+      "title": "Over My Dead Body",
+      "author": "Drake",
+      "type": "single",
+      "album": "Take Care (Deluxe Version)",
+      "image": "/music/covers/drake-take-care-deluxe-version.jpg"
+    },
+    {
+      "title": "Bane",
+      "author": "Destroy Lonely",
+      "type": "single",
+      "image": "/music/covers/destroy-lonely-bane.jpg"
+    },
+    {
+      "title": "NOSTYLIST",
+      "author": "Destroy Lonely",
+      "type": "single",
+      "album": "NO STYLIST",
+      "image": "/music/covers/destroy-lonely-no-stylist.jpg"
+    },
+    {
+      "title": "Losses",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Pain 1993 (feat. Playboi Carti)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Toosie Slide",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Chicago Freestyle",
+      "author": "Drake & GIVĒON",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Know Yourself",
+      "author": "Drake",
+      "type": "single",
+      "album": "If You're Reading This It's Too Late",
+      "image": "/music/covers/drake-if-you-re-reading-this-it-s-too-late.jpg"
+    },
+    {
+      "title": "Energy",
+      "author": "Drake",
+      "type": "single",
+      "album": "If You're Reading This It's Too Late",
+      "image": "/music/covers/drake-if-you-re-reading-this-it-s-too-late.jpg"
+    },
+    {
+      "title": "Jungle",
+      "author": "Drake",
+      "type": "single",
+      "album": "If You're Reading This It's Too Late",
+      "image": "/music/covers/drake-if-you-re-reading-this-it-s-too-late.jpg"
+    },
+    {
+      "title": "You & The 6",
+      "author": "Drake",
+      "type": "single",
+      "album": "If You're Reading This It's Too Late",
+      "image": "/music/covers/drake-if-you-re-reading-this-it-s-too-late.jpg"
+    },
+    {
+      "title": "Desires (feat. Future)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Outstanding Member",
+      "author": "Ronnie Flex",
+      "type": "single",
+      "album": "SDL 1",
+      "image": "/music/covers/ronnie-flex-sdl-1.jpg"
+    },
+    {
+      "title": "Free Mind",
+      "author": "Tems",
+      "type": "single",
+      "album": "For Broken Ears",
+      "image": "/music/covers/tems-higher-for-broken-ears.jpg"
+    },
+    {
+      "title": "Piece of My Heart (feat. Brent Faiyaz)",
+      "author": "Wizkid",
+      "type": "single",
+      "album": "Morayo",
+      "image": "/music/covers/wizkid-morayo.jpg"
+    },
+    {
+      "title": "My Shayla * SPICE-RILLA",
+      "author": "Tory Lanez & Dstny",
+      "type": "single",
+      "album": "PETERSON",
+      "image": "/music/covers/tory-lanez-peterson.jpg"
+    },
+    {
+      "title": "VTMNTSCOAT",
+      "author": "Destroy Lonely",
+      "type": "single",
+      "album": "NO STYLIST",
+      "image": "/music/covers/destroy-lonely-no-stylist.jpg"
+    },
+    {
+      "title": "Went Thru It",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "BUSINESS IS BUSINESS",
+      "image": "/music/covers/young-thug-business-is-business.jpg"
+    },
+    {
+      "title": "Bacc Seat (feat. Ty Dolla $ign)",
+      "author": "Roddy Ricch",
+      "type": "single",
+      "album": "Please Excuse Me For Being Antisocial",
+      "image": "/music/covers/roddy-ricch-please-excuse-me-for-being-antisocial.jpg"
+    },
+    {
+      "title": "TURNINUP",
+      "author": "Destroy Lonely",
+      "type": "single",
+      "album": "NO STYLIST",
+      "image": "/music/covers/destroy-lonely-no-stylist.jpg"
+    },
+    {
+      "title": "Down Below",
+      "author": "Roddy Ricch",
+      "type": "single",
+      "album": "Feed Tha Streets ll",
+      "image": "/music/covers/roddy-ricch-feed-tha-streets-ll.jpg"
+    },
+    {
+      "title": "Can't Tell Me Nothing",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "Graduation",
+      "image": "/music/covers/kanye-west-can-t-tell-me-nothing.jpg"
+    },
+    {
+      "title": "CN TOWER",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "CELIBACY",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "PIMMIE'S DILEMMA",
+      "author": "Pimmie, PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/pimmie-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "GIMME A HUG",
+      "author": "Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/drake-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "GREEDY",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "WHEN HE'S GONE",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "GLORIOUS",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "OMW",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "SOMEBODY LOVES ME",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "DIE TRYING",
+      "author": "PARTYNEXTDOOR, Drake & Yebba",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "RAINING IN HOUSTON",
+      "author": "Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/drake-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "DEEPER",
+      "author": "PARTYNEXTDOOR",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "CRYING IN CHANEL",
+      "author": "Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/drake-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "SOMETHING ABOUT YOU",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "MOTH BALLS",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/partynextdoor-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "NOKIA",
+      "author": "Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/drake-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "BRIAN STEEL",
+      "author": "Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/drake-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "SMALL TOWN FAME",
+      "author": "Drake",
+      "type": "single",
+      "album": "$ome $exy $ongs 4 U",
+      "image": "/music/covers/drake-ome-exy-ongs-4-u.jpg"
+    },
+    {
+      "title": "Mask Off",
+      "author": "Future",
+      "type": "single",
+      "album": "FUTURE",
+      "image": "/music/covers/future-future.jpg"
+    },
+    {
+      "title": "311",
+      "author": "Jordan Ward & Gwen Bunn",
+      "type": "single",
+      "album": "FORWARD",
+      "image": "/music/covers/jordan-ward-forward.jpg"
+    },
+    {
+      "title": "Man Of The Year",
+      "author": "PlaqueBoyMax, UnoTheActivist & 5STAR",
+      "type": "single",
+      "image": "/music/covers/plaqueboymax-man-of-the-year-man-of-the-year.jpg"
+    },
+    {
+      "title": "AWKWARD FREESTYLE",
+      "author": "Eem Triplin",
+      "type": "single",
+      "image": "/music/covers/eem-triplin-awkward-freestyle.png"
+    },
+    {
+      "title": "PRICETAG/BEVERLYWOOD",
+      "author": "Jordan Ward & Lido",
+      "type": "single",
+      "album": "moreward(FORWARD)",
+      "image": "/music/covers/jordan-ward-moreward-forward.jpg"
+    },
+    {
+      "title": "Through the Fire",
+      "author": "Deca OTA",
+      "type": "single",
+      "image": "/music/covers/deca-ota-through-the-fire.jpg"
+    },
+    {
+      "title": "BUBBLE GUM",
+      "author": "Quavo",
+      "type": "single",
+      "album": "QUAVO HUNCHO",
+      "image": "/music/covers/quavo-quavo-huncho.jpg"
+    },
+    {
+      "title": "Focused (feat. Young Thug)",
+      "author": "Quavo",
+      "type": "single",
+      "album": "Rocket Power",
+      "image": "/music/covers/quavo-rocket-power.jpg"
+    },
+    {
+      "title": "Pipe Down",
+      "author": "Drake",
+      "type": "single",
+      "album": "Certified Lover Boy",
+      "image": "/music/covers/drake-certified-lover-boy.jpg"
+    },
+    {
+      "title": "Millions",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "So Much Fun (Deluxe)",
+      "image": "/music/covers/young-thug-so-much-fun-deluxe.jpg"
+    },
+    {
+      "title": "Monëy so big",
+      "author": "Yeat",
+      "type": "single",
+      "album": "Up 2 Më",
+      "image": "/music/covers/yeat-up-2-me.jpg"
+    },
+    {
+      "title": "way back",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "Birds In The Trap Sing McKnight",
+      "image": "/music/covers/travis-scott-birds-in-the-trap-sing-mcknight.jpg"
+    },
+    {
+      "title": "CAROUSEL",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "ASTROWORLD",
+      "image": "/music/covers/travis-scott-astroworld.jpg"
+    },
+    {
+      "title": "DrIP DrIp Drip (feat. Meek Mill)",
+      "author": "Tory Lanez",
+      "type": "single",
+      "album": "LoVE me NOw (ReLoAdeD)",
+      "image": "/music/covers/tory-lanez-love-me-now-reloaded.jpg"
+    },
+    {
+      "title": "WHAT TO DO? (feat. Don Toliver)",
+      "author": "JACKBOYS & Travis Scott",
+      "type": "single",
+      "album": "JACKBOYS",
+      "image": "/music/covers/jackboys-jackboys.jpg"
+    },
+    {
+      "title": "Backyard",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "DAYS BEFORE RODEO",
+      "image": "/music/covers/travis-scott-days-before-rodeo.jpg"
+    },
+    {
+      "title": "Deceiving Eve",
+      "author": "Tory Lanez",
+      "type": "single",
+      "album": "PLAYBOY",
+      "image": "/music/covers/tory-lanez-playboy.jpg"
+    },
+    {
+      "title": "Come Through and Chill (feat. J. Cole & Salaam Remi)",
+      "author": "Miguel",
+      "type": "single",
+      "album": "War & Leisure",
+      "image": "/music/covers/miguel-war-leisure.jpg"
+    },
+    {
+      "title": "Heartless",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "After Hours (Deluxe Video Album)",
+      "image": "/music/covers/the-weeknd-after-hours-deluxe-video-album.jpg"
+    },
+    {
+      "title": "Swangin' On Westheimer",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "Life of a DON",
+      "image": "/music/covers/don-toliver-life-of-a-don.jpg"
+    },
+    {
+      "title": "Come and See Me",
+      "author": "PARTYNEXTDOOR & Drake",
+      "type": "single",
+      "image": "/music/covers/partynextdoor-come-and-see-me.jpg"
+    },
+    {
+      "title": "530",
+      "author": "¥$, Kanye West & Ty Dolla $ign",
+      "type": "single",
+      "album": "VULTURES 2",
+      "image": "/music/covers/vultures-2.jpg"
+    },
+    {
+      "title": "Down In Atlanta",
+      "author": "Pharrell Williams & Travis Scott",
+      "type": "single",
+      "image": "/music/covers/pharrell-williams-down-in-atlanta.jpg"
+    },
+    {
+      "title": "BË QUIET",
+      "author": "Yeat & Kodak Black",
+      "type": "single",
+      "album": "LYFESTYLE",
+      "image": "/music/covers/yeat-lyfestyle.jpg"
+    },
+    {
+      "title": "LYFE PARTY",
+      "author": "Yeat",
+      "type": "single",
+      "album": "LYFESTYLE",
+      "image": "/music/covers/yeat-lyfestyle.jpg"
+    },
+    {
+      "title": "Blow for Blow (feat. J. Cole)",
+      "author": "Tee Grizzley",
+      "type": "single",
+      "image": "/music/covers/tee-grizzley-blow-for-blow-feat-j-cole.jpg"
+    },
+    {
+      "title": "Used to This (feat. Drake)",
+      "author": "Future",
+      "type": "single",
+      "album": "FUTURE",
+      "image": "/music/covers/future-future.jpg"
+    },
+    {
+      "title": "Nothing Like Your Exes",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "Featuring Ty Dolla $ign",
+      "image": "/music/covers/ty-dolla-ign-featuring-ty-dolla-ign.jpg"
+    },
+    {
+      "title": "Privileged Rappers",
+      "author": "Drake & 21 Savage",
+      "type": "single",
+      "album": "Her Loss",
+      "image": "/music/covers/drake-her-loss.jpg"
+    },
+    {
+      "title": "F.N",
+      "author": "Lil Tjay",
+      "type": "single",
+      "album": "True 2 Myself",
+      "image": "/music/covers/lil-tjay-true-2-myself.jpg"
+    },
+    {
+      "title": "Leaked",
+      "author": "Lil Tjay",
+      "type": "single",
+      "image": "/music/covers/lil-tjay-leaked.jpg"
+    },
+    {
+      "title": "Crooked Smile (feat. TLC)",
+      "author": "J. Cole",
+      "type": "single",
+      "album": "Born Sinner (Deluxe Version)",
+      "image": "/music/covers/j-cole-born-sinner-deluxe-version.jpg"
+    },
+    {
+      "title": "All To Me",
+      "author": "GIVĒON",
+      "type": "single",
+      "album": "When It's All Said And Done... Take Time",
+      "image": "/music/covers/giveon-when-it-s-all-said-and-done-take-time.jpg"
+    },
+    {
+      "title": "today i did good",
+      "author": "Gunna",
+      "type": "single",
+      "album": "One of Wun",
+      "image": "/music/covers/gunna-today-i-did-good.jpg"
+    },
+    {
+      "title": "Away From Home",
+      "author": "Drake",
+      "type": "single",
+      "album": "For All The Dogs",
+      "image": "/music/covers/drake-for-all-the-dogs.jpg"
+    },
+    {
+      "title": "8am in Charlotte",
+      "author": "Drake",
+      "type": "single",
+      "album": "For All The Dogs",
+      "image": "/music/covers/drake-for-all-the-dogs.jpg"
+    },
+    {
+      "title": "All The Parties (feat. Chief Keef)",
+      "author": "Drake",
+      "type": "single",
+      "album": "For All The Dogs",
+      "image": "/music/covers/drake-for-all-the-dogs.jpg"
+    },
+    {
+      "title": "Drew A Picasso",
+      "author": "Drake",
+      "type": "single",
+      "album": "For All The Dogs",
+      "image": "/music/covers/drake-for-all-the-dogs.jpg"
+    },
+    {
+      "title": "Bam (feat. Damian \"Jr. Gong\" Marley)",
+      "author": "JAY-Z",
+      "type": "single",
+      "album": "4:44",
+      "image": "/music/covers/jay-z-4-44.jpg"
+    },
+    {
+      "title": "4:44",
+      "author": "JAY-Z",
+      "type": "single",
+      "image": "/music/covers/jay-z-4-44.jpg"
+    },
+    {
+      "title": "Otis (feat. Otis Redding)",
+      "author": "JAŸ-Z & Kanye West",
+      "type": "single",
+      "album": "Watch the Throne (Deluxe)",
+      "image": "/music/covers/jay-z-watch-the-throne-deluxe.jpg"
+    },
+    {
+      "title": "Champion",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "Graduation",
+      "image": "/music/covers/kanye-west-can-t-tell-me-nothing.jpg"
+    },
+    {
+      "title": "Welcome to the Jungle",
+      "author": "JAŸ-Z & Kanye West",
+      "type": "single",
+      "album": "Watch the Throne (Deluxe)",
+      "image": "/music/covers/jay-z-watch-the-throne-deluxe.jpg"
+    },
+    {
+      "title": "That's My Bitch",
+      "author": "JAŸ-Z & Kanye West",
+      "type": "single",
+      "album": "Watch the Throne (Deluxe)",
+      "image": "/music/covers/jay-z-watch-the-throne-deluxe.jpg"
+    },
+    {
+      "title": "New Day",
+      "author": "JAŸ-Z & Kanye West",
+      "type": "single",
+      "album": "Watch the Throne (Deluxe)",
+      "image": "/music/covers/jay-z-watch-the-throne-deluxe.jpg"
+    },
+    {
+      "title": "Landed",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Lo Mein",
+      "author": "Lil Uzi Vert",
+      "type": "single",
+      "album": "Eternal Atake (Deluxe) - LUV vs. The World 2",
+      "image": "/music/covers/lil-uzi-vert-eternal-atake-deluxe-luv-vs-the-world-2.jpg"
+    },
+    {
+      "title": "Not You Too (feat. Chris Brown)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Dark Lane Demo Tapes",
+      "image": "/music/covers/drake-dark-lane-demo-tapes.jpg"
+    },
+    {
+      "title": "Family Feud (feat. Beyoncé)",
+      "author": "JAY-Z",
+      "type": "single",
+      "album": "4:44",
+      "image": "/music/covers/jay-z-4-44.jpg"
+    },
+    {
+      "title": "One Time (feat. Future)",
+      "author": "NAV & Don Toliver",
+      "type": "single",
+      "album": "Demons Protected By Angels (Bonus Version)",
+      "image": "/music/covers/nav-demons-protected-by-angels-bonus-version.jpg"
+    },
+    {
+      "title": "My Friends (feat. Lil Durk)",
+      "author": "Ty Dolla $ign & Mustard",
+      "type": "single",
+      "image": "/music/covers/ty-dolla-ign-my-friends-feat-lil-durk.jpg"
+    },
+    {
+      "title": "Parade on Cleveland (feat. Drake)",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "BUSINESS IS BUSINESS",
+      "image": "/music/covers/young-thug-business-is-business.jpg"
+    },
+    {
+      "title": "Late",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "Late Registration",
+      "image": "/music/covers/kanye-west-late-registration.jpg"
+    },
+    {
+      "title": "No Thank You",
+      "author": "Bryson Tiller",
+      "type": "single",
+      "album": "Bryson Tiller",
+      "image": "/music/covers/bryson-tiller-bryson-tiller.jpg"
+    },
+    {
+      "title": "Number",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "Beach House 3 (Deluxe)",
+      "image": "/music/covers/ty-dolla-ign-beach-house-3-deluxe.jpg"
+    },
+    {
+      "title": "White Dress",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "The Man with the Iron Fists",
+      "image": "/music/covers/kanye-west-the-man-with-the-iron-fists.jpg"
+    },
+    {
+      "title": "WASTING TIME (feat. Drake & The Neptunes)",
+      "author": "Brent Faiyaz",
+      "type": "single",
+      "album": "WASTELAND",
+      "image": "/music/covers/brent-faiyaz-wasteland.jpg"
+    },
+    {
+      "title": "Childs Play",
+      "author": "Drake",
+      "type": "single",
+      "album": "Views",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "ALL MINE",
+      "author": "Brent Faiyaz",
+      "type": "single",
+      "album": "WASTELAND",
+      "image": "/music/covers/brent-faiyaz-wasteland.jpg"
+    },
+    {
+      "title": "The Take (feat. Chris Brown)",
+      "author": "Tory Lanez",
+      "type": "single",
+      "album": "Chixtape 5",
+      "image": "/music/covers/tory-lanez-chixtape-5.jpg"
+    },
+    {
+      "title": "ATTITUDE (FEAT. CHARLIE WILSON & CASH COBAIN)",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "HARDSTONE PSYCHO",
+      "image": "/music/covers/don-toliver-hardstone-psycho.jpg"
+    },
+    {
+      "title": "the ends",
+      "author": "Travis Scott",
+      "type": "single",
+      "album": "Birds In The Trap Sing McKnight",
+      "image": "/music/covers/travis-scott-birds-in-the-trap-sing-mcknight.jpg"
+    },
+    {
+      "title": "All Day (feat. Theophilus London, Allan Kingdom & Paul McCartney)",
+      "author": "Kanye West",
+      "type": "single",
+      "image": "/music/covers/kanye-west-all-day-feat-theophilus-london-allan-kingdom-paul-mccartney.jpg"
+    },
+    {
+      "title": "act ii: date @ 8 (remix)",
+      "author": "4batz & Drake",
+      "type": "single",
+      "image": "/music/covers/4batz-act-ii-date-8.jpg"
+    },
+    {
+      "title": "Had Enough (feat. Offset & Quavo)",
+      "author": "Don Toliver",
+      "type": "single",
+      "album": "Heaven Or Hell",
+      "image": "/music/covers/don-toliver-heaven-or-hell.jpg"
+    },
+    {
+      "title": "God Is",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "JESUS IS KING",
+      "image": "/music/covers/kanye-west-jesus-is-king.jpg"
+    },
+    {
+      "title": "BURN",
+      "author": "¥$, Kanye West & Ty Dolla $ign",
+      "type": "single",
+      "album": "VULTURES 1",
+      "image": "/music/covers/vultures-1.jpg"
+    },
+    {
+      "title": "No More Parties in LA",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "The Life of Pablo",
+      "image": "/music/covers/kanye-west-the-life-of-pablo.jpg"
+    },
+    {
+      "title": "Follow God",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "JESUS IS KING",
+      "image": "/music/covers/kanye-west-jesus-is-king.jpg"
+    },
+    {
+      "title": "Selah",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "JESUS IS KING",
+      "image": "/music/covers/kanye-west-jesus-is-king.jpg"
+    },
+    {
+      "title": "How Bout Now",
+      "author": "Drake",
+      "type": "single",
+      "album": "Care Package",
+      "image": "/music/covers/drake-care-package.jpg"
+    },
+    {
+      "title": "With You (feat. PARTYNEXTDOOR)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Views",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "Can You Stand the Rain",
+      "author": "New Edition",
+      "type": "single",
+      "image": "/music/covers/new-edition-can-you-stand-the-rain.jpg"
+    },
+    {
+      "title": "The College Dropout",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-the-college-dropout.jpg"
+    },
+    {
+      "title": "Uuugly",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-uuugly.jpg"
+    },
+    {
+      "title": "Xscape",
+      "author": "Michael Jackson",
+      "type": "album",
+      "image": "/music/covers/michael-jackson-xscape.jpg"
+    },
+    {
+      "title": "DONDA 2",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-donda-2.jpg"
+    },
+    {
+      "title": "HIM ALL ALONG",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-him-all-along.jpg"
+    },
+    {
+      "title": "back in the a",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-back-in-the-a.jpg"
+    },
+    {
+      "title": "Blue Green Red",
+      "author": "Drake",
+      "type": "single",
+      "album": "No Face",
+      "unreleased": true,
+      "image": "/music/covers/drake-blue-green-red-no-face.jpg"
     }
   ]
 }

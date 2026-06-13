@@ -31,6 +31,9 @@ function apiDevMiddleware(): Plugin {
           } else if (url === "/api/music/streaming-url") {
             const { handleStreamingUrl } = await import("./src/server/handlers/streaming-url");
             response = await handleStreamingUrl(requestUrl);
+          } else if (url === "/api/music/playlist-order") {
+            const { handlePlaylistOrder } = await import("./src/server/handlers/playlist-order");
+            response = await handlePlaylistOrder();
           } else {
             next();
             return;

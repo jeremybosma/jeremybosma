@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-13T14:35:01.974Z",
+  "syncedAt": "2026-06-13T16:47:35.053Z",
   "products": [
     {
       "id": "69f0ce3ee6d7e130380409a4",
@@ -8452,7 +8452,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/8debb176-290b-4d5a-a5fc-cf86b31ec3b9",
                   "layerType": "image",
-                  "imageId": "69f0cdfff235050dd57f2788_a6eac725-e075-af50-f66d-70b21d93bb48"
+                  "imageId": "69f0cdfff235050dd57f2788_bcae532f-d7d9-9ee3-2a03-24265e58db67"
                 }
               ],
               "decoration_method": "dtg"
@@ -12356,7 +12356,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/2233870c-2180-473a-adcc-4c7a5451c53c",
                   "layerType": "image",
-                  "imageId": "696d285b031446d92e885bdd_1b874f39-d4a4-b2f2-f234-b516ed64fc1e"
+                  "imageId": "696d285b031446d92e885bdd_fcb799cc-93b0-a501-acd6-14a2ea2d7bd7"
                 }
               ],
               "decoration_method": "aop"
@@ -12378,7 +12378,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/a5fbae9a-46bd-42ad-97ba-cde1e79514aa",
                   "layerType": "image",
-                  "imageId": "696d2c926112f2ff42f5cc42_7ca76ae4-1a61-47d3-93d3-25abf8af8d63"
+                  "imageId": "696d2c926112f2ff42f5cc42_5fba66da-b113-dfb2-f13b-301dd91cb9ea"
                 }
               ],
               "decoration_method": "aop"
@@ -23287,7 +23287,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/8bc175a2-7faf-4f33-9ab3-39a935bda2a5",
                   "layerType": "image",
-                  "imageId": "694ac02af66c8b70aee3d24e_ca233606-b569-38cf-463d-97d2416a1b7e"
+                  "imageId": "694ac02af66c8b70aee3d24e_d3f4cd0f-aa57-4bbc-c647-3b666b685938"
                 }
               ],
               "decoration_method": "dtg"
@@ -23319,7 +23319,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/a6fbe134-bb51-484f-a7a9-a16030662ca7",
                   "layerType": "image",
-                  "imageId": "694ac134473ad609da3c4f90_4b2c4158-f85f-a9da-ed0d-4f5faeb6f314"
+                  "imageId": "694ac134473ad609da3c4f90_efbed902-27e9-89e2-71d0-3d14b24f645d"
                 },
                 {
                   "id": "5941187eb8e7e37b3f0e62e5",
@@ -23335,7 +23335,7 @@
                   "angle": 0,
                   "src": "",
                   "layerType": "image",
-                  "imageId": "5941187eb8e7e37b3f0e62e5_54bae4a5-21d5-4501-4bce-82e777c3f936"
+                  "imageId": "5941187eb8e7e37b3f0e62e5_fbc917da-6fdc-5db1-7992-161d8d4c722b"
                 }
               ],
               "decoration_method": "dtf"

@@ -14,13 +14,17 @@ import {
 
 async function main() {
   const force = process.argv.includes("--force");
+  const missingOnly = process.argv.includes("--missing-only");
 
   console.log("\n🎵 Syncing music covers to public/music/covers/...\n");
   if (force) {
     console.log("  (forcing re-download of all covers)\n");
   }
+  if (missingOnly) {
+    console.log("  (only fetching missing covers)\n");
+  }
 
-  const payload = await syncAllMusicCovers(musicData, { force });
+  const payload = await syncAllMusicCovers(musicData, { force, missingOnly });
 
   const { stats, ...covers } = payload;
   writeMusicCoversJson(covers);

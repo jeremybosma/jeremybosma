@@ -67,12 +67,23 @@ function normalizeEntryKey(entry: MusicData): string {
   ].join("\0");
 }
 
+export function getMusicEntryKey(entry: MusicData): string {
+  return normalizeEntryKey(entry);
+}
+
 export function isMusicEntryDuplicate(
   entry: MusicData,
   existing: MusicData[]
 ): boolean {
-  const key = normalizeEntryKey(entry);
-  return existing.some((track) => normalizeEntryKey(track) === key);
+  const key = getMusicEntryKey(entry);
+  return existing.some((track) => getMusicEntryKey(track) === key);
+}
+
+export function writeMusicDataFile(entries: MusicData[]): void {
+  const lines = entries.map((entry) => formatMusicEntry(entry)).join("\n");
+  const content = `import type { MusicData } from "@/lib/music-api";\n\nexport const musicData: MusicData[] = [\n${lines}\n];\n`;
+
+  fs.writeFileSync(MUSIC_DATA_PATH, content);
 }
 
 function isDuplicate(entry: MusicData, fileContent: string): boolean {

@@ -174,7 +174,7 @@ export default function HomePage() {
 
       <HomeSection delay={0.2} skipEntrance={skipEntrance}>
         <h2>Highlighted work</h2>
-        <HoverSlideList className="flex flex-col -mx-3">
+        <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
           <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" />  
           <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
           <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" />
@@ -189,8 +189,8 @@ export default function HomePage() {
 
       <HomeSection delay={0.3} skipEntrance={skipEntrance}>
         <h2>Education</h2>
-        <HoverSlideList className="flex flex-col -mx-3">
-          <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 – May 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" />
+        <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
+          <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 – May 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" previewImages={[]} />
         </HoverSlideList>
       </HomeSection>
 
@@ -220,35 +220,109 @@ export default function HomePage() {
   );
 }
 
+const PROJECT_PREVIEW_SLOTS = [
+  {
+    position:
+      "left-[4%] top-1/2 -translate-y-1/2 -rotate-[8deg] opacity-0 scale-90 group-hover/project:opacity-100 group-hover/project:scale-100 group-hover/project:-translate-x-2 group-hover/project:-rotate-[12deg]",
+  },
+  {
+    position:
+      "right-[4%] top-1/2 -translate-y-1/2 rotate-[8deg] opacity-0 scale-90 group-hover/project:opacity-100 group-hover/project:scale-100 group-hover/project:translate-x-2 group-hover/project:rotate-[12deg]",
+  },
+  {
+    position:
+      "left-1/2 top-[6%] -translate-x-1/2 -rotate-[3deg] opacity-0 scale-90 group-hover/project:opacity-100 group-hover/project:scale-100 group-hover/project:-translate-y-2 group-hover/project:-rotate-[8deg]",
+  },
+] as const;
+
+const PROJECT_PREVIEW_HUES = [215, 265, 155] as const;
+
 type ProjectProps = {
   name: string;
   description: string;
   image: string;
   link: string;
+  /** Up to 3 landscape preview images (16:9). Omit for placeholders; pass [] to hide. */
+  previewImages?: string[];
 };
 
-function ProjectCard({ name, description, image, link }: ProjectProps) {
+function ProjectPreviewMedia({ src, index }: { src?: string; index: number }) {
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt=""
+        className="h-full w-full object-cover"
+        loading="lazy"
+        width={160}
+        height={90}
+      />
+    );
+  }
+
+  const hue = PROJECT_PREVIEW_HUES[index] ?? 215;
+
+  return (
+    <div
+      className="h-full w-full"
+      aria-hidden="true"
+      style={{
+        background: `linear-gradient(145deg, hsl(${hue} 35% 32%), hsl(${hue} 28% 20%))`,
+      }}
+    />
+  );
+}
+
+function ProjectCard({ name, description, image, link, previewImages }: ProjectProps) {
+  const showPreviews = previewImages === undefined || previewImages.length > 0;
+  const previews =
+    previewImages === undefined
+      ? [undefined, undefined, undefined]
+      : previewImages.slice(0, PROJECT_PREVIEW_SLOTS.length);
+
   return (
     <HoverSlideItem
       href={link}
-      className="group rounded-lg px-3 py-2"
+      className="group/project overflow-visible rounded-lg px-3 py-2"
       aria-label={`Visit ${name} website (opens in new tab)`}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex gap-3 items-center">
-        <img
-          src={image}
-          alt={`${name} project logo`}
-          className="w-[34px] h-[34px] rounded-md border-black/10 dark:border-white/10 border-[0.5px]"
-          width={100}
-          height={100}
-          loading="lazy"
-        />
-        <div className="flex flex-col min-w-0">
-          <span className="flex gap-2 items-center">
+      <div className="flex items-center gap-3">
+        <div className="relative h-14 w-[92px] shrink-0 overflow-visible pointer-events-none">
+          {showPreviews
+            ? previews.map((previewSrc, slotIndex) => {
+                const slot = PROJECT_PREVIEW_SLOTS[slotIndex];
+                if (!slot) return null;
+
+                return (
+                  <div
+                    key={slotIndex}
+                    className={`absolute w-[76px] aspect-video overflow-hidden rounded-md bg-secondary/60 shadow-md ring-1 ring-border/30 transition-all duration-300 ease-out ${slot.position}`}
+                  >
+                    <ProjectPreviewMedia src={previewSrc} index={slotIndex} />
+                  </div>
+                );
+              })
+            : null}
+          <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-md border border-black/10 bg-background shadow-sm transition-transform duration-300 ease-out group-hover/project:scale-[1.04] dark:border-white/10">
+            <img
+              src={image}
+              alt={`${name} project logo`}
+              className="size-[34px] object-cover"
+              width={100}
+              height={100}
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div className="flex min-w-0 flex-col">
+          <span className="flex items-center gap-2">
             <h3 className="hover-slide-title">{name}</h3>
-            <IconArrowUpRight className="w-2 h-2 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" aria-hidden="true" />
+            <IconArrowUpRight
+              className="h-2 w-2 text-muted-foreground transition-all duration-200 group-hover/project:text-foreground group-hover/project:translate-x-0.5 group-hover/project:-translate-y-0.5"
+              aria-hidden="true"
+            />
           </span>
           <p className="hover-slide-muted text-muted-foreground">{description}</p>
         </div>

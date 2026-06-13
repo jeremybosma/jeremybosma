@@ -217,6 +217,7 @@ export async function syncTrackCover(
   track: MusicData,
   options: {
     force?: boolean;
+    missingOnly?: boolean;
     existing?: FetchedMusicData;
     albumCovers?: Map<string, string>;
   } = {}
@@ -233,7 +234,13 @@ export async function syncTrackCover(
       if (albumKey) {
         options.albumCovers?.set(albumKey, cached);
       }
-      return { ...track, image: cached, status: "cached" };
+
+      if (
+        !options.missingOnly ||
+        !isPlaceholderCover(cached)
+      ) {
+        return { ...track, image: cached, status: "cached" };
+      }
     }
   }
 
@@ -281,7 +288,7 @@ export async function syncTrackCover(
 
 export async function syncAllMusicCovers(
   tracks: MusicData[],
-  options: { force?: boolean } = {}
+  options: { force?: boolean; missingOnly?: boolean } = {}
 ): Promise<MusicCoversData & { stats: Record<SyncTrackStatus, number> }> {
   ensurePlaceholder();
 
@@ -300,6 +307,7 @@ export async function syncAllMusicCovers(
     const existing = existingByKey.get(getTrackKey(track));
     const synced = await syncTrackCover(track, {
       force: options.force,
+      missingOnly: options.missingOnly,
       existing,
       albumCovers,
     });
@@ -323,7 +331,7 @@ export async function syncAllMusicCovers(
     );
 
     if (synced.status === "downloaded" || synced.status === "missing") {
-      await new Promise((resolve) => setTimeout(resolve, 150));
+      await new Promise((resolve) => setTimeout(resolve, 275));
     }
   }
 

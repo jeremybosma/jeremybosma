@@ -11,6 +11,8 @@ import {
   type MusicAlbumGroup,
   type MusicListItem,
 } from "@/lib/music-list-groups";
+import { orderMusicByPlaylist } from "@/lib/music-playlist-order";
+import type { AppleMusicPlaylistTrack } from "@/lib/apple-music-playlist";
 import { StreamingPlatformDialog } from "@/components/streaming-platform-dialog";
 import { shouldSkipViewTransitionEntrance } from "@/lib/view-transition-entrance";
 
@@ -191,12 +193,40 @@ function MusicGridItem({
   );
 }
 
-export function MusicList({ music }: MusicListProps) {
+export function MusicList({ music: initialMusic }: MusicListProps) {
   useInstallHoverSlideLists();
+  const [music, setMusic] = useState(initialMusic);
   const [selectedTrack, setSelectedTrack] = useState<FetchedMusicData | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [expandedGroupKey, setExpandedGroupKey] = useState<string | null>(null);
   const [skipEntrance] = useState(shouldSkipViewTransitionEntrance);
+
+  useEffect(() => {
+    setMusic(initialMusic);
+  }, [initialMusic]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/api/music/playlist-order")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Playlist sync failed (${response.status})`);
+        }
+        return response.json() as Promise<{ tracks?: AppleMusicPlaylistTrack[] }>;
+      })
+      .then((data) => {
+        if (cancelled || !data.tracks?.length) return;
+        setMusic(orderMusicByPlaylist(initialMusic, data.tracks));
+      })
+      .catch((error) => {
+        console.error("Failed to sync music order with Apple Music playlist:", error);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [initialMusic]);
 
   const listItems = useMemo(() => buildMusicListItems(music), [music]);
 

@@ -1,4 +1,5 @@
 import { DraftBadge } from "@/components/draft-badge";
+import { ProseContent } from "@/components/prose-content";
 import type { Post } from "@/lib/blog";
 import type React from "react";
 import { writingTitleVtName } from "@/lib/page-view-transition";
@@ -52,10 +53,7 @@ export default function WritingPostPage({ post }: WritingPostPageProps) {
           </time>
         </header>
 
-        <div
-          className="prose"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
+        <ProseContent client:load html={post.contentHtml} />
       </div>
     </article>
   );
