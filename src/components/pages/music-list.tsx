@@ -14,7 +14,7 @@ import {
 import { orderMusicByPlaylist } from "@/lib/music-playlist-order";
 import type { AppleMusicPlaylistTrack } from "@/lib/apple-music-playlist";
 import { StreamingPlatformDialog } from "@/components/streaming-platform-dialog";
-import { shouldSkipViewTransitionEntrance } from "@/lib/view-transition-entrance";
+import { useSkipViewTransitionEntrance } from "@/lib/view-transition-entrance";
 
 interface MusicListProps {
   music: FetchedMusicData[];
@@ -141,8 +141,7 @@ function AlbumGroupCard({
         <h2 className="hover-slide-title truncate">
           {group.album}
           <span className="text-muted-foreground font-normal">
-            {" "}
-            ({group.tracks.length})
+            {` (${group.tracks.length})`}
           </span>
         </h2>
         <p className="hover-slide-muted text-sm text-muted-foreground truncate">
@@ -158,14 +157,14 @@ function MusicGridItem({
   item,
   index,
   skipEntrance,
-  expandedGroupKey,
+  expandedGroupKeys,
   onTrackClick,
   onToggleGroup,
 }: {
   item: MusicListItem;
   index: number;
   skipEntrance: boolean;
-  expandedGroupKey: string | null;
+  expandedGroupKeys: ReadonlySet<string>;
   onTrackClick: (track: FetchedMusicData) => void;
   onToggleGroup: (key: string) => void;
 }) {
@@ -178,7 +177,7 @@ function MusicGridItem({
       {item.kind === "album-group" ? (
         <AlbumGroupCard
           group={item}
-          isExpanded={expandedGroupKey === item.key}
+          isExpanded={expandedGroupKeys.has(item.key)}
           eager={index < 10}
           onToggle={() => onToggleGroup(item.key)}
         />
@@ -198,8 +197,10 @@ export function MusicList({ music: initialMusic }: MusicListProps) {
   const [music, setMusic] = useState(initialMusic);
   const [selectedTrack, setSelectedTrack] = useState<FetchedMusicData | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [expandedGroupKey, setExpandedGroupKey] = useState<string | null>(null);
-  const [skipEntrance] = useState(shouldSkipViewTransitionEntrance);
+  const [expandedGroupKeys, setExpandedGroupKeys] = useState<ReadonlySet<string>>(
+    () => new Set()
+  );
+  const skipEntrance = useSkipViewTransitionEntrance();
 
   useEffect(() => {
     setMusic(initialMusic);
@@ -232,7 +233,7 @@ export function MusicList({ music: initialMusic }: MusicListProps) {
 
   useEffect(() => {
     scheduleHoverSlideLists();
-  }, [expandedGroupKey, listItems]);
+  }, [expandedGroupKeys, listItems]);
 
   const openInPlatform = useCallback((track: FetchedMusicData, platform: Platform) => {
     const searchQuery = encodeURIComponent(`${track.author} ${track.title}`);
@@ -299,19 +300,27 @@ export function MusicList({ music: initialMusic }: MusicListProps) {
   };
 
   const toggleGroup = useCallback((key: string) => {
-    setExpandedGroupKey((current) => (current === key ? null : key));
+    setExpandedGroupKeys((current) => {
+      const next = new Set(current);
+      if (next.has(key)) {
+        next.delete(key);
+      } else {
+        next.add(key);
+      }
+      return next;
+    });
   }, []);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && expandedGroupKey) {
-        setExpandedGroupKey(null);
+      if (event.key === "Escape") {
+        setExpandedGroupKeys((current) => (current.size > 0 ? new Set() : current));
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [expandedGroupKey]);
+  }, []);
 
   return (
     <>
@@ -322,11 +331,11 @@ export function MusicList({ music: initialMusic }: MusicListProps) {
               item={item}
               index={index}
               skipEntrance={skipEntrance}
-              expandedGroupKey={expandedGroupKey}
+              expandedGroupKeys={expandedGroupKeys}
               onTrackClick={handleTrackClick}
               onToggleGroup={toggleGroup}
             />
-            {item.kind === "album-group" && expandedGroupKey === item.key
+            {item.kind === "album-group" && expandedGroupKeys.has(item.key)
               ? item.tracks.map((track, trackIndex) => (
                   <TrackCard
                     key={`${item.key}:${track.title}`}

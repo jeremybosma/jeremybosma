@@ -26,6 +26,16 @@ function shouldSkipHomeEntrance() {
   return sessionStorage.getItem(HOME_SHOWN_KEY) === "1";
 }
 
+function useSkipHomeEntrance(): boolean {
+  const [skipEntrance, setSkipEntrance] = useState(false);
+
+  useEffect(() => {
+    setSkipEntrance(shouldSkipHomeEntrance());
+  }, []);
+
+  return skipEntrance;
+}
+
 function homeSectionProps(delay: number) {
   return {
     ...sectionProps,
@@ -64,10 +74,17 @@ const internetengineering = "/projects/internet-engineering.png";
 const integrate = "/projects/integrate.png";
 const alfacollege = "/alfa-college.png";
 
+/** Which captured screenshot (1–3) shows in each hover slot: left, right, top. */
+const PROJECT_PREVIEW_ORDER: readonly [number, number, number] = [2, 3, 1];
+
+function projectPreviews(slug: string): string[] {
+  return PROJECT_PREVIEW_ORDER.map((n) => `/projects/previews/${slug}-${n}.jpg`);
+}
+
 export default function HomePage() {
   useInstallHoverSlideLists();
   const [showMiddleName, setShowMiddleName] = useState(false);
-  const [skipEntrance] = useState(shouldSkipHomeEntrance);
+  const skipEntrance = useSkipHomeEntrance();
 
   useEffect(() => {
     if (skipEntrance) return;
@@ -103,7 +120,7 @@ export default function HomePage() {
             aria-label={showMiddleName ? "Show short name" : "Show full name"}
           >
             <h1 className="inline leading-none">
-              Jeremy{" "}
+              {"Jeremy "}
               <span className="inline-block align-baseline">
                 <AnimatePresence initial={false}>
                   {showMiddleName ? (
@@ -167,10 +184,10 @@ export default function HomePage() {
       <HomeSection delay={0.2} skipEntrance={skipEntrance}>
         <h2>Highlighted work</h2>
         <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
-          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" />  
-          <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
-          <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" />
-          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" />
+          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" previewImages={projectPreviews("individu")} />  
+          <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" previewImages={projectPreviews("internet-engineering")} />
+          <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" previewImages={projectPreviews("integrate")} />
+          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" previewImages={projectPreviews("fulldev")} />
           {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
           {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
@@ -289,7 +306,7 @@ function ProjectCard({ name, description, image, link, previewImages }: ProjectP
 
                 return (
                   <div
-                    key={slotIndex}
+                    key={previewSrc ?? slotIndex}
                     className={`absolute w-[76px] aspect-video overflow-hidden rounded-md bg-secondary/60 shadow-md ring-1 ring-border/30 transition-all duration-300 ease-out ${slot.position}`}
                   >
                     <ProjectPreviewMedia src={previewSrc} index={slotIndex} />

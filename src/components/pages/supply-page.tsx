@@ -10,6 +10,8 @@ type SupplyPageContentProps = {
   error: string | null;
 };
 
+const SHOW_SUPPLY_COMING_SOON = false;
+
 export default function SupplyPageContent({
   products,
   error,
@@ -17,19 +19,23 @@ export default function SupplyPageContent({
     useInstallHoverSlideLists();
 
     if (error || !products || products.length === 0) {
-        return (
-            <section className="page-panel-vt text-[17px] flex flex-col items-center justify-center min-h-[60vh]">
-                <div className="flex flex-col items-center gap-4 text-center">
-                    <IconTshirt className="w-24 h-24 text-muted-foreground/40" />
-                    <div className="space-y-2">
-                        <h1 className="text-2xl font-semibold">Coming Soon</h1>
-                        <p className="text-muted-foreground max-w-sm">
-                            Products are on the way. Check back later.
-                        </p>
+        if (SHOW_SUPPLY_COMING_SOON) {
+            return (
+                <section className="page-panel-vt text-[17px] flex flex-col items-center justify-center min-h-[60vh]">
+                    <div className="flex flex-col items-center gap-4 text-center">
+                        <IconTshirt className="w-24 h-24 text-muted-foreground/40" />
+                        <div className="space-y-2">
+                            <h1 className="text-2xl font-semibold">Coming Soon</h1>
+                            <p className="text-muted-foreground max-w-sm">
+                                Products are on the way. Check back later.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        );
+                </section>
+            );
+        }
+
+        return <section className="page-panel-vt text-[17px]" />;
     }
 
     return (

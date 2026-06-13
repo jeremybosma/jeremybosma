@@ -2,13 +2,16 @@ import type React from "react";
 import { DraftBadge } from "@/components/draft-badge";
 import { HoverSlideItem, HoverSlideList } from "@/components/hover-slide-list";
 import { useInstallHoverSlideLists } from "@/lib/hover-slide-list-dom";
-import { getAllPosts } from "@/lib/blog";
+import type { PostMeta } from "@/lib/blog-types";
 import { writingTitleVtName } from "@/lib/page-view-transition";
 import { IconChevronRight } from "@/lib/symbols-react";
 
-export default function WritingPageContent() {
+type WritingPageContentProps = {
+  posts: PostMeta[];
+};
+
+export default function WritingPageContent({ posts }: WritingPageContentProps) {
     useInstallHoverSlideLists();
-    const posts = getAllPosts();
 
     return (
         <section className="text-[17px]">

@@ -89,14 +89,14 @@ async function bootHydrationEntry(element: HTMLElement, fresh = false) {
       freshRoots.set(element, root);
       root.render(elementTree);
     });
-    scheduleHoverSlideLists();
+    queueMicrotask(() => scheduleHoverSlideLists());
     return;
   }
 
   unmountIslandRoot(element);
   const root = hydrateRoot(element, createElement(Component, props, staticChildren));
   hydratedRoots.set(element, root);
-  scheduleHoverSlideLists();
+  queueMicrotask(() => scheduleHoverSlideLists());
 }
 
 export async function rehydrateSitexIslands(

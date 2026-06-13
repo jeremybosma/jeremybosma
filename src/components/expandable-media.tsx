@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal, flushSync } from "react-dom";
 import {
   mediaTransitionStyle,
@@ -12,7 +12,78 @@ function isVideoSrc(src: string): boolean {
   return /\.(mp4|webm|mov)(\?|$)/i.test(src);
 }
 
-function LightboxVideo({ src, canPlay }: { src: string; canPlay: boolean }) {
+type VideoSource = { src: string; type: string };
+
+function ThumbnailVideo({
+  src,
+  sources,
+  className = "",
+  style,
+  paused = false,
+}: {
+  src: string;
+  sources?: VideoSource[];
+  className?: string;
+  style?: CSSProperties;
+  paused?: boolean;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (paused) {
+      el.pause();
+      el.muted = true;
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.muted = true;
+          void el.play().catch(() => {});
+        } else {
+          el.pause();
+        }
+      },
+      { threshold: 0.45 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [paused, src, sources]);
+
+  return (
+    <video
+      ref={ref}
+      className={className}
+      style={style}
+      playsInline
+      loop
+      muted
+      preload="metadata"
+      tabIndex={-1}
+      aria-hidden
+    >
+      {sources?.map((source) => (
+        <source key={source.src} src={source.src} type={source.type} />
+      ))}
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
+
+function LightboxVideo({
+  src,
+  sources,
+  canPlay,
+}: {
+  src: string;
+  sources?: VideoSource[];
+  canPlay: boolean;
+}) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -41,14 +112,18 @@ function LightboxVideo({ src, canPlay }: { src: string; canPlay: boolean }) {
   return (
     <video
       ref={ref}
-      src={src}
       className={`max-h-[85dvh] w-auto max-w-[90vw] object-contain transition-opacity duration-200 ${
         canPlay ? "opacity-100" : "opacity-0"
       }`}
       playsInline
       loop
       muted
-    />
+    >
+      {sources?.map((source) => (
+        <source key={source.src} src={source.src} type={source.type} />
+      ))}
+      <source src={src} type="video/mp4" />
+    </video>
   );
 }
 
@@ -72,6 +147,8 @@ type ExpandableVideoProps = ExpandableMediaBase & {
   src: string;
   alt?: string;
   poster?: string;
+  sources?: VideoSource[];
+  autoPlayThumbnail?: boolean;
 };
 
 export type ExpandableMediaProps = ExpandableImageProps | ExpandableVideoProps;
@@ -86,6 +163,8 @@ export function ExpandableMedia(props: ExpandableMediaProps) {
   const alt = props.type === "video" ? (props.alt ?? "Video") : props.alt;
   const poster =
     props.type === "video" ? props.poster : undefined;
+  const sources = props.type === "video" ? props.sources : undefined;
+  const autoPlayThumbnail = props.type === "video" && props.autoPlayThumbnail;
   const posterSrc = poster ?? (isVideo ? undefined : props.src);
 
   const [open, setOpen] = useState(false);
@@ -204,7 +283,7 @@ export function ExpandableMedia(props: ExpandableMediaProps) {
                     aria-hidden
                   />
                 )}
-                <LightboxVideo src={props.src} canPlay={canPlay} />
+                <LightboxVideo src={props.src} sources={sources} canPlay={canPlay} />
               </>
             ) : (
               <img
@@ -231,19 +310,28 @@ export function ExpandableMedia(props: ExpandableMediaProps) {
         {isVideo ? (
           <span
             className={`relative block overflow-hidden rounded-lg ${thumbnailClassName}`}
-            style={thumbnailVtStyle}
           >
-            {posterSrc ? (
+            {autoPlayThumbnail ? (
+              <ThumbnailVideo
+                src={props.src}
+                sources={sources}
+                className="h-full w-full object-cover"
+                style={thumbnailVtStyle}
+                paused={open}
+              />
+            ) : posterSrc ? (
               <img
                 src={posterSrc}
                 alt={alt}
                 className="w-full rounded-lg"
+                style={thumbnailVtStyle}
                 draggable={false}
               />
             ) : (
               <video
                 src={props.src}
                 className="w-full rounded-lg"
+                style={thumbnailVtStyle}
                 playsInline
                 muted
                 preload="metadata"

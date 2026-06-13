@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BOUND_ATTR = "data-hover-slide-bound";
+const boundLists = new WeakSet<HTMLElement>();
 
 type HoverSlideVars = {
   "--hover-slide-x": string;
@@ -27,9 +27,9 @@ function applyVars(list: HTMLElement, vars: HoverSlideVars) {
 }
 
 function bindHoverSlideList(list: HTMLElement) {
-  if (list.hasAttribute(BOUND_ATTR)) return;
+  if (boundLists.has(list)) return;
 
-  list.setAttribute(BOUND_ATTR, "true");
+  boundLists.add(list);
 
   let activeElement: HTMLElement | null = null;
 

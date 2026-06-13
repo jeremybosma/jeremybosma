@@ -1,19 +1,18 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
+import SupplyCheckoutModal from "@/components/supply-checkout-modal";
 import { supplyTitleVtName } from "@/lib/page-view-transition";
 import { formatPrice } from "@/lib/printify";
 import { useUserCountry } from "@/lib/use-user-country";
 import type { ProductDetailData } from "@/lib/use-product-detail";
 import { useProductDetailStore } from "@/lib/use-product-detail";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
 export default function ProductDetailPanel(props: ProductDetailData) {
   const userCountry = useUserCountry();
+  const [checkoutOpen, setCheckoutOpen] = React.useState(false);
+  const [checkoutNotice, setCheckoutNotice] = React.useState<{
+    type: "success" | "error" | "cancelled";
+    message: string;
+  } | null>(null);
   const {
     data,
     selectedColor,
@@ -21,37 +20,102 @@ export default function ProductDetailPanel(props: ProductDetailData) {
     selectedVariant,
     currentImage,
     lightboxOpen,
-    sizeUnit,
     isVariantAvailable,
     setSelectedColor,
     setSelectedSize,
     setLightboxOpen,
-    setSizeUnit,
   } = useProductDetailStore(props, { effects: true });
 
-  const {
-    product,
-    lowestPrice,
-    highestPrice,
-    cleanDescription,
-    safetyInformation,
-    colors,
-    sizes,
-  } = data;
+  const { product, colors, sizes, paymentsConfigured } = data;
 
-  const sizeChart = {
-    sizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"],
-    measurements: {
-      width: [45.72, 50.8, 55.88, 60.96, 66.04, 71.12, 76.2, 81.28],
-      length: [71.12, 73.66, 76.2, 78.74, 81.28, 83.82, 86.36, 88.9],
-      sleeve: [38.35, 41.91, 45.72, 49.53, 53.34, 56.9, 60.2, 63.5],
-      tolerance: [3.81, 3.81, 3.81, 3.81, 3.81, 3.81, 3.81, 3.81],
-    },
+  const canPurchase =
+    paymentsConfigured &&
+    selectedVariant != null &&
+    isVariantAvailable(selectedColor, selectedSize);
+
+  const purchasePrice = selectedVariant
+    ? formatPrice(selectedVariant.price, userCountry)
+    : null;
+
+  const handlePurchase = () => {
+    if (!selectedVariant || !canPurchase) return;
+    setCheckoutOpen(true);
   };
 
-  const cmToInch = (cm: number) => (cm / 2.54).toFixed(1);
-  const formatMeasurement = (cm: number) =>
-    sizeUnit === "cm" ? cm.toFixed(1) : cmToInch(cm);
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const checkout = params.get("checkout");
+    const checkoutId =
+      params.get("checkout_id") ?? params.get("session_id");
+
+    if (!checkout) return;
+
+    if (checkout === "cancelled") {
+      setCheckoutNotice({
+        type: "cancelled",
+        message: "Payment was cancelled. You can try again when ready.",
+      });
+      params.delete("checkout");
+      params.delete("checkout_id");
+      params.delete("session_id");
+      const nextSearch = params.toString();
+      const nextUrl = `${window.location.pathname}${
+        nextSearch ? `?${nextSearch}` : ""
+      }`;
+      window.history.replaceState({}, "", nextUrl);
+      return;
+    }
+
+    if (checkout !== "success" || !checkoutId) return;
+
+    let cancelled = false;
+
+    void (async () => {
+      try {
+        const response = await fetch(
+          `/api/supply/checkout-complete?checkout_id=${encodeURIComponent(checkoutId)}`
+        );
+        const data = (await response.json()) as {
+          error?: string;
+          orderId?: string;
+        };
+
+        if (!response.ok) {
+          throw new Error(data.error ?? "Failed to confirm payment");
+        }
+
+        if (cancelled) return;
+
+        setCheckoutNotice({
+          type: "success",
+          message: data.orderId
+            ? `Payment received. Your order is being prepared (Printify #${data.orderId}).`
+            : "Payment received. Your order is being prepared.",
+        });
+      } catch (error) {
+        if (cancelled) return;
+        setCheckoutNotice({
+          type: "error",
+          message:
+            error instanceof Error
+              ? error.message
+              : "Payment succeeded but order confirmation failed",
+        });
+      } finally {
+        params.delete("checkout");
+        params.delete("session_id");
+        const nextSearch = params.toString();
+        const nextUrl = `${window.location.pathname}${
+          nextSearch ? `?${nextSearch}` : ""
+        }`;
+        window.history.replaceState({}, "", nextUrl);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -77,19 +141,12 @@ export default function ProductDetailPanel(props: ProductDetailData) {
           >
             {product.title}
           </h1>
-          <p className="text-xl">
-            {selectedVariant
-              ? formatPrice(selectedVariant.price, userCountry)
-              : lowestPrice === highestPrice
-                ? formatPrice(lowestPrice, userCountry)
-                : `${formatPrice(lowestPrice, userCountry)} - ${formatPrice(highestPrice, userCountry)}`}
-          </p>
         </div>
 
         {colors.length > 0 && (
           <div>
             <p className="text-sm font-medium">
-              Color:{" "}
+              {"Color: "}
               <span className="text-muted-foreground font-normal">
                 {colors.find((c) => c.id === selectedColor)?.title}
               </span>
@@ -125,7 +182,7 @@ export default function ProductDetailPanel(props: ProductDetailData) {
         {sizes.length > 0 && (
           <div>
             <p className="text-sm font-medium mb-2">
-              Size:{" "}
+              {"Size: "}
               <span className="text-muted-foreground font-normal">
                 {sizes.find((s) => s.id === selectedSize)?.title}
               </span>
@@ -155,127 +212,46 @@ export default function ProductDetailPanel(props: ProductDetailData) {
           </div>
         )}
 
-        {(cleanDescription || sizes.length > 0 || safetyInformation) && (
-          <Accordion type="multiple" className="w-full">
-            {cleanDescription && (
-              <AccordionItem value="description">
-                <AccordionTrigger>Description</AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-sm text-muted-foreground whitespace-pre-line">
-                    {cleanDescription}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            )}
-            {sizes.length > 0 && (
-              <AccordionItem value="sizing">
-                <AccordionTrigger>Size Guide</AccordionTrigger>
-                <AccordionContent>
-                  <div className="flex gap-2 mb-4">
-                    <button
-                      type="button"
-                      onClick={() => setSizeUnit("cm")}
-                      className={`px-3 py-1 text-xs rounded-md border transition-all ${
-                        sizeUnit === "cm"
-                          ? "border-foreground bg-foreground text-background"
-                          : "border-border hover:border-muted-foreground"
-                      }`}
-                    >
-                      CM
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSizeUnit("in")}
-                      className={`px-3 py-1 text-xs rounded-md border transition-all ${
-                        sizeUnit === "in"
-                          ? "border-foreground bg-foreground text-background"
-                          : "border-border hover:border-muted-foreground"
-                      }`}
-                    >
-                      IN
-                    </button>
-                  </div>
+        {checkoutNotice ? (
+          <div
+            className={`rounded-md border px-4 py-3 text-sm ${
+              checkoutNotice.type === "success"
+                ? "border-green-600/30 bg-green-600/10 text-green-800 dark:text-green-300"
+                : checkoutNotice.type === "cancelled"
+                  ? "border-border bg-secondary/40 text-muted-foreground"
+                  : "border-red-600/30 bg-red-600/10 text-red-700 dark:text-red-300"
+            }`}
+          >
+            {checkoutNotice.message}
+          </div>
+        ) : null}
 
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-border">
-                          <th className="text-left py-2 pr-4 font-medium sticky left-0 bg-background">
-                            {sizeUnit === "cm" ? "Measurement (cm)" : "Measurement (in)"}
-                          </th>
-                          {sizeChart.sizes.map((size) => (
-                            <th
-                              key={size}
-                              className="text-center py-2 px-2 font-medium min-w-[50px]"
-                            >
-                              {size}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-border/50">
-                          <td className="py-2 pr-4 text-muted-foreground sticky left-0 bg-background">
-                            Width
-                          </td>
-                          {sizeChart.measurements.width.map((val, i) => (
-                            <td key={i} className="text-center py-2 px-2">
-                              {formatMeasurement(val)}
-                            </td>
-                          ))}
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="py-2 pr-4 text-muted-foreground sticky left-0 bg-background">
-                            Length
-                          </td>
-                          {sizeChart.measurements.length.map((val, i) => (
-                            <td key={i} className="text-center py-2 px-2">
-                              {formatMeasurement(val)}
-                            </td>
-                          ))}
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="py-2 pr-4 text-muted-foreground sticky left-0 bg-background">
-                            Sleeve length
-                          </td>
-                          {sizeChart.measurements.sleeve.map((val, i) => (
-                            <td key={i} className="text-center py-2 px-2">
-                              {formatMeasurement(val)}
-                            </td>
-                          ))}
-                        </tr>
-                        <tr>
-                          <td className="py-2 pr-4 text-muted-foreground sticky left-0 bg-background">
-                            Tolerance ±
-                          </td>
-                          {sizeChart.measurements.tolerance.map((val, i) => (
-                            <td
-                              key={i}
-                              className="text-center py-2 px-2 text-muted-foreground"
-                            >
-                              {formatMeasurement(val)}
-                            </td>
-                          ))}
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            )}
-            {safetyInformation && (
-              <AccordionItem value="safety">
-                <AccordionTrigger>Safety & Care</AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-sm text-muted-foreground whitespace-pre-line">
-                    {safetyInformation}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            )}
-          </Accordion>
-        )}
+        <button
+          type="button"
+          disabled={!canPurchase}
+          onClick={handlePurchase}
+          className={`w-full px-4 py-3 text-sm font-medium rounded-md border transition-all ${
+            canPurchase
+              ? "border-foreground bg-foreground text-background hover:opacity-90"
+              : "border-border bg-secondary text-muted-foreground cursor-not-allowed opacity-60"
+          }`}
+        >
+          {canPurchase && purchasePrice
+            ? `Purchase for ${purchasePrice}`
+            : "Out of Stock"}
+        </button>
       </div>
+
+      {selectedVariant ? (
+        <SupplyCheckoutModal
+          open={checkoutOpen}
+          onClose={() => setCheckoutOpen(false)}
+          productId={product.id}
+          productTitle={product.title}
+          variant={selectedVariant}
+          countryCode={userCountry}
+        />
+      ) : null}
 
       <AnimatePresence>
         {lightboxOpen && currentImage && (

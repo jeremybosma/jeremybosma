@@ -1,6 +1,6 @@
 import { DraftBadge } from "@/components/draft-badge";
 import { ProseContent } from "@/components/prose-content";
-import type { Post } from "@/lib/blog";
+import type { Post } from "@/lib/blog-types";
 import type React from "react";
 import { writingTitleVtName } from "@/lib/page-view-transition";
 import { IconChevronLeft } from "@/lib/symbols-react";

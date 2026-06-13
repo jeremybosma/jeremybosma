@@ -10,7 +10,7 @@ export default function Page() {
       pathname="/videos"
     >
       <ClientShell client:load pathname="/videos">
-        <VideosPageContent />
+        <VideosPageContent client:load />
       </ClientShell>
     </BaseLayout>
   );

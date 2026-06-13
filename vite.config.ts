@@ -1,62 +1,82 @@
 import { config as loadDotenv } from "dotenv";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { defineConfig, type Plugin } from "vite";
+import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 
 loadDotenv();
 import tailwindcss from "@tailwindcss/vite";
 import { sitex } from "@fulldotdev/sitex/plugin";
 import react from "@vitejs/plugin-react";
+
+const rootDir = path.dirname(fileURLToPath(import.meta.url));
+
+async function sendApiResponse(
+  res: import("node:http").ServerResponse,
+  response: Response
+) {
+  res.statusCode = response.status;
+  response.headers.forEach((value, key) => {
+    res.setHeader(key, value);
+  });
+  res.end(await response.text());
+}
+
+function sendApiError(
+  res: import("node:http").ServerResponse,
+  status: number,
+  message: string
+) {
+  res.statusCode = status;
+  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify({ error: message }));
+}
+
+function registerApiMiddleware(server: ViteDevServer) {
+  server.middlewares.use(async (req, res, next) => {
+    const url = req.url?.split("?")[0] ?? "";
+    if (!url.startsWith("/api/")) {
+      next();
+      return;
+    }
+
+    try {
+      const { handleApiRequest } = await server.ssrLoadModule(
+        "/src/server/handlers/api.ts"
+      );
+      const requestUrl = new URL(req.url ?? "/", "http://localhost");
+      const response = await handleApiRequest(
+        req,
+        requestUrl,
+        (moduleId) => server.ssrLoadModule(moduleId)
+      );
+
+      if (!response) {
+        sendApiError(res, 404, "API route not found");
+        return;
+      }
+
+      await sendApiResponse(res, response);
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "API request failed";
+      sendApiError(res, 500, message);
+    }
+  });
+}
+
 function apiDevMiddleware(): Plugin {
   return {
     name: "portfolio-api-dev",
-    configureServer(server) {
-      server.middlewares.use(async (req, res, next) => {
-        const url = req.url?.split("?")[0] ?? "";
-        if (!url.startsWith("/api/")) {
-          next();
-          return;
-        }
-
-        try {
-          const requestUrl = new URL(req.url ?? "/", "http://localhost");
-          let response: Response;
-
-          if (url === "/api/music/album-art") {
-            const { handleAlbumArt } = await import("./src/server/handlers/album-art");
-            response = await handleAlbumArt(requestUrl);
-          } else if (url === "/api/music/add") {
-            const { handleAddMusic } = await import("./src/server/handlers/add-music");
-            response = await handleAddMusic(req);
-          } else if (url === "/api/music/streaming-url") {
-            const { handleStreamingUrl } = await import("./src/server/handlers/streaming-url");
-            response = await handleStreamingUrl(requestUrl);
-          } else if (url === "/api/music/playlist-order") {
-            const { handlePlaylistOrder } = await import("./src/server/handlers/playlist-order");
-            response = await handlePlaylistOrder();
-          } else {
-            next();
-            return;
-          }
-
-          res.statusCode = response.status;
-          response.headers.forEach((value, key) => {
-            res.setHeader(key, value);
-          });
-          res.end(await response.text());
-        } catch (error) {
-          next(error);
-        }
-      });
+    enforce: "pre",
+    configureServer(devServer) {
+      registerApiMiddleware(devServer);
     },
   };
 }
 
-const rootDir = path.dirname(fileURLToPath(import.meta.url));
-
 export default defineConfig({
   appType: "custom",
-  plugins: [tailwindcss(), react(), sitex(), apiDevMiddleware()],
+  plugins: [tailwindcss(), react(), apiDevMiddleware(), sitex()],
   publicDir: "public",
   resolve: {
     alias: {

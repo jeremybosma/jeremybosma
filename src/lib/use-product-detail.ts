@@ -12,6 +12,7 @@ export type ProductDetailData = {
   highestPrice: number;
   cleanDescription: string;
   safetyInformation: string | null;
+  paymentsConfigured: boolean;
 };
 
 type ProductDetailState = {

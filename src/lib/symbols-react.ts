@@ -4,7 +4,7 @@ export { IconHouse } from "symbols-react/src/icons/IconHouse.js";
 export { IconHouseFill } from "symbols-react/src/icons/IconHouseFill.js";
 export { IconPhotoStack } from "symbols-react/src/icons/IconPhotoStack.js";
 export { IconPhotoStackFill } from "symbols-react/src/icons/IconPhotoStackFill.js";
-export { IconAirpodsProLeft } from "symbols-react/src/icons/IconAirpodsProLeft.js";
+export { IconMusicNoteList } from "symbols-react/src/icons/IconMusicNoteList.js";
 export { IconXLogo } from "symbols-react/src/icons/IconXLogo.js";
 export { IconLine3Horizontal } from "symbols-react/src/icons/IconLine3Horizontal.js";
 export { IconXmark } from "symbols-react/src/icons/IconXmark.js";

@@ -1,9 +1,9 @@
 {
-  "syncedAt": "2026-06-13T16:47:35.053Z",
+  "syncedAt": "2026-06-13T19:45:50.354Z",
   "products": [
     {
       "id": "69f0ce3ee6d7e130380409a4",
-      "title": "Unisex Garment-Dyed T-shirt",
+      "title": "Rich Kids From The Countryside",
       "description": "<p>Comfort Colors introduces the “Comfort Colors 1717” garment-dyed t-shirt; a fully customizable tee made with 100% ring-spun cotton. The soft-washed, garment-dyed fabric brings extra coziness to your wardrobe while the relaxed fit makes it an excellent daily choice. The double-needle stitching throughout the tee makes it highly durable, while the lack of side seams helps the shirt retain its tubular shape. Discover all 58 colors in our charts below.</p><br/><p>.: Heavyweight fabric (6.1 oz/yd² (206.8 g/m²))<br/>.: Relaxed fit<br/>.: Pre-shrunk 100% ring-spun US cotton<br/>.: Available in 58 colors<br/>.: Sewn-in label</p>",
       "tags": [
         "Unisex",
@@ -911,7 +911,7 @@
           "id": 79169,
           "sku": "23477507519356019865",
           "cost": 1571,
-          "price": 2618,
+          "price": 3599,
           "title": "White / 3XL",
           "grams": 400,
           "is_enabled": true,
@@ -1642,7 +1642,7 @@
           "id": 73199,
           "sku": "27928538206710619748",
           "cost": 1241,
-          "price": 2068,
+          "price": 2399,
           "title": "White / S",
           "grams": 130,
           "is_enabled": true,
@@ -2900,7 +2900,7 @@
           "id": 73203,
           "sku": "96049226526316878685",
           "cost": 1241,
-          "price": 2068,
+          "price": 2499,
           "title": "White / M",
           "grams": 160,
           "is_enabled": true,
@@ -4022,7 +4022,7 @@
           "id": 73211,
           "sku": "30247220778955442373",
           "cost": 1241,
-          "price": 2068,
+          "price": 2499,
           "title": "White / XL",
           "grams": 220,
           "is_enabled": true,
@@ -4464,7 +4464,7 @@
           "id": 73207,
           "sku": "24242998992023319511",
           "cost": 1241,
-          "price": 2068,
+          "price": 2499,
           "title": "White / L",
           "grams": 170,
           "is_enabled": true,
@@ -5892,7 +5892,7 @@
           "id": 73215,
           "sku": "18843021464273775985",
           "cost": 1367,
-          "price": 2278,
+          "price": 2699,
           "title": "White / 2XL",
           "grams": 230,
           "is_enabled": true,
@@ -6623,7 +6623,7 @@
           "id": 101476,
           "sku": "79627153012091235966",
           "cost": 1766,
-          "price": 2943,
+          "price": 2899,
           "title": "White / 4XL",
           "grams": 480,
           "is_enabled": true,
@@ -7693,25 +7693,8 @@
       ],
       "images": [
         {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_98445_front",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/98445/unisex-garment-dyed-t-shirt.jpg?camera_label=front",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "front",
-          "is_default": true,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
           "mockup_id": "69f0ce3ee6d7e130380409a4_73207_98446_back",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/98446/unisex-garment-dyed-t-shirt.jpg?camera_label=back",
+          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/98446/rich-kids-from-the-countryside.jpg?camera_label=back",
           "variant_ids": [
             79169,
             73199,
@@ -7722,13 +7705,13 @@
             101476
           ],
           "position": "back",
-          "is_default": false,
+          "is_default": true,
           "is_selected_for_publishing": true,
           "order": null
         },
         {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100629_folded",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100629/unisex-garment-dyed-t-shirt.jpg?camera_label=folded",
+          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_98445_front",
+          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/98445/rich-kids-from-the-countryside.jpg?camera_label=front",
           "variant_ids": [
             79169,
             73199,
@@ -7738,271 +7721,20 @@
             73215,
             101476
           ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_126095_person-5-context",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/126095/unisex-garment-dyed-t-shirt.jpg?camera_label=person-5-context",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_126111_person-5-context-2",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/126111/unisex-garment-dyed-t-shirt.jpg?camera_label=person-5-context-2",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_112433_person-1-front",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/112433/unisex-garment-dyed-t-shirt.jpg?camera_label=person-1-front",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_112434_person-1-back",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/112434/unisex-garment-dyed-t-shirt.jpg?camera_label=person-1-back",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_98448_person-2",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/98448/unisex-garment-dyed-t-shirt.jpg?camera_label=person-2",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100630_person-3-front",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100630/unisex-garment-dyed-t-shirt.jpg?camera_label=person-3-front",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_110640_person-3-back",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/110640/unisex-garment-dyed-t-shirt.jpg?camera_label=person-3-back",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100633_person-3-left-sleeve",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100633/unisex-garment-dyed-t-shirt.jpg?camera_label=person-3-left-sleeve",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "left_sleeve",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100674_person-3-context",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100674/unisex-garment-dyed-t-shirt.jpg?camera_label=person-3-context",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100634_person-4-front",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100634/unisex-garment-dyed-t-shirt.jpg?camera_label=person-4-front",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100635_person-4-back",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100635/unisex-garment-dyed-t-shirt.jpg?camera_label=person-4-back",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100636_person-4-right-sleeve",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100636/unisex-garment-dyed-t-shirt.jpg?camera_label=person-4-right-sleeve",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "right_sleeve",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_100637_person-4-context",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/100637/unisex-garment-dyed-t-shirt.jpg?camera_label=person-4-context",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_110132_size-chart",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/110132/unisex-garment-dyed-t-shirt.jpg?camera_label=size-chart",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
-          "mockup_id": "69f0ce3ee6d7e130380409a4_73207_126094_folded-2",
-          "src": "https://images-api.printify.com/mockup/69f0ce3ee6d7e130380409a4/73207/126094/unisex-garment-dyed-t-shirt.jpg?camera_label=folded-2",
-          "variant_ids": [
-            79169,
-            73199,
-            73203,
-            73211,
-            73207,
-            73215,
-            101476
-          ],
-          "position": "other",
+          "position": "front",
           "is_default": false,
           "is_selected_for_publishing": true,
           "order": null
         }
       ],
       "created_at": "2026-04-28 15:11:57+00:00",
-      "updated_at": "2026-04-28 15:12:10+00:00",
+      "updated_at": "2026-06-13 19:44:32+00:00",
       "visible": true,
       "is_locked": false,
+      "external": {
+        "id": "",
+        "handle": ""
+      },
       "blueprint_id": 706,
       "user_id": 25790405,
       "shop_id": 25790898,
@@ -8452,7 +8184,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/8debb176-290b-4d5a-a5fc-cf86b31ec3b9",
                   "layerType": "image",
-                  "imageId": "69f0cdfff235050dd57f2788_bcae532f-d7d9-9ee3-2a03-24265e58db67"
+                  "imageId": "69f0cdfff235050dd57f2788_fa557a18-21f5-ce99-d757-48b5febfeda2"
                 }
               ],
               "decoration_method": "dtg"
@@ -9350,7 +9082,7 @@
     },
     {
       "id": "69ebcf3d95f805910f08712d",
-      "title": "AUTHORIZED PERSONNEL ONLY Long Sleeve Tee | Back Print Statement Shirt",
+      "title": "AUTHORIZED PERSONNEL ONLY",
       "description": "A soft, vintage-feel long sleeve that reads like a quiet statement. The clean white fabric and bold back print—\"AUTHORIZED PERSONNEL ONLY\"—give it a minimalist, utilitarian edge. Wear it layered under a denim jacket for city errands or alone on cool mornings when you want to move through the day with a little guarded wit. The thicker, eco-friendly cotton drapes with subtle weight, while ribbed cuffs and taped shoulders keep the silhouette steady after many washes. It’s the kind of shirt that quietly signals boundaries and dry humor to people who notice.<br/><br/>Product features<br/>- Eco-friendly thicker cotton with vintage hand and medium weight (6.0 oz/yd²).<br/>- Tubular knit without side seams to reduce waste and create a clean drape.<br/>- Ribbed knit collar and shoulder tape for shape retention and stability.<br/>- Classic fit with sewn-in label; runs smaller than usual — consider sizing up.<br/>- Fiber blends vary by color; solid whites are 100% cotton and meet EU REACH requirements.<br/><br/>Care instructions<br/>- Non-chlorine: bleach as needed<br/>- Do not dryclean<br/>- Machine wash: cold (max 30C or 90F)<br/>- Tumble dry: medium heat<br/>- Do not iron<br/>",
       "tags": [
         "Long Sleeves",
@@ -11596,26 +11328,8 @@
       ],
       "images": [
         {
-          "mockup_id": "69ebcf3d95f805910f08712d_33793_105264_front",
-          "src": "https://images-api.printify.com/mockup/69ebcf3d95f805910f08712d/33793/105264/authorized-personnel-only-long-sleeve-tee-back-print-statement-shirt.jpg?camera_label=front",
-          "variant_ids": [
-            33794,
-            33793,
-            33791,
-            33792,
-            33795,
-            77170,
-            77146,
-            64722
-          ],
-          "position": "front",
-          "is_default": true,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
           "mockup_id": "69ebcf3d95f805910f08712d_33793_105265_back",
-          "src": "https://images-api.printify.com/mockup/69ebcf3d95f805910f08712d/33793/105265/authorized-personnel-only-long-sleeve-tee-back-print-statement-shirt.jpg?camera_label=back",
+          "src": "https://images-api.printify.com/mockup/69ebcf3d95f805910f08712d/33793/105265/authorized-personnel-only.jpg?camera_label=back",
           "variant_ids": [
             33794,
             33793,
@@ -11627,13 +11341,13 @@
             64722
           ],
           "position": "back",
-          "is_default": false,
+          "is_default": true,
           "is_selected_for_publishing": true,
           "order": null
         },
         {
-          "mockup_id": "69ebcf3d95f805910f08712d_33793_110103_size-chart",
-          "src": "https://images-api.printify.com/mockup/69ebcf3d95f805910f08712d/33793/110103/authorized-personnel-only-long-sleeve-tee-back-print-statement-shirt.jpg?camera_label=size-chart",
+          "mockup_id": "69ebcf3d95f805910f08712d_33793_105264_front",
+          "src": "https://images-api.printify.com/mockup/69ebcf3d95f805910f08712d/33793/105264/authorized-personnel-only.jpg?camera_label=front",
           "variant_ids": [
             33794,
             33793,
@@ -11644,14 +11358,14 @@
             77146,
             64722
           ],
-          "position": "other",
+          "position": "front",
           "is_default": false,
           "is_selected_for_publishing": true,
           "order": null
         }
       ],
       "created_at": "2026-04-24 20:14:53+00:00",
-      "updated_at": "2026-04-24 20:15:13+00:00",
+      "updated_at": "2026-06-13 19:43:56+00:00",
       "visible": true,
       "is_locked": false,
       "external": {
@@ -12167,7 +11881,7 @@
           "price": 4495,
           "title": "XS",
           "grams": 149,
-          "is_enabled": false,
+          "is_enabled": true,
           "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
@@ -12183,8 +11897,8 @@
           "price": 4495,
           "title": "S",
           "grams": 154,
-          "is_enabled": false,
-          "is_default": false,
+          "is_enabled": true,
+          "is_default": true,
           "is_available": true,
           "is_printify_express_eligible": false,
           "options": [
@@ -12199,7 +11913,7 @@
           "price": 4495,
           "title": "M",
           "grams": 176,
-          "is_enabled": false,
+          "is_enabled": true,
           "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
@@ -12216,7 +11930,7 @@
           "title": "L",
           "grams": 204,
           "is_enabled": true,
-          "is_default": true,
+          "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
           "options": [
@@ -12231,7 +11945,7 @@
           "price": 4495,
           "title": "XL",
           "grams": 235,
-          "is_enabled": false,
+          "is_enabled": true,
           "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
@@ -12247,7 +11961,7 @@
           "price": 5032,
           "title": "2XL",
           "grams": 249,
-          "is_enabled": false,
+          "is_enabled": true,
           "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
@@ -12263,7 +11977,7 @@
           "price": 5300,
           "title": "3XL",
           "grams": 263,
-          "is_enabled": false,
+          "is_enabled": true,
           "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
@@ -12279,7 +11993,7 @@
           "price": 5568,
           "title": "4XL",
           "grams": 277,
-          "is_enabled": false,
+          "is_enabled": true,
           "is_default": false,
           "is_available": true,
           "is_printify_express_eligible": false,
@@ -12294,7 +12008,14 @@
           "mockup_id": "696d3156e378710ab70953ce_94256_79057_front",
           "src": "https://images-api.printify.com/mockup/696d3156e378710ab70953ce/94256/79057/tactical.jpg?camera_label=front",
           "variant_ids": [
-            94256
+            94253,
+            94254,
+            94255,
+            94256,
+            94257,
+            94258,
+            94259,
+            94260
           ],
           "position": "other",
           "is_default": true,
@@ -12305,7 +12026,14 @@
           "mockup_id": "696d3156e378710ab70953ce_94256_76496_back",
           "src": "https://images-api.printify.com/mockup/696d3156e378710ab70953ce/94256/76496/tactical.jpg?camera_label=back",
           "variant_ids": [
-            94256
+            94253,
+            94254,
+            94255,
+            94256,
+            94257,
+            94258,
+            94259,
+            94260
           ],
           "position": "other",
           "is_default": false,
@@ -12314,7 +12042,7 @@
         }
       ],
       "created_at": "2026-01-18 19:15:34+00:00",
-      "updated_at": "2026-06-01 20:59:21+00:00",
+      "updated_at": "2026-06-13 19:41:45+00:00",
       "visible": true,
       "is_locked": false,
       "external": {
@@ -12356,7 +12084,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/2233870c-2180-473a-adcc-4c7a5451c53c",
                   "layerType": "image",
-                  "imageId": "696d285b031446d92e885bdd_fcb799cc-93b0-a501-acd6-14a2ea2d7bd7"
+                  "imageId": "696d285b031446d92e885bdd_319bf97d-e27e-cbc1-6296-1d344c0c4cf7"
                 }
               ],
               "decoration_method": "aop"
@@ -12378,7 +12106,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/a5fbae9a-46bd-42ad-97ba-cde1e79514aa",
                   "layerType": "image",
-                  "imageId": "696d2c926112f2ff42f5cc42_5fba66da-b113-dfb2-f13b-301dd91cb9ea"
+                  "imageId": "696d2c926112f2ff42f5cc42_302ac230-fa22-bc6e-a6bb-64e8e8a18ad6"
                 }
               ],
               "decoration_method": "aop"
@@ -22638,24 +22366,6 @@
           "order": null
         },
         {
-          "mockup_id": "694ac15a630cde3ecc08d3d8_12100_92571_back",
-          "src": "https://images-api.printify.com/mockup/694ac15a630cde3ecc08d3d8/12100/92571/ping-pong.jpg?camera_label=back",
-          "variant_ids": [
-            12102,
-            12103,
-            12100,
-            12101,
-            12104,
-            12105,
-            24031,
-            24164
-          ],
-          "position": "back",
-          "is_default": false,
-          "is_selected_for_publishing": true,
-          "order": null
-        },
-        {
           "mockup_id": "694ac15a630cde3ecc08d3d8_12100_102001_folded",
           "src": "https://images-api.printify.com/mockup/694ac15a630cde3ecc08d3d8/12100/102001/ping-pong.jpg?camera_label=folded",
           "variant_ids": [
@@ -22690,12 +22400,34 @@
           "is_default": false,
           "is_selected_for_publishing": true,
           "order": null
+        },
+        {
+          "mockup_id": "694ac15a630cde3ecc08d3d8_12100_92571_back",
+          "src": "https://images-api.printify.com/mockup/694ac15a630cde3ecc08d3d8/12100/92571/ping-pong.jpg?camera_label=back",
+          "variant_ids": [
+            12102,
+            12103,
+            12100,
+            12101,
+            12104,
+            12105,
+            24031,
+            24164
+          ],
+          "position": "back",
+          "is_default": false,
+          "is_selected_for_publishing": true,
+          "order": null
         }
       ],
       "created_at": "2025-12-23 16:20:42+00:00",
-      "updated_at": "2026-01-18 15:05:39+00:00",
+      "updated_at": "2026-06-13 19:45:09+00:00",
       "visible": true,
       "is_locked": false,
+      "external": {
+        "id": "",
+        "handle": ""
+      },
       "blueprint_id": 6,
       "user_id": 25790405,
       "shop_id": 25790898,
@@ -23287,7 +23019,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/8bc175a2-7faf-4f33-9ab3-39a935bda2a5",
                   "layerType": "image",
-                  "imageId": "694ac02af66c8b70aee3d24e_d3f4cd0f-aa57-4bbc-c647-3b666b685938"
+                  "imageId": "694ac02af66c8b70aee3d24e_1b1af7c0-e35b-b0a1-4a6d-474edf765647"
                 }
               ],
               "decoration_method": "dtg"
@@ -23319,7 +23051,7 @@
                   "angle": 0,
                   "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/25790405/a6fbe134-bb51-484f-a7a9-a16030662ca7",
                   "layerType": "image",
-                  "imageId": "694ac134473ad609da3c4f90_efbed902-27e9-89e2-71d0-3d14b24f645d"
+                  "imageId": "694ac134473ad609da3c4f90_83b857b5-1624-cf9d-4d02-c450d6a5e868"
                 },
                 {
                   "id": "5941187eb8e7e37b3f0e62e5",
@@ -23335,7 +23067,7 @@
                   "angle": 0,
                   "src": "",
                   "layerType": "image",
-                  "imageId": "5941187eb8e7e37b3f0e62e5_fbc917da-6fdc-5db1-7992-161d8d4c722b"
+                  "imageId": "5941187eb8e7e37b3f0e62e5_ed43fc5e-3be9-cc0b-1793-ca46b649161c"
                 }
               ],
               "decoration_method": "dtf"

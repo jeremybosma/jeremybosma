@@ -7,6 +7,7 @@ import {
   type PrintifyProduct,
   type PrintifyVariant,
 } from "@/lib/printify";
+import { isPolarConfiguredForProduct } from "@/lib/polar-product-ids";
 import { getCachedProduct } from "@/lib/supply-products";
 
 export type SupplyProductPageData = {
@@ -19,6 +20,7 @@ export type SupplyProductPageData = {
   highestPrice: number;
   cleanDescription: string;
   safetyInformation: string | null;
+  paymentsConfigured: boolean;
 };
 
 export async function loadSupplyProductPage(
@@ -60,5 +62,6 @@ export async function loadSupplyProductPage(
     highestPrice,
     cleanDescription,
     safetyInformation,
+    paymentsConfigured: isPolarConfiguredForProduct(productId),
   };
 }

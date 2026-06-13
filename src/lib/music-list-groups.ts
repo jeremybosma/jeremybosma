@@ -1,6 +1,6 @@
 import type { FetchedMusicData, MusicData } from "@/lib/music-api";
 import { getAlbumName, normalizeMusicText } from "@/lib/music-playlist-order";
-import { dedupeMusicTracks } from "@/lib/music-track-dedup";
+import { dedupeMusicTracks, getTrackIdentityKey } from "@/lib/music-track-dedup";
 
 const PLACEHOLDER_IMAGE = "/music/covers/placeholder.svg";
 
@@ -113,7 +113,7 @@ export function buildMusicListItems(music: FetchedMusicData[]): MusicListItem[] 
 
     items.push({
       kind: "track",
-      key: `${track.author}\0${track.title}\0${track.type}`,
+      key: getTrackIdentityKey(track),
       track,
     });
   }

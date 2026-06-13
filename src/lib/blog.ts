@@ -3,20 +3,11 @@ import path from "node:path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import type { Post, PostMeta } from "@/lib/blog-types";
+
+export type { Post, PostMeta } from "@/lib/blog-types";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
-
-export type PostMeta = {
-    slug: string;
-    title: string;
-    date: string;
-    description: string;
-    draft: boolean;
-};
-
-export type Post = PostMeta & {
-    contentHtml: string;
-};
 
 export function getAllPostSlugs(): string[] {
     const fileNames = fs.readdirSync(postsDirectory);
@@ -37,6 +28,14 @@ export function getAllPosts(): PostMeta[] {
     });
 }
 
+function serializePostDate(value: unknown): string {
+    if (!value) return "";
+    if (value instanceof Date) {
+        return value.toISOString().slice(0, 10);
+    }
+    return String(value);
+}
+
 export function getPostMeta(slug: string): PostMeta {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -45,7 +44,7 @@ export function getPostMeta(slug: string): PostMeta {
     return {
         slug,
         title: data.title ?? slug,
-        date: data.date ?? "",
+        date: serializePostDate(data.date),
         description: data.description ?? "",
         draft: Boolean(data.draft),
     };
@@ -69,7 +68,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     return {
         slug,
         title: data.title ?? slug,
-        date: data.date ?? "",
+        date: serializePostDate(data.date),
         description: data.description ?? "",
         draft: Boolean(data.draft),
         contentHtml,

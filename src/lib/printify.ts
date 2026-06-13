@@ -70,10 +70,53 @@ export type PrintifyProduct = {
     updated_at: string;
     visible: boolean;
     is_locked: boolean;
+    external?: {
+        id?: string;
+        handle?: string;
+        type?: number;
+    };
     blueprint_id: number;
     user_id: number;
     shop_id: number;
     print_provider_id: number;
+};
+
+export type PrintifyShippingAddress = {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+    country: string;
+    region: string;
+    address1: string;
+    address2?: string;
+    city: string;
+    zip: string;
+};
+
+export type PrintifyOrderLineItem = {
+    product_id: string;
+    variant_id: number;
+    quantity: number;
+    external_id?: string;
+};
+
+export type PrintifyShippingCosts = {
+    standard?: number;
+    express?: number;
+    priority?: number;
+    printify_express?: number;
+    economy?: number;
+};
+
+export type PrintifyCreateOrderPayload = {
+    external_id: string;
+    line_items: PrintifyOrderLineItem[];
+    shipping_method: number;
+    is_printify_express?: boolean;
+    is_economy_shipping?: boolean;
+    send_shipping_notification?: boolean;
+    address_to: PrintifyShippingAddress;
 };
 
 export type PrintifyProductsResponse = {
@@ -509,4 +552,60 @@ export async function syncPublishedProducts(): Promise<string[]> {
 // Check if a product is ready for sale
 export function isProductPublished(product: PrintifyProduct): boolean {
     return product.visible && getEnabledVariants(product).length > 0;
+}
+
+export function getProductPurchaseUrl(product: PrintifyProduct): string | null {
+    const handle = product.external?.handle?.trim();
+    if (!handle) return null;
+    return `https://${handle}.printify.me/products`;
+}
+
+export async function calculateOrderShipping(
+    lineItems: PrintifyOrderLineItem[],
+    address: PrintifyShippingAddress
+): Promise<PrintifyShippingCosts> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/orders/shipping.json`,
+        {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify({
+                line_items: lineItems,
+                address_to: address,
+            }),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to calculate shipping: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+
+    return response.json();
+}
+
+export async function createOrder(
+    payload: PrintifyCreateOrderPayload
+): Promise<{ id: string }> {
+    const shopId = getShopId();
+    const response = await fetch(
+        `${PRINTIFY_API_BASE}/shops/${shopId}/orders.json`,
+        {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify(payload),
+        }
+    );
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(
+            `Failed to create order: ${response.status} ${response.statusText} - ${text}`
+        );
+    }
+
+    return response.json();
 }

@@ -5,7 +5,7 @@ import {
   IconHouseFill,
   IconPhotoStack,
   IconPhotoStackFill,
-  IconAirpodsProLeft,
+  IconMusicNoteList,
   IconXLogo,
   IconLine3Horizontal,
   IconXmark,
@@ -49,7 +49,7 @@ const NAV_ITEMS: NavItem[] = [
     iconActive: IconPhotoStackFill,
   },
   { label: "Videos", href: "/videos", icon: IconFilm, iconActive: IconFilmFill },
-  { label: "Music", href: "/music", icon: IconAirpodsProLeft, iconActive: IconAirpodsProLeft },
+  { label: "Music", href: "/music", icon: IconMusicNoteList, iconActive: IconMusicNoteList },
 ];
 
 const SOCIAL_ITEMS: NavItem[] = [

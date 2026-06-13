@@ -1,8 +1,11 @@
 import BaseLayout from "@/components/layouts/base";
 import ClientShell from "@/components/layouts/client-shell";
 import WritingPageContent from "@/components/pages/writing-page";
+import { getAllPosts } from "@/lib/blog";
 
 export default function Page() {
+  const posts = getAllPosts();
+
   return (
     <BaseLayout
       title="Writing"
@@ -10,7 +13,7 @@ export default function Page() {
       pathname="/writing"
     >
       <ClientShell client:load pathname="/writing">
-        <WritingPageContent client:load />
+        <WritingPageContent client:load posts={posts} />
       </ClientShell>
     </BaseLayout>
   );
