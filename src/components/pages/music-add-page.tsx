@@ -1,20 +1,62 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchAlbumArt } from "@/lib/music-api";
+import {
+    clearMusicAddDraft,
+    readMusicAddDraft,
+    writeMusicAddDraft,
+    type MusicAddFormData,
+} from "@/lib/music-add-draft";
 import { motion } from "motion/react";
 import { sectionProps } from "@/components/layouts/client-shell";
 
+const emptyForm: MusicAddFormData = {
+    title: "",
+    author: "",
+    type: "single",
+    unreleased: false,
+    album: "",
+};
+
 export default function MusicAddPage() {
-    const [formData, setFormData] = useState({
-        title: "",
-        author: "",
-        type: "single" as "single" | "album",
-        unreleased: false,
-        album: "",
-    });
+    const [formData, setFormData] = useState(emptyForm);
 
     const [preview, setPreview] = useState<string | null>(null);
+    const [previewError, setPreviewError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
-    const [generatedCode, setGeneratedCode] = useState<string>("");
+    const [adding, setAdding] = useState(false);
+    const [addedCode, setAddedCode] = useState<string>("");
+    const [addMessage, setAddMessage] = useState<string | null>(null);
+    const [addError, setAddError] = useState<string | null>(null);
+    const [isDuplicate, setIsDuplicate] = useState(false);
+    const [multiAdd, setMultiAdd] = useState(false);
+    const titleInputRef = useRef<HTMLInputElement>(null);
+    const draftRestoredRef = useRef(false);
+
+    useEffect(() => {
+        if (draftRestoredRef.current) return;
+        draftRestoredRef.current = true;
+
+        const draft = readMusicAddDraft();
+        if (!draft?.multiAdd) return;
+
+        setFormData({
+            title: draft.title,
+            author: draft.author,
+            type: draft.type,
+            unreleased: draft.unreleased,
+            album: draft.album,
+        });
+        setMultiAdd(true);
+
+        if (!draft.title) {
+            requestAnimationFrame(() => titleInputRef.current?.focus());
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!multiAdd) return;
+        writeMusicAddDraft({ ...formData, multiAdd: true });
+    }, [formData, multiAdd]);
 
     const handlePreview = async () => {
         if (!formData.title || !formData.author) {
@@ -23,28 +65,93 @@ export default function MusicAddPage() {
         }
 
         setLoading(true);
+        setPreviewError(null);
+        setPreview(null);
+
         const imageUrl = await fetchAlbumArt(
             formData.author,
             formData.title,
             formData.type,
             formData.type === "single" && formData.album ? formData.album : undefined
         );
-        setPreview(imageUrl);
+
+        if (imageUrl) {
+            setPreview(imageUrl);
+        } else {
+            setPreviewError("No album art found. You can still generate the code snippet below.");
+        }
+
         setLoading(false);
     };
 
-    const handleGenerate = () => {
-        const albumPart = formData.type === "single" && formData.album ? `, album: "${formData.album}"` : "";
-        const code = `    { title: "${formData.title}", author: "${formData.author}", type: "${formData.type}"${albumPart}${formData.unreleased ? ", unreleased: true" : ""} },`;
-        setGeneratedCode(code);
+    const handleAdd = async () => {
+        if (!formData.title || !formData.author) {
+            alert("Please fill in title and artist");
+            return;
+        }
+
+        setAdding(true);
+        setAddMessage(null);
+        setAddError(null);
+        setIsDuplicate(false);
+        setAddedCode("");
+
+        if (multiAdd) {
+            writeMusicAddDraft({
+                ...formData,
+                title: "",
+                multiAdd: true,
+            });
+        }
+
+        try {
+            const response = await fetch("/api/music/add", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    title: formData.title,
+                    author: formData.author,
+                    type: formData.type,
+                    album: formData.type === "single" && formData.album ? formData.album : undefined,
+                    unreleased: formData.unreleased,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                setIsDuplicate(Boolean(data.duplicate));
+                setAddError(data.error ?? "Failed to add track");
+                if (data.code) setAddedCode(data.code);
+                return;
+            }
+
+            setAddedCode(data.code);
+            setAddMessage(data.message);
+
+            if (multiAdd) {
+                setFormData((current) => ({ ...current, title: "" }));
+                setPreview(null);
+                setPreviewError(null);
+                titleInputRef.current?.focus();
+            }
+        } catch {
+            setAddError("Failed to add track");
+        } finally {
+            setAdding(false);
+        }
     };
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(generatedCode);
-        alert("Copied to clipboard! Now paste it into your musicData array.");
+        navigator.clipboard.writeText(addedCode);
+        alert("Copied to clipboard.");
     };
 
-    if (import.meta.env.DEV) return (
+    if (!import.meta.env.DEV) {
+        return null;
+    }
+
+    return (
         <>
             <motion.section
                 {...sectionProps}
@@ -70,6 +177,7 @@ export default function MusicAddPage() {
                         Title
                     </label>
                     <input
+                        ref={titleInputRef}
                         type="text"
                         value={formData.title}
                         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
@@ -136,14 +244,67 @@ export default function MusicAddPage() {
                     </label>
                 </div>
 
-                <button
-                    type="button"
-                    onClick={handlePreview}
-                    disabled={loading || !formData.title || !formData.author}
-                    className="w-full px-4 py-2.5 border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-                >
-                    {loading ? "Fetching..." : "Preview Album Art"}
-                </button>
+                <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                        <input
+                            type="checkbox"
+                            id="multi-add"
+                            checked={multiAdd}
+                            onChange={(e) => {
+                                const checked = e.target.checked;
+                                setMultiAdd(checked);
+                                if (checked) {
+                                    writeMusicAddDraft({ ...formData, multiAdd: true });
+                                } else {
+                                    clearMusicAddDraft();
+                                }
+                            }}
+                            className="w-4 h-4 accent-black dark:accent-white"
+                        />
+                        <label htmlFor="multi-add" className="text-sm">
+                            Multi add
+                        </label>
+                    </div>
+                    <p className="text-xs text-black/40 dark:text-white/40 -mt-1">
+                        Keep artist, album, and type after adding — only clears the title
+                    </p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <button
+                        type="button"
+                        onClick={handlePreview}
+                        disabled={loading || !formData.title || !formData.author}
+                        className="w-full px-4 py-2.5 border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    >
+                        {loading ? "Fetching..." : "Preview Album Art"}
+                    </button>
+                    <button
+                        type="button"
+                        onClick={handleAdd}
+                        disabled={adding || !formData.title || !formData.author}
+                        className="w-full px-4 py-2.5 border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    >
+                        {adding ? "Adding..." : "Add to music"}
+                    </button>
+                </div>
+                {previewError ? (
+                    <p className="text-sm text-amber-700 dark:text-amber-300">{previewError}</p>
+                ) : null}
+                {addError ? (
+                    <p
+                        className={
+                            isDuplicate
+                                ? "text-sm text-amber-700 dark:text-amber-300"
+                                : "text-sm text-red-600 dark:text-red-400"
+                        }
+                    >
+                        {addError}
+                    </p>
+                ) : null}
+                {addMessage ? (
+                    <p className="text-sm text-green-700 dark:text-green-300">{addMessage}</p>
+                ) : null}
             </motion.section>
 
             {preview && (
@@ -171,17 +332,10 @@ export default function MusicAddPage() {
                             </p>
                         </div>
                     </div>
-                    <button
-                        type="button"
-                        onClick={handleGenerate}
-                        className="w-full mt-4 px-4 py-2.5 border border-black/10 dark:border-white/10 rounded-md hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
-                    >
-                        Generate Code
-                    </button>
                 </motion.section>
             )}
 
-            {generatedCode && (
+            {addedCode ? (
                 <motion.section
                     {...sectionProps}
                     initial="hidden"
@@ -189,7 +343,7 @@ export default function MusicAddPage() {
                     transition={{ ...sectionProps.transition, delay: 0.2 }}
                 >
                     <div className="flex justify-between items-center">
-                        <h2>Generated Code</h2>
+                        <h2>Added entry</h2>
                         <button
                             type="button"
                             onClick={copyToClipboard}
@@ -199,19 +353,10 @@ export default function MusicAddPage() {
                         </button>
                     </div>
                     <pre className="mt-2 p-4 bg-black/5 dark:bg-white/5 rounded-md overflow-x-auto text-sm">
-                        <code>{generatedCode}</code>
+                        <code>{addedCode}</code>
                     </pre>
-                    <div className="mt-4 text-sm text-black/60 dark:text-white/60">
-                        <p className="font-medium mb-2">Next steps:</p>
-                        <ol className="list-decimal list-inside space-y-1">
-                            <li>Copy the code above</li>
-                            <li>Open <code className="bg-black/5 dark:bg-white/5 px-1 rounded">src/pages/music.tsx</code></li>
-                            <li>Add the code to the <code className="bg-black/5 dark:bg-white/5 px-1 rounded">musicData</code> array</li>
-                            <li>Save the file</li>
-                        </ol>
-                    </div>
                 </motion.section>
-            )}
+            ) : null}
 
             <motion.section
                 {...sectionProps}
@@ -222,15 +367,12 @@ export default function MusicAddPage() {
                 <h2>How it works</h2>
                 <ul className="mt-2 space-y-1 text-black/60 dark:text-white/60">
                     <li>Fill in the song/album title and artist name</li>
-                    <li>Click "Preview Album Art" to see the album cover</li>
-                    <li>Click "Generate Code" to get the code snippet</li>
-                    <li>Copy and paste it into your musicData array</li>
-                    <li>Album art is fetched automatically from iTunes API</li>
+                    <li>Optionally preview album art from iTunes</li>
+                    <li>Click "Add to music" to append it to <code className="bg-black/5 dark:bg-white/5 px-1 rounded">music-data.ts</code></li>
+                    <li>Run <code className="bg-black/5 dark:bg-white/5 px-1 rounded">bun run sync:music</code> to download all covers to <code className="bg-black/5 dark:bg-white/5 px-1 rounded">public/music/covers/</code></li>
                 </ul>
             </motion.section>
         </>
     );
-
-    return null;
 }
 

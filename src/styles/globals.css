@@ -235,16 +235,98 @@
   @apply mb-4;
 }
 
-/* View transitions: only the content area animates; sidebar is excluded */
+/* View transitions: only the visible content area animates; sidebar is excluded */
 .view-transition-content {
-  view-transition-name: main-content;
-}
-
-.view-transition-sidebar {
   view-transition-name: none;
 }
 
+.page-panel-vt {
+  view-transition-name: page-panel;
+}
+
+.page-title-vt {
+  view-transition-name: var(--page-title-vt);
+}
+
+.page-image-vt {
+  view-transition-name: var(--page-image-vt);
+}
+
+@media (min-width: 768px) {
+  .view-transition-content--mobile .page-panel-vt,
+  .view-transition-content--mobile .page-title-vt,
+  .view-transition-content--mobile .page-image-vt {
+    view-transition-name: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .view-transition-content--desktop .page-panel-vt,
+  .view-transition-content--desktop .page-title-vt,
+  .view-transition-content--desktop .page-image-vt {
+    view-transition-name: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .view-transition-content--mobile {
+    view-transition-name: main-content;
+  }
+}
+
+@media (min-width: 768px) {
+  .view-transition-content--desktop {
+    view-transition-name: main-content;
+  }
+}
+
+.view-transition-chrome {
+  view-transition-name: site-chrome;
+}
+
+.view-transition-sidebar {
+  view-transition-name: site-chrome;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
 @supports (view-transition-name: none) {
+  html.page-vt ::view-transition-group(root),
+  html.page-vt ::view-transition-old(root),
+  html.page-vt ::view-transition-new(root),
+  html.page-vt ::view-transition-group(main-content),
+  html.page-vt ::view-transition-old(main-content),
+  html.page-vt ::view-transition-new(main-content),
+  html.page-vt ::view-transition-group(site-chrome),
+  html.page-vt ::view-transition-old(site-chrome),
+  html.page-vt ::view-transition-new(site-chrome) {
+    animation-duration: 0s !important;
+  }
+
+  html.page-vt ::view-transition-group(*),
+  html.page-vt ::view-transition-old(*),
+  html.page-vt ::view-transition-new(*) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+    z-index: 2;
+  }
+
+  html.page-vt ::view-transition-group(page-panel) {
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+    z-index: 1;
+  }
+
+  html.page-vt ::view-transition-old(page-panel) {
+    animation: page-panel-fade-out 0.5s cubic-bezier(0.32, 0.72, 0, 1) both;
+  }
+
+  html.page-vt ::view-transition-new(page-panel) {
+    animation: page-panel-fade-in 0.5s cubic-bezier(0.32, 0.72, 0, 1) both;
+  }
+
   /*
    * During gallery lightbox VT, disable root + main-content cross-fades.
    * Otherwise, after named backdrop/image layers finish, the root snapshot can
@@ -259,16 +341,193 @@
     animation-duration: 0s !important;
   }
 
-  ::view-transition-old(main-content),
-  ::view-transition-new(main-content) {
-    animation-duration: 0.2s;
+  html:not(.gallery-lightbox-vt):not(.gallery-expand-vt) ::view-transition-old(main-content),
+  html:not(.gallery-lightbox-vt):not(.gallery-expand-vt) ::view-transition-new(main-content) {
+    animation-duration: 0.35s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  html:not(.gallery-lightbox-vt):not(.gallery-expand-vt) ::view-transition-group(*),
+  html:not(.gallery-lightbox-vt):not(.gallery-expand-vt) ::view-transition-old(*),
+  html:not(.gallery-lightbox-vt):not(.gallery-expand-vt) ::view-transition-new(*) {
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  /* Highlight expand names (gallery-item-*) must stay below the lightbox morph */
+  html.gallery-lightbox-vt ::view-transition-group(*) {
+    z-index: 1;
+  }
+
+  html.gallery-lightbox-vt ::view-transition-group(gallery-scrim) {
+    z-index: 90;
+    animation-duration: 0.32s;
     animation-timing-function: ease-out;
   }
 
-  ::view-transition-group(gallery-photo) {
-    z-index: 20;
+  html.gallery-lightbox-vt ::view-transition-group(gallery-photo) {
+    z-index: 100;
     animation-duration: 0.45s;
     animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
+  html.gallery-lightbox-vt ::view-transition-image-pair(gallery-photo) {
+    isolation: isolate;
+  }
+
+  html.gallery-lightbox-vt ::view-transition-old(gallery-scrim) {
+    animation: gallery-scrim-fade-out 0.28s ease-out both;
+  }
+
+  html.gallery-lightbox-vt ::view-transition-new(gallery-scrim) {
+    animation: gallery-scrim-fade-in 0.28s ease-out both;
+  }
+
+  html.gallery-lightbox-vt ::view-transition-old(gallery-photo),
+  html.gallery-lightbox-vt ::view-transition-new(gallery-photo) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+    animation-fill-mode: both;
+  }
+
+  html.gallery-expand-vt ::view-transition-group(root),
+  html.gallery-expand-vt ::view-transition-old(root),
+  html.gallery-expand-vt ::view-transition-new(root),
+  html.gallery-expand-vt ::view-transition-group(main-content),
+  html.gallery-expand-vt ::view-transition-old(main-content),
+  html.gallery-expand-vt ::view-transition-new(main-content) {
+    animation-duration: 0s !important;
+  }
+
+  html.gallery-expand-vt ::view-transition-group(*),
+  html.gallery-expand-vt ::view-transition-old(*),
+  html.gallery-expand-vt ::view-transition-new(*) {
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+}
+
+@keyframes page-panel-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes page-panel-fade-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+}
+
+@keyframes gallery-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gallery-scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes gallery-scrim-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Sliding hover highlight for list / grid link groups */
+.hover-slide-list {
+  position: relative;
+  isolation: isolate;
+  --hover-slide-x: 0px;
+  --hover-slide-y: 0px;
+  --hover-slide-w: 0px;
+  --hover-slide-h: 0px;
+  --hover-slide-opacity: 0;
+}
+
+.hover-slide-list--instant .hover-slide-highlight {
+  transition: none;
+}
+
+.hover-slide-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: var(--hover-slide-w);
+  height: var(--hover-slide-h);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--secondary) 78%, transparent);
+  opacity: var(--hover-slide-opacity);
+  transform: translate3d(var(--hover-slide-x), var(--hover-slide-y), 0);
+  transition:
+    transform 0.24s cubic-bezier(0.32, 0.72, 0, 1),
+    width 0.24s cubic-bezier(0.32, 0.72, 0, 1),
+    height 0.24s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.14s ease;
+  pointer-events: none;
+  will-change: transform, width, height, opacity;
+}
+
+.hover-slide-item {
+  position: relative;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.12s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+button.hover-slide-item {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.hover-slide-item:active {
+  transform: scale(0.988);
+}
+
+.hover-slide-muted {
+  transition: color 0.18s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.hover-slide-item:hover .hover-slide-muted,
+.hover-slide-item:focus-visible .hover-slide-muted {
+  color: color-mix(in oklch, var(--foreground) 82%, var(--muted-foreground));
+}
+
+.hover-slide-title {
+  transition: color 0.18s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.hover-slide-item:hover .hover-slide-title,
+.hover-slide-item:focus-visible .hover-slide-title {
+  color: var(--foreground);
+}
+
+.hover-slide-item--pinned::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--secondary) 78%, transparent);
+  z-index: -1;
+}
+
+.hover-slide-item--pinned .hover-slide-title {
+  color: var(--foreground);
+}
+
+.hover-slide-item--pinned .hover-slide-muted {
+  color: color-mix(in oklch, var(--foreground) 82%, var(--muted-foreground));
 }

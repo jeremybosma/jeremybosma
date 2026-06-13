@@ -345,6 +345,20 @@ export function getDefaultImage(product: PrintifyProduct): string | null {
     return product.images.at(0)?.src ?? null;
 }
 
+export type SupplyListItem = {
+    id: string;
+    title: string;
+    imageUrl: string | null;
+};
+
+export function toSupplyListItems(products: PrintifyProduct[]): SupplyListItem[] {
+    return products.map((product) => ({
+        id: product.id,
+        title: product.title,
+        imageUrl: getDefaultImage(product),
+    }));
+}
+
 export function getFrontImage(product: PrintifyProduct): string | null {
     const frontImage = product.images.find((img) => img.position === "front");
     if (frontImage) return frontImage.src;

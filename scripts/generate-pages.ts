@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { getAllPostSlugs } from "../src/lib/blog";
-import { getPublishedProducts } from "../src/lib/printify";
+import { getCachedPublishedProducts } from "../src/lib/supply-products";
 
 const WRITING_DIR = path.join(process.cwd(), "src/pages/writing");
 const SUPPLY_DIR = path.join(process.cwd(), "src/pages/supply");
@@ -30,7 +30,7 @@ export default async function Page() {
   const post = await getPostBySlug(${JSON.stringify(slug)});
 
   return (
-    <BaseLayout title={post.title} description={post.description} pathname={${JSON.stringify(`/writing/${slug}`)}}>
+    <BaseLayout title={post.title} description={post.description} pathname={${JSON.stringify(`/writing/${slug}`)}} noIndex={post.draft}>
       <ClientShell client:load pathname={${JSON.stringify(`/writing/${slug}`)}}>
         <WritingPostPage post={post} />
       </ClientShell>
@@ -79,7 +79,7 @@ export default async function Page() {
       icon={productIcon}
     >
       <ClientShell client:load pathname={${JSON.stringify(`/supply/${productId}`)}}>
-        <SupplyProductPage client:load {...data} />
+        <SupplyProductPage {...data} />
       </ClientShell>
     </BaseLayout>
   );
@@ -98,20 +98,11 @@ async function main() {
   }
   console.log(`Generated ${slugs.length} writing route(s)`);
 
-  let productCount = 0;
-  if (process.env.PRINTIFY_SHOP_ID && process.env.PRINTIFY_API_TOKEN) {
-    try {
-      const products = await getPublishedProducts();
-      for (const product of products) {
-        writeSupplyProductPage(product.id);
-        productCount++;
-      }
-    } catch (error) {
-      console.warn("Could not generate supply product pages:", error);
-    }
-  } else {
-    console.log("Printify env not set — skipping supply product page generation");
+  const products = getCachedPublishedProducts();
+  for (const product of products) {
+    writeSupplyProductPage(product.id);
   }
+  const productCount = products.length;
   console.log(`Generated ${productCount} supply product route(s)`);
 }
 

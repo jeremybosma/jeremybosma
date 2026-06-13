@@ -11,6 +11,7 @@ export type PostMeta = {
     title: string;
     date: string;
     description: string;
+    draft: boolean;
 };
 
 export type Post = PostMeta & {
@@ -46,6 +47,7 @@ export function getPostMeta(slug: string): PostMeta {
         title: data.title ?? slug,
         date: data.date ?? "",
         description: data.description ?? "",
+        draft: Boolean(data.draft),
     };
 }
 
@@ -69,6 +71,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
         title: data.title ?? slug,
         date: data.date ?? "",
         description: data.description ?? "",
+        draft: Boolean(data.draft),
         contentHtml,
     };
 }

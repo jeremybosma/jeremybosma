@@ -1,13 +1,12 @@
 import { config as loadDotenv } from "dotenv";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig, type Plugin } from "vite";
 
 loadDotenv();
 import tailwindcss from "@tailwindcss/vite";
 import { sitex } from "@fulldotdev/sitex/plugin";
 import react from "@vitejs/plugin-react";
-import { handleAlbumArt } from "./src/server/handlers/album-art";
-import { handleStreamingUrl } from "./src/server/handlers/streaming-url";
-
 function apiDevMiddleware(): Plugin {
   return {
     name: "portfolio-api-dev",
@@ -24,8 +23,13 @@ function apiDevMiddleware(): Plugin {
           let response: Response;
 
           if (url === "/api/music/album-art") {
+            const { handleAlbumArt } = await import("./src/server/handlers/album-art");
             response = await handleAlbumArt(requestUrl);
+          } else if (url === "/api/music/add") {
+            const { handleAddMusic } = await import("./src/server/handlers/add-music");
+            response = await handleAddMusic(req);
           } else if (url === "/api/music/streaming-url") {
+            const { handleStreamingUrl } = await import("./src/server/handlers/streaming-url");
             response = await handleStreamingUrl(requestUrl);
           } else {
             next();
@@ -45,8 +49,15 @@ function apiDevMiddleware(): Plugin {
   };
 }
 
+const rootDir = path.dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig({
   appType: "custom",
   plugins: [tailwindcss(), react(), sitex(), apiDevMiddleware()],
   publicDir: "public",
+  resolve: {
+    alias: {
+      "@": path.resolve(rootDir, "src"),
+    },
+  },
 });

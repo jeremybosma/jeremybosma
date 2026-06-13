@@ -1,12 +1,35 @@
 /**
  * Prebuild script to sync products with Printify.
  * Only syncs products stuck in "Publishing..." state (is_locked=true).
- * 
+ * Writes src/lib/supply-products.json so pages load from cache instead of the API.
+ *
  * Run manually: bun run scripts/sync-products.ts
  * Runs automatically before build via the "prebuild" script in package.json
  */
 
-import { syncPublishedProducts, getShops, getAllProducts, getEnabledVariants } from "../src/lib/printify";
+import fs from "node:fs";
+import path from "node:path";
+import {
+  syncPublishedProducts,
+  getShops,
+  getAllProducts,
+  getEnabledVariants,
+  getPublishedProducts,
+} from "../src/lib/printify";
+
+const SUPPLY_PRODUCTS_PATH = path.join(
+  process.cwd(),
+  "src/lib/supply-products.json"
+);
+
+function writeSupplyProductsCache(products: Awaited<ReturnType<typeof getPublishedProducts>>) {
+  const payload = {
+    syncedAt: new Date().toISOString(),
+    products,
+  };
+  fs.writeFileSync(SUPPLY_PRODUCTS_PATH, `${JSON.stringify(payload, null, 2)}\n`);
+  console.log(`\n📦 Wrote ${products.length} product(s) to src/lib/supply-products.json\n`);
+}
 
 async function main() {
   if (!process.env.PRINTIFY_SHOP_ID || !process.env.PRINTIFY_API_TOKEN) {
@@ -60,6 +83,14 @@ async function main() {
     }
   } catch (error) {
     console.error("\n❌ Sync failed:", error);
+    process.exit(1);
+  }
+
+  try {
+    const products = await getPublishedProducts();
+    writeSupplyProductsCache(products);
+  } catch (error) {
+    console.error("\n❌ Failed to write supply products cache:", error);
     process.exit(1);
   }
 }

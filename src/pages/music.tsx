@@ -1,11 +1,10 @@
 import BaseLayout from "@/components/layouts/base";
 import ClientShell from "@/components/layouts/client-shell";
 import MusicList from "@/components/pages/music-list";
-import { musicData } from "@/lib/music-data";
-import { fetchMultipleAlbumArtsServer } from "@/lib/music-api.server";
+import { getCachedMusic } from "@/lib/music-covers";
 
-export default async function Page() {
-  const music = await fetchMultipleAlbumArtsServer(musicData);
+export default function Page() {
+  const music = getCachedMusic();
 
   return (
     <BaseLayout

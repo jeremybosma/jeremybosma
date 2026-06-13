@@ -22,6 +22,7 @@ export { IconGithubLogo } from "symbols-react/src/icons/IconGithubLogo.js";
 export { IconChevronLeft } from "symbols-react/src/icons/IconChevronLeft.js";
 export { IconChevronRight } from "symbols-react/src/icons/IconChevronRight.js";
 export { IconArrowUpRight } from "symbols-react/src/icons/IconArrowUpRight.js";
+export { IconBubbleFill } from "symbols-react/src/icons/IconBubbleFill.js";
 export { IconAppleLogo } from "symbols-react/src/icons/IconAppleLogo.js";
 export { IconPlayFill } from "symbols-react/src/icons/IconPlayFill.js";
 export { IconFilmStack } from "symbols-react/src/icons/IconFilmStack.js";

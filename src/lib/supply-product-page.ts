@@ -1,5 +1,4 @@
 import {
-  getProduct,
   getEnabledVariants,
   getUniqueColors,
   getUniqueSizes,
@@ -8,6 +7,7 @@ import {
   type PrintifyProduct,
   type PrintifyVariant,
 } from "@/lib/printify";
+import { getCachedProduct } from "@/lib/supply-products";
 
 export type SupplyProductPageData = {
   product: PrintifyProduct;
@@ -24,7 +24,10 @@ export type SupplyProductPageData = {
 export async function loadSupplyProductPage(
   productId: string
 ): Promise<SupplyProductPageData | null> {
-  const product = await getProduct(productId);
+  const product = getCachedProduct(productId);
+  if (!product) {
+    return null;
+  }
 
   if (!isProductPublished(product)) {
     return null;

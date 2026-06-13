@@ -5,10 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "bun run scripts/sync-products.ts && bun run scripts/generate-pages.ts && bun run scripts/generate-sitemap.ts",
+    "prebuild": "bun run scripts/sync-products.ts && bun run scripts/sync-music.ts && bun run scripts/generate-pages.ts && bun run scripts/generate-sitemap.ts",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:instagram:setup": "pip3 install -r scripts/requirements-instagram.txt",
+    "sync:instagram": "python3 scripts/sync-instagram-highlights.py",
+    "sync:music": "bun run scripts/sync-music.ts",
+    "instagram:login": "bash scripts/instagram-login.sh",
+    "instagram:import": "python3 scripts/import-instagram-session.py"
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.2.8",

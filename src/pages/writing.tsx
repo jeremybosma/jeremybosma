@@ -10,7 +10,7 @@ export default function Page() {
       pathname="/writing"
     >
       <ClientShell client:load pathname="/writing">
-        <WritingPageContent />
+        <WritingPageContent client:load />
       </ClientShell>
     </BaseLayout>
   );

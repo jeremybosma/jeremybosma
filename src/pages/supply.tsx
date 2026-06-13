@@ -1,17 +1,12 @@
 import BaseLayout from "@/components/layouts/base";
 import ClientShell from "@/components/layouts/client-shell";
 import SupplyPageContent from "@/components/pages/supply-page";
-import { getPublishedProducts } from "@/lib/printify";
+import { toSupplyListItems } from "@/lib/printify";
+import { getCachedPublishedProducts } from "@/lib/supply-products";
 
-export default async function Page() {
-  let products = null;
-  let error: string | null = null;
-
-  try {
-    products = await getPublishedProducts();
-  } catch (e) {
-    error = e instanceof Error ? e.message : "Failed to load products";
-  }
+export default function Page() {
+  const published = getCachedPublishedProducts();
+  const products = published.length > 0 ? toSupplyListItems(published) : null;
 
   return (
     <BaseLayout
@@ -20,7 +15,7 @@ export default async function Page() {
       pathname="/supply"
     >
       <ClientShell client:load pathname="/supply">
-        <SupplyPageContent products={products} error={error} />
+        <SupplyPageContent client:load products={products} error={null} />
       </ClientShell>
     </BaseLayout>
   );

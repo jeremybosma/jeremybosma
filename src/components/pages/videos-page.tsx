@@ -2,7 +2,7 @@ import { IconFilm } from "@/lib/symbols-react";
 
 export default function VideosPageContent() {
     return (
-        <section className="text-[17px] flex flex-col items-center justify-center min-h-[60vh]">
+        <section className="page-panel-vt text-[17px] flex flex-col items-center justify-center min-h-[60vh]">
             <div className="flex flex-col items-center gap-4 text-center">
                 <IconFilm className="w-24 h-24 text-muted-foreground/40" />
                 <div className="space-y-2">

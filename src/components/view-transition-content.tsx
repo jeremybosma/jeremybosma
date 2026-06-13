@@ -1,9 +1,17 @@
 import type { ReactNode } from "react";
 
-export function ViewTransitionContent({ children }: { children: ReactNode }) {
+type ViewTransitionContentProps = {
+  children: ReactNode;
+  variant: "mobile" | "desktop";
+};
+
+export function ViewTransitionContent({
+  children,
+  variant,
+}: ViewTransitionContentProps) {
   return (
     <div
-      className="view-transition-content flex flex-col gap-8"
+      className={`view-transition-content view-transition-content--${variant} flex flex-col gap-8`}
       data-view-transition-content
     >
       {children}

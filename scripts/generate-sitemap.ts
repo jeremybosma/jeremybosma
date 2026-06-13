@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { getAllPostSlugs } from "../src/lib/blog";
-import { getAllProducts, getEnabledVariants } from "../src/lib/printify";
+import { getAllPosts } from "../src/lib/blog";
+import { getCachedPublishedProducts } from "../src/lib/supply-products";
 import { SITE_URL } from "../src/lib/site";
 
 function urlEntry(
@@ -30,33 +30,25 @@ async function main() {
     urlEntry(`${SITE_URL}/music`, { changefreq: "weekly", priority: "0.7" }),
   ];
 
-  for (const slug of getAllPostSlugs()) {
+  for (const post of getAllPosts()) {
+    if (post.draft) continue;
+
     urls.push(
-      urlEntry(`${SITE_URL}/writing/${slug}`, {
+      urlEntry(`${SITE_URL}/writing/${post.slug}`, {
         changefreq: "weekly",
         priority: "0.7",
       })
     );
   }
 
-  if (process.env.PRINTIFY_SHOP_ID && process.env.PRINTIFY_API_TOKEN) {
-    try {
-      const products = await getAllProducts();
-      const visible = products.filter(
-        (p) => p.visible && getEnabledVariants(p).length > 0
-      );
-      for (const product of visible) {
-        urls.push(
-          urlEntry(`${SITE_URL}/supply/${product.id}`, {
-            lastmod: new Date(product.updated_at).toISOString(),
-            changefreq: "weekly",
-            priority: "0.6",
-          })
-        );
-      }
-    } catch {
-      // skip supply URLs when Printify is unavailable at build time
-    }
+  for (const product of getCachedPublishedProducts()) {
+    urls.push(
+      urlEntry(`${SITE_URL}/supply/${product.id}`, {
+        lastmod: new Date(product.updated_at).toISOString(),
+        changefreq: "weekly",
+        priority: "0.6",
+      })
+    );
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

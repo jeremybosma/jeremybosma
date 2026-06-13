@@ -1,7 +1,61 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { ExpandablePhoto } from "@/components/expandable-photo";
+import { HoverSlideItem, HoverSlideList } from "@/components/hover-slide-list";
+import { useInstallHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { sectionProps } from "@/components/layouts/client-shell";
-import { IconArrowUpRight } from "@/lib/symbols-react";
+import { BOOK_CALL_URL, IMESSAGE_URL } from "@/lib/site";
+import { IconArrowUpRight, IconBubbleFill } from "@/lib/symbols-react";
+
+const HOME_SHOWN_KEY = "portfolio-home-shown";
+const ENTRANCE_DURATION_MS =
+  (0.3 + sectionProps.transition.duration) * 1000;
+
+function shouldSkipHomeEntrance() {
+  if (typeof window === "undefined") return false;
+
+  // View-transition navigation already animates the page panel in.
+  if (window.history.state?.viewTransitionNavigation) return true;
+
+  const nav = performance.getEntriesByType("navigation")[0] as
+    | PerformanceNavigationTiming
+    | undefined;
+
+  if (nav?.type === "reload") return false;
+
+  return sessionStorage.getItem(HOME_SHOWN_KEY) === "1";
+}
+
+function homeSectionProps(delay: number) {
+  return {
+    ...sectionProps,
+    initial: "hidden" as const,
+    animate: "visible" as const,
+    transition: {
+      ...sectionProps.transition,
+      delay,
+    },
+  };
+}
+
+type HomeSectionProps = {
+  delay: number;
+  skipEntrance: boolean;
+  className?: string;
+  children: React.ReactNode;
+};
+
+function HomeSection({ delay, skipEntrance, className, children }: HomeSectionProps) {
+  if (skipEntrance) {
+    return <section className={className}>{children}</section>;
+  }
+
+  return (
+    <motion.section {...homeSectionProps(delay)} className={className}>
+      {children}
+    </motion.section>
+  );
+}
 
 const profile = "/profile2.jpeg";
 const individu = "/projects/individu.png";
@@ -11,18 +65,28 @@ const integrate = "/projects/integrate.png";
 const alfacollege = "/alfa-college.png";
 
 export default function HomePage() {
+  useInstallHoverSlideLists();
   const [showMiddleName, setShowMiddleName] = useState(false);
+  const [skipEntrance] = useState(shouldSkipHomeEntrance);
+
+  useEffect(() => {
+    if (skipEntrance) return;
+
+    const timer = window.setTimeout(() => {
+      sessionStorage.setItem(HOME_SHOWN_KEY, "1");
+    }, ENTRANCE_DURATION_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [skipEntrance]);
 
   return (
-    <div className="page-sections flex flex-col gap-8">
-      <motion.section
-        {...sectionProps}
-        initial="hidden"
-        animate="visible"
-        transition={{ ...sectionProps.transition, delay: 0 }}
+    <div className="page-panel-vt page-sections flex flex-col gap-8">
+      <HomeSection
+        delay={0}
+        skipEntrance={skipEntrance}
         className="text-[17px] flex gap-2 items-center"
       >
-        <img
+        <ExpandablePhoto
           loading="eager"
           src={profile}
           alt="Jeremy Bosma"
@@ -79,40 +143,38 @@ export default function HomePage() {
           </button>
           <p className="text-black/60 dark:text-white/60">Software Engineer &amp; Designer</p>
         </div>
-      </motion.section>
+      </HomeSection>
 
-      <motion.section
-        {...sectionProps}
-        initial="hidden"
-        animate="visible"
-        transition={{ ...sectionProps.transition, delay: 0.1 }}
-      >
+      <HomeSection delay={0.1} skipEntrance={skipEntrance}>
         <p>
           I'm a software engineer with eye for design and micro-interactions and I aim to create memorable digital experiences.
         </p>
-      </motion.section>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <a
+            href={BOOK_CALL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full border border-black bg-black px-3 py-2 text-sm font-medium text-white shadow-sm transition-all duration-150 hover:bg-black/85 dark:border-white dark:bg-white dark:text-black dark:hover:bg-white/90 active:scale-[0.98]"
+          >
+            Book a call
+            <IconArrowUpRight
+              className="w-3 h-3 fill-current transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              aria-hidden="true"
+            />
+          </a>
+          <a
+            href={IMESSAGE_URL}
+            className="group inline-flex items-center gap-2 rounded-full border border-[#2fb350] bg-[linear-gradient(180deg,#5BD066_0%,#34C759_100%)] px-3 py-2 text-sm font-medium text-white shadow-sm transition-all duration-150 hover:brightness-105 active:scale-[0.98]"
+          >
+            <IconBubbleFill className="w-4 h-4 fill-white" aria-hidden="true" />
+            Quick message
+          </a>
+        </div>
+      </HomeSection>
 
-      {false && (
-        <motion.section
-          {...sectionProps}
-          initial="hidden"
-          animate="visible"
-          transition={{ ...sectionProps.transition, delay: 0.2 }}
-          className="bg-white border rounded-md p-4"
-        >
-          <h2>Open to freelance work (Fixed or hourly rate)</h2>
-          <p className="text-black/60 dark:text-white/60">I'm currently looking for a new challenge. If you have any opportunities, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_">X</a> for all your programming and or design needs.</p>
-        </motion.section>
-      )}
-
-      <motion.section
-        {...sectionProps}
-        initial="hidden"
-        animate="visible"
-        transition={{ ...sectionProps.transition, delay: 0.2 }}
-      >
+      <HomeSection delay={0.2} skipEntrance={skipEntrance}>
         <h2>Highlighted work</h2>
-        <div className="flex flex-col">
+        <HoverSlideList className="flex flex-col -mx-3">
           <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" />  
           <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" />
           <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" />
@@ -122,32 +184,38 @@ export default function HomePage() {
           {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
           {/* <ProjectCard name="explore.work" description="AI-assisted job finder with realtime resume suggestions and inquiry-tracker" image={explorework} link="https://explore.work" />
           <ProjectCard name="outfitsbio" description="Keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" /> */}
-        </div>
-      </motion.section>
+        </HoverSlideList>
+      </HomeSection>
 
-      <motion.section
-        {...sectionProps}
-        initial="hidden"
-        animate="visible"
-        transition={{ ...sectionProps.transition, delay: 0.3 }}
-      >
+      <HomeSection delay={0.3} skipEntrance={skipEntrance}>
         <h2>Education</h2>
-        <div className="flex flex-col">
+        <HoverSlideList className="flex flex-col -mx-3">
           <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 – May 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" />
-        </div>
-      </motion.section>
+        </HoverSlideList>
+      </HomeSection>
 
-      <motion.section
-        {...sectionProps}
-        initial="hidden"
-        animate="visible"
-        transition={{ ...sectionProps.transition, delay: 0.35 }}
-      >
+      {false && <HomeSection delay={0.35} skipEntrance={skipEntrance}>
         <h2>Contact</h2>
         <p className="text-black/60 dark:text-white/60">
           I'm always looking for new opportunities and collaborations. If you have any questions or would like to get in touch, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_" target="_blank" rel="noopener noreferrer">X</a>.
         </p>
-      </motion.section>
+      </HomeSection>
+      }
+
+      {false && (
+        <HomeSection
+          delay={0.2}
+          skipEntrance={skipEntrance}
+          className="bg-white border rounded-md p-4"
+        >
+          <h2>Open to freelance work (Fixed or hourly rate)</h2>
+          <p className="text-black/60 dark:text-white/60">I'm currently looking for a new challenge. If you have any opportunities, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_">X</a> for all your programming and or design needs.</p>
+        </HomeSection>
+      )}
+
+      <HomeSection delay={0.3} skipEntrance={skipEntrance}>
+        <footer className="text-xs text-black/60 dark:text-white/60">Updated Jun 2026</footer>
+      </HomeSection>
     </div>
   );
 }
@@ -161,14 +229,14 @@ type ProjectProps = {
 
 function ProjectCard({ name, description, image, link }: ProjectProps) {
   return (
-    <a
+    <HoverSlideItem
       href={link}
-      className="group"
+      className="group rounded-lg px-3 py-2"
       aria-label={`Visit ${name} website (opens in new tab)`}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex gap-3 my-2 items-center">
+      <div className="flex gap-3 items-center">
         <img
           src={image}
           alt={`${name} project logo`}
@@ -177,14 +245,14 @@ function ProjectCard({ name, description, image, link }: ProjectProps) {
           height={100}
           loading="lazy"
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col min-w-0">
           <span className="flex gap-2 items-center">
-            <h3>{name}</h3>
-            <IconArrowUpRight className="w-2 h-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" aria-hidden="true" />
+            <h3 className="hover-slide-title">{name}</h3>
+            <IconArrowUpRight className="w-2 h-2 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" aria-hidden="true" />
           </span>
-          <p className="text-black/60 dark:text-white/60">{description}</p>
+          <p className="hover-slide-muted text-muted-foreground">{description}</p>
         </div>
       </div>
-    </a>
+    </HoverSlideItem>
   );
 }

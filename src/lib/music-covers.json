@@ -1,0 +1,449 @@
+{
+  "syncedAt": "2026-06-13T16:12:21.448Z",
+  "tracks": [
+    {
+      "title": "2005",
+      "author": "Ian",
+      "type": "album",
+      "image": "/music/covers/ian-2005.jpg"
+    },
+    {
+      "title": "100 Grams",
+      "author": "Eem Triplin",
+      "type": "single",
+      "album": "Coming Undone",
+      "image": "/music/covers/eem-triplin-100-grams-coming-undone.jpg"
+    },
+    {
+      "title": "What Do You Mean?",
+      "author": "Justin Bieber",
+      "type": "single",
+      "album": "Purpose",
+      "image": "/music/covers/justin-bieber-what-do-you-mean-purpose.jpg"
+    },
+    {
+      "title": "What Did I Miss?",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-what-did-i-miss.jpg"
+    },
+    {
+      "title": "Donda (Deluxe)",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-donda-deluxe.jpg"
+    },
+    {
+      "title": "Man Of The Year",
+      "author": "plaqueboymax",
+      "type": "single",
+      "album": "Man Of The Year",
+      "image": "/music/covers/plaqueboymax-man-of-the-year-man-of-the-year.jpg"
+    },
+    {
+      "title": "Wheels Fall Off",
+      "author": "Ty Dolla $ign",
+      "type": "single",
+      "album": "Wheels Fall Off",
+      "image": "/music/covers/ty-dolla-ign-wheels-fall-off-wheels-fall-off.jpg"
+    },
+    {
+      "title": "scars",
+      "author": "Baby Keem",
+      "type": "single",
+      "album": "The Melodic Blue",
+      "image": "/music/covers/baby-keem-scars-the-melodic-blue.jpg"
+    },
+    {
+      "title": "WHEN I THINK ABOUT IT",
+      "author": "Future",
+      "type": "single",
+      "album": "BEASTMODE 2",
+      "image": "/music/covers/future-when-i-think-about-it-beastmode-2.jpg"
+    },
+    {
+      "title": "WHERE DO YOU SLEEP?",
+      "author": "The Kid LAROI",
+      "type": "single",
+      "album": "THE FIRST TIME (DELUXE VERSION)",
+      "image": "/music/covers/the-kid-laroi-where-do-you-sleep-the-first-time-deluxe-version.jpg"
+    },
+    {
+      "title": "Can You Stand the Rain",
+      "author": "New Edition",
+      "type": "single",
+      "image": "/music/covers/new-edition-can-you-stand-the-rain.jpg"
+    },
+    {
+      "title": "Forever on Some Fly Shit",
+      "author": "Nipsey Hussle",
+      "type": "single",
+      "album": "TMC",
+      "image": "/music/covers/nipsey-hussle-forever-on-some-fly-shit-tmc.jpg"
+    },
+    {
+      "title": "Enjoy The Show",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "Hurry Up Tomorrow",
+      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
+    },
+    {
+      "title": "Peaches",
+      "author": "Justin Bieber",
+      "type": "single",
+      "album": "Justice",
+      "image": "/music/covers/justin-bieber-peaches-justice.jpg"
+    },
+    {
+      "title": "Banking On Me",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-banking-on-me.jpg"
+    },
+    {
+      "title": "The College Dropout",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-the-college-dropout.jpg"
+    },
+    {
+      "title": "Uuugly",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-uuugly.jpg"
+    },
+    {
+      "title": "Xscape",
+      "author": "Michael Jackson",
+      "type": "album",
+      "image": "/music/covers/michael-jackson-xscape.jpg"
+    },
+    {
+      "title": "act ii: date @ 8",
+      "author": "4batz",
+      "type": "single",
+      "image": "/music/covers/4batz-act-ii-date-8.jpg"
+    },
+    {
+      "title": "Jesus Is King",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-jesus-is-king.jpg"
+    },
+    {
+      "title": "Figure It Out",
+      "author": "Ian",
+      "type": "single",
+      "image": "/music/covers/ian-figure-it-out.jpg"
+    },
+    {
+      "title": "NOKIA",
+      "author": "Drake",
+      "type": "single",
+      "image": "/music/covers/drake-nokia.jpg"
+    },
+    {
+      "title": "DONDA 2",
+      "author": "Kanye West",
+      "type": "album",
+      "image": "/music/covers/kanye-west-donda-2.jpg"
+    },
+    {
+      "title": "Draft Day",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "HIM ALL ALONG",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-him-all-along.jpg"
+    },
+    {
+      "title": "Views",
+      "author": "Drake",
+      "type": "album",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "back in the a",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-back-in-the-a.jpg"
+    },
+    {
+      "title": "Scorpion",
+      "author": "Drake",
+      "type": "album",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "All To Myself",
+      "author": "Future",
+      "type": "single",
+      "image": "/music/covers/future-all-to-myself.jpg"
+    },
+    {
+      "title": "Can't Tell Me Nothing",
+      "author": "Kanye West",
+      "type": "single",
+      "image": "/music/covers/kanye-west-can-t-tell-me-nothing.jpg"
+    },
+    {
+      "title": "today i did good",
+      "author": "Gunna",
+      "type": "single",
+      "image": "/music/covers/gunna-today-i-did-good.jpg"
+    },
+    {
+      "title": "2 Mazza",
+      "author": "Smiley",
+      "type": "single",
+      "album": "Don't box me in",
+      "image": "/music/covers/smiley-2-mazza-don-t-box-me-in.jpg"
+    },
+    {
+      "title": "Blue Green Red",
+      "author": "Drake",
+      "type": "single",
+      "album": "No Face",
+      "unreleased": true,
+      "image": "/music/covers/drake-blue-green-red-no-face.jpg"
+    },
+    {
+      "title": "BBW",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Road Trips",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Cheetah Print",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Q&A",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Princess",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "New Bestie",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Hoe Phase",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Stuck",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Don't Worry",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "National Treasures",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Janice STFU",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Burning Bridges",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Little Birdie",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Whisper My Name",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Make Them Know",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Firm Friends",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Make Them Remember",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "2 Hard 4 The Radio",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Shabang",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "Make Them Cry",
+      "author": "Drake",
+      "type": "single",
+      "album": "ICEMAN",
+      "image": "/music/covers/drake-don-t-worry-iceman.jpg"
+    },
+    {
+      "title": "WNBA",
+      "author": "Drake",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "Gen 5",
+      "author": "Drake",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "White Bone",
+      "author": "Drake",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "Classic",
+      "author": "Drake",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "I'm Spent",
+      "author": "Drake",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "High Fives",
+      "author": "Drake",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-wnba-habibti.jpg"
+    },
+    {
+      "title": "Violent Crimes",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "ye",
+      "image": "/music/covers/kanye-west-violent-crimes-ye.jpg"
+    },
+    {
+      "title": "Futura Free",
+      "author": "Frank Ocean",
+      "type": "single",
+      "album": "Blonde",
+      "image": "/music/covers/frank-ocean-futura-free-blonde.jpg"
+    },
+    {
+      "title": "Walk In Wardrobe",
+      "author": "Central Cee",
+      "type": "single",
+      "album": "CAN'T RUSH GREATNESS",
+      "image": "/music/covers/central-cee-walk-in-wardrobe-can-t-rush-greatness.jpg"
+    },
+    {
+      "title": "Higher",
+      "author": "Tems",
+      "type": "single",
+      "album": "For Broken Ears",
+      "image": "/music/covers/tems-higher-for-broken-ears.jpg"
+    },
+    {
+      "title": "Wanna Be Startin' Somethin'",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Thriller",
+      "image": "/music/covers/michael-jackson-wanna-be-startin-somethin-thriller.jpg"
+    },
+    {
+      "title": "P.Y.T. (Pretty Young Thing)",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Thriller",
+      "image": "/music/covers/michael-jackson-wanna-be-startin-somethin-thriller.jpg"
+    },
+    {
+      "title": "The Girl Is Mine (feat. Paul McCartney)",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Thriller",
+      "image": "/music/covers/michael-jackson-wanna-be-startin-somethin-thriller.jpg"
+    }
+  ]
+}

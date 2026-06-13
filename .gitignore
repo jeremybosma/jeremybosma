@@ -27,6 +27,9 @@
 # production
 /build
 
+# instagram sync cache (credentials stay in .env / ~/.config/instaloader)
+.cache/
+
 # misc
 .DS_Store
 *.pem
