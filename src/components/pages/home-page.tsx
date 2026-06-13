@@ -4,8 +4,8 @@ import { ExpandablePhoto } from "@/components/expandable-photo";
 import { HoverSlideItem, HoverSlideList } from "@/components/hover-slide-list";
 import { useInstallHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { sectionProps } from "@/components/layouts/client-shell";
-import { BOOK_CALL_URL, IMESSAGE_URL } from "@/lib/site";
-import { IconArrowUpRight, IconBubbleFill } from "@/lib/symbols-react";
+import { CONTACT_EMAIL } from "@/lib/site";
+import { IconArrowUpRight, IconEnvelope } from "@/lib/symbols-react";
 
 const HOME_SHOWN_KEY = "portfolio-home-shown";
 const ENTRANCE_DURATION_MS =
@@ -151,23 +151,15 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap gap-2 mt-4">
           <a
-            href={BOOK_CALL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="group inline-flex items-center gap-2 rounded-full border border-black bg-black px-3 py-2 text-sm font-medium text-white shadow-sm transition-all duration-150 hover:bg-black/85 dark:border-white dark:bg-white dark:text-black dark:hover:bg-white/90 active:scale-[0.98]"
           >
-            Book a call
+            <IconEnvelope className="w-4 h-4 fill-current" aria-hidden="true" />
+            Email
             <IconArrowUpRight
               className="w-3 h-3 fill-current transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden="true"
             />
-          </a>
-          <a
-            href={IMESSAGE_URL}
-            className="group inline-flex items-center gap-2 rounded-full border border-[#2fb350] bg-[linear-gradient(180deg,#5BD066_0%,#34C759_100%)] px-3 py-2 text-sm font-medium text-white shadow-sm transition-all duration-150 hover:brightness-105 active:scale-[0.98]"
-          >
-            <IconBubbleFill className="w-4 h-4 fill-white" aria-hidden="true" />
-            Quick message
           </a>
         </div>
       </HomeSection>
