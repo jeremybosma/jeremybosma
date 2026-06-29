@@ -67,7 +67,7 @@ function HomeSection({ delay, skipEntrance, className, children }: HomeSectionPr
   );
 }
 
-const profile = "/profile2.jpeg";
+const profile = "/profile.png";
 const individu = "/projects/individu.png";
 const fulldev = "/projects/fulldev.png";
 const internetengineering = "/projects/internet-engineering.png";
