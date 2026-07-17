@@ -5,7 +5,6 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { islands } from "virtual:sitex-islands";
 
 const hydrationAttributes = {
-  children: "data-sitex-children",
   island: "data-sitex-island",
   mode: "data-sitex-mode",
   props: "data-sitex-props",
@@ -43,6 +42,20 @@ function isReactMounted(element: Element): boolean {
   return Object.keys(element).some((key) => key.startsWith("__reactContainer"));
 }
 
+function readStaticChildren(element: HTMLElement) {
+  const staticChildrenElement = Array.from(element.children).find((child) =>
+    child.hasAttribute(hydrationAttributes.staticChildren)
+  );
+  const staticChildrenHtml = staticChildrenElement?.innerHTML;
+  staticChildrenElement?.remove();
+  return staticChildrenElement
+    ? createElement("div", {
+        [hydrationAttributes.staticChildren]: "",
+        dangerouslySetInnerHTML: { __html: staticChildrenHtml },
+      })
+    : undefined;
+}
+
 async function bootHydrationEntry(element: HTMLElement, fresh = false) {
   const id = element.getAttribute(hydrationAttributes.island);
   const mode = element.getAttribute(hydrationAttributes.mode);
@@ -64,21 +77,13 @@ async function bootHydrationEntry(element: HTMLElement, fresh = false) {
   const mod = await loadEntry();
   const Component = mod.default;
   const props = parseHydrationProps(element.getAttribute(hydrationAttributes.props));
-  const staticChildrenHtml = element.getAttribute(hydrationAttributes.children);
-  const staticChildren = staticChildrenHtml
-    ? createElement("div", {
-        [hydrationAttributes.staticChildren]: "",
-        dangerouslySetInnerHTML: { __html: staticChildrenHtml },
-      })
-    : undefined;
+  const staticChildren = readStaticChildren(element);
 
   if (mode === "only" || fresh) {
     unmountIslandRoot(element);
 
     flushSync(() => {
-      const elementTree = createElement(Component, props);
-      // After view-transition HTML swap, SSR markup is already in the DOM.
-      // Hydrate into it so shared nodes (e.g. morphed product images) are kept.
+      const elementTree = createElement(Component, props, staticChildren);
       if (fresh && element.childNodes.length > 0) {
         const root = hydrateRoot(element, elementTree);
         hydratedRoots.set(element, root);

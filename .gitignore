@@ -19,6 +19,7 @@
 
 # sitex / vite
 /dist/
+/.sitex/
 
 # generated sitex routes (from scripts/generate-pages.ts)
 /src/pages/writing/

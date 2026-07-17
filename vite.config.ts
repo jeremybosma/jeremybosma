@@ -1,7 +1,7 @@
 import { config as loadDotenv } from "dotenv";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { defineConfig, type Plugin, type ViteDevServer } from "vite";
+import { defineConfig, type Plugin, type ViteDevServer } from "vite-plus";
 
 loadDotenv();
 import tailwindcss from "@tailwindcss/vite";
@@ -47,7 +47,7 @@ function registerApiMiddleware(server: ViteDevServer) {
       const response = await handleApiRequest(
         req,
         requestUrl,
-        (moduleId) => server.ssrLoadModule(moduleId)
+        (moduleId: string) => server.ssrLoadModule(moduleId)
       );
 
       if (!response) {
@@ -76,7 +76,15 @@ function apiDevMiddleware(): Plugin {
 
 export default defineConfig({
   appType: "custom",
-  plugins: [tailwindcss(), react(), apiDevMiddleware(), sitex()],
+  plugins: [
+    tailwindcss(),
+    react(),
+    apiDevMiddleware(),
+    ...sitex({
+      site: { url: "https://jeremybosma.nl" },
+      favicon: false,
+    }),
+  ],
   publicDir: "public",
   resolve: {
     alias: {
