@@ -153,13 +153,17 @@ type ExpandableVideoProps = ExpandableMediaBase & {
 
 export type ExpandableMediaProps = ExpandableImageProps | ExpandableVideoProps;
 
+function isExpandableVideo(props: ExpandableMediaProps): props is ExpandableVideoProps {
+  return props.type === "video" || isVideoSrc(props.src);
+}
+
 export function ExpandableMedia(props: ExpandableMediaProps) {
   const {
     className = "",
     thumbnailClassName = "",
   } = props;
 
-  const isVideo = props.type === "video" || isVideoSrc(props.src);
+  const isVideo = isExpandableVideo(props);
   const alt = props.type === "video" ? (props.alt ?? "Video") : props.alt;
   const poster =
     props.type === "video" ? props.poster : undefined;
@@ -342,13 +346,13 @@ export function ExpandableMedia(props: ExpandableMediaProps) {
           </span>
         ) : (
           <img
-            loading={props.type !== "video" ? props.loading : undefined}
+            loading={props.loading}
             src={props.src}
             alt={alt}
             className={thumbnailClassName}
-            width={props.type !== "video" ? props.width : undefined}
-            height={props.type !== "video" ? props.height : undefined}
-            fetchPriority={props.type !== "video" ? props.fetchPriority : undefined}
+            width={props.width}
+            height={props.height}
+            fetchPriority={props.fetchPriority}
             style={thumbnailVtStyle}
             draggable={false}
           />

@@ -46,6 +46,8 @@ export function runLightboxViewTransition(
       document.documentElement.classList.remove(LIGHTBOX_VT_HTML_CLASS);
       onFinished?.();
     });
+
+    return transition;
   };
 
   if (waitForPaint) {
