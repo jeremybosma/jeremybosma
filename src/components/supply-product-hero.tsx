@@ -7,7 +7,7 @@ type SupplyProductHeroProps = {
   imageUrl: string | null;
 };
 
-/** Server-rendered hero image — stays outside client islands so view transitions are not replaced on hydrate. */
+/** Server-rendered hero image. Stays outside client islands so view transitions are not replaced on hydrate. */
 export function SupplyProductHero({
   productId,
   productTitle,

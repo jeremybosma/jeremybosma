@@ -186,7 +186,7 @@ type GalleryPageProps = {
     highlights?: GalleryHighlight[];
 };
 
-/** Static tile for collapsed fan — no playback or sound controls. */
+/** Static tile for collapsed fan: no playback or sound controls. */
 function PreviewMedia({
     img,
     className = "",
@@ -369,7 +369,7 @@ function MediaCell({
     const isVideo = isVideoMedia(img);
     const isLightboxSource = lightboxOpen && lightboxSourceKey === cellKey;
 
-    // Source tile must lose gallery-photo before the lightbox gets it — duplicate
+    // Source tile must lose gallery-photo before the lightbox gets it. Duplicate
     // names abort the open morph (close still works). See WICG/view-transitions.
     const lightboxVtName = isLightboxSource
         ? "none"

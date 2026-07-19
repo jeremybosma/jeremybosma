@@ -31,7 +31,7 @@ async function main() {
 
   console.log("\n🎵 Syncing music library with Apple Music playlist...\n");
   console.log(`   ${FAVORITE_SONGS_PLAYLIST.url}`);
-  if (dryRun) console.log("   (dry run — no files will be written)\n");
+  if (dryRun) console.log("   (dry run: no files will be written)\n");
   if (prune) console.log("   (pruning tracks not in playlist)\n");
   if (force) console.log("   (forcing cover re-download)\n");
   if (dataOnly) console.log("   (updating music-data.ts only)\n");
@@ -58,7 +58,7 @@ async function main() {
     console.log("   First 10 tracks after sync:");
     for (const track of tracks.slice(0, 10)) {
       const album = track.album ? ` [${track.album}]` : "";
-      console.log(`   - ${track.author} — ${track.title}${album}`);
+      console.log(`   - ${track.author} - ${track.title}${album}`);
     }
     console.log("\n✅ Dry run complete.\n");
     return;

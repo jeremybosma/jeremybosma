@@ -130,7 +130,7 @@
   }
 }
 
-/* Sitex: [data-sitex-island] wraps islands — section gaps live on .page-sections inside each page */
+/* Sitex: [data-sitex-island] wraps islands; section gaps live on .page-sections inside each page */
 .view-transition-content [data-sitex-island] .page-sections {
   display: flex;
   flex-direction: column;

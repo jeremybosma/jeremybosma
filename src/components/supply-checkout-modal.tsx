@@ -624,7 +624,7 @@ function PhoneField({
           }`}
           aria-hidden="true"
         >
-          {dialCode || "—"}
+          {dialCode || "-"}
         </div>
         <input
           type="tel"

@@ -266,7 +266,7 @@ export default function MusicAddPage() {
                         </label>
                     </div>
                     <p className="text-xs text-black/40 dark:text-white/40 -mt-1">
-                        Keep artist, album, and type after adding — only clears the title
+                        Keep artist, album, and type after adding; only clears the title
                     </p>
                 </div>
 

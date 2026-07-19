@@ -1,4 +1,4 @@
-// @ts-nocheck — icon modules are plain JS without typings.
+// @ts-nocheck - icon modules are plain JS without typings.
 /** Re-exports only icons used in this app (avoids broken symbols-react barrel during SSR). */
 export { IconHouse } from "symbols-react/src/icons/IconHouse.js";
 export { IconHouseFill } from "symbols-react/src/icons/IconHouseFill.js";

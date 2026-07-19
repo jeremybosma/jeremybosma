@@ -15,7 +15,7 @@ export function normalizeMusicText(value: string): string {
     .trim();
 }
 
-/** For matching only — never used when writing titles to music-data.ts */
+/** For matching only. Never used when writing titles to music-data.ts */
 export function normalizeTitleForMatch(value: string): string {
   return normalizeMusicText(stripFeaturedArtistsFromTitle(value));
 }

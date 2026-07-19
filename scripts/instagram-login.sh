@@ -8,7 +8,7 @@ BROWSER="${INSTAGRAM_COOKIE_BROWSER:-helium}"
 cd "$ROOT"
 
 echo "Instagram password login via Instaloader often fails with"
-echo '  "Unexpected null login result" — that is normal.'
+echo '  "Unexpected null login result" - that is normal.'
 echo ""
 echo "Import session from your browser instead:"
 echo ""

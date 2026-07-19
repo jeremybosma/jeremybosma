@@ -1,5 +1,12 @@
 {
   "buildCommand": "bun run build",
   "outputDirectory": "dist",
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/music", "destination": "/music.html" },
+    { "source": "/videos", "destination": "/videos.html" },
+    { "source": "/writing", "destination": "/writing.html" },
+    { "source": "/supply", "destination": "/supply.html" }
+  ]
 }

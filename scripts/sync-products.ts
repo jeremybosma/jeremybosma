@@ -22,10 +22,32 @@ const SUPPLY_PRODUCTS_PATH = path.join(
   "src/lib/supply-products.json"
 );
 
+function withoutEmDash(text: string): string {
+  return text.replace(/\s—\s/g, ", ").replace(/—/g, "-");
+}
+
+function sanitizeProductCopy<T>(value: T): T {
+  if (typeof value === "string") {
+    return withoutEmDash(value) as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizeProductCopy(item)) as T;
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => [key, sanitizeProductCopy(item)])
+    ) as T;
+  }
+
+  return value;
+}
+
 function writeSupplyProductsCache(products: Awaited<ReturnType<typeof getPublishedProducts>>) {
   const payload = {
     syncedAt: new Date().toISOString(),
-    products,
+    products: sanitizeProductCopy(products),
   };
   fs.writeFileSync(SUPPLY_PRODUCTS_PATH, `${JSON.stringify(payload, null, 2)}\n`);
   console.log(`\n📦 Wrote ${products.length} product(s) to src/lib/supply-products.json\n`);

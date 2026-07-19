@@ -59,7 +59,7 @@ export function getAlbumCoverSlug(author: string, albumName: string): string {
   return slugify(`${author}-${albumName}`);
 }
 
-/** Cover filename — one file per album when the track belongs to one. */
+/** Cover filename: one file per album when the track belongs to one. */
 export function getStorageSlug(track: MusicData): string {
   const albumKey = getAlbumKey(track);
   if (albumKey) {
@@ -327,7 +327,7 @@ export async function syncAllMusicCovers(
             : "not found";
 
     console.log(
-      `  [${index + 1}/${orderedTracks.length}] ${track.author} — ${track.title} (${statusLabel})`
+      `  [${index + 1}/${orderedTracks.length}] ${track.author} - ${track.title} (${statusLabel})`
     );
 
     if (synced.status === "downloaded" || synced.status === "missing") {
@@ -344,7 +344,7 @@ export async function syncAllMusicCovers(
     tracks: tracks.map((track) => {
       const synced = tracksByKey.get(getTrackKey(track));
       if (!synced) {
-        throw new Error(`Missing sync result for ${track.author} — ${track.title}`);
+        throw new Error(`Missing sync result for ${track.author} - ${track.title}`);
       }
       const { status: _status, ...entry } = synced;
       return entry;

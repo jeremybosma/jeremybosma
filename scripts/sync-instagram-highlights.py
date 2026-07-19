@@ -238,7 +238,7 @@ def ffmpeg_available() -> bool:
         )
         if not _FFMPEG_AVAILABLE:
             print(
-                "ffmpeg not found — video posters skipped (install ffmpeg for lightbox animations)",
+                "ffmpeg not found: video posters skipped (install ffmpeg for lightbox animations)",
                 file=sys.stderr,
             )
     return _FFMPEG_AVAILABLE
