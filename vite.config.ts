@@ -86,9 +86,13 @@ export default defineConfig({
     }),
   ],
   publicDir: "public",
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-dom/client", "react/jsx-dev-runtime"],
+  },
   resolve: {
     alias: {
       "@": path.resolve(rootDir, "src"),
     },
+    dedupe: ["react", "react-dom"],
   },
 });
