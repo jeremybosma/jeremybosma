@@ -12,7 +12,9 @@ let navigationGeneration = 0;
 let installed = false;
 
 function isInternalPath(pathname: string): boolean {
-  return pathname === "/" || /^\/(writing|supply|gallery|videos|music)(\/|$)/.test(pathname);
+  return (
+    pathname === "/" || /^\/(agency|writing|supply|gallery|videos|music)(\/|$)/.test(pathname)
+  );
 }
 
 function isInternalLink(anchor: HTMLAnchorElement): boolean {

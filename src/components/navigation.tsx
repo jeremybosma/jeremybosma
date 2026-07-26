@@ -21,7 +21,7 @@ import {
   IconEnvelope,
   IconGithubLogo,
 } from "@/lib/symbols-react";
-import { PATHNAME_SYNC_EVENT } from "@/lib/pathname-sync";
+import { usePathname } from "@/lib/pathname-sync";
 
 type NavItem = {
   label: string;
@@ -35,8 +35,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/", icon: IconHouse, iconActive: IconHouseFill },
   {
     label: "Agency",
-    href: "https://internet-engineering.com",
-    external: true,
+    href: "/agency",
     icon: IconBriefcase,
     iconActive: IconBriefcaseFill,
   },
@@ -69,25 +68,6 @@ const SOCIAL_ITEMS: NavItem[] = [
     icon: IconLinkedinLogo,
   },
 ];
-
-function subscribeToPathname(onStoreChange: () => void) {
-  window.addEventListener("popstate", onStoreChange);
-  window.addEventListener("pageshow", onStoreChange);
-  window.addEventListener(PATHNAME_SYNC_EVENT, onStoreChange);
-  return () => {
-    window.removeEventListener("popstate", onStoreChange);
-    window.removeEventListener("pageshow", onStoreChange);
-    window.removeEventListener(PATHNAME_SYNC_EVENT, onStoreChange);
-  };
-}
-
-function usePathname(pathnameProp?: string) {
-  return React.useSyncExternalStore(
-    subscribeToPathname,
-    () => window.location.pathname,
-    () => pathnameProp ?? "/"
-  );
-}
 
 function NavLink({
   item,

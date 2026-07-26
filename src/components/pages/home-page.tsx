@@ -185,7 +185,7 @@ export default function HomePage() {
         <h2>Highlighted work</h2>
         <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
           <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" previewImages={projectPreviews("individu")} />  
-          <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="https://internet-engineering.com" previewImages={projectPreviews("internet-engineering")} />
+          <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="/agency" previewImages={projectPreviews("internet-engineering")} />
           <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" previewImages={projectPreviews("integrate")} />
           <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" previewImages={projectPreviews("fulldev")} />
           {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
@@ -288,14 +288,16 @@ function ProjectCard({ name, description, image, link, previewImages }: ProjectP
     previewImages === undefined
       ? [undefined, undefined, undefined]
       : previewImages.slice(0, PROJECT_PREVIEW_SLOTS.length);
+  const isExternal = /^https?:\/\//.test(link);
 
   return (
     <HoverSlideItem
       href={link}
       className="group/project overflow-visible rounded-lg px-3 py-2"
-      aria-label={`Visit ${name} website (opens in new tab)`}
-      target="_blank"
-      rel="noopener noreferrer"
+      aria-label={isExternal ? `Visit ${name} website (opens in new tab)` : `Open ${name}`}
+      {...(isExternal
+        ? { target: "_blank" as const, rel: "noopener noreferrer" }
+        : {})}
     >
       <div className="flex items-center gap-3">
         <div className="relative h-14 w-[92px] shrink-0 overflow-visible pointer-events-none">
