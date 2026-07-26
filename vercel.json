@@ -3,6 +3,7 @@
   "outputDirectory": "dist",
   "framework": null,
   "rewrites": [
+    { "source": "/agency", "destination": "/agency.html" },
     { "source": "/gallery", "destination": "/gallery.html" },
     { "source": "/music", "destination": "/music.html" },
     { "source": "/music/:slug", "destination": "/music/:slug.html" },
