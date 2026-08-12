@@ -137,8 +137,9 @@
   gap: 2rem;
 }
 
-/* Agency embeds the external site full-bleed beside the sidebar */
-html[data-pathname="/agency"] .view-transition-content {
+/* Site embeds (agency + homepage projects) fill the main column beside the sidebar */
+html[data-pathname="/agency"] .view-transition-content,
+html[data-pathname^="/site/"] .view-transition-content {
   gap: 0;
   height: 100%;
   min-height: 0;
@@ -146,7 +147,9 @@ html[data-pathname="/agency"] .view-transition-content {
 }
 
 html[data-pathname="/agency"] .view-transition-content [data-sitex-static-children],
-html[data-pathname="/agency"] .view-transition-content [data-sitex-island] {
+html[data-pathname="/agency"] .view-transition-content [data-sitex-island],
+html[data-pathname^="/site/"] .view-transition-content [data-sitex-static-children],
+html[data-pathname^="/site/"] .view-transition-content [data-sitex-island] {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -155,7 +158,8 @@ html[data-pathname="/agency"] .view-transition-content [data-sitex-island] {
   width: 100%;
 }
 
-html[data-pathname="/agency"] .agency-iframe {
+html[data-pathname="/agency"] .site-embed-iframe,
+html[data-pathname^="/site/"] .site-embed-iframe {
   display: block;
   flex: 1 1 auto;
   width: 100%;

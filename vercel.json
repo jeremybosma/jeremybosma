@@ -4,6 +4,7 @@
   "framework": null,
   "rewrites": [
     { "source": "/agency", "destination": "/agency.html" },
+    { "source": "/site/:slug", "destination": "/site/:slug.html" },
     { "source": "/gallery", "destination": "/gallery.html" },
     { "source": "/music", "destination": "/music.html" },
     { "source": "/music/:slug", "destination": "/music/:slug.html" },

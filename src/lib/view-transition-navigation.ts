@@ -13,7 +13,8 @@ let installed = false;
 
 function isInternalPath(pathname: string): boolean {
   return (
-    pathname === "/" || /^\/(agency|writing|supply|gallery|videos|music)(\/|$)/.test(pathname)
+    pathname === "/" ||
+    /^\/(agency|site|writing|supply|gallery|videos|music)(\/|$)/.test(pathname)
   );
 }
 

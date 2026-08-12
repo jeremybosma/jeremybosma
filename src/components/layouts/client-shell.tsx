@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation";
 import { ViewTransitionContent } from "@/components/view-transition-content";
 import { scheduleHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { registerPathnameSync, usePathname } from "@/lib/pathname-sync";
+import { isSiteEmbedPath } from "@/lib/site-embeds";
 import { installViewTransitionNavigation } from "@/lib/view-transition-navigation";
 import { cn } from "@/lib/utils";
 
@@ -61,7 +62,7 @@ const StableDesktopContent = React.memo(
 export default function ClientShell({ children, pathname: pathnameProp }: ClientShellProps) {
   const [, syncNavigation] = React.useReducer((count: number) => count + 1, 0);
   const pathname = usePathname(pathnameProp);
-  const isAgencyEmbed = pathname === "/agency";
+  const isEmbed = isSiteEmbedPath(pathname);
 
   React.useEffect(() => installViewTransitionNavigation(), []);
   React.useEffect(() => registerPathnameSync(syncNavigation), []);
@@ -70,41 +71,41 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
   }, []);
 
   return (
-    <div className={cn("min-h-screen", isAgencyEmbed && "h-dvh overflow-hidden")}>
+    <div className={cn("min-h-screen", isEmbed && "h-dvh overflow-hidden")}>
       <AnalyticsIsland />
       <div
         className={cn(
           "view-transition-chrome md:hidden flex flex-col",
-          isAgencyEmbed ? "h-dvh p-0" : "p-6 gap-6"
+          isEmbed ? "h-dvh p-0" : "p-6 gap-6"
         )}
       >
-        <div className={cn(isAgencyEmbed && "px-6 pt-6")}>
+        <div className={cn(isEmbed && "px-6 pt-6")}>
           <Navigation pathname={pathnameProp} />
         </div>
         <main
           className={cn(
             "flex flex-col",
-            isAgencyEmbed ? "min-h-0 flex-1" : "gap-8"
+            isEmbed ? "min-h-0 flex-1" : "gap-8"
           )}
         >
           <StableMobileContent>{children}</StableMobileContent>
         </main>
       </div>
 
-      <div className={cn("hidden md:block", isAgencyEmbed ? "h-dvh" : "min-h-screen")}>
+      <div className={cn("hidden md:block", isEmbed ? "h-dvh" : "min-h-screen")}>
         <aside className="view-transition-chrome view-transition-sidebar fixed top-0 left-0 h-screen w-48 p-8 flex flex-col">
           <Navigation pathname={pathnameProp} />
         </aside>
         <main
           className={cn(
             "ml-48",
-            isAgencyEmbed ? "h-dvh" : "min-h-screen flex justify-center"
+            isEmbed ? "h-dvh" : "min-h-screen flex justify-center"
           )}
         >
           <div
             className={cn(
               "w-full flex flex-col min-h-0",
-              isAgencyEmbed ? "h-full max-w-none p-0" : "max-w-2xl p-8 gap-8"
+              isEmbed ? "h-full max-w-none p-0" : "max-w-2xl p-8 gap-8"
             )}
           >
             <StableDesktopContent>{children}</StableDesktopContent>

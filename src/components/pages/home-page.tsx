@@ -184,10 +184,10 @@ export default function HomePage() {
       <HomeSection delay={0.2} skipEntrance={skipEntrance}>
         <h2>Highlighted work</h2>
         <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
-          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="https://individu.ai" previewImages={projectPreviews("individu")} />  
+          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="/site/individu" previewImages={projectPreviews("individu")} />  
           <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="/agency" previewImages={projectPreviews("internet-engineering")} />
-          <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="https://integrate.dev" previewImages={projectPreviews("integrate")} />
-          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" previewImages={projectPreviews("fulldev")} />
+          <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="/site/integrate" previewImages={projectPreviews("integrate")} />
+          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="/site/fulldev" previewImages={projectPreviews("fulldev")} />
           {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
           {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
