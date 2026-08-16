@@ -158,19 +158,15 @@ html[data-pathname^="/site/"] .view-transition-content [data-sitex-island] {
   width: 100%;
 }
 
-.site-embed-host--warming {
-  /* Full-size off-screen so browsers still load the frames without covering the page. */
-  top: 0;
-  width: 100vw;
-  height: 100dvh;
-  transform: translateX(-100vw);
+.site-embed-host:not(.site-embed-host--active) {
+  visibility: hidden;
   pointer-events: none;
+  view-transition-name: none;
 }
 
 .site-embed-host--active {
-  top: 0;
-  right: 0;
-  bottom: 0;
+  /* Same named transition as homepage .page-panel-vt so embed nav is one fade. */
+  view-transition-name: page-panel;
 }
 
 /* Prose styles for blog posts */

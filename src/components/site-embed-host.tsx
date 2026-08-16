@@ -97,10 +97,8 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
   return (
     <div
       className={cn(
-        "site-embed-host pointer-events-none fixed z-[1] md:left-48",
-        activeSlug
-          ? "site-embed-host--active pointer-events-auto inset-0"
-          : "site-embed-host--warming"
+        "site-embed-host pointer-events-none fixed inset-0 z-[1] md:left-48",
+        activeSlug && "site-embed-host--active pointer-events-auto"
       )}
       aria-hidden={activeSlug ? undefined : true}
     >
@@ -115,7 +113,7 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
             title={embed.title}
             className={cn(
               "site-embed-iframe absolute inset-0 h-full w-full border-0 bg-background",
-              activeSlug && !isActive && "invisible"
+              !isActive && "invisible"
             )}
             loading="eager"
             referrerPolicy="no-referrer-when-downgrade"
