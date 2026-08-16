@@ -1,12 +1,447 @@
 {
-  "syncedAt": "2026-07-17T17:14:25.911Z",
+  "syncedAt": "2026-08-16T16:22:43.710Z",
   "tracks": [
     {
-      "title": "BBW",
+      "title": "Hideaway",
+      "author": "Kiesza",
+      "type": "single",
+      "album": "Sound of a Woman",
+      "image": "/music/covers/kiesza-sound-of-a-woman.jpg"
+    },
+    {
+      "title": "NOSEBLEEDS (feat. lostboyshawty, Benaja & Louis Pedro)",
+      "author": "STERREN STRALEN OVERAL",
+      "type": "single",
+      "album": "NOSEBLEEDS",
+      "image": "/music/covers/sterren-stralen-overal-nosebleeds.jpg"
+    },
+    {
+      "title": "Trots Op Ellende",
+      "author": "Fresku",
+      "type": "single",
+      "album": "In Het Diepe",
+      "image": "/music/covers/fresku-in-het-diepe.jpg"
+    },
+    {
+      "title": "Glimlach (feat. Asiah)",
+      "author": "Fresku",
+      "type": "single",
+      "album": "In Het Diepe",
+      "image": "/music/covers/fresku-in-het-diepe.jpg"
+    },
+    {
+      "title": "Noodzaak",
+      "author": "Fresku",
+      "type": "single",
+      "album": "In Het Diepe",
+      "image": "/music/covers/fresku-in-het-diepe.jpg"
+    },
+    {
+      "title": "Kreeft (feat. MocroManiac)",
+      "author": "Fresku",
+      "type": "single",
+      "album": "Nooit Meer Terug",
+      "image": "/music/covers/fresku-nooit-meer-terug.jpg"
+    },
+    {
+      "title": "Lifestyle",
+      "author": "lostboyshawty & Hiltje",
+      "type": "single",
+      "album": "Jerragamo",
+      "image": "/music/covers/lostboyshawty-hiltje-jerragamo.png"
+    },
+    {
+      "title": "Views",
+      "author": "Drake",
+      "type": "album",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "Essence (feat. Tems)",
+      "author": "Wizkid",
+      "type": "single",
+      "album": "Made In Lagos",
+      "image": "/music/covers/wizkid-made-in-lagos.jpg"
+    },
+    {
+      "title": "PUPPET",
+      "author": "Tyler, The Creator",
+      "type": "single",
+      "album": "IGOR",
+      "image": "/music/covers/tyler-the-creator-igor.jpg"
+    },
+    {
+      "title": "Goose and The Juice",
       "author": "Drake",
       "type": "single",
       "album": "MAID OF HONOUR",
       "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "If I Could",
+      "author": "Future",
+      "type": "single",
+      "album": "The Real Me",
+      "image": "/music/covers/future-the-real-me.jpg"
+    },
+    {
+      "title": "Money Over Everything",
+      "author": "Future",
+      "type": "single",
+      "album": "The Real Me",
+      "image": "/music/covers/future-the-real-me.jpg"
+    },
+    {
+      "title": "Sea bass",
+      "author": "NTF33",
+      "type": "single",
+      "image": "/music/covers/ntf33-sea-bass.jpg"
+    },
+    {
+      "title": "Redemption",
+      "author": "Drake",
+      "type": "single",
+      "album": "Views",
+      "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "Healing",
+      "author": "Gordo & Drake",
+      "type": "single",
+      "album": "DIAMANTE",
+      "image": "/music/covers/gordo-drake-diamante.jpg"
+    },
+    {
+      "title": "Just Saying",
+      "author": "Loe Shimmy & Summer Walker",
+      "type": "single",
+      "album": "Pretty Girlz Run The World",
+      "image": "/music/covers/loe-shimmy-summer-walker-pretty-girlz-run-the-world.jpg"
+    },
+    {
+      "title": "I Don't Fuck With You (feat. E-40)",
+      "author": "Big Sean",
+      "type": "single",
+      "album": "Dark Sky Paradise (Deluxe)",
+      "image": "/music/covers/big-sean-dark-sky-paradise-deluxe.jpg"
+    },
+    {
+      "title": "Diva",
+      "author": "PlaqueBoyMax",
+      "type": "single",
+      "image": "/music/covers/plaqueboymax-diva.jpg"
+    },
+    {
+      "title": "CONUNDRUMS",
+      "author": "ty!",
+      "type": "single",
+      "image": "/music/covers/ty-conundrums.jpg"
+    },
+    {
+      "title": "Run The World",
+      "author": "Loe Shimmy & Brent Faiyaz",
+      "type": "single",
+      "album": "Pretty Girlz Run The World",
+      "image": "/music/covers/loe-shimmy-brent-faiyaz-pretty-girlz-run-the-world.jpg"
+    },
+    {
+      "title": "Scorpion",
+      "author": "Drake",
+      "type": "album",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "24/7 (feat. Ella Mai)",
+      "author": "Meek Mill",
+      "type": "single",
+      "album": "Championships",
+      "image": "/music/covers/meek-mill-championships.jpg"
+    },
+    {
+      "title": "Dead Fresh",
+      "author": "Lil Baby",
+      "type": "single",
+      "image": "/music/covers/lil-baby-dead-fresh.jpg"
+    },
+    {
+      "title": "Not PLaying",
+      "author": "Playboi Carti",
+      "type": "single",
+      "album": "Whole Lotta Red",
+      "image": "/music/covers/playboi-carti-whole-lotta-red.jpg"
+    },
+    {
+      "title": "Final Fantasy",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "Talk Up (feat. JAŸ-Z)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Scorpion",
+      "image": "/music/covers/drake-draft-day-scorpion.jpg"
+    },
+    {
+      "title": "Rather Be In Oakland (feat. Karri)",
+      "author": "Ecchi.mp4",
+      "type": "single",
+      "image": "/music/covers/ecchi-mp4-rather-be-in-oakland-feat-karri.jpg"
+    },
+    {
+      "title": "Fortworth",
+      "author": "Drake & PARTYNEXTDOOR",
+      "type": "single",
+      "album": "HABIBTI",
+      "image": "/music/covers/drake-partynextdoor-habibti.jpg"
+    },
+    {
+      "title": "Nobody Else But You",
+      "author": "Trey Songz",
+      "type": "single",
+      "album": "Tremaine The Album",
+      "image": "/music/covers/trey-songz-tremaine-the-album.jpg"
+    },
+    {
+      "title": "Blue Laces (feat. Goldie)",
+      "author": "Nipsey Hussle",
+      "type": "single",
+      "album": "The Marathon",
+      "image": "/music/covers/nipsey-hussle-the-marathon.jpg"
+    },
+    {
+      "title": "Sex on the Beach",
+      "author": "PARTYNEXTDOOR",
+      "type": "single",
+      "album": "PARTYNEXTDOOR TWO",
+      "image": "/music/covers/partynextdoor-partynextdoor-two.jpg"
+    },
+    {
+      "title": "IT'S A TRAP",
+      "author": "Cochise",
+      "type": "single",
+      "album": "TRENCH TOWN",
+      "image": "/music/covers/cochise-trench-town.jpg"
+    },
+    {
+      "title": "Kick",
+      "author": "Future",
+      "type": "single",
+      "album": "The Real Me",
+      "image": "/music/covers/future-the-real-me.jpg"
+    },
+    {
+      "title": "N 2 Deep (feat. Future)",
+      "author": "Drake",
+      "type": "single",
+      "album": "Certified Lover Boy",
+      "image": "/music/covers/drake-certified-lover-boy.jpg"
+    },
+    {
+      "title": "After Hours",
+      "author": "prod.push",
+      "type": "single",
+      "image": "/music/covers/prod-push-after-hours.jpg"
+    },
+    {
+      "title": "Kane and Take",
+      "author": "Juz Hz",
+      "type": "single",
+      "image": "/music/covers/juz-hz-kane-and-take.jpg"
+    },
+    {
+      "title": "Special (feat. Rexx Life Raj & Jazz Cartier)",
+      "author": "Lex Aura",
+      "type": "single",
+      "image": "/music/covers/lex-aura-special-feat-rexx-life-raj-jazz-cartier.jpg"
+    },
+    {
+      "title": "Mannequin Challenge (feat. Juice WRLD)",
+      "author": "Young Thug",
+      "type": "single",
+      "album": "So Much Fun",
+      "image": "/music/covers/young-thug-so-much-fun.jpg"
+    },
+    {
+      "title": "Teen X Babe",
+      "author": "Ken Carson",
+      "type": "single",
+      "album": "Teen X : Relapsed - EP",
+      "image": "/music/covers/ken-carson-teen-x-relapsed-ep.jpg"
+    },
+    {
+      "title": "I Can't Wait To Get There",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "Hurry Up Tomorrow (Video Album)",
+      "image": "/music/covers/the-weeknd-hurry-up-tomorrow-video-album.jpg"
+    },
+    {
+      "title": "Like You (feat. Ciara)",
+      "author": "Bow Wow",
+      "type": "single",
+      "album": "Wanted",
+      "image": "/music/covers/bow-wow-wanted.jpg"
+    },
+    {
+      "title": "monster",
+      "author": "21 Savage",
+      "type": "single",
+      "album": "i am > i was (Deluxe)",
+      "image": "/music/covers/21-savage-i-am-i-was-deluxe.jpg"
+    },
+    {
+      "title": "Like That",
+      "author": "Future, Metro Boomin & Kendrick Lamar",
+      "type": "single",
+      "album": "WE DON'T TRUST YOU",
+      "image": "/music/covers/future-metro-boomin-kendrick-lamar-we-don-t-trust-you.jpg"
+    },
+    {
+      "title": "ID3 (from Josh Baker b2b Prospa b2b KETTAMA at Factory Town Miami 2026: Josh Baker pres. You&Me) [Mixed]",
+      "author": "ID",
+      "type": "single",
+      "album": "Josh Baker b2b Prospa b2b KETTAMA at Factory Town Miami 2026: Josh Baker pres. You&Me (DJ Mix)",
+      "image": "/music/covers/id-josh-baker-b2b-prospa-b2b-kettama-at-factory-town-miami-2026-josh-baker-pres-.jpg"
+    },
+    {
+      "title": "Wanna Know (Remix)",
+      "author": "Dave & Drake",
+      "type": "single",
+      "image": "/music/covers/dave-drake-wanna-know-remix.jpg"
+    },
+    {
+      "title": "Timeless",
+      "author": "The Weeknd & Playboi Carti",
+      "type": "single",
+      "album": "Hurry Up Tomorrow (Video Album)",
+      "image": "/music/covers/the-weeknd-playboi-carti-hurry-up-tomorrow-video-album.jpg"
+    },
+    {
+      "title": "Niagara Falls",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "Hurry Up Tomorrow (Video Album)",
+      "image": "/music/covers/the-weeknd-hurry-up-tomorrow-video-album.jpg"
+    },
+    {
+      "title": "Enjoy The Show",
+      "author": "The Weeknd & Future",
+      "type": "single",
+      "album": "Hurry Up Tomorrow (Video Album)",
+      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
+    },
+    {
+      "title": "Radio",
+      "author": "Future",
+      "type": "single",
+      "album": "The Real Me",
+      "image": "/music/covers/future-the-real-me.jpg"
+    },
+    {
+      "title": "SAG HARBOR",
+      "author": "Tyler, The Creator",
+      "type": "single",
+      "image": "/music/covers/tyler-the-creator-sag-harbor.jpg"
+    },
+    {
+      "title": "Demise",
+      "author": "Deeski & Lil Tony Official",
+      "type": "single",
+      "image": "/music/covers/deeski-lil-tony-official-demise.jpg"
+    },
+    {
+      "title": "Song Goes Off",
+      "author": "Trey Songz",
+      "type": "single",
+      "album": "Tremaine The Album",
+      "image": "/music/covers/trey-songz-tremaine-the-album.jpg"
+    },
+    {
+      "title": "I Invented Sex (feat. Drake)",
+      "author": "Trey Songz",
+      "type": "single",
+      "album": "Ready (Deluxe)",
+      "image": "/music/covers/trey-songz-ready-deluxe.jpg"
+    },
+    {
+      "title": "Fortunate (feat. Kanye West, Dreezy & CHILLER)",
+      "author": "The Game",
+      "type": "single",
+      "album": "DRILLMATIC Heart vs. Mind",
+      "image": "/music/covers/the-game-drillmatic-heart-vs-mind.jpg"
+    },
+    {
+      "title": "OK",
+      "author": "Kanye West & Don Toliver",
+      "type": "single",
+      "album": "BULLY - DELUXE",
+      "image": "/music/covers/kanye-west-don-toliver-bully-deluxe.jpg"
+    },
+    {
+      "title": "ØWAY",
+      "author": "Tezzus",
+      "type": "single",
+      "album": "THE RESURRECTIØN",
+      "image": "/music/covers/tezzus-the-resurrecti-n.jpg"
+    },
+    {
+      "title": "Know No Better (feat. Quavo)",
+      "author": "Major Lazer, Travis Scott & Camila Cabello",
+      "type": "single",
+      "album": "Know No Better - EP",
+      "image": "/music/covers/major-lazer-travis-scott-camila-cabello-know-no-better-ep.jpg"
+    },
+    {
+      "title": "HEADACHE",
+      "author": "Cochise",
+      "type": "single",
+      "album": "TRENCH TOWN",
+      "image": "/music/covers/cochise-trench-town.jpg"
+    },
+    {
+      "title": "Paranoid (feat. Mr Hudson)",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "808s & Heartbreak (Exclusive Edition)",
+      "image": "/music/covers/kanye-west-808s-heartbreak-exclusive-edition.jpg"
+    },
+    {
+      "title": "Say You Will",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "808s & Heartbreak (Exclusive Edition)",
+      "image": "/music/covers/kanye-west-808s-heartbreak-exclusive-edition.jpg"
+    },
+    {
+      "title": "Blood On the Leaves",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "Yeezus",
+      "image": "/music/covers/kanye-west-yeezus.jpg"
+    },
+    {
+      "title": "All That Matters",
+      "author": "Justin Bieber",
+      "type": "single",
+      "album": "Journals",
+      "image": "/music/covers/justin-bieber-journals.jpg"
+    },
+    {
+      "title": "Rock with You (Single Version)",
+      "author": "Michael Jackson",
+      "type": "single",
+      "album": "Off the Wall",
+      "image": "/music/covers/michael-jackson-off-the-wall.jpg"
+    },
+    {
+      "title": "Go Crazy",
+      "author": "Chris Brown & Young Thug",
+      "type": "single",
+      "album": "Slime & B",
+      "image": "/music/covers/chris-brown-young-thug-slime-b.jpg"
     },
     {
       "title": "Call Out My Name",
@@ -424,10 +859,10 @@
     },
     {
       "title": "IF I WASN’T RAPPIN’",
-      "author": "Concrete Boys, Lil Yachty, Draft Day & Dc2trill",
+      "author": "Concrete Boys, Dc2trill, Draft Day & Lil Yachty",
       "type": "single",
       "album": "It's Us Vol. 2",
-      "image": "/music/covers/concrete-boys-it-s-us-vol-2.jpg"
+      "image": "/music/covers/concrete-boys-dc2trill-draft-day-lil-yachty-it-s-us-vol-2.jpg"
     },
     {
       "title": "Jukebox Joints (feat. Joe Fox x Kanye West)",
@@ -451,9 +886,10 @@
       "image": "/music/covers/majid-jordan-wildest-dreams.jpg"
     },
     {
-      "title": "Views",
+      "title": "Weston Road Flows",
       "author": "Drake",
-      "type": "album",
+      "type": "single",
+      "album": "Views",
       "image": "/music/covers/drake-views.jpg"
     },
     {
@@ -811,9 +1247,10 @@
       "image": "/music/covers/sbtrkt-forward.jpg"
     },
     {
-      "title": "Scorpion",
+      "title": "Jaded",
       "author": "Drake",
-      "type": "album",
+      "type": "single",
+      "album": "Scorpion",
       "image": "/music/covers/drake-draft-day-scorpion.jpg"
     },
     {
@@ -1389,10 +1826,10 @@
       "image": "/music/covers/yakiyn-spread-like-butta.jpg"
     },
     {
-      "title": "Not a Romantic",
+      "title": "not a romantic",
       "author": "Karri",
       "type": "single",
-      "album": "Slider II",
+      "album": "SLIDER II",
       "image": "/music/covers/karri-slider-ii.png"
     },
     {
@@ -1462,12 +1899,6 @@
       "type": "single",
       "album": "Too Much Music-EP",
       "image": "/music/covers/plaqueboymax-too-much-music-ep.jpg"
-    },
-    {
-      "title": "Different Music (Yerr On The Street Live Performance)",
-      "author": "Rio Da Yung Og & Yerr On The Street",
-      "type": "single",
-      "image": "/music/covers/rio-da-yung-og-different-music-yerr-on-the-street-live-performance.jpg"
     },
     {
       "title": "Let’s Do It",
@@ -1937,20 +2368,6 @@
       "image": "/music/covers/drake-dog-house.jpg"
     },
     {
-      "title": "Niagara Falls",
-      "author": "The Weeknd",
-      "type": "single",
-      "album": "Hurry Up Tomorrow",
-      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
-    },
-    {
-      "title": "Enjoy The Show",
-      "author": "The Weeknd & Future",
-      "type": "single",
-      "album": "Hurry Up Tomorrow",
-      "image": "/music/covers/the-weeknd-enjoy-the-show-hurry-up-tomorrow.jpg"
-    },
-    {
       "title": "Digital Dash",
       "author": "Drake & Future",
       "type": "single",
@@ -2309,13 +2726,6 @@
     },
     {
       "title": "Jenni",
-      "author": "Cash Cobain & Chow Lee",
-      "type": "single",
-      "album": "2 Slizzy 2 Sexy (Deluxe)",
-      "image": "/music/covers/cash-cobain-2-slizzy-2-sexy-deluxe.jpg"
-    },
-    {
-      "title": "Jholiday 2",
       "author": "Cash Cobain & Chow Lee",
       "type": "single",
       "album": "2 Slizzy 2 Sexy (Deluxe)",
@@ -3187,14 +3597,14 @@
     },
     {
       "title": "Bam (feat. Damian \"Jr. Gong\" Marley)",
-      "author": "JAY-Z",
+      "author": "JAŸ-Z",
       "type": "single",
       "album": "4:44",
       "image": "/music/covers/jay-z-4-44.jpg"
     },
     {
       "title": "4:44",
-      "author": "JAY-Z",
+      "author": "JAŸ-Z",
       "type": "single",
       "image": "/music/covers/jay-z-4-44.jpg"
     },
@@ -3256,7 +3666,7 @@
     },
     {
       "title": "Family Feud (feat. Beyoncé)",
-      "author": "JAY-Z",
+      "author": "JAŸ-Z",
       "type": "single",
       "album": "4:44",
       "image": "/music/covers/jay-z-4-44.jpg"
@@ -3418,6 +3828,26 @@
       "type": "single",
       "album": "Views",
       "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "BBW",
+      "author": "Drake",
+      "type": "single",
+      "album": "MAID OF HONOUR",
+      "image": "/music/covers/drake-bbw-maid-of-honour.jpg"
+    },
+    {
+      "title": "Different Music (Yerr On The Street Live Performance)",
+      "author": "Rio Da Yung Og & Yerr On The Street",
+      "type": "single",
+      "image": "/music/covers/rio-da-yung-og-different-music-yerr-on-the-street-live-performance.jpg"
+    },
+    {
+      "title": "Jholiday 2",
+      "author": "Cash Cobain & Chow Lee",
+      "type": "single",
+      "album": "2 Slizzy 2 Sexy (Deluxe)",
+      "image": "/music/covers/cash-cobain-2-slizzy-2-sexy-deluxe.jpg"
     },
     {
       "title": "Can You Stand the Rain",
