@@ -1,16 +1,18 @@
 {
   "username": "jeremybosma_",
-  "syncedAt": "2026-06-13T14:28:57.034704+00:00",
+  "syncedAt": "2026-08-16T16:28:28.764106+00:00",
   "highlights": [
     {
       "id": "highlight",
+      "instagramId": "17889624669442033",
       "title": "❤️",
       "cover": "/gallery/highlights/highlight/_cover.jpg",
       "images": [
         {
-          "src": "/gallery/highlights/highlight/001.jpg",
+          "src": "/gallery/highlights/highlight/001.mp4",
           "alt": "❤️",
-          "type": "image"
+          "type": "video",
+          "poster": "/gallery/highlights/highlight/001-poster.jpg"
         },
         {
           "src": "/gallery/highlights/highlight/002.mp4",
@@ -19,10 +21,15 @@
           "poster": "/gallery/highlights/highlight/002-poster.jpg"
         },
         {
-          "src": "/gallery/highlights/highlight/004.mp4",
+          "src": "/gallery/highlights/highlight/003.mp4",
           "alt": "❤️",
           "type": "video",
-          "poster": "/gallery/highlights/highlight/004-poster.jpg"
+          "poster": "/gallery/highlights/highlight/003-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight/004.jpg",
+          "alt": "❤️",
+          "type": "image"
         },
         {
           "src": "/gallery/highlights/highlight/005.mp4",
@@ -31,9 +38,10 @@
           "poster": "/gallery/highlights/highlight/005-poster.jpg"
         },
         {
-          "src": "/gallery/highlights/highlight/006.jpg",
+          "src": "/gallery/highlights/highlight/006.mp4",
           "alt": "❤️",
-          "type": "image"
+          "type": "video",
+          "poster": "/gallery/highlights/highlight/006-poster.jpg"
         },
         {
           "src": "/gallery/highlights/highlight/007.mp4",
@@ -46,12 +54,17 @@
           "alt": "❤️",
           "type": "video",
           "poster": "/gallery/highlights/highlight/008-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight/009.jpg",
+          "alt": "❤️",
+          "type": "image"
         }
       ]
     },
     {
       "id": "highlight-556960",
-      "instagramId": "556960",
+      "instagramId": "18137159914556960",
       "title": "🎧",
       "cover": "/gallery/highlights/highlight-556960/_cover.jpg",
       "images": [
@@ -65,7 +78,7 @@
     },
     {
       "id": "highlight-793708",
-      "instagramId": "793708",
+      "instagramId": "17977742531793708",
       "title": "📸",
       "cover": "/gallery/highlights/highlight-793708/_cover.jpg",
       "images": [
@@ -308,12 +321,60 @@
           "alt": "📸",
           "type": "video",
           "poster": "/gallery/highlights/highlight-793708/040-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/041.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/041-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/042.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/042-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/043.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/043-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/044.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/044-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/045.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/045-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/046.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/046-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/047.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/047-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-793708/048.mp4",
+          "alt": "📸",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-793708/048-poster.jpg"
         }
       ]
     },
     {
       "id": "highlight-400688",
-      "instagramId": "400688",
+      "instagramId": "17888786700400688",
       "title": "💼",
       "cover": "/gallery/highlights/highlight-400688/_cover.jpg",
       "images": [
@@ -354,10 +415,9 @@
           "poster": "/gallery/highlights/highlight-400688/006-poster.jpg"
         },
         {
-          "src": "/gallery/highlights/highlight-400688/007.mp4",
+          "src": "/gallery/highlights/highlight-400688/007.jpg",
           "alt": "💼",
-          "type": "video",
-          "poster": "/gallery/highlights/highlight-400688/007-poster.jpg"
+          "type": "image"
         },
         {
           "src": "/gallery/highlights/highlight-400688/008.mp4",
@@ -444,9 +504,10 @@
           "poster": "/gallery/highlights/highlight-400688/021-poster.jpg"
         },
         {
-          "src": "/gallery/highlights/highlight-400688/022.jpg",
+          "src": "/gallery/highlights/highlight-400688/022.mp4",
           "alt": "💼",
-          "type": "image"
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-400688/022-poster.jpg"
         },
         {
           "src": "/gallery/highlights/highlight-400688/023.mp4",
@@ -465,12 +526,24 @@
           "alt": "💼",
           "type": "video",
           "poster": "/gallery/highlights/highlight-400688/025-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-400688/027.mp4",
+          "alt": "💼",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-400688/027-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-400688/028.mp4",
+          "alt": "💼",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-400688/028-poster.jpg"
         }
       ]
     },
     {
       "id": "highlight-474357",
-      "instagramId": "474357",
+      "instagramId": "18135548440474357",
       "title": "🏞️",
       "cover": "/gallery/highlights/highlight-474357/_cover.jpg",
       "images": [
@@ -869,6 +942,30 @@
           "alt": "🏞️",
           "type": "video",
           "poster": "/gallery/highlights/highlight-474357/066-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-474357/067.mp4",
+          "alt": "🏞️",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-474357/067-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-474357/068.mp4",
+          "alt": "🏞️",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-474357/068-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-474357/069.mp4",
+          "alt": "🏞️",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-474357/069-poster.jpg"
+        },
+        {
+          "src": "/gallery/highlights/highlight-474357/070.mp4",
+          "alt": "🏞️",
+          "type": "video",
+          "poster": "/gallery/highlights/highlight-474357/070-poster.jpg"
         }
       ]
     }

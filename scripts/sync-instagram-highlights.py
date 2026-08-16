@@ -89,7 +89,7 @@ def load_instaloader(username: str):
             )
             sys.exit(1)
 
-    loader = Instaloader(quiet=True)
+    loader = Instaloader(quiet=True, iphone_support=False)
     loader.load_session_from_file(username)
     if not loader.test_login():
         if browser:
@@ -107,25 +107,49 @@ def load_instaloader(username: str):
     return loader, profile
 
 
-def fetch_highlights_tray(context, user_id: str) -> list[dict[str, Any]]:
-    data = context.get_iphone_json(
-        path=f"api/v1/highlights/{user_id}/highlights_tray/",
-        params={},
-    )
-    tray = data.get("tray", [])
+def fetch_highlights_tray(loader, profile) -> list[dict[str, Any]]:
+    """GraphQL tray. The iPhone highlights_tray endpoint currently 500s."""
+    tray: list[dict[str, Any]] = []
+    for highlight in loader.get_highlights(profile):
+        tray.append(
+            {
+                "id": str(highlight.unique_id),
+                "title": highlight.title,
+                "_highlight": highlight,
+                "cover_media": {
+                    "cropped_image_version": {"url": highlight.cover_cropped_url}
+                },
+            }
+        )
     if not tray:
         raise SystemExit("No highlights found on this profile.")
     return tray
 
 
-def fetch_highlight_items(context, highlight_id: str) -> list[dict[str, Any]]:
-    reel_id = highlight_id.replace("highlight:", "")
-    data = context.get_iphone_json(
-        path=f"api/v1/feed/reels_media/?reel_ids=highlight:{reel_id}",
-        params={},
-    )
-    reel_key = f"highlight:{reel_id}"
-    return data.get("reels", {}).get(reel_key, {}).get("items", [])
+def fetch_highlight_items(_context, highlight_id: str, tray_item: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    highlight = (tray_item or {}).get("_highlight")
+    if highlight is None:
+        raise SystemExit(f"Missing highlight object for {highlight_id}")
+
+    items: list[dict[str, Any]] = []
+    for story_item in highlight.get_items():
+        if story_item.is_video and story_item.video_url:
+            items.append(
+                {
+                    "media_type": 2,
+                    "video_versions": [{"url": story_item.video_url, "width": 1, "height": 1}],
+                }
+            )
+            continue
+        items.append(
+            {
+                "media_type": 1,
+                "image_versions2": {
+                    "candidates": [{"url": story_item.url, "width": 1, "height": 1}]
+                },
+            }
+        )
+    return items
 
 
 def media_url(item: dict[str, Any]) -> tuple[str, str]:
@@ -292,10 +316,9 @@ def extension_for_url(url: str, media_type: str) -> str:
 
 def sync_highlights(loader, profile, *, force: bool = False) -> list[dict]:
     context = loader.context
-    user_id = str(profile.userid)
 
     print(f"Fetching highlights for @{profile.username}…")
-    tray = fetch_highlights_tray(context, user_id)
+    tray = fetch_highlights_tray(loader, profile)
 
     if force and OUT_DIR.exists():
         import shutil
@@ -340,7 +363,7 @@ def sync_highlights(loader, profile, *, force: bool = False) -> list[dict]:
             continue
 
         print(f"  {title}…", flush=True)
-        items = fetch_highlight_items(context, highlight_id)
+        items = fetch_highlight_items(context, highlight_id, tray_item)
         images: list[dict[str, str]] = []
         downloaded = 0
         skipped = 0
