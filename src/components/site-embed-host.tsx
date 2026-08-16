@@ -25,18 +25,18 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
     return activeSlug ? new Set<SiteEmbedSlug>([activeSlug]) : new Set();
   });
 
-  const warm = React.useEffectEvent((slug: SiteEmbedSlug) => {
+  const warm = React.useCallback((slug: SiteEmbedSlug) => {
     setWarmed((prev) => {
       if (prev.has(slug)) return prev;
       const next = new Set(prev);
       next.add(slug);
       return next;
     });
-  });
+  }, []);
 
   React.useEffect(() => {
     if (activeSlug) warm(activeSlug);
-  }, [activeSlug]);
+  }, [activeSlug, warm]);
 
   React.useEffect(() => {
     const onIntent = (event: Event) => {
@@ -57,7 +57,7 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
       document.removeEventListener("pointerdown", onIntent, true);
       document.removeEventListener("focusin", onIntent, true);
     };
-  }, []);
+  }, [warm]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -89,7 +89,7 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
       }
       for (const id of timers) window.clearTimeout(id);
     };
-  }, []);
+  }, [warm]);
 
   const warmedList = SITE_EMBED_SLUGS.filter((slug) => warmed.has(slug));
   if (warmedList.length === 0) return null;
@@ -97,8 +97,10 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
   return (
     <div
       className={cn(
-        "site-embed-host view-transition-chrome pointer-events-none fixed inset-0 z-[1] md:left-48",
-        activeSlug && "site-embed-host--active pointer-events-auto"
+        "site-embed-host pointer-events-none fixed z-[1] md:left-48",
+        activeSlug
+          ? "site-embed-host--active pointer-events-auto inset-0"
+          : "site-embed-host--warming"
       )}
       aria-hidden={activeSlug ? undefined : true}
     >
@@ -113,7 +115,6 @@ export default function SiteEmbedHost({ pathname }: SiteEmbedHostProps) {
             title={embed.title}
             className={cn(
               "site-embed-iframe absolute inset-0 h-full w-full border-0 bg-background",
-              // Only hide non-active frames while one is shown; keep all visible while warming.
               activeSlug && !isActive && "invisible"
             )}
             loading="eager"

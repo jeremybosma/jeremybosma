@@ -158,11 +158,19 @@ html[data-pathname^="/site/"] .view-transition-content [data-sitex-island] {
   width: 100%;
 }
 
-.site-embed-host:not(.site-embed-host--active) {
-  /* Keep frames painted/loading while inactive; hide from interaction and stacking. */
-  opacity: 0;
+.site-embed-host--warming {
+  /* Full-size off-screen so browsers still load the frames without covering the page. */
+  top: 0;
+  width: 100vw;
+  height: 100dvh;
+  transform: translateX(-100vw);
   pointer-events: none;
-  z-index: -1;
+}
+
+.site-embed-host--active {
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* Prose styles for blog posts */

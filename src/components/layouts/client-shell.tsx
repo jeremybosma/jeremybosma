@@ -95,7 +95,7 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
       </div>
 
       <div className={cn("hidden md:block", isEmbed ? "h-dvh" : "min-h-screen")}>
-        <aside className="view-transition-chrome view-transition-sidebar relative z-[2] fixed top-0 left-0 h-screen w-48 p-8 flex flex-col bg-background">
+        <aside className="view-transition-chrome view-transition-sidebar fixed top-0 left-0 z-[2] h-screen w-48 p-8 flex flex-col bg-background">
           <Navigation pathname={pathnameProp} />
         </aside>
         <main
