@@ -1,6 +1,7 @@
 import React, { type ReactNode } from "react";
 import AnalyticsIsland from "@/components/analytics-island";
 import Navigation from "@/components/navigation";
+import SiteEmbedHost from "@/components/site-embed-host";
 import { ViewTransitionContent } from "@/components/view-transition-content";
 import { scheduleHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { registerPathnameSync, usePathname } from "@/lib/pathname-sync";
@@ -73,13 +74,14 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
   return (
     <div className={cn("min-h-screen", isEmbed && "h-dvh overflow-hidden")}>
       <AnalyticsIsland />
+      <SiteEmbedHost pathname={pathname} />
       <div
         className={cn(
           "view-transition-chrome md:hidden flex flex-col",
           isEmbed ? "h-dvh p-0" : "p-6 gap-6"
         )}
       >
-        <div className={cn(isEmbed && "px-6 pt-6")}>
+        <div className={cn("relative z-[2]", isEmbed && "px-6 pt-6 bg-background")}>
           <Navigation pathname={pathnameProp} />
         </div>
         <main
@@ -93,7 +95,7 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
       </div>
 
       <div className={cn("hidden md:block", isEmbed ? "h-dvh" : "min-h-screen")}>
-        <aside className="view-transition-chrome view-transition-sidebar fixed top-0 left-0 h-screen w-48 p-8 flex flex-col">
+        <aside className="view-transition-chrome view-transition-sidebar relative z-[2] fixed top-0 left-0 h-screen w-48 p-8 flex flex-col bg-background">
           <Navigation pathname={pathnameProp} />
         </aside>
         <main

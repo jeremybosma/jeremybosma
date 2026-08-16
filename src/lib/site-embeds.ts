@@ -30,6 +30,8 @@ export const SITE_EMBEDS = {
 
 export type SiteEmbedSlug = keyof typeof SITE_EMBEDS;
 
+export const SITE_EMBED_SLUGS = Object.keys(SITE_EMBEDS) as SiteEmbedSlug[];
+
 export function getSiteEmbed(slug: string): SiteEmbed | null {
   if (slug in SITE_EMBEDS) {
     return SITE_EMBEDS[slug as SiteEmbedSlug];
@@ -43,4 +45,24 @@ export function siteEmbedPath(slug: SiteEmbedSlug): string {
 
 export function isSiteEmbedPath(pathname: string): boolean {
   return pathname === "/agency" || pathname.startsWith("/site/");
+}
+
+export function siteEmbedSlugFromPath(pathname: string): SiteEmbedSlug | null {
+  if (pathname === "/agency") return "agency";
+
+  const match = /^\/site\/([^/]+)\/?$/.exec(pathname);
+  if (!match) return null;
+
+  return getSiteEmbed(match[1]) ? (match[1] as SiteEmbedSlug) : null;
+}
+
+export function siteEmbedSlugFromHref(href: string | null | undefined): SiteEmbedSlug | null {
+  if (!href || href.startsWith("mailto:") || href.startsWith("http")) return null;
+
+  try {
+    const url = new URL(href, "https://jeremybosma.nl");
+    return siteEmbedSlugFromPath(url.pathname);
+  } catch {
+    return null;
+  }
 }

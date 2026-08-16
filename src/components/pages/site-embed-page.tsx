@@ -4,6 +4,7 @@ type SiteEmbedPageProps = {
   slug: string;
 };
 
+/** Placeholder for SSR / view transitions; the live iframe lives in SiteEmbedHost. */
 export default function SiteEmbedPage({ slug }: SiteEmbedPageProps) {
   const embed = getSiteEmbed(slug);
 
@@ -21,13 +22,10 @@ export default function SiteEmbedPage({ slug }: SiteEmbedPageProps) {
   }
 
   return (
-    <iframe
-      src={embed.url}
-      title={embed.title}
-      className="site-embed-iframe bg-background"
-      loading="eager"
-      referrerPolicy="no-referrer-when-downgrade"
-      allow="fullscreen"
+    <div
+      className="site-embed-placeholder h-full min-h-[50dvh] w-full bg-background md:min-h-full"
+      data-site-embed={slug}
+      aria-hidden="true"
     />
   );
 }
