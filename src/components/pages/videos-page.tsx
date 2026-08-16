@@ -15,7 +15,7 @@ function VideoGridItem({
   sources: VideoItem["sources"];
 }) {
   return (
-    <figure className="flex flex-col gap-2">
+    <figure className="flex min-w-0 w-full flex-col gap-2">
       <ExpandableMedia
         type="video"
         src={src}
@@ -23,8 +23,8 @@ function VideoGridItem({
         poster={poster}
         alt={title}
         autoPlayThumbnail
-        className="w-full"
-        thumbnailClassName="aspect-video w-full overflow-hidden rounded-md bg-secondary/60"
+        className="w-full min-w-0"
+        thumbnailClassName="relative aspect-video w-full overflow-hidden rounded-md bg-secondary/60"
       />
       <figcaption className="text-[12px] leading-tight text-muted-foreground">{title}</figcaption>
     </figure>
@@ -53,7 +53,7 @@ export default function VideosPageContent() {
 
   return (
     <section className="page-panel-vt text-[17px]">
-      <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-[repeat(auto-fit,minmax(min(100%,max(24rem,calc((100%-3rem)/4))),1fr))]">
         {videos.map((video) => (
           <VideoGridItem
             key={video.id}

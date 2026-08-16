@@ -17,12 +17,14 @@ type VideoSource = { src: string; type: string };
 function ThumbnailVideo({
   src,
   sources,
+  poster,
   className = "",
   style,
   paused = false,
 }: {
   src: string;
   sources?: VideoSource[];
+  poster?: string;
   className?: string;
   style?: CSSProperties;
   paused?: boolean;
@@ -60,6 +62,7 @@ function ThumbnailVideo({
       ref={ref}
       className={className}
       style={style}
+      poster={poster}
       playsInline
       loop
       muted
@@ -319,7 +322,8 @@ export function ExpandableMedia(props: ExpandableMediaProps) {
               <ThumbnailVideo
                 src={props.src}
                 sources={sources}
-                className="h-full w-full object-cover"
+                poster={posterSrc}
+                className="absolute inset-0 size-full object-cover"
                 style={thumbnailVtStyle}
                 paused={open}
               />

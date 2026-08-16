@@ -64,6 +64,7 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
   const [, syncNavigation] = React.useReducer((count: number) => count + 1, 0);
   const pathname = usePathname(pathnameProp);
   const isEmbed = isSiteEmbedPath(pathname);
+  const isVideosPage = pathname === "/videos" || pathname.startsWith("/videos/");
 
   React.useEffect(() => installViewTransitionNavigation(), []);
   React.useEffect(() => registerPathnameSync(syncNavigation), []);
@@ -107,7 +108,11 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
           <div
             className={cn(
               "w-full flex flex-col min-h-0",
-              isEmbed ? "h-full max-w-none p-0" : "max-w-2xl p-8 gap-8"
+              isEmbed
+                ? "h-full max-w-none p-0"
+                : isVideosPage
+                  ? "max-w-none p-8 gap-8"
+                  : "max-w-2xl p-8 gap-8"
             )}
           >
             <StableDesktopContent>{children}</StableDesktopContent>
