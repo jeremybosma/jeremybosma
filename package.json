@@ -25,6 +25,7 @@
     "@polar-sh/sdk": "^0.48.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@vercel/analytics": "^1.6.1",
+    "@vercel/functions": "^3.9.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",

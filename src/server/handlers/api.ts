@@ -27,6 +27,16 @@ export async function handleApiRequest(
 ): Promise<Response | null> {
   const pathname = url.pathname;
 
+  if (pathname === "/api/markdown") {
+    if (req.method !== "GET") {
+      return Response.json({ error: "Method not allowed" }, { status: 405 });
+    }
+    const handleMarkdownRequest = await loadHandler<
+      (pathname: string) => Response
+    >(loadModule, "/src/server/handlers/markdown.ts", "handleMarkdownRequest");
+    return handleMarkdownRequest(url.searchParams.get("path") ?? "/");
+  }
+
   if (pathname === "/api/music/album-art") {
     if (req.method !== "GET") {
       return Response.json({ error: "Method not allowed" }, { status: 405 });

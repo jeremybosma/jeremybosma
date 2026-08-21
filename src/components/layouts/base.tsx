@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import {
   DEFAULT_DESCRIPTION,
+  markdownAlternatePath,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
@@ -45,6 +46,12 @@ export default function BaseLayout({
         <meta name="author" content={SITE_NAME} />
         <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
         <link rel="canonical" href={canonical} />
+        <link rel="describedby" href={`${SITE_URL}/llms.txt`} />
+        <link
+          rel="alternate"
+          type="text/markdown"
+          href={pageUrl(markdownAlternatePath(pathname))}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:url" content={canonical} />

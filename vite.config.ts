@@ -31,6 +31,59 @@ function sendApiError(
   res.end(JSON.stringify({ error: message }));
 }
 
+function registerMarkdownMiddleware(server: ViteDevServer) {
+  server.middlewares.use(async (req, res, next) => {
+    const url = req.url?.split("?")[0] ?? "";
+    if (
+      url.startsWith("/api/") ||
+      url.startsWith("/@") ||
+      url.startsWith("/src/") ||
+      url.startsWith("/node_modules")
+    ) {
+      next();
+      return;
+    }
+    if (
+      /\.(?:js|css|map|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|json|xml|txt)$/i.test(
+        url
+      )
+    ) {
+      next();
+      return;
+    }
+
+    try {
+      const { preferredType } = await server.ssrLoadModule("/src/lib/accept.ts");
+      const accept = req.headers.accept ?? "";
+      const isMarkdownUrl = url.endsWith(".md");
+      const chosen = preferredType(accept) as string | null;
+
+      if (!isMarkdownUrl && chosen !== "text/markdown") {
+        if (chosen === null && accept) {
+          res.statusCode = 406;
+          res.setHeader("Content-Type", "text/plain; charset=utf-8");
+          res.setHeader("Vary", "Accept");
+          res.end("Not Acceptable\n\nAvailable: text/html, text/markdown\n");
+          return;
+        }
+        next();
+        return;
+      }
+
+      const { handleMarkdownRequest } = await server.ssrLoadModule(
+        "/src/server/handlers/markdown.ts"
+      );
+      const pathname = isMarkdownUrl ? url.slice(0, -3) || "/" : url;
+      const response = handleMarkdownRequest(pathname) as Response;
+      await sendApiResponse(res, response);
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Markdown request failed";
+      sendApiError(res, 500, message);
+    }
+  });
+}
+
 function registerApiMiddleware(server: ViteDevServer) {
   server.middlewares.use(async (req, res, next) => {
     const url = req.url?.split("?")[0] ?? "";
@@ -70,6 +123,7 @@ function apiDevMiddleware(): Plugin {
     enforce: "pre",
     configureServer(devServer) {
       registerApiMiddleware(devServer);
+      registerMarkdownMiddleware(devServer);
     },
   };
 }

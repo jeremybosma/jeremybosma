@@ -1,6 +1,6 @@
 {
   "extends": "@fulldotdev/sitex/tsconfig",
-  "include": ["src/**/*", "src/sitex-jsx.d.ts", "vite.config.ts", "api/**/*", "scripts/**/*"],
+  "include": ["src/**/*", "src/sitex-jsx.d.ts", "vite.config.ts", "api/**/*", "scripts/**/*", "middleware.ts"],
   "exclude": ["dist"],
   "compilerOptions": {
     "paths": {

@@ -1,4 +1,11 @@
-import { DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  DEFAULT_DESCRIPTION,
+  SITE_LOCATION,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_URLS,
+} from "@/lib/site";
 
 export function pageUrl(pathname: string) {
   if (pathname === "/") return SITE_URL;
@@ -10,15 +17,22 @@ export function personJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: SITE_NAME,
+    alternateName: ["Jeremy Benjamin Bosma", "jeremybosma"],
     url: SITE_URL,
-    email: "prive@jeremybosma.nl",
+    email: CONTACT_EMAIL,
     jobTitle: "Software Engineer & Designer",
     description: DEFAULT_DESCRIPTION,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: SITE_LOCATION.locality,
+      addressRegion: SITE_LOCATION.region,
+      addressCountry: SITE_LOCATION.countryCode,
+    },
     sameAs: [
-      "https://github.com/jeremybosma",
-      "https://x.com/jeremybosma_",
-      "https://instagram.com/jeremybosma_",
-      "https://linkedin.com/in/jeremybosma",
+      SOCIAL_URLS.github,
+      SOCIAL_URLS.x,
+      SOCIAL_URLS.instagram,
+      SOCIAL_URLS.linkedin,
     ],
   };
 }
@@ -28,11 +42,13 @@ export function webSiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE_NAME,
+    alternateName: "jeremybosma.nl",
     url: SITE_URL,
     description: DEFAULT_DESCRIPTION,
     author: {
       "@type": "Person",
       name: SITE_NAME,
+      url: SITE_URL,
     },
   };
 }

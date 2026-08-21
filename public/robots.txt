@@ -3,3 +3,4 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://jeremybosma.nl/sitemap.xml
+# Agent index: https://jeremybosma.nl/llms.txt

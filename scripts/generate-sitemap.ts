@@ -23,6 +23,9 @@ function urlEntry(
 async function main() {
   const urls: string[] = [
     urlEntry(SITE_URL, { changefreq: "weekly", priority: "1.0" }),
+    urlEntry(`${SITE_URL}/about`, { changefreq: "monthly", priority: "0.8" }),
+    urlEntry(`${SITE_URL}/contact`, { changefreq: "monthly", priority: "0.7" }),
+    urlEntry(`${SITE_URL}/privacy`, { changefreq: "yearly", priority: "0.5" }),
     urlEntry(`${SITE_URL}/agency`, { changefreq: "monthly", priority: "0.8" }),
     urlEntry(`${SITE_URL}/writing`, { changefreq: "weekly", priority: "0.8" }),
     urlEntry(`${SITE_URL}/supply`, { changefreq: "weekly", priority: "0.8" }),

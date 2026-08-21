@@ -181,6 +181,26 @@ export default function HomePage() {
         </div>
       </HomeSection>
 
+      <HomeSection delay={0.15} skipEntrance={skipEntrance}>
+        <h2>About</h2>
+        <div className="flex flex-col gap-4 text-black/80 dark:text-white/80">
+          <p>
+            Jeremy Bosma is based in Groningen, the Netherlands. This site — jeremybosma.nl — is the canonical home for my work, writing, shop, and contact details. I treat design and engineering as one job: interaction, visual system, and frontend architecture in the same loop.
+          </p>
+          <h3>Background</h3>
+          <p>
+            I study Software Development at Alfa-college (MBO 4, September 2023 – May 2026) and build products alongside school. I care about performance, accessibility, and pages that still read clearly when JavaScript is slow or missing. Most of the work is on the web.
+          </p>
+          <h3>How I work</h3>
+          <p>
+            I take product design and engineering together, with a bias toward interface craft and micro-interactions. School, products, and agency work overlap on purpose: I want the same standard of craft whether the audience is a founder, a classmate, or someone who found this site through search. I live and work in Groningen.
+          </p>
+          <p>
+            Writing, photos, videos, and a small merch shop (Jeremy's Supply) also live on this domain. The agency surface is Internet Engineering; jeremybosma.nl is the person. If you want a fuller biography, how to verify this site, or how I collaborate, read the <a className="underline" href="/about">about</a> page. Privacy for the site and shop is documented on <a className="underline" href="/privacy">privacy</a>.
+          </p>
+        </div>
+      </HomeSection>
+
       <HomeSection delay={0.2} skipEntrance={skipEntrance}>
         <h2>Highlighted work</h2>
         <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
@@ -203,27 +223,26 @@ export default function HomePage() {
         </HoverSlideList>
       </HomeSection>
 
-      {false && <HomeSection delay={0.35} skipEntrance={skipEntrance}>
-        <h2>Contact</h2>
-        <p className="text-black/60 dark:text-white/60">
-          I'm always looking for new opportunities and collaborations. If you have any questions or would like to get in touch, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_" target="_blank" rel="noopener noreferrer">X</a>.
-        </p>
-      </HomeSection>
-      }
-
-      {false && (
-        <HomeSection
-          delay={0.2}
-          skipEntrance={skipEntrance}
-          className="bg-white border rounded-md p-4"
-        >
-          <h2>Open to freelance work (Fixed or hourly rate)</h2>
-          <p className="text-black/60 dark:text-white/60">I'm currently looking for a new challenge. If you have any opportunities, please don't hesitate to contact me on <a className="underline" href="mailto:prive@jeremybosma.nl">prive@jeremybosma.nl</a> or contact me on <a className="underline" href="https://x.com/jeremybosma_">X</a> for all your programming and or design needs.</p>
-        </HomeSection>
-      )}
-
       <HomeSection delay={0.3} skipEntrance={skipEntrance}>
-        <footer className="text-xs text-black/60 dark:text-white/60">Updated Jun 2026</footer>
+        <h2>Contact</h2>
+        <div className="flex flex-col gap-4">
+          <p className="text-black/80 dark:text-white/80">
+            The fastest way to reach Jeremy Bosma is email: <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. I am in Groningen, the Netherlands (CET/CEST). Use email for hiring, collaboration, press, and anything that should not live in a public reply. For a longer note on what to include, see <a className="underline" href="/contact">contact</a>.
+          </p>
+          <p className="text-black/60 dark:text-white/60">
+            Public profiles: <a className="underline" href="https://github.com/jeremybosma" target="_blank" rel="noopener noreferrer">GitHub</a>, <a className="underline" href="https://x.com/jeremybosma_" target="_blank" rel="noopener noreferrer">X</a>, <a className="underline" href="https://instagram.com/jeremybosma_" target="_blank" rel="noopener noreferrer">Instagram</a>, and <a className="underline" href="https://linkedin.com/in/jeremybosma" target="_blank" rel="noopener noreferrer">LinkedIn</a>. Agency work goes through <a className="underline" href="/agency">Internet Engineering</a>.
+          </p>
+        </div>
+      </HomeSection>
+
+      <HomeSection delay={0.35} skipEntrance={skipEntrance}>
+        <footer className="text-xs text-black/60 dark:text-white/60 flex flex-wrap gap-x-3 gap-y-1">
+          <span>Updated Aug 2026</span>
+          <a className="underline" href="/about">About</a>
+          <a className="underline" href="/contact">Contact</a>
+          <a className="underline" href="/privacy">Privacy</a>
+          <a className="underline" href="/llms.txt">llms.txt</a>
+        </footer>
       </HomeSection>
     </div>
   );
