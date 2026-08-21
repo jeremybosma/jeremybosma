@@ -69,12 +69,6 @@ const SOCIAL_ITEMS: NavItem[] = [
   },
 ];
 
-const INFO_ITEMS: NavItem[] = [
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Privacy", href: "/privacy" },
-];
-
 function NavLink({
   item,
   isActive,
@@ -156,10 +150,6 @@ export default function Navigation({ pathname: pathnameProp }: NavigationProps) 
           {SOCIAL_ITEMS.map((item) => (
             <NavLink key={item.href} item={item} isActive={false} />
           ))}
-          <div className="h-px bg-black/10 dark:bg-white/10 my-2" />
-          {INFO_ITEMS.map((item) => (
-            <NavLink key={item.href} item={item} isActive={isActive(item)} />
-          ))}
         </div>
       </nav>
 
@@ -203,15 +193,6 @@ export default function Navigation({ pathname: pathnameProp }: NavigationProps) 
                     key={item.href}
                     item={item}
                     isActive={false}
-                    onClick={() => setIsOpen(false)}
-                  />
-                ))}
-                <div className="h-px bg-black/10 dark:bg-white/10 my-2" />
-                {INFO_ITEMS.map((item) => (
-                  <NavLink
-                    key={item.href}
-                    item={item}
-                    isActive={isActive(item)}
                     onClick={() => setIsOpen(false)}
                   />
                 ))}
