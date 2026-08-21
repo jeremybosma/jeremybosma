@@ -6,6 +6,13 @@
     {
       "source": "/(.*)",
       "headers": [{ "key": "Vary", "value": "Accept, Accept-Encoding" }]
+    },
+    {
+      "source": "/(.*).md",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "Vary", "value": "Accept, Accept-Encoding" }
+      ]
     }
   ],
   "rewrites": [
@@ -18,7 +25,7 @@
           "value": "(.*)text/markdown(.*)"
         }
       ],
-      "destination": "/api/markdown?path=/"
+      "destination": "/index.md"
     },
     {
       "source": "/about",
@@ -29,7 +36,7 @@
           "value": "(.*)text/markdown(.*)"
         }
       ],
-      "destination": "/api/markdown?path=/about"
+      "destination": "/about.md"
     },
     {
       "source": "/contact",
@@ -40,7 +47,7 @@
           "value": "(.*)text/markdown(.*)"
         }
       ],
-      "destination": "/api/markdown?path=/contact"
+      "destination": "/contact.md"
     },
     {
       "source": "/privacy",
@@ -51,7 +58,7 @@
           "value": "(.*)text/markdown(.*)"
         }
       ],
-      "destination": "/api/markdown?path=/privacy"
+      "destination": "/privacy.md"
     },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },

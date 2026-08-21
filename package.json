@@ -6,7 +6,7 @@
   "scripts": {
     "predev": "bun run scripts/generate-pages.ts",
     "dev": "vp dev",
-    "prebuild": "bun run scripts/sync-products.ts && bun run scripts/sync-music.ts && bun run scripts/generate-pages.ts && bun run scripts/generate-sitemap.ts",
+    "prebuild": "bun run scripts/sync-products.ts && bun run scripts/sync-music.ts && bun run scripts/generate-pages.ts && bun run scripts/generate-sitemap.ts && bun run scripts/generate-agent-markdown.ts",
     "build": "vp build",
     "preview": "vp preview",
     "typecheck": "tsgo --noEmit",

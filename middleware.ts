@@ -1,8 +1,35 @@
+const MARKDOWN_FILES: Record<string, string> = {
+  "/": "/index.md",
+  "/about": "/about.md",
+  "/contact": "/contact.md",
+  "/privacy": "/privacy.md",
+  "/agency": "/agency.md",
+  "/writing": "/writing.md",
+  "/supply": "/supply.md",
+  "/gallery": "/gallery.md",
+  "/videos": "/videos.md",
+  "/music": "/music.md",
+  "/404": "/404.md",
+};
+
+const NOT_FOUND_MARKDOWN = `# Not found
+
+This path does not exist on jeremybosma.nl.
+
+## Where to go next
+
+- [Home](https://jeremybosma.nl/)
+- [About](https://jeremybosma.nl/about)
+- [Contact](https://jeremybosma.nl/contact)
+- [llms.txt](https://jeremybosma.nl/llms.txt)
+- [Sitemap](https://jeremybosma.nl/sitemap.xml)
+`;
+
 function isSkippablePath(pathname: string) {
   if (pathname.startsWith("/api/")) return true;
   if (pathname.startsWith("/assets/")) return true;
   if (pathname.startsWith("/_vercel")) return true;
-  return /\.(?:js|css|map|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|json|xml|txt)$/i.test(
+  return /\.(?:js|css|map|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|json|xml|txt|md)$/i.test(
     pathname
   );
 }
@@ -50,24 +77,42 @@ function continueRequest(headers?: Record<string, string>) {
   return new Response(null, { headers: responseHeaders });
 }
 
+function normalizePath(pathname: string) {
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return pathname.slice(0, -1);
+  }
+  return pathname;
+}
+
 export default function middleware(request: Request) {
   const { pathname } = new URL(request.url);
 
   if (isSkippablePath(pathname)) {
-    return continueRequest();
-  }
-
-  const isMarkdownUrl = pathname.endsWith(".md");
-  if (!isMarkdownUrl && !prefersMarkdown(request.headers.get("accept"))) {
     return continueRequest({
       Vary: "Accept, Accept-Encoding",
     });
   }
 
-  const documentPath = isMarkdownUrl ? pathname.slice(0, -3) || "/" : pathname;
-  const destination = new URL("/api/markdown", request.url);
-  destination.searchParams.set("path", documentPath);
+  if (!prefersMarkdown(request.headers.get("accept"))) {
+    return continueRequest({
+      Vary: "Accept, Accept-Encoding",
+    });
+  }
 
+  const documentPath = normalizePath(pathname);
+  const markdownFile = MARKDOWN_FILES[documentPath];
+
+  if (!markdownFile) {
+    return new Response(NOT_FOUND_MARKDOWN, {
+      status: 404,
+      headers: {
+        "Content-Type": "text/markdown; charset=utf-8",
+        Vary: "Accept, Accept-Encoding",
+      },
+    });
+  }
+
+  const destination = new URL(markdownFile, request.url);
   return new Response(null, {
     headers: {
       "x-middleware-rewrite": destination.toString(),
