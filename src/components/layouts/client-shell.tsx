@@ -74,7 +74,7 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
 
   return (
     <div className={cn("min-h-screen", isEmbed && "h-dvh overflow-hidden")}>
-      <AnalyticsIsland />
+      <AnalyticsIsland route={pathname} />
       <SiteEmbedHost pathname={pathname} />
       <div
         className={cn(

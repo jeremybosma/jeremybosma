@@ -1,5 +1,15 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
-export default function AnalyticsIsland() {
-  return <Analytics />;
+type AnalyticsIslandProps = {
+  route?: string;
+};
+
+export default function AnalyticsIsland({ route }: AnalyticsIslandProps) {
+  return (
+    <>
+      <Analytics />
+      <SpeedInsights route={route} />
+    </>
+  );
 }

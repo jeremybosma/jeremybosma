@@ -8,7 +8,7 @@ Jeremy Bosma, Groningen, the Netherlands, is responsible for this website. Conta
 
 ## What this site collects
 
-Browsing the public pages does not require an account. Vercel may process standard request data (IP address, user agent, timestamps) to serve and protect the site. Vercel Analytics is used to understand aggregate traffic. It is designed to be privacy-friendly and does not rely on advertising cookies to identify you across the web.
+Browsing the public pages does not require an account. Vercel may process standard request data (IP address, user agent, timestamps) to serve and protect the site. Vercel Analytics is used to understand aggregate traffic. Vercel Speed Insights is used to measure Core Web Vitals in aggregate. Both are designed to be privacy-friendly and do not rely on advertising cookies to identify you across the web.
 
 If you email me, I receive whatever you put in the message, including your email address, so I can reply.
 
