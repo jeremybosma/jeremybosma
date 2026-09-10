@@ -17,7 +17,7 @@ export function ExpandablePhoto({
   return (
     <ExpandableMedia
       {...props}
-      className="shrink-0"
+      className="shrink-0 overflow-hidden rounded-full"
       thumbnailClassName={className}
     />
   );

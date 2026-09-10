@@ -19,6 +19,7 @@ export function personJsonLd() {
     name: SITE_NAME,
     alternateName: ["Jeremy Benjamin Bosma", "jeremybosma"],
     url: SITE_URL,
+    image: `${SITE_URL}/profile.webp`,
     email: CONTACT_EMAIL,
     jobTitle: "Software Engineer & Designer",
     description: DEFAULT_DESCRIPTION,
@@ -64,6 +65,7 @@ export function profilePageJsonLd(pathname: string, title: string, description: 
       "@type": "Person",
       name: SITE_NAME,
       url: SITE_URL,
+      image: `${SITE_URL}/profile.webp`,
     },
   };
 }

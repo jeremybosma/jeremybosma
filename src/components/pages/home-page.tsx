@@ -67,7 +67,7 @@ function HomeSection({ delay, skipEntrance, className, children }: HomeSectionPr
   );
 }
 
-const profile = "/profile.png";
+const profile = "/profile.webp";
 const individu = "/projects/individu.png";
 const fulldev = "/projects/fulldev.png";
 const internetengineering = "/projects/internet-engineering.png";
@@ -107,9 +107,9 @@ export default function HomePage() {
           loading="eager"
           src={profile}
           alt="Jeremy Bosma"
-          className="w-12 h-12 rounded-xl object-cover"
-          width={100}
-          height={100}
+          className="h-12 w-12 overflow-hidden rounded-full object-cover"
+          width={48}
+          height={48}
           fetchPriority="high"
         />
         <div className="min-w-0">

@@ -22,7 +22,6 @@ export default function BaseLayout({
   title,
   description = DEFAULT_DESCRIPTION,
   pathname = "/",
-  icon,
   jsonLd,
   noIndex = false,
 }: BaseLayoutProps) {
@@ -45,6 +44,10 @@ export default function BaseLayout({
         <meta name="description" content={description} />
         <meta name="author" content={SITE_NAME} />
         <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href={canonical} />
         <link rel="describedby" href={`${SITE_URL}/llms.txt`} />
         <link
