@@ -33,7 +33,9 @@ function subscribeToPathname(onStoreChange: () => void) {
 export function usePathname(pathnameProp?: string) {
   return useSyncExternalStore(
     subscribeToPathname,
-    () => window.location.pathname,
+    // Back/forward changes location before the next page HTML is fetched. Keep
+    // the shell and iframe host on the displayed route until the swap commits.
+    () => document.documentElement.dataset.pathname ?? window.location.pathname,
     () => pathnameProp ?? "/"
   );
 }

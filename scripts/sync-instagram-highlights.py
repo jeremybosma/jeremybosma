@@ -91,11 +91,13 @@ def load_instaloader(username: str):
 
     loader = Instaloader(quiet=True, iphone_support=False)
     loader.load_session_from_file(username)
-    if not loader.test_login():
+    logged_in_username = loader.test_login()
+    if not logged_in_username:
         if browser:
             refresh_session_from_browser(username, browser)
             loader.load_session_from_file(username)
-        if not loader.test_login():
+            logged_in_username = loader.test_login()
+        if not logged_in_username:
             print(
                 "Session invalid. Quit Helium, log into instagram.com, then:\n"
                 "  bun run instagram:login",
@@ -103,7 +105,13 @@ def load_instaloader(username: str):
             )
             sys.exit(1)
 
-    profile = Profile.from_username(loader.context, username)
+    # Highlights only need the account ID. For our verified account, use its
+    # session identity instead of requesting post metadata via web_profile_info.
+    account_id = loader.context._session.cookies.get("ds_user_id")
+    if logged_in_username.lower() == username.lower() and account_id:
+        profile = Profile(loader.context, {"id": account_id, "username": username})
+    else:
+        profile = Profile.from_username(loader.context, username)
     return loader, profile
 
 
@@ -136,6 +144,7 @@ def fetch_highlight_items(_context, highlight_id: str, tray_item: dict[str, Any]
         if story_item.is_video and story_item.video_url:
             items.append(
                 {
+                    "instagramId": str(story_item.mediaid),
                     "media_type": 2,
                     "video_versions": [{"url": story_item.video_url, "width": 1, "height": 1}],
                 }
@@ -143,6 +152,7 @@ def fetch_highlight_items(_context, highlight_id: str, tray_item: dict[str, Any]
             continue
         items.append(
             {
+                "instagramId": str(story_item.mediaid),
                 "media_type": 1,
                 "image_versions2": {
                     "candidates": [{"url": story_item.url, "width": 1, "height": 1}]
@@ -364,6 +374,9 @@ def sync_highlights(loader, profile, *, force: bool = False) -> list[dict]:
 
         print(f"  {title}…", flush=True)
         items = fetch_highlight_items(context, highlight_id, tray_item)
+        existing_images = {
+            image.get("src"): image for image in (existing_entry or {}).get("images", [])
+        }
         images: list[dict[str, str]] = []
         downloaded = 0
         skipped = 0
@@ -376,23 +389,34 @@ def sync_highlights(loader, profile, *, force: bool = False) -> list[dict]:
             ext = extension_for_url(url, media_type)
             out_name = f"{index:03d}{ext}"
             dest = dest_dir / out_name
+            src = f"/gallery/highlights/{slug}/{out_name}"
+            media_id = item["instagramId"]
+            cached_image = existing_images.get(src, {})
+            # Highlight items can be reordered. A matching filename alone does
+            # not mean it still contains the same story.
+            refresh_media = force or cached_image.get("instagramId") != media_id
             try:
-                if download_media(context, url, dest, force=force):
+                media_downloaded = download_media(context, url, dest, force=refresh_media)
+                if media_downloaded:
                     downloaded += 1
                     time.sleep(0.3)
                 else:
                     skipped += 1
             except Exception as err:
                 print(f"    skip item {index}: {err}", file=sys.stderr)
+                # A failed refresh must not remove a previously synced item.
+                if cached_image and public_path_exists(src):
+                    images.append(cached_image)
                 continue
             entry: dict[str, str] = {
-                "src": f"/gallery/highlights/{slug}/{out_name}",
+                "src": src,
+                "instagramId": media_id,
                 "alt": title,
                 "type": "video" if media_type == "video" else "image",
             }
             if media_type == "video":
                 poster_path = poster_path_for_video(dest)
-                if poster_path.is_file() and poster_path.stat().st_size > 0:
+                if not media_downloaded and poster_path.is_file() and poster_path.stat().st_size > 0:
                     entry["poster"] = f"/gallery/highlights/{slug}/{poster_path.name}"
                 else:
                     poster = extract_video_poster(dest)
@@ -410,9 +434,9 @@ def sync_highlights(loader, profile, *, force: bool = False) -> list[dict]:
             cover_src = existing_entry.get("cover", cover_src)
         cover_from_tray = cover_url(tray_item)
         cover_path = dest_dir / "_cover.jpg"
-        if cover_from_tray and not (cover_path.is_file() and cover_path.stat().st_size > 0):
+        if cover_from_tray:
             try:
-                if download_media(context, cover_from_tray, cover_path, force=force):
+                if download_media(context, cover_from_tray, cover_path, force=True):
                     time.sleep(0.3)
                 cover_src = f"/gallery/highlights/{slug}/_cover.jpg"
             except Exception:

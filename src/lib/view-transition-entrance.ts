@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+// Runtime state resets on a full load, unlike history.state, which survives reloads.
+let clientNavigated = false;
+
+export function markViewTransitionNavigation() {
+  clientNavigated = true;
+}
 
 /** Skip Motion entrance animations after client-side view-transition navigation. */
 export function shouldSkipViewTransitionEntrance(): boolean {
-  if (typeof window === "undefined") return false;
-  return Boolean(window.history.state?.viewTransitionNavigation);
+  return clientNavigated;
 }
 
-/** Defer entrance-skip checks until after hydration so SSR and client markup match. */
+/** Decide before the first render so Motion never starts a second entrance. */
 export function useSkipViewTransitionEntrance(): boolean {
-  const [skipEntrance, setSkipEntrance] = useState(false);
-
-  useEffect(() => {
-    setSkipEntrance(shouldSkipViewTransitionEntrance());
-  }, []);
-
+  const [skipEntrance] = useState(shouldSkipViewTransitionEntrance);
   return skipEntrance;
 }

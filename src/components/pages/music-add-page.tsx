@@ -8,6 +8,7 @@ import {
 } from "@/lib/music-add-draft";
 import { motion } from "motion/react";
 import { sectionProps } from "@/components/layouts/client-shell";
+import { useSkipViewTransitionEntrance } from "@/lib/view-transition-entrance";
 
 const emptyForm: MusicAddFormData = {
     title: "",
@@ -18,6 +19,10 @@ const emptyForm: MusicAddFormData = {
 };
 
 export default function MusicAddPage() {
+    const skipEntrance = useSkipViewTransitionEntrance();
+    const entranceTransition = (delay: number) => skipEntrance
+        ? { duration: 0 }
+        : { ...sectionProps.transition, delay };
     const [formData, setFormData] = useState(emptyForm);
 
     const [preview, setPreview] = useState<string | null>(null);
@@ -155,9 +160,9 @@ export default function MusicAddPage() {
         <>
             <motion.section
                 {...sectionProps}
-                initial="hidden"
+                initial={skipEntrance ? false : "hidden"}
                 animate="visible"
-                transition={{ ...sectionProps.transition, delay: 0 }}
+                transition={entranceTransition(0)}
             >
                 <h1>Add Music</h1>
                 <p className="text-black/60 dark:text-white/60">
@@ -167,9 +172,9 @@ export default function MusicAddPage() {
 
             <motion.section
                 {...sectionProps}
-                initial="hidden"
+                initial={skipEntrance ? false : "hidden"}
                 animate="visible"
-                transition={{ ...sectionProps.transition, delay: 0.1 }}
+                transition={entranceTransition(0.1)}
                 className="space-y-4"
             >
                 <div>
@@ -310,9 +315,9 @@ export default function MusicAddPage() {
             {preview && (
                 <motion.section
                     {...sectionProps}
-                    initial="hidden"
+                    initial={skipEntrance ? false : "hidden"}
                     animate="visible"
-                    transition={{ ...sectionProps.transition, delay: 0.15 }}
+                    transition={entranceTransition(0.15)}
                 >
                     <h2>Preview</h2>
                     <div className="flex gap-4 items-center mt-2">
@@ -338,9 +343,9 @@ export default function MusicAddPage() {
             {addedCode ? (
                 <motion.section
                     {...sectionProps}
-                    initial="hidden"
+                    initial={skipEntrance ? false : "hidden"}
                     animate="visible"
-                    transition={{ ...sectionProps.transition, delay: 0.2 }}
+                    transition={entranceTransition(0.2)}
                 >
                     <div className="flex justify-between items-center">
                         <h2>Added entry</h2>
@@ -360,9 +365,9 @@ export default function MusicAddPage() {
 
             <motion.section
                 {...sectionProps}
-                initial="hidden"
+                initial={skipEntrance ? false : "hidden"}
                 animate="visible"
-                transition={{ ...sectionProps.transition, delay: 0.25 }}
+                transition={entranceTransition(0.25)}
             >
                 <h2>How it works</h2>
                 <ul className="mt-2 space-y-1 text-black/60 dark:text-white/60">
@@ -375,4 +380,3 @@ export default function MusicAddPage() {
         </>
     );
 }
-

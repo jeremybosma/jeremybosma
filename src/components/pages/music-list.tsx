@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { HoverSlideItem, HoverSlideList } from "@/components/hover-slide-list";
 import {
   scheduleHoverSlideLists,
@@ -168,11 +168,18 @@ function MusicGridItem({
   onTrackClick: (track: FetchedMusicData) => void;
   onToggleGroup: (key: string) => void;
 }) {
+  const itemElement = useRef<HTMLDivElement>(null);
+
   return (
     <motion.div
+      ref={itemElement}
       initial={skipEntrance ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, delay: skipEntrance ? 0 : index * 0.03 }}
+      transition={{ duration: skipEntrance ? 0 : 0.3, delay: skipEntrance ? 0 : index * 0.03 }}
+      onAnimationComplete={() => {
+        // Commit before Motion releases its native animation and exposes SSR opacity:0.
+        if (itemElement.current) itemElement.current.style.opacity = "1";
+      }}
     >
       {item.kind === "album-group" ? (
         <AlbumGroupCard

@@ -1,6 +1,6 @@
 import { scheduleHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { PATHNAME_SYNC_EVENT, syncPathnameAfterNavigation } from "@/lib/pathname-sync";
-import { rehydrateSitexIslands } from "@/lib/sitex-rehydrate";
+import { markViewTransitionNavigation } from "@/lib/view-transition-entrance";
 import { flushSync } from "react-dom";
 
 const PAGE_VT_CLASS = "page-vt";
@@ -52,6 +52,7 @@ function applyNavigationUpdate(
   const title = doc.title;
   const pathname = new URL(url, window.location.href).pathname;
 
+  markViewTransitionNavigation();
   swapViewTransitionContent(doc);
   document.title = title;
   document.documentElement.dataset.pathname = pathname;
@@ -94,7 +95,9 @@ function swapViewTransitionContent(doc: Document) {
 function revealMotionSsrContent(root: ParentNode) {
   for (const el of root.querySelectorAll<HTMLElement>("[style]")) {
     if (el.style.opacity === "0") {
-      el.style.opacity = "1";
+      // Preserve SSR style spelling; CSSOM assignment normalizes every property
+      // and makes otherwise matching React hydration markup appear different.
+      el.setAttribute("style", el.getAttribute("style")!.replace(/(^|;)opacity:\s*0(?=;|$)/, "$1opacity:1"));
     }
   }
 }
@@ -109,12 +112,16 @@ function runPageViewTransition(update: () => void): Promise<void> {
 
   const transition = (
     document as Document & {
-      startViewTransition: (cb: () => void) => { finished: Promise<void> };
+      startViewTransition: (cb: () => void) => { ready: Promise<void>; finished: Promise<void> };
     }
   ).startViewTransition(() => {
     update();
     window.scrollTo(0, 0);
   });
+
+  // A newer navigation can cancel the snapshots while the DOM update still
+  // succeeds. Handle that expected rejection rather than reporting a page error.
+  void transition.ready.catch(() => {});
 
   return transition.finished.finally(() => {
     document.documentElement.classList.remove(PAGE_VT_CLASS);
@@ -143,15 +150,9 @@ async function navigateToUrl(
     applyNavigationUpdate(doc, url, options);
   };
 
-  // Hydrate only after the view transition finishes. Rehydrating during the
-  // transition gets overwritten when the browser commits the captured snapshot
-  // (SSR motion markup keeps opacity:0), leaving a blank page and dead islands.
+  // SiteX's mutation observer hydrates the swapped islands once. A second manual
+  // hydration after this transition would mount them again and replay entrances.
   await runPageViewTransition(update);
-
-  const containers = document.querySelectorAll("[data-view-transition-content]");
-  await Promise.all(
-    [...containers].map((container) => rehydrateSitexIslands(container, { fresh: true }))
-  );
 
   scheduleHoverSlideLists();
 }

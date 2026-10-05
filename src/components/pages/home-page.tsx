@@ -8,6 +8,7 @@ import { useInstallHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { sectionProps } from "@/components/layouts/client-shell";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { IconArrowUpRight, IconEnvelope } from "@/lib/symbols-react";
+import { shouldSkipViewTransitionEntrance } from "@/lib/view-transition-entrance";
 
 const HOME_SHOWN_KEY = "portfolio-home-shown";
 const ENTRANCE_DURATION_MS =
@@ -17,7 +18,7 @@ function shouldSkipHomeEntrance() {
   if (typeof window === "undefined") return false;
 
   // View-transition navigation already animates the page panel in.
-  if (window.history.state?.viewTransitionNavigation) return true;
+  if (shouldSkipViewTransitionEntrance()) return true;
 
   const nav = performance.getEntriesByType("navigation")[0] as
     | PerformanceNavigationTiming
@@ -29,7 +30,7 @@ function shouldSkipHomeEntrance() {
 }
 
 function useSkipHomeEntrance(): boolean {
-  const [skipEntrance, setSkipEntrance] = useState(false);
+  const [skipEntrance, setSkipEntrance] = useState(shouldSkipViewTransitionEntrance);
 
   useEffect(() => {
     setSkipEntrance(shouldSkipHomeEntrance());
