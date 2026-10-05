@@ -150,7 +150,7 @@ function ProjectAppIcon({ project, open, onOpenChange }: {
           if (event.detail === 0) requestAnimationFrame(() => card.current?.querySelector("a")?.focus());
         }}
       >
-        <span className="project-app-icon">
+        <span className="project-app-icon" style={{ backgroundColor: project.backgroundColor }}>
           <img
             src={project.image}
             alt=""

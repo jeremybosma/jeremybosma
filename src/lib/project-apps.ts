@@ -6,6 +6,7 @@ export type ProjectApp = {
   link: string;
   previews: string[];
   logoScale?: number;
+  backgroundColor?: string;
   portrait?: boolean;
   hidden?: boolean;
 };
@@ -46,6 +47,7 @@ export const AGENCY_APPS: ProjectApp[] = [
     name: "Forge",
     description: "The AI-native operating system for software companies: docs, code, deploys, marketing, and revenue in one workspace",
     image: "/projects/forge-mark.svg",
+    backgroundColor: "#925b2a",
     link: "/site/forge",
     previews: previews("forge"),
   },
@@ -61,7 +63,7 @@ export const AGENCY_APPS: ProjectApp[] = [
     slug: "viavia",
     name: "VIA VIA",
     description: "A referral marketplace that pays real cash for trusted introductions to talent, services, and customers",
-    image: "/projects/viavia.png",
+    image: "/projects/viavia-mark.svg",
     link: "/site/viavia",
     previews: previews("viavia"),
   },
@@ -102,6 +104,7 @@ export const AGENCY_APPS: ProjectApp[] = [
     name: "Revyo Collect",
     description: "Connect QuickBooks, automate follow-ups, and manage customer email, payment promises, and disputes in one collections workspace",
     image: "/projects/revyocollect.svg",
+    backgroundColor: "#9b4432",
     link: "/site/revyocollect",
     previews: previews("revyocollect"),
   },
