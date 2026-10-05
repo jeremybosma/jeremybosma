@@ -180,7 +180,7 @@ export default function Navigation({ pathname: pathnameProp }: NavigationProps) 
         >
           <span className="nav-toggle-icon" data-open={isOpen} aria-hidden="true">
             <span className="nav-toggle-glyph nav-toggle-glyph--menu"><IconLine3Horizontal className="size-5" /></span>
-            <span className="nav-toggle-glyph nav-toggle-glyph--close"><IconXmark className="size-5" /></span>
+            <span className="nav-toggle-glyph nav-toggle-glyph--close"><IconXmark className="size-3" /></span>
           </span>
           Menu
         </button>

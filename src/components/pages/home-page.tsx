@@ -215,7 +215,7 @@ export default function HomePage() {
       </HomeSection>
 
       <HomeSection delay={0.3} skipEntrance={skipEntrance}>
-        <footer className="text-xs text-black/60 dark:text-white/60">Updated Jun 2026</footer>
+        <footer className="text-xs text-black/60 dark:text-white/60">Updated Oct 2026</footer>
       </HomeSection>
     </div>
   );
