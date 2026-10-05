@@ -541,8 +541,13 @@ html[data-pathname^="/site/"] .view-transition-content [data-sitex-island] {
   display: block;
   width: 64px;
   height: 64px;
-  border-radius: 26px;
+  /* Ordinary rounded corners need a tighter radius to resemble a squircle. */
+  border-radius: 22%;
   cursor: pointer;
+}
+
+@supports (corner-shape: squircle) {
+  .project-app-link { border-radius: 40%; }
 }
 
 .project-app-link,
@@ -683,7 +688,6 @@ html[data-pathname^="/site/"] .view-transition-content [data-sitex-island] {
   .project-app-link {
     width: 80px;
     height: 80px;
-    border-radius: 32px;
   }
 }
 
