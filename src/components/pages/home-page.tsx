@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ExpandablePhoto } from "@/components/expandable-photo";
 import { HoverSlideItem, HoverSlideList } from "@/components/hover-slide-list";
+import { ProjectAppGrid } from "@/components/project-app-grid";
+import { AGENCY_APPS, FULLDEV_APPS } from "@/lib/project-apps";
 import { useInstallHoverSlideLists } from "@/lib/hover-slide-list-dom";
 import { sectionProps } from "@/components/layouts/client-shell";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -56,22 +58,29 @@ type HomeSectionProps = {
 };
 
 function HomeSection({ delay, skipEntrance, className, children }: HomeSectionProps) {
-  if (skipEntrance) {
-    return <section className={className}>{children}</section>;
-  }
+  const section = useRef<HTMLElement>(null);
 
   return (
-    <motion.section {...homeSectionProps(delay)} className={className}>
+    <motion.section
+      {...homeSectionProps(delay)}
+      ref={section}
+      initial={skipEntrance ? false : "hidden"}
+      transition={skipEntrance ? { duration: 0 } : { ...sectionProps.transition, delay }}
+      className={className}
+      onAnimationComplete={() => {
+        // Motion cancels its native animation before its next render writes the
+        // final opacity. Commit it now so the SSR opacity:0 cannot flash back.
+        if (section.current) section.current.style.opacity = "1";
+      }}
+    >
       {children}
     </motion.section>
   );
 }
 
 const profile = "/profile.webp";
-const individu = "/projects/individu.png";
 const fulldev = "/projects/fulldev.png";
-const internetengineering = "/projects/internet-engineering.png";
-const integrate = "/projects/integrate.png";
+const internetengineering = "/projects/internet-engineering-mark.svg";
 const alfacollege = "/alfa-college.png";
 
 /** Which captured screenshot (1–3) shows in each hover slot: left, right, top. */
@@ -184,9 +193,10 @@ export default function HomePage() {
       <HomeSection delay={0.2} skipEntrance={skipEntrance}>
         <h2>Highlighted work</h2>
         <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
-          <ProjectCard name="Individu" description="Let AI work in the apps you use everyday" image={individu} link="/site/individu" previewImages={projectPreviews("individu")} />  
           <ProjectCard name="Internet Engineering" description="Software agency building products your users want to come back to" image={internetengineering} link="/agency" previewImages={projectPreviews("internet-engineering")} />
-          <ProjectCard name="Integrate" description="Devtool to connect AI agents to services without shipping new backends" image={integrate} link="/site/integrate" previewImages={projectPreviews("integrate")} />
+        </HoverSlideList>
+        <ProjectAppGrid projects={AGENCY_APPS} label="Projects by Internet Engineering" />
+        <HoverSlideList className="mt-7 flex flex-col -mx-3 overflow-visible">
           <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="/site/fulldev" previewImages={projectPreviews("fulldev")} />
           {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
@@ -194,6 +204,7 @@ export default function HomePage() {
           {/* <ProjectCard name="explore.work" description="AI-assisted job finder with realtime resume suggestions and inquiry-tracker" image={explorework} link="https://explore.work" />
           <ProjectCard name="outfitsbio" description="Keep track of your clothing, go shopping, share, and find outfit inspiration" image={outfitsbio} link="https://outfitsbio.com" /> */}
         </HoverSlideList>
+        <ProjectAppGrid projects={FULLDEV_APPS} label="Projects at full.dev" />
       </HomeSection>
 
       <HomeSection delay={0.3} skipEntrance={skipEntrance}>

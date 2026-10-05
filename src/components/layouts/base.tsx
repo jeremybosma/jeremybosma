@@ -69,9 +69,6 @@ export default function BaseLayout({
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`${SITE_URL}/ogimage.png`} />
-        {pathname.startsWith("/site/") ? (
-          <script dangerouslySetInnerHTML={{ __html: "location.replace('/')" }} />
-        ) : null}
         {structuredData ? (
           <script
             type="application/ld+json"

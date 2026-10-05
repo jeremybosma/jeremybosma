@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Internet Engineering">
+  <rect width="512" height="512" fill="#fff"/>
+  <g transform="translate(126 126) scale(1) rotate(-12 130 130)" fill="#000">
+    <rect x="0" y="0" width="114.4" height="114.4"/>
+    <path d="M260 0v114.4H145.6C145.6 51.2 196.8 0 260 0Z"/>
+    <path d="M0 145.6h114.4c0 63.2-51.2 114.4-114.4 114.4V145.6Z"/>
+    <rect x="145.6" y="145.6" width="114.4" height="114.4"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect x="2" y="2" width="28" height="28" rx="9" fill="#0088ff"/>
+  <g id="glyph" fill="none" stroke="#fff" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 8v13c0 3.8-2.2 5.8-5.8 5.8-2.4 0-4.2-.9-5.1-2.3"/>
+    <path d="M21 14c0-3.3-2.1-5.6-5.3-5.6s-5.4 2.3-5.4 5.6 2.2 5.6 5.4 5.6S21 17.3 21 14Z"/>
+  </g>
+</svg>

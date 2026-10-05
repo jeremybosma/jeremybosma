@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
   IconHouse,
   IconHouseFill,
@@ -132,6 +132,11 @@ type NavigationProps = {
 export default function Navigation({ pathname: pathnameProp }: NavigationProps) {
   const pathname = usePathname(pathnameProp);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [animateToggle, setAnimateToggle] = React.useState(true);
+  const reduceMotion = useReducedMotion();
+  const menuId = React.useId();
+  const toggleButton = React.useRef<HTMLButtonElement>(null);
+  const animateMenu = animateToggle && !reduceMotion;
 
   const isActive = (item: NavItem) => {
     if (item.external) return false;
@@ -153,29 +158,41 @@ export default function Navigation({ pathname: pathnameProp }: NavigationProps) 
         </div>
       </nav>
 
-      <div className="md:hidden">
+      <div className="md:hidden" onKeyDown={(event) => {
+        if (event.key !== "Escape" || !isOpen) return;
+        event.preventDefault();
+        setAnimateToggle(false);
+        setIsOpen(false);
+        toggleButton.current?.focus();
+      }}>
         <button
+          ref={toggleButton}
           type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 py-2 text-base font-medium text-black dark:text-white"
+          onClick={(event) => {
+            setAnimateToggle(event.detail > 0);
+            setIsOpen((current) => !current);
+          }}
+          className="nav-toggle-button flex items-center gap-2 rounded-lg py-2 text-base font-medium text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring dark:text-white"
+          data-animate={animateMenu}
           aria-expanded={isOpen}
+          aria-controls={isOpen ? menuId : undefined}
           aria-label="Toggle navigation menu"
         >
-          {isOpen ? (
-            <IconXmark className="w-5 h-5" />
-          ) : (
-            <IconLine3Horizontal className="w-5 h-5" />
-          )}
+          <span className="nav-toggle-icon" data-open={isOpen} aria-hidden="true">
+            <span className="nav-toggle-glyph nav-toggle-glyph--menu"><IconLine3Horizontal className="size-5" /></span>
+            <span className="nav-toggle-glyph nav-toggle-glyph--close"><IconXmark className="size-5" /></span>
+          </span>
           Menu
         </button>
 
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+              id={menuId}
+              initial={{ opacity: 0, height: 0, filter: animateMenu ? "blur(2px)" : "blur(0px)" }}
+              animate={{ opacity: 1, height: "auto", filter: "blur(0px)" }}
+              exit={{ opacity: 0, height: 0, filter: animateMenu ? "blur(2px)" : "blur(0px)" }}
+              transition={{ duration: animateMenu ? 0.2 : 0, ease: [0.23, 1, 0.32, 1] }}
               className="overflow-hidden"
             >
               <div className="flex flex-col gap-1 pt-2 pl-2">

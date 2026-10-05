@@ -78,11 +78,11 @@ export default function ClientShell({ children, pathname: pathnameProp }: Client
       <SiteEmbedHost pathname={pathname} />
       <div
         className={cn(
-          "view-transition-chrome md:hidden flex flex-col",
+          "md:hidden flex flex-col",
           isEmbed ? "h-dvh p-0" : "p-6 gap-6"
         )}
       >
-        <div className={cn("relative z-[2]", isEmbed && "px-6 pt-6 bg-background")}>
+        <div className={cn("view-transition-chrome relative z-[2]", isEmbed && "px-6 pt-6 bg-background")}>
           <Navigation pathname={pathnameProp} />
         </div>
         <main
