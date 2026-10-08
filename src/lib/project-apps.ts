@@ -28,10 +28,10 @@ export const AGENCY_APPS: ProjectApp[] = [
     slug: "integrate",
     name: "Integrate",
     description: "Devtool to connect AI agents to services without shipping new backends",
-    image: "/projects/integrate.png",
+    image: "/projects/integrate-app.png",
+    backgroundColor: "#faf9f6",
     link: "/site/integrate",
     previews: previews("integrate", "jpg"),
-    logoScale: 1.75,
   },
   {
     slug: "hedge-club",
