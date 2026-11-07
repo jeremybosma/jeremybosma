@@ -1,4 +1,5 @@
 instaloader>=4.15
 browser-cookie3>=0.19
+curl_cffi>=0.13
 # Video poster frames (for gallery lightbox animations): install ffmpeg separately
 # e.g. brew install ffmpeg

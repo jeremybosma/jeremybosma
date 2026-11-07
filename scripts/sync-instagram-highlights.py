@@ -3,8 +3,8 @@
 Download Instagram story highlights into public/gallery/highlights and refresh
 src/lib/gallery-highlights.json for the portfolio gallery page.
 
-Uses Instagram's mobile API (i.instagram.com). The Instaloader CLI --highlights
-path relies on deprecated GraphQL query hashes and returns 400 "invalid request".
+Uses Instagram's current web GraphQL API with authenticated browser cookies.
+Instaloader's legacy login and highlight query hashes are no longer supported.
 
 Auth:
   1. Session: ~/.config/instaloader/session-<username>  (bun run instagram:login)
@@ -23,6 +23,8 @@ Posters:
 """
 
 from __future__ import annotations
+
+from instagram_auth import validate_session
 
 import json
 import os
@@ -73,7 +75,7 @@ def load_instaloader(username: str):
     try:
         from instaloader import Instaloader, Profile
     except ImportError:
-        print("pip3 install instaloader browser-cookie3", file=sys.stderr)
+        print("pip3 install -r scripts/requirements-instagram.txt", file=sys.stderr)
         sys.exit(1)
 
     session_file = Path.home() / ".config" / "instaloader" / f"session-{username}"
@@ -91,75 +93,40 @@ def load_instaloader(username: str):
 
     loader = Instaloader(quiet=True, iphone_support=False)
     loader.load_session_from_file(username)
-    logged_in_username = loader.test_login()
+    logged_in_username = validate_session(loader)
     if not logged_in_username:
         if browser:
             refresh_session_from_browser(username, browser)
             loader.load_session_from_file(username)
-            logged_in_username = loader.test_login()
+            logged_in_username = validate_session(loader)
         if not logged_in_username:
             print(
-                "Session invalid. Quit Helium, log into instagram.com, then:\n"
+                "Session invalid. Log into instagram.com in Helium, quit Helium, then:\n"
                 "  bun run instagram:login",
                 file=sys.stderr,
             )
             sys.exit(1)
 
-    # Highlights only need the account ID. For our verified account, use its
-    # session identity instead of requesting post metadata via web_profile_info.
+    if logged_in_username.lower() != username.lower():
+        raise SystemExit(f"Logged in as @{logged_in_username}, expected @{username}.")
     account_id = loader.context._session.cookies.get("ds_user_id")
-    if logged_in_username.lower() == username.lower() and account_id:
-        profile = Profile(loader.context, {"id": account_id, "username": username})
-    else:
-        profile = Profile.from_username(loader.context, username)
+    profile = Profile(loader.context, {"id": account_id, "username": username})
     return loader, profile
 
 
 def fetch_highlights_tray(loader, profile) -> list[dict[str, Any]]:
-    """GraphQL tray. The iPhone highlights_tray endpoint currently 500s."""
-    tray: list[dict[str, Any]] = []
-    for highlight in loader.get_highlights(profile):
-        tray.append(
-            {
-                "id": str(highlight.unique_id),
-                "title": highlight.title,
-                "_highlight": highlight,
-                "cover_media": {
-                    "cropped_image_version": {"url": highlight.cover_cropped_url}
-                },
-            }
-        )
+    from instagram_web import InstagramWebClient
+
+    client = InstagramWebClient(loader)
+    loader.context._portfolio_web = client
+    tray = client.highlights(profile.userid)
     if not tray:
         raise SystemExit("No highlights found on this profile.")
     return tray
 
 
-def fetch_highlight_items(_context, highlight_id: str, tray_item: dict[str, Any] | None = None) -> list[dict[str, Any]]:
-    highlight = (tray_item or {}).get("_highlight")
-    if highlight is None:
-        raise SystemExit(f"Missing highlight object for {highlight_id}")
-
-    items: list[dict[str, Any]] = []
-    for story_item in highlight.get_items():
-        if story_item.is_video and story_item.video_url:
-            items.append(
-                {
-                    "instagramId": str(story_item.mediaid),
-                    "media_type": 2,
-                    "video_versions": [{"url": story_item.video_url, "width": 1, "height": 1}],
-                }
-            )
-            continue
-        items.append(
-            {
-                "instagramId": str(story_item.mediaid),
-                "media_type": 1,
-                "image_versions2": {
-                    "candidates": [{"url": story_item.url, "width": 1, "height": 1}]
-                },
-            }
-        )
-    return items
+def fetch_highlight_items(context, highlight_id: str, tray_item=None) -> list[dict[str, Any]]:
+    return context._portfolio_web.items(highlight_id)
 
 
 def media_url(item: dict[str, Any]) -> tuple[str, str]:

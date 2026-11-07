@@ -14,6 +14,8 @@ Other browsers: INSTAGRAM_COOKIE_BROWSER=firefox|chrome bun run instagram:login
 
 from __future__ import annotations
 
+from instagram_auth import validate_session
+
 import argparse
 import os
 import sys
@@ -78,7 +80,7 @@ def import_from_firefox_sqlite(cookiefile: str) -> tuple[str, object]:
 
     loader = Instaloader(max_connection_attempts=3)
     loader.context._session.cookies.update(rows)
-    username = loader.test_login()
+    username = validate_session(loader)
     if not username:
         raise SystemExit(
             "Not logged in to Instagram in Firefox.\n"
@@ -135,7 +137,7 @@ def import_from_helium(cookiefile: str | None) -> tuple[str, object]:
 
     loader = Instaloader(max_connection_attempts=3)
     loader.context.update_cookies(cookies)
-    username = loader.test_login()
+    username = validate_session(loader)
     if not username:
         raise LoginException("Helium cookies found but Instagram login test failed.")
     loader.context.username = username
@@ -183,7 +185,7 @@ def import_from_browser(browser: str, cookiefile: str | None) -> tuple[str, obje
 
     loader = Instaloader(max_connection_attempts=3)
     loader.context.update_cookies(cookies)
-    username = loader.test_login()
+    username = validate_session(loader)
     if not username:
         raise LoginException(
             f"Cookies found but login test failed for {browser}. Try Helium instead."
@@ -224,13 +226,11 @@ def main() -> None:
         username, loader = import_from_browser(browser, args.cookiefile)
 
     if username.lower() != expected:
-        print(
-            f"Warning: logged in as @{username}, expected @{expected}.",
-            file=sys.stderr,
-        )
+        raise SystemExit(f"Logged in as @{username}, expected @{expected}; session not saved.")
 
     dest = session_path(username)
     loader.save_session_to_file(str(dest))
+    dest.chmod(0o600)
     print(f"Saved session for @{username} → {dest}")
     print("Run: bun run sync:instagram")
 
