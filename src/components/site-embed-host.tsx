@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const IDLE_PRELOAD_DELAY_MS = 1200;
 const IDLE_PRELOAD_GAP_MS = 1800;
-const IDLE_PRELOAD_SLUGS: SiteEmbedSlug[] = ["agency", "individu", "fulldev"];
+const IDLE_PRELOAD_SLUGS: SiteEmbedSlug[] = ["agency", "individu"];
 
 type SiteEmbedHostProps = {
   pathname: string;

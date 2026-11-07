@@ -6,7 +6,7 @@ Jeremy Bosma is a software engineer and designer based in Groningen, in the nort
 
 I build digital products with a strong focus on how they feel to use. That means interface craft, motion, and micro-interactions, not only features. I treat design and engineering as one job: the interaction model, the visual system, and the frontend architecture should come from the same person or a very tight loop.
 
-I am currently studying Software Development at Alfa-college in Groningen (MBO 4, September 2023 through May 2026). Alongside school I work on my own products and on agency work through Internet Engineering.
+I am currently studying Software Development at Alfa-college in Groningen (MBO 4, September 2023 through November 2026). Alongside school I work on my own products and on agency work through Internet Engineering.
 
 ## What I work on
 

@@ -26,6 +26,7 @@ export const SITE_EMBEDS = {
     title: "full.dev",
     description: "Web development agency that's also building devtools.",
     url: "https://full.dev",
+    allowEmbed: false,
   },
   "hedge-club": {
     title: "Hedge Club",
@@ -92,6 +93,7 @@ export const SITE_EMBEDS = {
     title: "Fulldev UI",
     description: "Astro components and blocks for building websites.",
     url: "https://ui.full.dev/",
+    allowEmbed: false,
   },
 } as const satisfies Record<string, SiteEmbed>;
 

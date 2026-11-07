@@ -80,7 +80,7 @@ function HomeSection({ delay, skipEntrance, className, children }: HomeSectionPr
 }
 
 const profile = "/profile.webp";
-const fulldev = "/projects/fulldev.png";
+const fulldev = "/projects/fulldev-mark.svg";
 const internetengineering = "/projects/internet-engineering-mark.svg";
 const alfacollege = "/alfa-college.png";
 
@@ -198,7 +198,7 @@ export default function HomePage() {
         </HoverSlideList>
         <ProjectAppGrid projects={AGENCY_APPS} label="Projects by Internet Engineering" />
         <HoverSlideList className="mt-7 flex flex-col -mx-3 overflow-visible">
-          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="/site/fulldev" previewImages={projectPreviews("fulldev")} />
+          <ProjectCard name="Internship at full.dev" description="Web development agency that's also building devtools" image={fulldev} link="https://full.dev" previewImages={projectPreviews("fulldev")} />
           {/* <ProjectCard name="Clipras" description="Get paid to post AI generated clips from creator and brand campaigns fairly by web3" image={clipras} link="https://clipras.com" /> */}
           {/* <ProjectCard name="seavan" description="AI Automated container planning" image={seavan} link="https://seavan.app" /> */}
           {/* <ProjectCard name="vesselspro" description="A better solution to fleet management, ship maintenance, and more for privates and major shipping companies" image={vesselspro} link="https://vessels.pro" /> */}
@@ -211,7 +211,7 @@ export default function HomePage() {
       <HomeSection delay={0.3} skipEntrance={skipEntrance}>
         <h2>Education</h2>
         <HoverSlideList className="flex flex-col -mx-3 overflow-visible">
-          <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 – May 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" previewImages={[]} />
+          <ProjectCard name="Alfa-college" description="MBO 4, Software Development • Sep 2023 - Nov 2026" image={alfacollege} link="https://www.alfa-college.nl/mbo-opleidingen/informatie-en-communicatietechnologie-ict/software-developer-groningen" previewImages={[]} />
         </HoverSlideList>
       </HomeSection>
 

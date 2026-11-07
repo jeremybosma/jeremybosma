@@ -147,8 +147,8 @@ export const FULLDEV_APPS: ProjectApp[] = [
     slug: "fulldev-ui",
     name: "Fulldev UI",
     description: "A collection of Astro components and blocks for building websites",
-    image: "/projects/fulldev-ui.png",
-    link: "/site/fulldev-ui",
+    image: "/projects/fulldev-ui-mark.svg",
+    link: "https://ui.full.dev/",
     previews: previews("fulldev-ui"),
   },
 ];

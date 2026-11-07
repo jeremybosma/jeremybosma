@@ -40,17 +40,17 @@ Reach for this site when you need the canonical source for Jeremy Bosma: biograp
 
 I am a software engineer with an eye for design. Most of my work is on the web: product design and engineering together, from interaction details to frontend architecture. I care about performance, accessibility, and making interfaces that still make sense when JavaScript is slow or missing.
 
-I study Software Development at Alfa-college (MBO 4, September 2023 – May 2026) and build my own products alongside school and client work.
+I study Software Development at Alfa-college (MBO 4, September 2023 - November 2026) and build my own products alongside school and client work.
 
 ## Highlighted work
 
 - [Individu](${SITE_URL}/site/individu) — let AI work in the apps you use every day ([individu.ai](https://individu.ai)).
 - [Internet Engineering](${SITE_URL}/agency) — software agency building products people want to come back to ([internet-engineering.com](https://internet-engineering.com)).
-- [Internship at full.dev](${SITE_URL}/site/fulldev) — web development agency that also builds developer tools ([full.dev](https://full.dev)).
+- [Internship at full.dev](https://full.dev) — web development agency that also builds developer tools ([full.dev](https://full.dev)).
 
 ## Education
 
-- Alfa-college — MBO 4, Software Development, Groningen, September 2023 – May 2026.
+- Alfa-college — MBO 4, Software Development, Groningen, September 2023 - November 2026.
 
 ## Contact
 
@@ -80,7 +80,7 @@ Jeremy Bosma is a software engineer and designer based in Groningen, in the nort
 
 I build digital products with a strong focus on how they feel to use. That means interface craft, motion, and micro-interactions, not only features. I treat design and engineering as one job: the interaction model, the visual system, and the frontend architecture should come from the same person or a very tight loop.
 
-I am currently studying Software Development at Alfa-college in Groningen (MBO 4, September 2023 through May 2026). Alongside school I work on my own products and on agency work through Internet Engineering.
+I am currently studying Software Development at Alfa-college in Groningen (MBO 4, September 2023 through November 2026). Alongside school I work on my own products and on agency work through Internet Engineering.
 
 ## What I work on
 
