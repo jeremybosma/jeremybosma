@@ -14,8 +14,6 @@ import {
   IconBriefcase,
   IconBriefcaseFill,
   IconPencilLine,
-  IconFilm,
-  IconFilmFill,
   IconTshirt,
   IconTshirtFill,
   IconEnvelope,
@@ -47,7 +45,6 @@ const NAV_ITEMS: NavItem[] = [
     icon: IconPhotoStack,
     iconActive: IconPhotoStackFill,
   },
-  { label: "Videos", href: "/videos", icon: IconFilm, iconActive: IconFilmFill },
   { label: "Music", href: "/music", icon: IconMusicNoteList, iconActive: IconMusicNoteList },
 ];
 

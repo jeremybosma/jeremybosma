@@ -1,6 +1,214 @@
 {
-  "syncedAt": "2026-10-05T15:18:55.955Z",
+  "syncedAt": "2026-11-07T19:51:03.863Z",
   "tracks": [
+    {
+      "title": "Saint Pablo",
+      "author": "Kanye West",
+      "type": "single",
+      "album": "The Life of Pablo",
+      "image": "/music/covers/kanye-west-the-life-of-pablo.jpg"
+    },
+    {
+      "title": "Falling Back",
+      "author": "Drake",
+      "type": "single",
+      "album": "Honestly, Nevermind",
+      "image": "/music/covers/drake-honestly-nevermind.jpg"
+    },
+    {
+      "title": "Ya Hit (feat. Drake, Travis Scott & Loe Shimmy)",
+      "author": "Future",
+      "type": "single",
+      "image": "/music/covers/future-ya-hit-feat-drake-travis-scott-loe-shimmy.jpg"
+    },
+    {
+      "title": "Nachtmerrie",
+      "author": "Sevn Alias",
+      "type": "single",
+      "album": "Precasso",
+      "image": "/music/covers/sevn-alias-precasso.jpg"
+    },
+    {
+      "title": "Closer",
+      "author": "Ne-Yo",
+      "type": "single",
+      "album": "Year of the Gentleman (Deluxe Edition)",
+      "image": "/music/covers/ne-yo-year-of-the-gentleman-deluxe-edition.jpg"
+    },
+    {
+      "title": "Mi Swing Es Tropical (feat. Tempo & Candela Allstars)",
+      "author": "Quantic & Nickodemus",
+      "type": "single",
+      "image": "/music/covers/quantic-nickodemus-mi-swing-es-tropical-feat-tempo-candela-allstars.jpg"
+    },
+    {
+      "title": "Some How Some Way (feat. Beanie Sigel & Scarface)",
+      "author": "JAŸ-Z",
+      "type": "single",
+      "album": "The Blueprint 2: The Gift & The Curse",
+      "image": "/music/covers/jay-z-the-blueprint-2-the-gift-the-curse.jpg"
+    },
+    {
+      "title": "One Mic, One Gun",
+      "author": "Nas & 21 Savage",
+      "type": "single",
+      "album": "Magic 2",
+      "image": "/music/covers/nas-21-savage-magic-2.jpg"
+    },
+    {
+      "title": "Count up That Loot",
+      "author": "Nipsey Hussle",
+      "type": "single",
+      "image": "/music/covers/nipsey-hussle-count-up-that-loot.jpg"
+    },
+    {
+      "title": "OHZOARROGANT",
+      "author": "lostboyshawty",
+      "type": "single",
+      "album": "FLEXX ‘N FINESSE // OHZOARROGANT",
+      "image": "/music/covers/lostboyshawty-flexx-n-finesse-ohzoarrogant.jpg"
+    },
+    {
+      "title": "FLEXX ‘N FINESSE",
+      "author": "lostboyshawty",
+      "type": "single",
+      "album": "FLEXX ‘N FINESSE // OHZOARROGANT",
+      "image": "/music/covers/lostboyshawty-flexx-n-finesse-ohzoarrogant.jpg"
+    },
+    {
+      "title": "You Used To Love Me",
+      "author": "Faith Evans",
+      "type": "single",
+      "album": "You Used To Love Me - EP",
+      "image": "/music/covers/faith-evans-you-used-to-love-me-ep.jpg"
+    },
+    {
+      "title": "Breakin' My Heart (Pretty Brown Eyes)",
+      "author": "Mint Condition",
+      "type": "single",
+      "album": "Meant to Be Mint",
+      "image": "/music/covers/mint-condition-meant-to-be-mint.jpg"
+    },
+    {
+      "title": "Right My Wrongs",
+      "author": "Bryson Tiller",
+      "type": "single",
+      "album": "T R A P S O U L",
+      "image": "/music/covers/bryson-tiller-t-r-a-p-s-o-u-l.jpg"
+    },
+    {
+      "title": "UPSTAIRS",
+      "author": "DC3",
+      "type": "single",
+      "image": "/music/covers/dc3-upstairs.jpg"
+    },
+    {
+      "title": "BEEP BEEP",
+      "author": "Travis Scott & SahBabii",
+      "type": "single",
+      "album": "JACKBOYS 2",
+      "image": "/music/covers/travis-scott-sahbabii-jackboys-2.jpg"
+    },
+    {
+      "title": "Jugaste y Sufrí (feat. DannyLux)",
+      "author": "Eslabon Armado",
+      "type": "single",
+      "album": "Corta Venas",
+      "image": "/music/covers/eslabon-armado-corta-venas.jpg"
+    },
+    {
+      "title": "Shotta's.",
+      "author": "Season 25",
+      "type": "single",
+      "image": "/music/covers/season-25-shotta-s.jpg"
+    },
+    {
+      "title": "BADDIES IN BELGICA",
+      "author": "Issah",
+      "type": "single",
+      "album": "BADDIES IN HOLLANDA",
+      "image": "/music/covers/issah-baddies-in-hollanda.jpg"
+    },
+    {
+      "title": "Bria's Interlude (feat. Omarion)",
+      "author": "Drake",
+      "type": "single",
+      "album": "So Far Gone",
+      "image": "/music/covers/drake-so-far-gone.jpg"
+    },
+    {
+      "title": "Limitless (feat. WaveIQ)",
+      "author": "Jon Keith",
+      "type": "single",
+      "album": "Anti-Hero",
+      "image": "/music/covers/jon-keith-anti-hero.jpg"
+    },
+    {
+      "title": "The Party & The After Party",
+      "author": "The Weeknd",
+      "type": "single",
+      "album": "Trilogy",
+      "image": "/music/covers/the-weeknd-trilogy.jpg"
+    },
+    {
+      "title": "Champagne",
+      "author": "Victory Lap & deathtoricky",
+      "type": "single",
+      "image": "/music/covers/victory-lap-deathtoricky-champagne.jpg"
+    },
+    {
+      "title": "Lover, You Should've Come Over",
+      "author": "Jeff Buckley",
+      "type": "single",
+      "album": "Grace",
+      "image": "/music/covers/jeff-buckley-grace.jpg"
+    },
+    {
+      "title": "Love U",
+      "author": "Westside Gunn",
+      "type": "single",
+      "album": "Hitler Wears Hermes 7",
+      "image": "/music/covers/westside-gunn-hitler-wears-hermes-7.jpg"
+    },
+    {
+      "title": "Schijn je licht op mij",
+      "author": "Ronnie Flex & ADF Samski",
+      "type": "single",
+      "image": "/music/covers/ronnie-flex-adf-samski-schijn-je-licht-op-mij.jpg"
+    },
+    {
+      "title": "On the Square (Demo)",
+      "author": "Mac DeMarco",
+      "type": "single",
+      "album": "Here Comes the Cowboy Demos",
+      "image": "/music/covers/mac-demarco-here-comes-the-cowboy-demos.jpg"
+    },
+    {
+      "title": "Loose",
+      "author": "Daniel Caesar",
+      "type": "single",
+      "album": "Freudian",
+      "image": "/music/covers/daniel-caesar-freudian.jpg"
+    },
+    {
+      "title": "ALL IN MOTION",
+      "author": "Yung Fazo",
+      "type": "single",
+      "image": "/music/covers/yung-fazo-all-in-motion.jpg"
+    },
+    {
+      "title": "Can You Lose By Following God",
+      "author": "Whole Truth",
+      "type": "single",
+      "album": "Good God! Apocryphal Hymns",
+      "image": "/music/covers/whole-truth-good-god-apocryphal-hymns.jpg"
+    },
+    {
+      "title": "KU LO SA - A COLORS SHOW",
+      "author": "Oxlade",
+      "type": "single",
+      "image": "/music/covers/oxlade-ku-lo-sa-a-colors-show.jpg"
+    },
     {
       "title": "Answer Me",
       "author": "Nine Vicious Vault",
@@ -13,13 +221,6 @@
       "type": "single",
       "album": "HEELS HAVE EYES 2",
       "image": "/music/covers/westside-gunn-heels-have-eyes-2.png"
-    },
-    {
-      "title": "Favorite",
-      "author": "Nobu Woods",
-      "type": "single",
-      "album": "Iris",
-      "image": "/music/covers/nobu-woods-iris.jpg"
     },
     {
       "title": "Destined",
@@ -262,13 +463,6 @@
       "type": "single",
       "album": "NDA",
       "image": "/music/covers/trippie-redd-partynextdoor-nda.jpg"
-    },
-    {
-      "title": "Bria's Interlude (feat. Omarion)",
-      "author": "Drake",
-      "type": "single",
-      "album": "So Far Gone",
-      "image": "/music/covers/drake-so-far-gone.jpg"
     },
     {
       "title": "Churchill Downs (feat. Drake)",
@@ -630,6 +824,7 @@
       "title": "Panic At The Disco",
       "author": "1900Rugrat",
       "type": "single",
+      "album": "Roll N' Rock",
       "image": "/music/covers/1900rugrat-panic-at-the-disco.jpg"
     },
     {
@@ -759,6 +954,7 @@
       "title": "CONUNDRUMS",
       "author": "ty!",
       "type": "single",
+      "album": "RED",
       "image": "/music/covers/ty-conundrums.jpg"
     },
     {
@@ -864,12 +1060,6 @@
       "image": "/music/covers/drake-certified-lover-boy.jpg"
     },
     {
-      "title": "After Hours",
-      "author": "prod.push",
-      "type": "single",
-      "image": "/music/covers/prod-push-after-hours.jpg"
-    },
-    {
       "title": "Kane and Take",
       "author": "DC2TriII",
       "type": "single",
@@ -931,10 +1121,10 @@
       "image": "/music/covers/id-josh-baker-b2b-prospa-b2b-kettama-at-factory-town-miami-2026-josh-baker-pres-.jpg"
     },
     {
-      "title": "Wanna Know (Remix)",
-      "author": "Dave & Drake",
+      "title": "Wanna Know Remix (feat. Drake)",
+      "author": "Dave",
       "type": "single",
-      "image": "/music/covers/dave-drake-wanna-know-remix.jpg"
+      "image": "/music/covers/dave-wanna-know-remix-feat-drake.jpg"
     },
     {
       "title": "Timeless",
@@ -2325,6 +2515,7 @@
       "title": "Look Alive (feat. Drake)",
       "author": "BlocBoy JB",
       "type": "single",
+      "album": "Simi",
       "image": "/music/covers/blocboy-jb-look-alive-feat-drake.jpg"
     },
     {
@@ -3570,7 +3761,7 @@
       "title": "LOYAL (feat. Drake)",
       "author": "PARTYNEXTDOOR",
       "type": "single",
-      "album": "PARTYMOBILE (Chopped Not Slopped)",
+      "album": "PARTYMOBILE",
       "image": "/music/covers/partynextdoor-partymobile-chopped-not-slopped.jpg"
     },
     {
@@ -4440,6 +4631,25 @@
       "type": "single",
       "album": "Views",
       "image": "/music/covers/drake-views.jpg"
+    },
+    {
+      "title": "Favorite",
+      "author": "Nobu Woods",
+      "type": "single",
+      "album": "Iris",
+      "image": "/music/covers/nobu-woods-iris.jpg"
+    },
+    {
+      "title": "After Hours",
+      "author": "prod.push",
+      "type": "single",
+      "image": "/music/covers/prod-push-after-hours.jpg"
+    },
+    {
+      "title": "Wanna Know (Remix)",
+      "author": "Dave & Drake",
+      "type": "single",
+      "image": "/music/covers/dave-drake-wanna-know-remix.jpg"
     },
     {
       "title": "Sea bass",
