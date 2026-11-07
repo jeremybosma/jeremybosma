@@ -14,7 +14,6 @@ Selected work linked from this site:
 
 - Individu — a product that lets AI work in the apps people already use every day.
 - Internet Engineering — a software agency for founders who want products people actually return to.
-- Integrate — a developer tool for connecting AI agents to services without shipping a new backend for every integration.
 - An internship at full.dev, a web development agency that also builds developer tools.
 
 I also keep a writing archive, a photo gallery, videos, a music library, and Jeremy's Supply, a small merch shop.

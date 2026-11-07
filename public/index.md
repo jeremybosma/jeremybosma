@@ -18,7 +18,6 @@ I study Software Development at Alfa-college (MBO 4, September 2023 – May 2026
 
 - [Individu](https://jeremybosma.nl/site/individu) — let AI work in the apps you use every day ([individu.ai](https://individu.ai)).
 - [Internet Engineering](https://jeremybosma.nl/agency) — software agency building products people want to come back to ([internet-engineering.com](https://internet-engineering.com)).
-- [Integrate](https://jeremybosma.nl/site/integrate) — connect AI agents to services without shipping new backends ([integrate.dev](https://integrate.dev)).
 - [Internship at full.dev](https://jeremybosma.nl/site/fulldev) — web development agency that also builds developer tools ([full.dev](https://full.dev)).
 
 ## Education

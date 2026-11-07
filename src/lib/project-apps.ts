@@ -26,6 +26,7 @@ export const AGENCY_APPS: ProjectApp[] = [
   },
   {
     slug: "integrate",
+    hidden: true,
     name: "Integrate",
     description: "Devtool to connect AI agents to services without shipping new backends",
     image: "/projects/integrate-app.png",
@@ -35,6 +36,7 @@ export const AGENCY_APPS: ProjectApp[] = [
   },
   {
     slug: "hedge-club",
+    hidden: true,
     name: "Hedge Club",
     description: "An iPhone research desk for observing prediction markets and reviewing paper-trading decisions",
     image: "/projects/hedge-club.png",
@@ -44,6 +46,7 @@ export const AGENCY_APPS: ProjectApp[] = [
   },
   {
     slug: "forge",
+    hidden: true,
     name: "Forge",
     description: "The AI-native operating system for software companies: docs, code, deploys, marketing, and revenue in one workspace",
     image: "/projects/forge-mark.svg",
@@ -53,6 +56,7 @@ export const AGENCY_APPS: ProjectApp[] = [
   },
   {
     slug: "restyle",
+    hidden: true,
     name: "Restyle",
     description: "Turn a website URL into a visual redesign preview and a drop-in Next.js and Tailwind patch",
     image: "/projects/restyle.png",
@@ -94,6 +98,7 @@ export const AGENCY_APPS: ProjectApp[] = [
   },
   {
     slug: "gluiss",
+    hidden: true,
     name: "Gluiss",
     description: "A composable React interface system with adaptive layouts, accessible controls, liquid glass, and motion",
     image: "/projects/gluiss-mark.svg",

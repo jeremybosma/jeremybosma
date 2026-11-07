@@ -46,7 +46,6 @@ I study Software Development at Alfa-college (MBO 4, September 2023 – May 2026
 
 - [Individu](${SITE_URL}/site/individu) — let AI work in the apps you use every day ([individu.ai](https://individu.ai)).
 - [Internet Engineering](${SITE_URL}/agency) — software agency building products people want to come back to ([internet-engineering.com](https://internet-engineering.com)).
-- [Integrate](${SITE_URL}/site/integrate) — connect AI agents to services without shipping new backends ([integrate.dev](https://integrate.dev)).
 - [Internship at full.dev](${SITE_URL}/site/fulldev) — web development agency that also builds developer tools ([full.dev](https://full.dev)).
 
 ## Education
@@ -89,7 +88,6 @@ Selected work linked from this site:
 
 - Individu — a product that lets AI work in the apps people already use every day.
 - Internet Engineering — a software agency for founders who want products people actually return to.
-- Integrate — a developer tool for connecting AI agents to services without shipping a new backend for every integration.
 - An internship at full.dev, a web development agency that also builds developer tools.
 
 I also keep a writing archive, a photo gallery, videos, a music library, and Jeremy's Supply, a small merch shop.

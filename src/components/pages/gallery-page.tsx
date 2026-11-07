@@ -42,7 +42,6 @@ const legacyImages: GalleryImage[] = [
     { src: "/gallery/gym.jpeg", alt: "Gym" },
     { src: "/gallery/jesussaves.jpeg", alt: "Jesus saves" },
     { src: "/gallery/mediamarkt.jpeg", alt: "MediaMarkt" },
-    { src: "/gallery/integrate.jpeg", alt: "Integrate" },
     { src: "/gallery/taper2.jpeg", alt: "Taper" },
     { src: "/gallery/mirror.jpeg", alt: "Mirror" },
     { src: "/gallery/mirror2.jpeg", alt: "Mirror" },
